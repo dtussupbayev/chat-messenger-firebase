@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../services/snack_bar_service.dart';
+import '../../../core/utils/snack_bar_service.dart';
 
 class VerifyEmailController extends ChangeNotifier {
   bool isEmailVerified = false;

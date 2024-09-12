@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
 import '../../../services/firestore_service.dart';
-import '../../../services/snack_bar_service.dart';
+import '../../../core/utils/snack_bar_service.dart';
 import '../../chats/chats_screen.dart';
 
 class SignUpController extends ChangeNotifier {
