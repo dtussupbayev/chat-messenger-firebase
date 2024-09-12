@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:random_string/random_string.dart';
 
-import '../../services/firestore_service.dart';
+import '../../core/services/firestore_service.dart';
 
 class ChatController extends ChangeNotifier {
   TextEditingController messageTextEditingController = TextEditingController();

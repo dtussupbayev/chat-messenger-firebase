@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/firestore_service.dart';
+import 'package:flutter_application_1/core/services/firestore_service.dart';
 
 class ChatsController extends ChangeNotifier {
   Stream? chatRoomsStream;

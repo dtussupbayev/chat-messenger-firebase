@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../services/firestore_service.dart';
+import '../../core/services/firestore_service.dart';
 import '../chat/chat_screen.dart';
 import 'users_search_controller.dart';
 

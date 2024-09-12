@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
-import '../../../services/firestore_service.dart';
+import '../../../core/services/firestore_service.dart';
 import '../../../core/utils/snack_bar_service.dart';
 import '../../chats/chats_screen.dart';
 

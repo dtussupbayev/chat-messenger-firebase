@@ -11,7 +11,7 @@ import 'features/chats/chats_screen.dart';
 import 'features/authentication/login/login_screen.dart';
 import 'features/settings/settings_controller.dart';
 import 'features/settings/settings_screen.dart';
-import 'services/firebase_service.dart';
+import 'core/services/firebase_service.dart';
 
 /// The Widget that configures your application.
 class App extends StatelessWidget {
