@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../generated/l10n.dart';
 import '../../../core/utils/snack_bar_service.dart';
@@ -53,7 +54,10 @@ class LoginController extends ChangeNotifier {
     }
 
     if (context.mounted) {
-      Navigator.pushNamedAndRemoveUntil(context, ChatsScreen.routeName, (route) => false);
+      while (context.canPop()) {
+        context.pop();
+      }
+      context.pushReplacement(ChatsScreen.routeName);
     }
   }
 }

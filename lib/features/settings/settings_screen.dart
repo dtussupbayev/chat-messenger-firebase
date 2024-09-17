@@ -10,7 +10,7 @@ import 'settings_controller.dart';
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key, required this.controller});
 
-  static const routeName = '/settings';
+  static const routeName = 'settings';
 
   final SettingsController controller;
 
@@ -61,7 +61,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: DropdownButton<Locale>(
                 onChanged: widget.controller.updateLocale,
                 value: widget.controller.locale,
-                items: S.delegate.supportedLocales.map<DropdownMenuItem<Locale>>((value) {
+                items: S.delegate.supportedLocales
+                    .map<DropdownMenuItem<Locale>>((value) {
                   return DropdownMenuItem<Locale>(
                     value: value,
                     child: Text(

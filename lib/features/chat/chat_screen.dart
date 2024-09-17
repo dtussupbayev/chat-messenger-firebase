@@ -3,8 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/account/account_screen.dart';
+import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:flutter_application_1/features/settings/settings_screen.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'chat_controller.dart';
@@ -133,7 +135,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.pop(context);
+                          context.pop();
                         },
                         child: const Icon(
                           Icons.arrow_back_ios_new_outlined,
@@ -149,9 +151,9 @@ class _ChatScreenState extends State<ChatScreen> {
                       PopupMenuButton<String>(
                         onSelected: (value) {
                           if (value == 'settings') {
-                            Navigator.restorablePushNamed(context, SettingsScreen.routeName);
+                            context.pushReplacement(SettingsScreen.routeName, extra: context.read<SettingsController>());
                           } else if (value == 'account') {
-                            Navigator.restorablePushNamed(context, AccountScreen.routeName);
+                            context.pushReplacement(AccountScreen.routeName);
                           }
                         },
                         itemBuilder: (BuildContext context) {

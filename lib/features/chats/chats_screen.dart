@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/chat/chat_screen.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'chats_app_bar_menu_button.dart';
@@ -138,14 +139,13 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
       return GestureDetector(
         onTap: () {
           context.mounted
-              ? Navigator.restorablePushNamed(
-                  context,
+              ? context.pushNamed(
                   ChatScreen.routeName,
-                  arguments: [
-                    chatsController.id,
-                    chatsController.firstName,
-                    chatsController.lastName
-                  ],
+                  pathParameters: {'uid': chatsController.id},
+                  queryParameters: {
+                    'firstName': chatsController.firstName,
+                    'lastName': chatsController.lastName
+                  },
                 )
               : null;
         },

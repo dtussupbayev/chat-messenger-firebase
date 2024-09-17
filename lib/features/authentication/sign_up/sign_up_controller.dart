@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../generated/l10n.dart';
 import '../../../core/services/firestore_service.dart';
@@ -12,8 +13,10 @@ class SignUpController extends ChangeNotifier {
 
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
-  TextEditingController passwordRepeatTextEditingController = TextEditingController();
-  TextEditingController firstNameTextEditingController = TextEditingController();
+  TextEditingController passwordRepeatTextEditingController =
+      TextEditingController();
+  TextEditingController firstNameTextEditingController =
+      TextEditingController();
   TextEditingController lastNameTextEditingController = TextEditingController();
 
   disposeTextInputControllers() {
@@ -34,7 +37,8 @@ class SignUpController extends ChangeNotifier {
     final isValid = formKey.currentState!.validate();
     if (!isValid) return;
 
-    if (passwordTextEditingController.text != passwordRepeatTextEditingController.text) {
+    if (passwordTextEditingController.text !=
+        passwordRepeatTextEditingController.text) {
       SnackBarService.showSnackBar(
         context,
         S.of(context).passwordsDifferent,
@@ -44,7 +48,8 @@ class SignUpController extends ChangeNotifier {
     }
 
     try {
-      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailTextEditingController.text,
         password: passwordTextEditingController.text,
       );
@@ -84,7 +89,10 @@ class SignUpController extends ChangeNotifier {
       }
     }
     if (context.mounted) {
-      Navigator.pushNamedAndRemoveUntil(context, ChatsScreen.routeName, (route) => false);
+      while (context.canPop()) {
+        context.pop();
+      }
+      context.push(ChatsScreen.routeName);
     }
   }
 }

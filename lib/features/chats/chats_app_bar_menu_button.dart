@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/settings/settings_controller.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 import '../../generated/l10n.dart';
 import '../account/account_screen.dart';
@@ -19,12 +22,13 @@ class CMenuButton extends StatelessWidget {
     return PopupMenuButton<String>(
       onSelected: (value) {
         if (value == 'settings') {
-          Navigator.restorablePushNamed(context, SettingsScreen.routeName);
+          context.goNamed(SettingsScreen.routeName,
+              extra: context.read<SettingsController>());
         } else if (value == 'account') {
           if ((user == null)) {
-            Navigator.restorablePushNamed(context, LoginScreen.routeName);
+            context.push(LoginScreen.routeName);
           } else {
-            Navigator.restorablePushNamed(context, AccountScreen.routeName);
+            context.goNamed(AccountScreen.routeName);
           }
         }
       },
@@ -45,4 +49,3 @@ class CMenuButton extends StatelessWidget {
     );
   }
 }
-

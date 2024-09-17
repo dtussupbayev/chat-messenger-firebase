@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_application_1/generated/l10n.dart';
@@ -71,7 +72,7 @@ class ResetPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => Navigator.restorablePushNamed(context, ResetPasswordScreen.routeName),
+      onPressed: () => context.push(ResetPasswordScreen.routeName),
       child: Text(S.of(context).resetPassword),
     );
   }
@@ -85,7 +86,7 @@ class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => Navigator.restorablePushNamed(context, SignUpScreen.routeName),
+      onPressed: () => context.push(SignUpScreen.routeName),
       child: Text(
         S.of(context).signUp,
         style: const TextStyle(
@@ -128,8 +129,9 @@ class PasswordFormField extends StatelessWidget {
       autocorrect: false,
       controller: loginController.passwordTextEditingController,
       obscureText: loginController.isHiddenPassword,
-      validator: (value) =>
-          value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
+      validator: (value) => value != null && value.length < 6
+          ? S.of(context).passwordFormValidatorText
+          : null,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
           border: const OutlineInputBorder(),
@@ -137,7 +139,9 @@ class PasswordFormField extends StatelessWidget {
           suffix: InkWell(
             onTap: loginController.togglePasswordView,
             child: Icon(
-              loginController.isHiddenPassword ? Icons.visibility_off : Icons.visibility,
+              loginController.isHiddenPassword
+                  ? Icons.visibility_off
+                  : Icons.visibility,
             ),
           )),
     );

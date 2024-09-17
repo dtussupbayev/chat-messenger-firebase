@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/services/firestore_service.dart';
 import '../chat/chat_screen.dart';
@@ -70,7 +71,8 @@ class SearchResultListView extends StatefulWidget {
 }
 
 class _SearchResultListViewState extends State<SearchResultListView> {
-  final UsersSearchController searchDelegateController = UsersSearchController();
+  final UsersSearchController searchDelegateController =
+      UsersSearchController();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +80,8 @@ class _SearchResultListViewState extends State<SearchResultListView> {
         ? ListView.builder(
             itemCount: widget.snapshot.data!.docs.length,
             itemBuilder: (context, index) {
-              Map<String, dynamic> userData = searchDelegateController.getUserData(
+              Map<String, dynamic> userData =
+                  searchDelegateController.getUserData(
                 widget.snapshot,
                 index,
               );
@@ -98,8 +101,14 @@ class _SearchResultListViewState extends State<SearchResultListView> {
                   await searchDelegateController.createChatRoom(uid, email);
 
                   context.mounted
-                      ? Navigator.restorablePushNamed(context, ChatScreen.routeName,
-                          arguments: [uid, firstName, lastName])
+                      ? context.pushNamed(
+                          ChatScreen.routeName,
+                          pathParameters: {'uid': uid},
+                          queryParameters: {
+                            'firstName': firstName,
+                            'lastName': lastName
+                          },
+                        )
                       : null;
                 },
                 child: ListTile(

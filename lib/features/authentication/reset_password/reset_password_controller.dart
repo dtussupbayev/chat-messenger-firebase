@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../generated/l10n.dart';
 import '../../../core/utils/snack_bar_service.dart';
@@ -20,8 +21,8 @@ class ResetPasswordController extends ChangeNotifier {
     if (!isValid) return;
 
     try {
-      await FirebaseAuth.instance
-          .sendPasswordResetEmail(email: emailTextEditingController.text.trim());
+      await FirebaseAuth.instance.sendPasswordResetEmail(
+          email: emailTextEditingController.text.trim());
     } on FirebaseAuthException catch (e) {
       if (context.mounted) {
         if (e.code == 'user-not-found') {
@@ -52,8 +53,10 @@ class ResetPasswordController extends ChangeNotifier {
     }
 
     if (context.mounted) {
-      Navigator.pushNamedAndRemoveUntil(
-          context, ChatsScreen.routeName, (Route<dynamic> route) => false);
+      while (context.canPop()) {
+        context.pop();
+      }
+      context.push(ChatsScreen.routeName);
     }
   }
 }

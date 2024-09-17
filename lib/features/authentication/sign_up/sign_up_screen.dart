@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
@@ -12,7 +13,7 @@ class SignUpScreen extends StatefulWidget {
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 
-  static const routeName = 'sign_up';
+  static const routeName = '/sign_up';
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
@@ -71,7 +72,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => Navigator.restorablePushReplacementNamed(context, LoginScreen.routeName),
+      onPressed: () => context.pushReplacement(LoginScreen.routeName),
       child: Text(
         S.of(context).enter,
         style: const TextStyle(
@@ -160,15 +161,18 @@ class PasswordRepeatFormField extends StatelessWidget {
       controller: signUpController.passwordRepeatTextEditingController,
       obscureText: signUpController.isHiddenPassword,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (value) =>
-          value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
+      validator: (value) => value != null && value.length < 6
+          ? S.of(context).passwordFormValidatorText
+          : null,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         hintText: S.of(context).passwordRepeatFormHintText,
         suffix: InkWell(
           onTap: signUpController.togglePasswordView,
           child: Icon(
-            signUpController.isHiddenPassword ? Icons.visibility_off : Icons.visibility,
+            signUpController.isHiddenPassword
+                ? Icons.visibility_off
+                : Icons.visibility,
           ),
         ),
       ),
@@ -190,8 +194,9 @@ class PasswordFormField extends StatelessWidget {
       autocorrect: false,
       controller: signUpController.passwordTextEditingController,
       obscureText: signUpController.isHiddenPassword,
-      validator: (value) =>
-          value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
+      validator: (value) => value != null && value.length < 6
+          ? S.of(context).passwordFormValidatorText
+          : null,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
           border: const OutlineInputBorder(),
@@ -199,7 +204,9 @@ class PasswordFormField extends StatelessWidget {
           suffix: InkWell(
             onTap: signUpController.togglePasswordView,
             child: Icon(
-              signUpController.isHiddenPassword ? Icons.visibility_off : Icons.visibility,
+              signUpController.isHiddenPassword
+                  ? Icons.visibility_off
+                  : Icons.visibility,
             ),
           )),
     );

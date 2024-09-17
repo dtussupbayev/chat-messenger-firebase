@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../generated/l10n.dart';
 import 'account_controller.dart';
@@ -104,7 +105,7 @@ class ArrawBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Navigator.pop(context);
+        context.pop(context);
       },
       icon: const Icon(
         Icons.arrow_back_ios,

@@ -11,7 +11,7 @@ class VerifyEmailScreen extends StatefulWidget {
   @override
   State<VerifyEmailScreen> createState() => _VerifyEmailScreenState();
 
-  static const routeName = 'verify_email';
+  static const routeName = '/verify_email';
 }
 
 class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
