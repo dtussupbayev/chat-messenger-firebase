@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
 import '../../account/account_screen.dart';
-import '../../authentication/login/login_screen.dart';
+import '../../authentication/login/screen/login_screen.dart';
 import '../../settings/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {

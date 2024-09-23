@@ -9,6 +9,7 @@ class SnackBarService {
     String message,
     bool error,
   ) {
+    FocusScope.of(context).unfocus();
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
 
     final snackBar = SnackBar(

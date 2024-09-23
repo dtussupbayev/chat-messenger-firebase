@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
-import '../login/login_screen.dart';
+import '../login/screen/login_screen.dart';
 import 'sign_up_controller.dart';
 
 class SignUpScreen extends StatefulWidget {

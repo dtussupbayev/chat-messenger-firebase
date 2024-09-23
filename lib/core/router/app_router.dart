@@ -7,7 +7,7 @@ import '../../features/authentication/reset_password/reset_password_screen.dart'
 import '../../features/authentication/sign_up/sign_up_screen.dart';
 import '../../features/chat/screens/chat_screen.dart';
 import '../../features/chats/screen/chats_screen.dart';
-import '../../features/authentication/login/login_screen.dart';
+import '../../features/authentication/login/screen/login_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../services/firebase_service.dart';
 
