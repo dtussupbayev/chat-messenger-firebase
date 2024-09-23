@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
-import '../../account/account_screen.dart';
+import '../../account/screens/account_screen.dart';
 import '../../authentication/login/screen/login_screen.dart';
 import '../../settings/settings_screen.dart';
 

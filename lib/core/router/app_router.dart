@@ -2,7 +2,7 @@ import 'package:flutter_application_1/features/authentication/verify_email/scree
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/account/account_screen.dart';
+import '../../features/account/screens/account_screen.dart';
 import '../../features/authentication/reset_password/screens/reset_password_screen.dart';
 import '../../features/authentication/sign_up/screens/sign_up_screen.dart';
 import '../../features/chat/screens/chat_screen.dart';
