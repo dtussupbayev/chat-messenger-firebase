@@ -2,10 +2,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 
-class EmailFormField extends StatelessWidget {
+class EmailInput extends StatelessWidget {
   final TextEditingController emailTextEditingController;
 
-  const EmailFormField({
+  const EmailInput({
     super.key,
     required this.emailTextEditingController,
   });

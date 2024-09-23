@@ -1,10 +1,10 @@
-import 'package:flutter_application_1/features/authentication/verify_email/verify_email_screen.dart';
+import 'package:flutter_application_1/features/authentication/verify_email/screens/verify_email_screen.dart';
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/account/account_screen.dart';
-import '../../features/authentication/reset_password/reset_password_screen.dart';
-import '../../features/authentication/sign_up/sign_up_screen.dart';
+import '../../features/authentication/reset_password/screens/reset_password_screen.dart';
+import '../../features/authentication/sign_up/screens/sign_up_screen.dart';
 import '../../features/chat/screens/chat_screen.dart';
 import '../../features/chats/screen/chats_screen.dart';
 import '../../features/authentication/login/screen/login_screen.dart';

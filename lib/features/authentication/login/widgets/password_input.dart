@@ -3,10 +3,10 @@ import 'package:flutter_application_1/features/authentication/login/bloc/login_b
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PasswordFormField extends StatelessWidget {
+class PasswordInput extends StatelessWidget {
   final TextEditingController passwordTextEditingController;
 
-  const PasswordFormField({
+  const PasswordInput({
     super.key,
     required this.passwordTextEditingController,
   });

@@ -3,12 +3,12 @@ import 'package:flutter_application_1/features/authentication/login/bloc/login_b
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginButton extends StatelessWidget {
+class SubmitLoginButton extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final GlobalKey<FormState> formKey;
 
-  const LoginButton({
+  const SubmitLoginButton({
     super.key,
     required this.emailController,
     required this.passwordController,

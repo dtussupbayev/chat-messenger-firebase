@@ -1,9 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/authentication/verify_email/widgets/cancel_verification_button.dart';
+import 'package:flutter_application_1/features/authentication/verify_email/widgets/resend_verification_email_button.dart';
 
-import '../../../generated/l10n.dart';
-import '../../chats/screen/chats_screen.dart';
-import 'verify_email_controller.dart';
+import '../../../../generated/l10n.dart';
+import '../../../chats/screen/chats_screen.dart';
+import '../logic/verify_email_controller.dart';
 
 class VerifyEmailScreen extends StatefulWidget {
   const VerifyEmailScreen({super.key});
@@ -51,24 +52,9 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: verifyEmailController.canResendEmail
-                        ? () => verifyEmailController.sendVerificationEmail(context)
-                        : null,
-                    icon: const Icon(Icons.email),
-                    label: Text(S.of(context).resend),
-                  ),
+                  ResendVerificationEmailButton(verifyEmailController: verifyEmailController),
                   const SizedBox(height: 20),
-                  TextButton(
-                    onPressed: () async {
-                      verifyEmailController.timer?.cancel();
-                      await FirebaseAuth.instance.signOut();
-                    },
-                    child: Text(
-                      S.of(context).cancel,
-                      style: const TextStyle(),
-                    ),
-                  )
+                  CancelVerificationButton(verifyEmailController: verifyEmailController)
                 ],
               ),
             ),

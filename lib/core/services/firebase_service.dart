@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/chats/screen/chats_screen.dart';
-import '../../features/authentication/verify_email/verify_email_screen.dart';
+import '../../features/authentication/verify_email/screens/verify_email_screen.dart';
 
 class FirebaseService extends StatelessWidget {
   static const routeName = '/';

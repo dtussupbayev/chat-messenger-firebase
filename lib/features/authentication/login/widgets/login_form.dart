@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/login/widgets/email_form_field.dart';
-import 'package:flutter_application_1/features/authentication/login/widgets/login_button.dart';
-import 'package:flutter_application_1/features/authentication/login/widgets/password_form_field.dart';
-import 'package:flutter_application_1/features/authentication/login/widgets/reset_password_button.dart';
-import 'package:flutter_application_1/features/authentication/login/widgets/sign_up_button.dart';
+import 'package:flutter_application_1/features/authentication/login/widgets/email_input.dart';
+import 'package:flutter_application_1/features/authentication/login/widgets/submit_login_button.dart';
+import 'package:flutter_application_1/features/authentication/login/widgets/password_input.dart';
+import 'package:flutter_application_1/features/authentication/login/widgets/navigate_reset_password_button.dart';
+import 'package:flutter_application_1/features/authentication/login/widgets/navigate_sign_up_button.dart';
 
 class LoginForm extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -18,18 +18,18 @@ class LoginForm extends StatelessWidget {
       key: formKey,
       child: Column(
         children: [
-          EmailFormField(emailTextEditingController: emailController),
+          EmailInput(emailTextEditingController: emailController),
           const SizedBox(height: 30),
-          PasswordFormField(passwordTextEditingController: passwordController),
+          PasswordInput(passwordTextEditingController: passwordController),
           const SizedBox(height: 30),
-          LoginButton(
+          SubmitLoginButton(
             emailController: emailController,
             passwordController: passwordController,
             formKey: formKey,
           ),
           const SizedBox(height: 30),
-          const SignUpButton(),
-          const ResetPasswordButton(),
+          const NavigateSignUpButton(),
+          const NavigateResetPasswordButton(),
         ],
       ),
     );
