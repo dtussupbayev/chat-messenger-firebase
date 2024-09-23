@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/services/firestore_service.dart';
-import '../chat/chat_screen.dart';
+import '../chat/screens/chat_screen.dart';
 import 'users_search_controller.dart';
 
 class UsersSearchDelegate extends SearchDelegate<String> {

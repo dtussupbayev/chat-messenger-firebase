@@ -1,15 +1,13 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/account/account_screen.dart';
+import 'package:flutter_application_1/features/chat/widgets/chat_message_list.dart';
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:flutter_application_1/features/settings/settings_screen.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import 'chat_controller.dart';
+import '../logic/chat_controller.dart';
 
 class ChatScreen extends StatefulWidget {
   final String firstName, lastName, uid;
@@ -36,76 +34,6 @@ class _ChatScreenState extends State<ChatScreen> {
     chatController.onTheLoad(widget.uid);
   }
 
-  Widget chatMessageTile(String message, bool sendByMe) {
-    return Row(
-      mainAxisAlignment: sendByMe ? MainAxisAlignment.end : MainAxisAlignment.start,
-      children: [
-        Flexible(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-            decoration: BoxDecoration(
-              color: sendByMe
-                  ? Theme.of(context).colorScheme.onSurfaceVariant
-                  : Theme.of(context).colorScheme.onSurface,
-              borderRadius: BorderRadius.only(
-                topLeft: const Radius.circular(24),
-                bottomRight: sendByMe ? const Radius.circular(0) : const Radius.circular(24),
-                topRight: const Radius.circular(24),
-                bottomLeft: sendByMe ? const Radius.circular(24) : const Radius.circular(0),
-              ),
-            ),
-            child: Text(
-              message,
-              style: TextStyle(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.onPrimary),
-            ),
-          ),
-        )
-      ],
-    );
-  }
-
-  Widget chatMessage() {
-    return StreamBuilder(
-        stream: chatController.messageStream,
-        builder: (context, AsyncSnapshot snapshot) {
-          User? user = FirebaseAuth.instance.currentUser;
-          return snapshot.hasData
-              ? ListView.builder(
-                  padding: const EdgeInsets.only(bottom: 90, top: 130),
-                  itemCount: snapshot.data.docs.length,
-                  reverse: true,
-                  itemBuilder: (context, index) {
-                    DocumentSnapshot ds = snapshot.data.docs[index];
-                    debugPrint(user?.uid);
-                    debugPrint('ds["sendBy"]: ${ds["sendBy"]}');
-                    debugPrint('ds.id: ${ds.id}');
-                    return GestureDetector(
-                      onHorizontalDragStart: (_) => FirebaseFirestore.instance
-                          .collection("chatRooms")
-                          .doc(chatController.chatRoomId)
-                          .collection("messages")
-                          .doc(ds.id)
-                          .delete(),
-                      child: chatMessageTile(
-                        ds["message"],
-                        user?.uid == ds["sendBy"],
-                      ),
-                    );
-                  },
-                )
-              : const Center(
-                  child: SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                ));
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -126,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       topRight: Radius.circular(30),
                     ),
                   ),
-                  child: chatMessage(),
+                  child: ChatMessageList(chatController: chatController),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
@@ -151,7 +79,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       PopupMenuButton<String>(
                         onSelected: (value) {
                           if (value == 'settings') {
-                            context.pushReplacement(SettingsScreen.routeName, extra: context.read<SettingsController>());
+                            context.pushReplacement(SettingsScreen.routeName,
+                                extra: context.read<SettingsController>());
                           } else if (value == 'account') {
                             context.pushReplacement(AccountScreen.routeName);
                           }
@@ -175,14 +104,16 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                  margin:
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                   alignment: Alignment.bottomCenter,
                   child: Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
                       padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30)),
                       child: TextField(
                         controller: chatController.messageTextEditingController,
                         decoration: InputDecoration(
