@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
-import '../../chats/chats_screen.dart';
+import '../../chats/screen/chats_screen.dart';
 import 'verify_email_controller.dart';
 
 class VerifyEmailScreen extends StatefulWidget {

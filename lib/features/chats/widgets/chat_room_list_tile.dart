@@ -1,109 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/chat/chat_screen.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-
-import 'chats_app_bar_menu_button.dart';
-import 'chats_controller.dart';
-import 'users_search_delegate.dart';
-
-class ChatsScreen extends StatefulWidget {
-  const ChatsScreen({
-    super.key,
-  });
-
-  static const routeName = '/chats';
-
-  @override
-  State<ChatsScreen> createState() => _ChatsScreenState();
-}
-
-class _ChatsScreenState extends State<ChatsScreen> {
-  final ChatsController chatsController = ChatsController();
-
-  @override
-  void initState() {
-    super.initState();
-    chatsController.onTheLoad();
-  }
-
-  Widget chatRoomList() {
-    return StreamBuilder(
-        stream: chatsController.chatRoomsStream,
-        builder: (context, AsyncSnapshot snapshot) {
-          return snapshot.hasData
-              ? ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: snapshot.data.docs.length,
-                  shrinkWrap: true,
-                  itemBuilder: ((context, index) {
-                    DocumentSnapshot ds = snapshot.data.docs[index];
-                    return ChatRoomListTile(
-                      lastMessage: ds["lastMessage"],
-                      lastMessageSendBy: ds["lastMessageSendBy"] ?? "",
-                      chatRoomId: ds.id,
-                      myUid: chatsController.uid ?? "",
-                      time: ds["lastMessageSendTs"],
-                      chatsController: chatsController,
-                    );
-                  }),
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                );
-        });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
-
-    return ChangeNotifierProvider(
-      create: (ctx) => chatsController,
-      child: Consumer(builder: (context, chatsController, _) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(S.of(context).chats),
-            actions: [
-              user == null ? const SizedBox() : const SearchButton(),
-              CMenuButton(user: user),
-            ],
-          ),
-          body: user != null
-              ? chatRoomList()
-              : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 60.0),
-                  child: Center(
-                    child: Text(
-                      S.of(context).itemListAvailability,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-        );
-      }),
-    );
-  }
-}
-
-class SearchButton extends StatelessWidget {
-  const SearchButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(Icons.search),
-      onPressed: () {
-        showSearch(context: context, delegate: UsersSearchDelegate());
-      },
-    );
-  }
-}
 
 class ChatRoomListTile extends StatefulWidget {
   final String lastMessage, lastMessageSendBy, chatRoomId, myUid, time;
@@ -123,6 +22,7 @@ class ChatRoomListTile extends StatefulWidget {
   @override
   State<ChatRoomListTile> createState() => _ChatRoomListTileState();
 }
+
 
 class _ChatRoomListTileState extends State<ChatRoomListTile> {
   @override

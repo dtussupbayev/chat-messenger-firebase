@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../generated/l10n.dart';
 import '../../../core/services/firestore_service.dart';
 import '../../../core/utils/snack_bar_service.dart';
-import '../../chats/chats_screen.dart';
+import '../../chats/screen/chats_screen.dart';
 
 class SignUpController extends ChangeNotifier {
   bool isHiddenPassword = true;

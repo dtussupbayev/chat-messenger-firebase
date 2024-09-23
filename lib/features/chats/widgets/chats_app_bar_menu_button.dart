@@ -4,10 +4,10 @@ import 'package:flutter_application_1/features/settings/settings_controller.dart
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../../generated/l10n.dart';
-import '../account/account_screen.dart';
-import '../authentication/login/login_screen.dart';
-import '../settings/settings_screen.dart';
+import '../../../generated/l10n.dart';
+import '../../account/account_screen.dart';
+import '../../authentication/login/login_screen.dart';
+import '../../settings/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
   const CMenuButton({
