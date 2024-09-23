@@ -7,8 +7,6 @@ import 'package:provider/provider.dart';
 class ChatRoomListTile extends StatefulWidget {
   final String lastMessage, lastMessageSendBy, chatRoomId, myUid, time;
 
-  final ChatsController chatsController;
-
   const ChatRoomListTile({
     super.key,
     required this.lastMessage,
@@ -16,21 +14,20 @@ class ChatRoomListTile extends StatefulWidget {
     required this.chatRoomId,
     required this.myUid,
     required this.time,
-    required this.chatsController,
   });
 
   @override
   State<ChatRoomListTile> createState() => _ChatRoomListTileState();
 }
 
-
 class _ChatRoomListTileState extends State<ChatRoomListTile> {
   @override
   void initState() {
     super.initState();
 
-    widget.chatsController.getThisUserInfo(widget.chatRoomId, widget.myUid);
-    debugPrint(widget.chatsController.firstName);
+    context
+        .read<ChatsController>()
+        .getThisUserInfo(widget.chatRoomId, widget.myUid);
   }
 
   @override

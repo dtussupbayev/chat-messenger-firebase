@@ -14,7 +14,8 @@ class FirebaseService extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Scaffold(body: Center(child: Text('Что-то пошло не так!')));
+          return const Scaffold(
+              body: Center(child: Text('Что-то пошло не так!')));
         } else if (snapshot.hasData) {
           if (!snapshot.data!.emailVerified) {
             return const VerifyEmailScreen();

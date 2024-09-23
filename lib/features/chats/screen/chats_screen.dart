@@ -20,7 +20,7 @@ class ChatsScreen extends StatefulWidget {
 }
 
 class _ChatsScreenState extends State<ChatsScreen> {
-  final ChatsController chatsController = ChatsController();
+  final chatsController = ChatsController();
 
   @override
   void initState() {
@@ -32,9 +32,10 @@ class _ChatsScreenState extends State<ChatsScreen> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
 
-    return ChangeNotifierProvider(
-      create: (ctx) => chatsController,
-      child: Consumer<ChatsController>(builder: (context, chatsController, _) {
+    return ChangeNotifierProvider<ChatsController>.value(
+      value: chatsController,
+      child:
+          Consumer<ChatsController>(builder: (context, chatsController, child) {
         return Scaffold(
           appBar: AppBar(
             title: Text(S.of(context).chats),
@@ -44,7 +45,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
             ],
           ),
           body: user != null
-              ? ChatRoomList(chatsController: chatsController)
+              ? const ChatRoomList()
               : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 60.0),
                   child: Center(

@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/features/authentication/verify_email/verify_email_screen.dart';
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:go_router/go_router.dart';
 
@@ -59,6 +60,11 @@ final router = GoRouter(
       path: ResetPasswordScreen.routeName,
       name: ResetPasswordScreen.routeName,
       builder: (context, state) => const ResetPasswordScreen(),
+    ),
+    GoRoute(
+      path: VerifyEmailScreen.routeName,
+      name: VerifyEmailScreen.routeName,
+      builder: (context, state) => const VerifyEmailScreen(),
     ),
     GoRoute(
       path: ChatsScreen.routeName,

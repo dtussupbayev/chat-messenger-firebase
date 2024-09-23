@@ -14,7 +14,7 @@ class AccountController extends ChangeNotifier {
     while (goRouter.canPop()) {
       goRouter.pop();
     }
-    goRouter.push('/');
+    goRouter.pushReplacement('/');
   }
 
   Future<Map<String, dynamic>?> getUserInfo() async {

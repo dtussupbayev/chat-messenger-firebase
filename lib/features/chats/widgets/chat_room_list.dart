@@ -2,17 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
 import 'package:flutter_application_1/features/chats/widgets/chat_room_list_tile.dart';
+import 'package:provider/provider.dart';
 
 class ChatRoomList extends StatelessWidget {
   const ChatRoomList({
     super.key,
-    required this.chatsController,
   });
-
-  final ChatsController chatsController;
 
   @override
   Widget build(BuildContext context) {
+    final chatsController = context.watch<ChatsController>();
     return StreamBuilder(
         stream: chatsController.chatRoomsStream,
         builder: (context, AsyncSnapshot snapshot) {
@@ -29,7 +28,6 @@ class ChatRoomList extends StatelessWidget {
                       chatRoomId: ds.id,
                       myUid: chatsController.uid ?? "",
                       time: ds["lastMessageSendTs"],
-                      chatsController: chatsController,
                     );
                   }),
                 )

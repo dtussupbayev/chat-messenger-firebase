@@ -92,7 +92,7 @@ class SignUpController extends ChangeNotifier {
       while (context.canPop()) {
         context.pop();
       }
-      context.push(ChatsScreen.routeName);
+      context.pushReplacement(ChatsScreen.routeName);
     }
   }
 }
