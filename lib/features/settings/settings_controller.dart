@@ -4,11 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'settings_service.dart';
 
-/// A class that many Widgets can interact with to read user settings, update
-/// user settings, or listen to user settings changes.
-///
-/// Controllers glue Data Services to Flutter Widgets. The SettingsController
-/// uses the SettingsService to store and retrieve user settings.
 class SettingsController with ChangeNotifier {
   SettingsController({
     required this.settingsService,
@@ -26,9 +21,6 @@ class SettingsController with ChangeNotifier {
 
   Locale get locale => _locale;
 
-  /// Load the user's settings from the SettingsService. It may load from a
-  /// local database or the internet. The controller only knows it can load the
-  /// settings from the service.
   Future<void> loadSettings() async {
     await loadTheme();
 

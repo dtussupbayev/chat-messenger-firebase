@@ -1,10 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/chat/logic/chat_controller.dart';
-import 'package:flutter_application_1/features/chat/screens/chat_screen.dart';
 import 'package:flutter_application_1/features/chat/widgets/chat_message_tile.dart';
 
 class ChatMessageList extends StatelessWidget {
