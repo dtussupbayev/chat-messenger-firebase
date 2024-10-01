@@ -6,10 +6,10 @@ import 'package:flutter_application_1/features/authentication/login/widgets/navi
 import 'package:flutter_application_1/features/authentication/login/widgets/navigate_sign_up_button.dart';
 
 class LoginForm extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
   LoginForm({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

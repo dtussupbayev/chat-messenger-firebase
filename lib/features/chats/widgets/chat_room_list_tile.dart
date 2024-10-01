@@ -5,8 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class ChatRoomListTile extends StatefulWidget {
-  final String lastMessage, lastMessageSendBy, chatRoomId, myUid, time;
-
   const ChatRoomListTile({
     super.key,
     required this.lastMessage,
@@ -15,6 +13,11 @@ class ChatRoomListTile extends StatefulWidget {
     required this.myUid,
     required this.time,
   });
+  final String lastMessage;
+  final String lastMessageSendBy;
+  final String chatRoomId;
+  final String myUid;
+  final String time;
 
   @override
   State<ChatRoomListTile> createState() => _ChatRoomListTileState();
@@ -32,91 +35,98 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ChatsController>(builder: (context, chatsController, _) {
-      return GestureDetector(
-        onTap: () {
-          context.mounted
-              ? context.pushNamed(
-                  ChatScreen.routeName,
-                  pathParameters: {'uid': chatsController.id},
-                  queryParameters: {
-                    'firstName': chatsController.firstName,
-                    'lastName': chatsController.lastName
-                  },
-                )
-              : null;
-        },
-        child: Container(
-          margin: const EdgeInsets.only(bottom: 10.0),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const SizedBox(
-              width: 10.0,
-            ),
-            CircleAvatar(
-              radius: 30,
-              child: Text(chatsController.firstLetters),
-            ),
-            const SizedBox(
-              width: 10.0,
-            ),
-            Column(
+    return Consumer<ChatsController>(
+      builder: (context, chatsController, _) {
+        return GestureDetector(
+          onTap: () {
+            if (context.mounted) {
+              context.goNamed(
+                ChatScreen.routeName,
+                pathParameters: {'uid': chatsController.id},
+                queryParameters: {
+                  'firstName': chatsController.firstName,
+                  'lastName': chatsController.lastName,
+                },
+              );
+            }
+          },
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 10.0),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 10.0,
+                  width: 10.0,
                 ),
-                Text(
-                  "${chatsController.firstName} ${chatsController.lastName}",
-                  style: const TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w500,
-                  ),
+                CircleAvatar(
+                  radius: 30,
+                  child: Text(chatsController.firstLetters),
                 ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width / 1.5,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      widget.lastMessageSendBy == widget.myUid
-                          ? Text(
-                              "Вы: ",
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      '${chatsController.firstName} ${chatsController.lastName}',
+                      style: const TextStyle(
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width / 1.5,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          if (widget.lastMessageSendBy == widget.myUid)
+                            Text(
+                              'Вы: ',
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium
                                   ?.copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary)
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  )
                                   .copyWith(fontWeight: FontWeight.bold),
                             )
-                          : const SizedBox(),
-                      Flexible(
-                        child: Text(
-                          widget.lastMessage,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary),
-                        ),
+                          else
+                            const SizedBox(),
+                          Flexible(
+                            child: Text(
+                              widget.lastMessage,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                )
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Text(
+                  widget.time,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
               ],
             ),
-            const Spacer(),
-            Text(
-              widget.time,
-              style: Theme.of(context).textTheme.bodyMedium,
-            )
-          ]),
-        ),
-      );
-    });
+          ),
+        );
+      },
+    );
   }
 }

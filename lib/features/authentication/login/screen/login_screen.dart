@@ -30,7 +30,10 @@ class LoginScreen extends StatelessWidget {
             listener: (context, state) {
               if (state.status == LoginStatus.failure) {
                 SnackBarService.showSnackBar(
-                    context, state.errorMessage ?? '', true);
+                  context,
+                  state.errorMessage ?? '',
+                  error: true,
+                );
               } else if (state.status == LoginStatus.success) {
                 if (context.mounted) {
                   while (context.canPop()) {

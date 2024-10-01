@@ -30,28 +30,28 @@ class SettingsController with ChangeNotifier {
   }
 
   Future<void> loadLocale() async {
-    var selectedLocale = prefs.getString("selectedLocale");
+    final selectedLocale = prefs.getString('selectedLocale');
     if (selectedLocale == null) {
       _locale = await settingsService.systemLocale();
-      prefs.setString('selectedLocale', _locale.toString());
+      await prefs.setString('selectedLocale', _locale.toString());
     } else {
       _locale = Locale(selectedLocale);
     }
   }
 
   Future<void> loadTheme() async {
-    var selectedTheme = prefs.getString("selectedTheme");
+    final selectedTheme = prefs.getString('selectedTheme');
 
     if (selectedTheme == null) {
       _themeMode = await settingsService.themeMode();
-      prefs.setString('selectedTheme', _themeMode.toString());
+      await prefs.setString('selectedTheme', _themeMode.toString());
     } else {
       switch (selectedTheme) {
-        case "ThemeMode.dark":
+        case 'ThemeMode.dark':
           _themeMode = ThemeMode.dark;
-        case "ThemeMode.light":
+        case 'ThemeMode.light':
           _themeMode = ThemeMode.light;
-        case "ThemeMode.system":
+        case 'ThemeMode.system':
           _themeMode = ThemeMode.system;
       }
     }
@@ -80,7 +80,7 @@ class SettingsController with ChangeNotifier {
 
     notifyListeners();
 
-    prefs.setString('selectedTheme', _themeMode.toString());
+    await prefs.setString('selectedTheme', _themeMode.toString());
 
     await settingsService.updateThemeMode(newThemeMode);
   }

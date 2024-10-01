@@ -79,6 +79,8 @@
   "@account": {},
   "itemListAvailability": "The list of chats is available only for those signed in the system",
   "@itemListAvailability": {},
+  "itemListEmpty": "Your messages empty, try to send new message",
+  "@itemListEmpty": {},
   "firstName": "First Name:",
   "@firstName": {},
   "lastName": "Last Name:",

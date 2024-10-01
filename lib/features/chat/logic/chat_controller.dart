@@ -9,10 +9,14 @@ import '../../../core/services/firestore_service.dart';
 class ChatController extends ChangeNotifier {
   TextEditingController messageTextEditingController = TextEditingController();
   Stream? messageStream;
-  String? myUid, myName, myEmail, messageId, chatRoomId;
+  String? myUid;
+  String? myName;
+  String? myEmail;
+  String? messageId;
+  String? chatRoomId;
   User? user = FirebaseAuth.instance.currentUser;
 
-  onTheLoad(String uidTo) async {
+  Future<void> onTheLoad(String uidTo) async {
     chatRoomId = FirestoreService.getChatRoomIdbyUid(uidTo, user!.uid);
     await getAndSetMessages(chatRoomId!);
     notifyListeners();
@@ -23,33 +27,37 @@ class ChatController extends ChangeNotifier {
     notifyListeners();
   }
 
-  addMessage(bool sendClicked) async {
-    if (messageTextEditingController.text != "") {
-      String message = messageTextEditingController.text;
-      messageTextEditingController.text = "";
+  Future<void> addMessage({required bool sendClicked}) async {
+    if (messageTextEditingController.text != '') {
+      final String message = messageTextEditingController.text;
+      messageTextEditingController.text = '';
 
-      DateTime now = DateTime.now();
-      String formattedDate = DateFormat('h:mma').format(now);
+      final DateTime now = DateTime.now();
+      final String formattedDate = DateFormat('h:mma').format(now);
 
-      User? user = FirebaseAuth.instance.currentUser;
+      final User? user = FirebaseAuth.instance.currentUser;
 
-      Map<String, dynamic> messageInfoMap = {
-        "message": message,
-        "sendBy": user!.uid,
-        "ts": formattedDate,
-        "time": FieldValue.serverTimestamp(),
+      final Map<String, dynamic> messageInfoMap = {
+        'message': message,
+        'sendBy': user!.uid,
+        'ts': formattedDate,
+        'time': FieldValue.serverTimestamp(),
       };
 
       messageId ??= randomAlphaNumeric(10);
 
-      FirestoreService.addMessage(chatRoomId!, messageId!, messageInfoMap).then((value) {
-        Map<String, dynamic> lastMessageInfoMap = {
-          "lastMessage": message,
-          "lastMessageSendTs": formattedDate,
-          "time": FieldValue.serverTimestamp(),
-          "lastMessageSendBy": user.uid
+      await FirestoreService.addMessage(chatRoomId!, messageId!, messageInfoMap)
+          .then((value) {
+        final Map<String, dynamic> lastMessageInfoMap = {
+          'lastMessage': message,
+          'lastMessageSendTs': formattedDate,
+          'time': FieldValue.serverTimestamp(),
+          'lastMessageSendBy': user.uid,
         };
-        FirestoreService.updateLastMessageSended(chatRoomId!, lastMessageInfoMap);
+        FirestoreService.updateLastMessageSended(
+          chatRoomId!,
+          lastMessageInfoMap,
+        );
         if (sendClicked) {
           messageId = null;
         }

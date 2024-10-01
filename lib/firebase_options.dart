@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+    show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -36,10 +33,7 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -59,4 +53,23 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-application-1-e2362',
     storageBucket: 'flutter-application-1-e2362.appspot.com',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
+    appId: '1:987841922201:web:fc09e673d952ff48ba2408',
+    messagingSenderId: '987841922201',
+    projectId: 'flutter-application-1-e2362',
+    authDomain: 'flutter-application-1-e2362.firebaseapp.com',
+    storageBucket: 'flutter-application-1-e2362.appspot.com',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
+    appId: '1:987841922201:web:b4c8ff92a5892e01ba2408',
+    messagingSenderId: '987841922201',
+    projectId: 'flutter-application-1-e2362',
+    authDomain: 'flutter-application-1-e2362.firebaseapp.com',
+    storageBucket: 'flutter-application-1-e2362.appspot.com',
+  );
+
 }

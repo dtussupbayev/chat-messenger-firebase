@@ -5,7 +5,6 @@ import 'package:flutter_application_1/features/account/widgets/user_information.
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_application_1/features/account/bloc/account_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -34,15 +33,7 @@ class _AccountScreenState extends State<AccountScreen> {
         ),
         body: Center(
           child: BlocConsumer<AccountBloc, AccountState>(
-            listener: (context, state) {
-              if (state is AccountSignedOut) {
-                final goRouter = GoRouter.of(context);
-                while (goRouter.canPop()) {
-                  goRouter.pop();
-                }
-                goRouter.pushReplacement('/');
-              }
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               if (state is AccountLoading) {
                 return const SizedBox(

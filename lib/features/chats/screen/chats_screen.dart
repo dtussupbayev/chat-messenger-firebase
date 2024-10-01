@@ -40,7 +40,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
           appBar: AppBar(
             title: Text(S.of(context).chats),
             actions: [
-              user == null ? const SizedBox() : const SearchButton(),
+              if (user == null) const SizedBox() else const SearchButton(),
               CMenuButton(user: user),
             ],
           ),
@@ -56,7 +56,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
                   ),
                 ),
         );
-      }),
+      },),
     );
   }
 }

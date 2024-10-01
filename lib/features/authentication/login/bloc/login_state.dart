@@ -3,10 +3,6 @@ part of 'login_bloc.dart';
 enum LoginStatus { initial, loading, success, failure }
 
 class LoginState extends Equatable {
-  final LoginStatus status;
-  final bool isPasswordHidden;
-  final String? errorMessage;
-  final bool isValid;
 
   const LoginState({
     this.status = LoginStatus.initial,
@@ -14,6 +10,10 @@ class LoginState extends Equatable {
     this.errorMessage,
     this.isValid = false,
   });
+  final LoginStatus status;
+  final bool isPasswordHidden;
+  final String? errorMessage;
+  final bool isValid;
 
   @override
   List<Object?> get props => [status, isPasswordHidden, errorMessage];

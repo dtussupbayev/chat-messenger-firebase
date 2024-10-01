@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/utils/snack_bar_service.dart';
@@ -10,8 +11,9 @@ class VerifyEmailController extends ChangeNotifier {
   bool isEmailVerified = false;
   bool canResendEmail = false;
   Timer? timer;
+  Timer? checkAuthTimer;
 
-  void initState(context) {
+  void initState(BuildContext context) {
     isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
 
     if (!isEmailVerified) {
@@ -26,9 +28,13 @@ class VerifyEmailController extends ChangeNotifier {
 
   Future<void> checkEmailVerified(BuildContext context) async {
     try {
-      FirebaseAuth.instance.currentUser?.reload();
+      await FirebaseAuth.instance.currentUser?.reload();
 
       isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
+      if (isEmailVerified) {
+        if (!context.mounted) return;
+        context.pushReplacementNamed(ChatsScreen.routeName);
+      }
       notifyListeners();
 
       if (isEmailVerified) timer?.cancel();
@@ -52,6 +58,9 @@ class VerifyEmailController extends ChangeNotifier {
       notifyListeners();
       await Future.delayed(const Duration(seconds: 10));
 
+      // checkAuthTimer = Timer.periodic(const Duration(seconds: 5), (_) {
+      //   context.read<AuthenticationBloc>().add(AuthenticationStatusCheck());
+      // });
       canResendEmail = true;
       notifyListeners();
     } catch (e) {
@@ -59,10 +68,16 @@ class VerifyEmailController extends ChangeNotifier {
         SnackBarService.showSnackBar(
           context,
           '$e',
-          //'Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.',
-          true,
+          error: true,
         );
       }
     }
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    checkAuthTimer?.cancel();
+    super.dispose();
   }
 }

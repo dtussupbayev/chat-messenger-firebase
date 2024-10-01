@@ -20,7 +20,7 @@ class UsersSearchController extends ChangeNotifier {
   }
 
   Map<String, dynamic> getUserData(AsyncSnapshot<QuerySnapshot<Object?>> snapshot, int index) {
-    return snapshot.data!.docs[index].data() as Map<String, dynamic>;
+    return snapshot.data!.docs[index].data()! as Map<String, dynamic>;
   }
 
   Future<void> createChatRoom(String uidTo, String emailTo) async {
@@ -29,12 +29,12 @@ class UsersSearchController extends ChangeNotifier {
     final firstUserEmail = user!.email;
     final secondUserEmail = emailTo;
 
-    Map<String, dynamic> chatRoomInfoMap = {
-      "users": [firstUserEmail, secondUserEmail],
-      "lastMessage": "",
-      "lastMessageSendTs": DateFormat('h:mma').format(DateTime.now()),
-      "time": FieldValue.serverTimestamp(),
-      "lastMessageSendBy": ""
+    final Map<String, dynamic> chatRoomInfoMap = {
+      'users': [firstUserEmail, secondUserEmail],
+      'lastMessage': '',
+      'lastMessageSendTs': DateFormat('h:mma').format(DateTime.now()),
+      'time': FieldValue.serverTimestamp(),
+      'lastMessageSendBy': '',
     };
 
     await FirestoreService.createChatRoom(chatRoomId, chatRoomInfoMap);

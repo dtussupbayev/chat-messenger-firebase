@@ -400,6 +400,16 @@ class S {
     );
   }
 
+  /// `Your messages empty, try to send new message`
+  String get itemListEmpty {
+    return Intl.message(
+      'Your messages empty, try to send new message',
+      name: 'itemListEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `First Name:`
   String get firstName {
     return Intl.message(

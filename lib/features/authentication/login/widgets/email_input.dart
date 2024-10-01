@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 
 class EmailInput extends StatelessWidget {
-  final TextEditingController emailTextEditingController;
 
   const EmailInput({
     super.key,
     required this.emailTextEditingController,
   });
+  final TextEditingController emailTextEditingController;
 
   @override
   Widget build(BuildContext context) {

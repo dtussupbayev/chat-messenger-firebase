@@ -4,11 +4,11 @@ import 'package:flutter_application_1/features/authentication/reset_password/wid
 import 'package:flutter_application_1/features/authentication/reset_password/widgets/submit_reset_password_button.dart';
 
 class ResetForm extends StatelessWidget {
-  final ResetPasswordController resetPasswordController;
   const ResetForm({
     super.key,
     required this.resetPasswordController,
   });
+  final ResetPasswordController resetPasswordController;
 
   @override
   Widget build(BuildContext context) {

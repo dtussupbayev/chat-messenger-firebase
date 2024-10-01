@@ -4,11 +4,11 @@ import 'package:flutter_application_1/features/authentication/sign_up/logic/sign
 import 'package:flutter_application_1/generated/l10n.dart';
 
 class EmailInput extends StatelessWidget {
-  final SignUpController signUpController;
   const EmailInput({
     super.key,
     required this.signUpController,
   });
+  final SignUpController signUpController;
 
   @override
   Widget build(BuildContext context) {

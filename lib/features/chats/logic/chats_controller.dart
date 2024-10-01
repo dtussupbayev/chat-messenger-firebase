@@ -8,11 +8,13 @@ class ChatsController extends ChangeNotifier {
 
   String? uid;
 
-  String firstName = "", lastName = "", id = "";
+  String firstName = '';
+  String lastName = '';
+  String id = '';
 
   String firstLetters = '';
 
-  getFirstLetters() {
+  void getFirstLetters() {
     firstLetters = '';
     if (firstName.isNotEmpty) {
       firstLetters += firstName[0].toUpperCase();
@@ -23,13 +25,13 @@ class ChatsController extends ChangeNotifier {
     notifyListeners();
   }
 
-  getTheCurrentUserInfo() async {
-    User? currentUser = FirebaseAuth.instance.currentUser;
+  void getTheCurrentUserInfo()  {
+    final User? currentUser = FirebaseAuth.instance.currentUser;
     uid = currentUser?.uid;
     notifyListeners();
   }
 
-  onTheLoad() async {
+  Future<void> onTheLoad() async {
     getTheCurrentUserInfo();
 
     chatRoomsStream = await FirestoreService.getChatRooms();
@@ -38,8 +40,8 @@ class ChatsController extends ChangeNotifier {
   }
 
   Future<void> getThisUserInfo(String chatRoomId, String myUid) async {
-    id = chatRoomId.replaceFirst(myUid, "").replaceFirst("_", "");
-    QuerySnapshot querySnapshot = await FirestoreService.getUserInfo(id);
+    id = chatRoomId.replaceFirst(myUid, '').replaceFirst('_', '');
+    final QuerySnapshot querySnapshot = await FirestoreService.getUserInfo(id);
     firstName = "${querySnapshot.docs[0]["firstName"]}";
     lastName = "${querySnapshot.docs[0]["lastName"]}";
     getFirstLetters();

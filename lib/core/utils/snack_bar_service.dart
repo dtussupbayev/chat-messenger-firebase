@@ -6,9 +6,9 @@ class SnackBarService {
 
   static void showSnackBar(
     BuildContext context,
-    String message,
-    bool error,
-  ) {
+    String message, {
+    required bool error,
+  }) {
     FocusScope.of(context).unfocus();
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
 

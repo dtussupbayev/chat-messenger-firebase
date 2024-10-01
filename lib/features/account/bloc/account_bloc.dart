@@ -8,12 +8,11 @@ part 'account_event.dart';
 part 'account_state.dart';
 
 class AccountBloc extends Bloc<AccountEvent, AccountState> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
   AccountBloc() : super(AccountInitial()) {
     on<LoadAccountInfoEvent>(_onLoadAccountInfo);
     on<SignOutEvent>(_onSignOut);
   }
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> _onLoadAccountInfo(
     LoadAccountInfoEvent event,
@@ -21,7 +20,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
   ) async {
     emit(AccountLoading());
     try {
-      User? user = _auth.currentUser;
+      final User? user = _auth.currentUser;
       if (user != null) {
         final snapshot = await FirebaseFirestore.instance
             .collection('users')
@@ -30,12 +29,15 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
 
         final data = snapshot.data();
         if (data != null) {
-          emit(AccountLoaded(
-            email: user.email ?? '',
-            firstName: data['firstName'] ?? '',
-            lastName: data['lastName'] ?? '',
-          ));
+          emit(
+            AccountLoaded(
+              email: user.email ?? '',
+              firstName: data['firstName'] ?? '',
+              lastName: data['lastName'] ?? '',
+            ),
+          );
         } else {
+          add(SignOutEvent());
           emit(AccountError(S.current.userInformationNotAvailable));
         }
       } else {

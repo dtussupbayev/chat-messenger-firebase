@@ -60,11 +60,11 @@ class UsersSearchDelegate extends SearchDelegate<String> {
 }
 
 class SearchResultListView extends StatefulWidget {
-  final AsyncSnapshot<QuerySnapshot<Object?>> snapshot;
   const SearchResultListView({
     super.key,
     required this.snapshot,
   });
+  final AsyncSnapshot<QuerySnapshot<Object?>> snapshot;
 
   @override
   State<SearchResultListView> createState() => _SearchResultListViewState();
@@ -80,18 +80,19 @@ class _SearchResultListViewState extends State<SearchResultListView> {
         ? ListView.builder(
             itemCount: widget.snapshot.data!.docs.length,
             itemBuilder: (context, index) {
-              Map<String, dynamic> userData =
+              final Map<String, dynamic> userData =
                   searchDelegateController.getUserData(
                 widget.snapshot,
                 index,
               );
 
-              String firstName = userData['firstName'] ?? '';
-              String lastName = userData['lastName'] ?? '';
-              String uid = userData['uid'] ?? '';
-              String email = userData['email'] ?? '';
+              final String firstName = userData['firstName'] ?? '';
+              final String lastName = userData['lastName'] ?? '';
+              final String uid = userData['uid'] ?? '';
+              final String email = userData['email'] ?? '';
 
-              String firstLetters = searchDelegateController.getFirstLetters(
+              final String firstLetters =
+                  searchDelegateController.getFirstLetters(
                 firstName,
                 lastName,
               );
@@ -100,16 +101,16 @@ class _SearchResultListViewState extends State<SearchResultListView> {
                 onTap: () async {
                   await searchDelegateController.createChatRoom(uid, email);
 
-                  context.mounted
-                      ? context.pushNamed(
-                          ChatScreen.routeName,
-                          pathParameters: {'uid': uid},
-                          queryParameters: {
-                            'firstName': firstName,
-                            'lastName': lastName
-                          },
-                        )
-                      : null;
+                  if (context.mounted) {
+                    context.goNamed(
+                      ChatScreen.routeName,
+                      pathParameters: {'uid': uid},
+                      queryParameters: {
+                        'firstName': firstName,
+                        'lastName': lastName,
+                      },
+                    );
+                  }
                 },
                 child: ListTile(
                   leading: CircleAvatar(
@@ -120,11 +121,8 @@ class _SearchResultListViewState extends State<SearchResultListView> {
               );
             },
           )
-        : Center(
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text("Show all users"),
-            ),
+        : const Center(
+            child: Text(''),
           );
   }
 }

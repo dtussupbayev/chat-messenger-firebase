@@ -4,16 +4,15 @@ import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubmitLoginButton extends StatelessWidget {
-  final TextEditingController emailController;
-  final TextEditingController passwordController;
-  final GlobalKey<FormState> formKey;
-
   const SubmitLoginButton({
     super.key,
     required this.emailController,
     required this.passwordController,
     required this.formKey,
   });
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {

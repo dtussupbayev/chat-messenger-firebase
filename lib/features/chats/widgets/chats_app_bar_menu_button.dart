@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
 import '../../account/screens/account_screen.dart';
-import '../../authentication/login/screen/login_screen.dart';
 import '../../settings/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
@@ -22,11 +21,13 @@ class CMenuButton extends StatelessWidget {
     return PopupMenuButton<String>(
       onSelected: (value) {
         if (value == 'settings') {
-          context.goNamed(SettingsScreen.routeName,
-              extra: context.read<SettingsController>());
+          context.goNamed(
+            SettingsScreen.routeName,
+            extra: context.read<SettingsController>(),
+          );
         } else if (value == 'account') {
           if ((user == null)) {
-            context.push(LoginScreen.routeName);
+            context.push('/auth');
           } else {
             context.goNamed(AccountScreen.routeName);
           }

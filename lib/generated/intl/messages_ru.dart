@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstNameFormHintText": MessageLookupByLibrary.simpleMessage("Имя"),
         "itemListAvailability": MessageLookupByLibrary.simpleMessage(
             "Список чатов доступен только для вошедших в систему"),
+        "itemListEmpty": MessageLookupByLibrary.simpleMessage(
+            "Здесь нет чатов. Попробуйте отправить первое сообщение"),
         "lastName": MessageLookupByLibrary.simpleMessage("Фамилия:"),
         "lastNameFormHintText": MessageLookupByLibrary.simpleMessage("Фамилия"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),

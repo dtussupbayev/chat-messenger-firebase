@@ -4,11 +4,11 @@ import 'package:flutter_application_1/features/authentication/reset_password/log
 import 'package:flutter_application_1/generated/l10n.dart';
 
 class EmailFormField extends StatelessWidget {
-  final ResetPasswordController resetPasswordController;
   const EmailFormField({
     super.key,
     required this.resetPasswordController,
   });
+  final ResetPasswordController resetPasswordController;
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<TogglePasswordVisibility>(_onTogglePasswordVisibility);
   }
 
-  void _onLoginSubmitted(LoginSubmitted event, Emitter<LoginState> emit) async {
+  Future<void> _onLoginSubmitted(LoginSubmitted event, Emitter<LoginState> emit) async {
     emit(state.copyWith(status: LoginStatus.loading));
 
     try {
@@ -26,18 +26,18 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         emit(state.copyWith(
           status: LoginStatus.failure,
           errorMessage: S.current.wrongEmailOrPasswordSnackBar,
-        ));
+        ),);
       } else {
         emit(state.copyWith(
           status: LoginStatus.failure,
           errorMessage: S.current.undefinedError,
-        ));
+        ),);
       }
     }
   }
 
   void _onTogglePasswordVisibility(
-      TogglePasswordVisibility event, Emitter<LoginState> emit) {
+      TogglePasswordVisibility event, Emitter<LoginState> emit,) {
     emit(state.copyWith(isPasswordHidden: !state.isPasswordHidden));
   }
 }

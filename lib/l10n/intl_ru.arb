@@ -81,6 +81,8 @@
   "@account": {},
   "itemListAvailability": "Список чатов доступен только для вошедших в систему",
   "@itemListAvailability": {},
+  "itemListEmpty": "Здесь нет чатов. Попробуйте отправить первое сообщение",
+  "@itemListEmpty": {},
   "firstName": "Имя:",
   "@firstName": {},
   "lastName": "Фамилия:",

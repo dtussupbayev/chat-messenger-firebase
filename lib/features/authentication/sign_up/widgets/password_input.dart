@@ -3,11 +3,11 @@ import 'package:flutter_application_1/features/authentication/sign_up/logic/sign
 import 'package:flutter_application_1/generated/l10n.dart';
 
 class PasswordInput extends StatelessWidget {
-  final SignUpController signUpController;
   const PasswordInput({
     super.key,
     required this.signUpController,
   });
+  final SignUpController signUpController;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class PasswordInput extends StatelessWidget {
                   ? Icons.visibility_off
                   : Icons.visibility,
             ),
-          )),
+          ),),
     );
   }
 }

@@ -10,15 +10,14 @@ class AccountInitial extends AccountState {}
 class AccountLoading extends AccountState {}
 
 class AccountLoaded extends AccountState {
-  final String email;
-  final String firstName;
-  final String lastName;
-
   AccountLoaded({
     required this.email,
     required this.firstName,
     required this.lastName,
   });
+  final String email;
+  final String firstName;
+  final String lastName;
 
   @override
   List<Object?> get props => [email, firstName, lastName];
@@ -27,9 +26,8 @@ class AccountLoaded extends AccountState {
 class AccountSignedOut extends AccountState {}
 
 class AccountError extends AccountState {
-  final String message;
-
   AccountError(this.message);
+  final String message;
 
   @override
   List<Object?> get props => [message];

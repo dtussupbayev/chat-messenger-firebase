@@ -26,24 +26,21 @@ class ChatMessageTile extends StatelessWidget {
                   : Theme.of(context).colorScheme.onSurface,
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(24),
-                bottomRight: sendByMe
-                    ? const Radius.circular(0)
-                    : const Radius.circular(24),
+                bottomRight: sendByMe ? Radius.zero : const Radius.circular(24),
                 topRight: const Radius.circular(24),
-                bottomLeft: sendByMe
-                    ? const Radius.circular(24)
-                    : const Radius.circular(0),
+                bottomLeft: sendByMe ? const Radius.circular(24) : Radius.zero,
               ),
             ),
             child: Text(
               message,
               style: TextStyle(
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.onPrimary),
+                fontSize: 15.0,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

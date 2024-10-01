@@ -17,27 +17,27 @@ class ChatMessageList extends StatelessWidget {
     return StreamBuilder(
         stream: chatController.messageStream,
         builder: (context, AsyncSnapshot snapshot) {
-          User? user = FirebaseAuth.instance.currentUser;
+          final User? user = FirebaseAuth.instance.currentUser;
           return snapshot.hasData
               ? ListView.builder(
                   padding: const EdgeInsets.only(bottom: 90, top: 130),
                   itemCount: snapshot.data.docs.length,
                   reverse: true,
                   itemBuilder: (context, index) {
-                    DocumentSnapshot ds = snapshot.data.docs[index];
+                    final DocumentSnapshot ds = snapshot.data.docs[index];
                     debugPrint(user?.uid);
                     debugPrint('ds["sendBy"]: ${ds["sendBy"]}');
                     debugPrint('ds.id: ${ds.id}');
                     return GestureDetector(
                       onHorizontalDragStart: (_) => FirebaseFirestore.instance
-                          .collection("chatRooms")
+                          .collection('chatRooms')
                           .doc(chatController.chatRoomId)
-                          .collection("messages")
+                          .collection('messages')
                           .doc(ds.id)
                           .delete(),
                       child: ChatMessageTile(
-                        message: ds["message"],
-                        sendByMe: user?.uid == ds["sendBy"],
+                        message: ds['message'],
+                        sendByMe: user?.uid == ds['sendBy'],
                       ),
                     );
                   },
@@ -47,7 +47,7 @@ class ChatMessageList extends StatelessWidget {
                   width: 20,
                   height: 20,
                   child: CircularProgressIndicator(strokeWidth: 2),
-                ));
-        });
+                ),);
+        },);
   }
 }

@@ -4,15 +4,15 @@ import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserInformation extends StatelessWidget {
-  final String email;
-  final String firstName;
-  final String lastName;
   const UserInformation({
     super.key,
     required this.email,
     required this.firstName,
     required this.lastName,
   });
+  final String email;
+  final String firstName;
+  final String lastName;
 
   @override
   Widget build(BuildContext context) {

@@ -22,21 +22,21 @@ class ResetPasswordController extends ChangeNotifier {
 
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(
-          email: emailTextEditingController.text.trim());
+          email: emailTextEditingController.text.trim(),);
     } on FirebaseAuthException catch (e) {
       if (context.mounted) {
         if (e.code == 'user-not-found') {
           SnackBarService.showSnackBar(
             context,
             S.of(context).userNotFoundText,
-            true,
+            error: true,
           );
           return;
         } else {
           SnackBarService.showSnackBar(
             context,
             S.of(context).undefinedError,
-            true,
+             error: true,
           );
           return;
         }

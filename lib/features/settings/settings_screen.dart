@@ -41,7 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 DropdownMenuItem(
                   value: ThemeMode.dark,
                   child: Text(S.of(context).darkTheme),
-                )
+                ),
               ],
             ),
           ),

@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("First Name"),
         "itemListAvailability": MessageLookupByLibrary.simpleMessage(
             "The list of chats is available only for those signed in the system"),
+        "itemListEmpty": MessageLookupByLibrary.simpleMessage(
+            "Your messages empty, try to send new message"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name:"),
         "lastNameFormHintText":
             MessageLookupByLibrary.simpleMessage("Last Name"),

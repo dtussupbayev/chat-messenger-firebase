@@ -1,11 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../../core/services/firestore_service.dart';
 import '../../../../core/utils/snack_bar_service.dart';
-import '../../../chats/screen/chats_screen.dart';
 
 class SignUpController extends ChangeNotifier {
   bool isHiddenPassword = true;
@@ -19,7 +17,7 @@ class SignUpController extends ChangeNotifier {
       TextEditingController();
   TextEditingController lastNameTextEditingController = TextEditingController();
 
-  disposeTextInputControllers() {
+  void disposeTextInputControllers() {
     emailTextEditingController.dispose();
     passwordTextEditingController.dispose();
     passwordRepeatTextEditingController.dispose();
@@ -27,7 +25,7 @@ class SignUpController extends ChangeNotifier {
     lastNameTextEditingController.dispose();
   }
 
-  togglePasswordView() {
+  void togglePasswordView() {
     isHiddenPassword = !isHiddenPassword;
 
     notifyListeners();
@@ -42,26 +40,26 @@ class SignUpController extends ChangeNotifier {
       SnackBarService.showSnackBar(
         context,
         S.of(context).passwordsDifferent,
-        true,
+        error: true,
       );
       return;
     }
 
     try {
-      UserCredential userCredential =
+      final UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailTextEditingController.text,
         password: passwordTextEditingController.text,
       );
 
-      User? user = userCredential.user;
+      final User? user = userCredential.user;
 
-      List<String> searchKeywords = FirestoreService.generateSearchKeywords(
+      final List<String> searchKeywords = FirestoreService.generateSearchKeywords(
         firstNameTextEditingController.text,
         lastNameTextEditingController.text,
       );
 
-      Map<String, dynamic> userInfoMap = {
+      final Map<String, dynamic> userInfoMap = {
         'uid': user!.uid,
         'email': emailTextEditingController.text,
         'firstName': firstNameTextEditingController.text,
@@ -76,23 +74,17 @@ class SignUpController extends ChangeNotifier {
           SnackBarService.showSnackBar(
             context,
             S.of(context).emailAlreadyInUseSnackBarText,
-            true,
+            error: true,
           );
           return;
         } else {
           SnackBarService.showSnackBar(
             context,
             S.of(context).undefinedError,
-            true,
+            error: true,
           );
         }
       }
-    }
-    if (context.mounted) {
-      while (context.canPop()) {
-        context.pop();
-      }
-      context.pushReplacement(ChatsScreen.routeName);
     }
   }
 }
