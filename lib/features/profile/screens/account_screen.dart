@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/account/widgets/arraw_back_button.dart';
-import 'package:flutter_application_1/features/account/widgets/sign_out_button.dart';
-import 'package:flutter_application_1/features/account/widgets/user_information.dart';
+import 'package:flutter_application_1/features/profile/widgets/arraw_back_button.dart';
+import 'package:flutter_application_1/features/profile/widgets/sign_out_button.dart';
+import 'package:flutter_application_1/features/profile/widgets/user_information.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_application_1/features/account/bloc/account_bloc.dart';
+import 'package:flutter_application_1/features/profile/bloc/profile_bloc.dart';
 
 import '../../../generated/l10n.dart';
 
-class AccountScreen extends StatefulWidget {
-  const AccountScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<AccountScreen> createState() => _AccountScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 
   static const routeName = 'account';
 }
 
-class _AccountScreenState extends State<AccountScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AccountBloc()..add(LoadAccountInfoEvent()),
+      create: (context) => ProfileBloc()..add(LoadProfileInfoEvent()),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -32,18 +32,18 @@ class _AccountScreenState extends State<AccountScreen> {
           ],
         ),
         body: Center(
-          child: BlocConsumer<AccountBloc, AccountState>(
+          child: BlocConsumer<ProfileBloc, ProfileState>(
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is AccountLoading) {
+              if (state is ProfileLoading) {
                 return const SizedBox(
                   width: 20,
                   height: 20,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 );
-              } else if (state is AccountError) {
+              } else if (state is ProfileError) {
                 return Text(state.message);
-              } else if (state is AccountLoaded) {
+              } else if (state is ProfileLoaded) {
                 return UserInformation(
                   email: state.email,
                   firstName: state.firstName,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/account/screens/account_screen.dart';
+import 'package:flutter_application_1/features/profile/screens/account_screen.dart';
 import 'package:flutter_application_1/features/chat/widgets/chat_message_list.dart';
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:flutter_application_1/features/settings/settings_screen.dart';
@@ -86,7 +86,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 extra: context.read<SettingsController>(),
                               );
                             } else if (value == 'account') {
-                              context.pushReplacement(AccountScreen.routeName);
+                              context.pushReplacement(ProfileScreen.routeName);
                             }
                           },
                           itemBuilder: (BuildContext context) {

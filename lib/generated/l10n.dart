@@ -380,10 +380,10 @@ class S {
     );
   }
 
-  /// `Account`
+  /// `Profile`
   String get account {
     return Intl.message(
-      'Account',
+      'Profile',
       name: 'account',
       desc: '',
       args: [],

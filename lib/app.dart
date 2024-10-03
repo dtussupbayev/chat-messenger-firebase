@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/services/bloc/authentication_bloc.dart';
-import 'package:flutter_application_1/core/services/firebase_service.dart';
+import 'package:flutter_application_1/core/screens/splash_screen.dart';
+import 'package:flutter_application_1/core/themes/app_themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -50,8 +51,8 @@ class App extends StatelessWidget {
                 ],
                 onGenerateTitle: (BuildContext context) =>
                     S.of(context).appTitle,
-                theme: ThemeData(),
-                darkTheme: ThemeData.dark(),
+                theme: lightTheme(),
+                darkTheme: darkTheme(),
                 themeMode: settingsController.themeMode,
                 debugShowCheckedModeBanner: false,
               ),

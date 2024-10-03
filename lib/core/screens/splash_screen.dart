@@ -4,7 +4,7 @@ import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import 'bloc/authentication_bloc.dart';
+import '../services/bloc/authentication_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key, required this.currentPath});

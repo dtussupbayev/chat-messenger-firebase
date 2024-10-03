@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/account/bloc/account_bloc.dart';
+import 'package:flutter_application_1/features/profile/bloc/profile_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignOutButton extends StatelessWidget {
@@ -9,13 +9,13 @@ class SignOutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AccountBloc, AccountState>(
+    return BlocBuilder<ProfileBloc, ProfileState>(
       builder: (context, state) {
-        if (state is AccountLoaded) {
+        if (state is ProfileLoaded) {
           return IconButton(
             icon: const Icon(Icons.logout),
             tooltip: 'Sign Out Icon',
-            onPressed: () => context.read<AccountBloc>().add(SignOutEvent()),
+            onPressed: () => context.read<ProfileBloc>().add(SignOutEvent()),
           );
         } else {
           return const SizedBox();

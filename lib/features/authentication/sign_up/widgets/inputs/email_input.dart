@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 
 class EmailInput extends StatelessWidget {
-
   const EmailInput({
     super.key,
     required this.emailTextEditingController,
   });
+
   final TextEditingController emailTextEditingController;
 
   @override
@@ -20,7 +20,7 @@ class EmailInput extends StatelessWidget {
           ? S.of(context).emailFormValidatorText
           : null,
       decoration: InputDecoration(
-        border: const OutlineInputBorder(),
+        prefixIcon: const Icon(Icons.mail),
         hintText: S.of(context).emailFormHintText,
       ),
     );

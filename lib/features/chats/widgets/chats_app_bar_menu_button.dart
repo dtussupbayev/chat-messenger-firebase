@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
-import '../../account/screens/account_screen.dart';
+import '../../profile/screens/account_screen.dart';
 import '../../settings/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
@@ -29,7 +29,7 @@ class CMenuButton extends StatelessWidget {
           if ((user == null)) {
             context.push('/auth');
           } else {
-            context.goNamed(AccountScreen.routeName);
+            context.goNamed(ProfileScreen.routeName);
           }
         }
       },

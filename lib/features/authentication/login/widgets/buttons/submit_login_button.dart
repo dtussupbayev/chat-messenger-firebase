@@ -18,7 +18,7 @@ class SubmitLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
-        return ElevatedButton(
+        return FilledButton(
           onPressed: () {
             if (formKey.currentState!.validate()) {
               context.read<LoginBloc>().add(
@@ -29,9 +29,16 @@ class SubmitLoginButton extends StatelessWidget {
                   );
             }
           },
-          child: state.status == LoginStatus.loading
-              ? const Center(child: CircularProgressIndicator())
-              : Center(child: Text(S.of(context).enter)),
+          child: Center(
+            child: state.status == LoginStatus.loading
+                ? Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  )
+                : Text(S.of(context).enter),
+          ),
         );
       },
     );

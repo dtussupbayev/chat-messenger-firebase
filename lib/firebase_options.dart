@@ -56,11 +56,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
-    appId: '1:987841922201:web:fc09e673d952ff48ba2408',
-    messagingSenderId: '987841922201',
-    projectId: 'flutter-application-1-e2362',
     authDomain: 'flutter-application-1-e2362.firebaseapp.com',
+    projectId: 'flutter-application-1-e2362',
     storageBucket: 'flutter-application-1-e2362.appspot.com',
+    messagingSenderId: '987841922201',
+    appId: '1:987841922201:web:fc09e673d952ff48ba2408',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -71,5 +71,4 @@ class DefaultFirebaseOptions {
     authDomain: 'flutter-application-1-e2362.firebaseapp.com',
     storageBucket: 'flutter-application-1-e2362.appspot.com',
   );
-
 }

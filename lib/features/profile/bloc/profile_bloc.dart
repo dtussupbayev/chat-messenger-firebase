@@ -4,21 +4,21 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 
-part 'account_event.dart';
-part 'account_state.dart';
+part 'profile_event.dart';
+part 'profile_state.dart';
 
-class AccountBloc extends Bloc<AccountEvent, AccountState> {
-  AccountBloc() : super(AccountInitial()) {
-    on<LoadAccountInfoEvent>(_onLoadAccountInfo);
+class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
+  ProfileBloc() : super(ProfileInitial()) {
+    on<LoadProfileInfoEvent>(_onLoadProfileInfo);
     on<SignOutEvent>(_onSignOut);
   }
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<void> _onLoadAccountInfo(
-    LoadAccountInfoEvent event,
-    Emitter<AccountState> emit,
+  Future<void> _onLoadProfileInfo(
+    LoadProfileInfoEvent event,
+    Emitter<ProfileState> emit,
   ) async {
-    emit(AccountLoading());
+    emit(ProfileLoading());
     try {
       final User? user = _auth.currentUser;
       if (user != null) {
@@ -30,7 +30,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
         final data = snapshot.data();
         if (data != null) {
           emit(
-            AccountLoaded(
+            ProfileLoaded(
               email: user.email ?? '',
               firstName: data['firstName'] ?? '',
               lastName: data['lastName'] ?? '',
@@ -38,25 +38,25 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
           );
         } else {
           add(SignOutEvent());
-          emit(AccountError(S.current.userInformationNotAvailable));
+          emit(ProfileError(S.current.userInformationNotAvailable));
         }
       } else {
-        emit(AccountError(S.current.userInformationNotAvailable));
+        emit(ProfileError(S.current.userInformationNotAvailable));
       }
     } catch (e) {
-      emit(AccountError('${S.current.error}:$e'));
+      emit(ProfileError('${S.current.error}:$e'));
     }
   }
 
   Future<void> _onSignOut(
     SignOutEvent event,
-    Emitter<AccountState> emit,
+    Emitter<ProfileState> emit,
   ) async {
     try {
       await _auth.signOut();
-      emit(AccountSignedOut());
+      emit(ProfileSignedOut());
     } catch (e) {
-      emit(AccountError('${S.current.error}:$e'));
+      emit(ProfileError('${S.current.error}:$e'));
     }
   }
 }

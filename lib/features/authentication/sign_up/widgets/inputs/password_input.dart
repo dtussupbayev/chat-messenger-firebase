@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/login/bloc/login_bloc.dart';
+import 'package:flutter_application_1/features/authentication/sign_up/bloc/sign_up_bloc.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,30 +8,33 @@ class PasswordInput extends StatelessWidget {
     super.key,
     required this.passwordTextEditingController,
   });
+
   final TextEditingController passwordTextEditingController;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginBloc, LoginState>(
+    return BlocBuilder<SignUpBloc, SignUpState>(
       builder: (context, state) {
-        final bool isHidden = state.isPasswordHidden;
         return TextFormField(
           keyboardType: TextInputType.text,
           autocorrect: false,
           controller: passwordTextEditingController,
-          obscureText: isHidden,
+          obscureText: state.isPasswordHidden,
           validator: (value) => value != null && value.length < 6
               ? S.of(context).passwordFormValidatorText
               : null,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           decoration: InputDecoration(
-            border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.lock),
             hintText: S.of(context).passwordFormHintText,
             suffix: InkWell(
-              onTap: () =>
-                  context.read<LoginBloc>().add(TogglePasswordVisibility()),
+              onTap: () {
+                context.read<SignUpBloc>().add(TogglePasswordVisibility());
+              },
               child: Icon(
-                isHidden ? Icons.visibility_off : Icons.visibility,
+                state.isPasswordHidden
+                    ? Icons.visibility_off
+                    : Icons.visibility,
               ),
             ),
           ),

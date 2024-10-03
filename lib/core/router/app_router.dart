@@ -1,5 +1,5 @@
-import 'package:flutter_application_1/core/services/firebase_service.dart';
-import 'package:flutter_application_1/features/account/screens/account_screen.dart';
+import 'package:flutter_application_1/core/screens/splash_screen.dart';
+import 'package:flutter_application_1/features/profile/screens/account_screen.dart';
 import 'package:flutter_application_1/features/authentication/login/screen/login_screen.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/screens/reset_password_screen.dart';
 import 'package:flutter_application_1/features/authentication/sign_up/screens/sign_up_screen.dart';
@@ -38,22 +38,22 @@ final router = GoRouter(
       ],
     ),
     GoRoute(
-      path: VerifyEmailScreen.routeName,
+      path: '/verify_email',
       name: VerifyEmailScreen.routeName,
       builder: (context, state) => const VerifyEmailScreen(),
     ),
     GoRoute(
-      path: ChatsScreen.routeName,
+      path: '/chats',
       name: ChatsScreen.routeName,
       builder: (context, state) => const ChatsScreen(),
       routes: [
         GoRoute(
-          path: AccountScreen.routeName,
-          name: AccountScreen.routeName,
-          builder: (context, state) => const AccountScreen(),
+          path: 'account',
+          name: ProfileScreen.routeName,
+          builder: (context, state) => const ProfileScreen(),
         ),
         GoRoute(
-          name: SettingsScreen.routeName,
+          name: 'settings',
           path: SettingsScreen.routeName,
           builder: (context, state) {
             final SettingsController settingsController =

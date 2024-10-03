@@ -25,7 +25,7 @@ class ChatsController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void getTheCurrentUserInfo()  {
+  void getTheCurrentUserInfo() {
     final User? currentUser = FirebaseAuth.instance.currentUser;
     uid = currentUser?.uid;
     notifyListeners();
@@ -42,8 +42,10 @@ class ChatsController extends ChangeNotifier {
   Future<void> getThisUserInfo(String chatRoomId, String myUid) async {
     id = chatRoomId.replaceFirst(myUid, '').replaceFirst('_', '');
     final QuerySnapshot querySnapshot = await FirestoreService.getUserInfo(id);
-    firstName = "${querySnapshot.docs[0]["firstName"]}";
-    lastName = "${querySnapshot.docs[0]["lastName"]}";
+    if (querySnapshot.docs.isNotEmpty) {
+      firstName = "${querySnapshot.docs[0]["firstName"]}";
+      lastName = "${querySnapshot.docs[0]["lastName"]}";
+    }
     getFirstLetters();
     debugPrint('firstName: $firstName');
     notifyListeners();

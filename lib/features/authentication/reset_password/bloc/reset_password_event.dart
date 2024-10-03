@@ -7,7 +7,19 @@ sealed class ResetPasswordEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SubmitResetPasswordEvent extends ResetPasswordEvent{
-  
-}
+class ResetPasswordSubmitted extends ResetPasswordEvent {
+  const ResetPasswordSubmitted({required this.email});
 
+  final String email;
+
+  @override
+  List<Object> get props => [email];
+
+  ResetPasswordSubmitted copyWith({
+    String? email,
+  }) {
+    return ResetPasswordSubmitted(
+      email: email ?? this.email,
+    );
+  }
+}

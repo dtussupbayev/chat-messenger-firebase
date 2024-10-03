@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
-class NavigateToLoginButton extends StatelessWidget {
-  const NavigateToLoginButton({
+class NavigateSignUpButton extends StatelessWidget {
+  const NavigateSignUpButton({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => context.pop(),
+      onPressed: () => context.go('/auth/sign-up'),
       child: Text(
-        S.of(context).enter,
-        style: const TextStyle(
+        S.of(context).signUp,
+        style: TextStyle(
           decoration: TextDecoration.underline,
+          decorationColor: Theme.of(context).primaryColor,
         ),
       ),
     );

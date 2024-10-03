@@ -1,16 +1,16 @@
-part of 'account_bloc.dart';
+part of 'profile_bloc.dart';
 
-sealed class AccountState extends Equatable {
+sealed class ProfileState extends Equatable {
   @override
   List<Object?> get props => [];
 }
 
-class AccountInitial extends AccountState {}
+class ProfileInitial extends ProfileState {}
 
-class AccountLoading extends AccountState {}
+class ProfileLoading extends ProfileState {}
 
-class AccountLoaded extends AccountState {
-  AccountLoaded({
+class ProfileLoaded extends ProfileState {
+  ProfileLoaded({
     required this.email,
     required this.firstName,
     required this.lastName,
@@ -23,10 +23,10 @@ class AccountLoaded extends AccountState {
   List<Object?> get props => [email, firstName, lastName];
 }
 
-class AccountSignedOut extends AccountState {}
+class ProfileSignedOut extends ProfileState {}
 
-class AccountError extends AccountState {
-  AccountError(this.message);
+class ProfileError extends ProfileState {
+  ProfileError(this.message);
   final String message;
 
   @override

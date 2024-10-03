@@ -1,64 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/email_input.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/first_name_input.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/last_name_input.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/navigate_to_login_button.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/password_input.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/password_repeat_input.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/widgets/submit_sign_up_button.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_application_1/core/utils/snack_bar_service.dart';
+import 'package:flutter_application_1/features/authentication/sign_up/bloc/sign_up_bloc.dart';
+import 'package:flutter_application_1/features/authentication/sign_up/widgets/sign_up_form.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../generated/l10n.dart';
-import '../logic/sign_up_controller.dart';
-
-class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-
-  static const routeName = '/sign_up';
-}
-
-class _SignUpScreenState extends State<SignUpScreen> {
-  final signUpController = SignUpController();
-
-  @override
-  void dispose() {
-    signUpController.disposeTextInputControllers();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => signUpController,
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: Text(S.of(context).signUpScreenAppBarTitle),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Consumer<SignUpController>(
-            builder: (context, signUpController, child) => Form(
-              key: signUpController.formKey,
-              child: ListView(
-                children: [
-                  EmailInput(signUpController: signUpController),
-                  const SizedBox(height: 20),
-                  PasswordInput(signUpController: signUpController),
-                  const SizedBox(height: 20),
-                  PasswordRepeatInput(signUpController: signUpController),
-                  const SizedBox(height: 20),
-                  FirstNameInput(signUpController: signUpController),
-                  const SizedBox(height: 20),
-                  LastNameInput(signUpController: signUpController),
-                  const SizedBox(height: 30),
-                  SubmitSignUpButton(signUpController: signUpController),
-                  const SizedBox(height: 20),
-                  const NavigateToLoginButton(),
-                ],
+    return BlocProvider(
+      create: (context) => SignUpBloc(),
+      child: BlocListener<SignUpBloc, SignUpState>(
+        listener: (context, state) {
+          if (state.status == SignUpStatus.failure) {
+            SnackBarService.showSnackBar(
+              context,
+              state.errorMessage ?? '',
+              error: true,
+            );
+          }
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          // appBar: AppBar(
+          //   title: Text(S.of(context).signUpScreenAppBarTitle),
+          // ),
+          body: Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: SingleChildScrollView(
+              child: SizedBox(
+                height: MediaQuery.sizeOf(context).height,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.textsms_rounded,
+                        size: 96,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      const SizedBox(height: 15),
+                      Text(
+                        'RealTimeChat',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontWeight: FontWeight.w700,
+                            ),
+                      ),
+                      const SizedBox(height: 30),
+                      const SignUpForm(),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
@@ -66,4 +63,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
+  static const routeName = '/sign_up';
 }

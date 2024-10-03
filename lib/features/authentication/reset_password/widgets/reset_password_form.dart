@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/reset_password/logic/reset_password_controller.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/widgets/email_form_field.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/widgets/submit_reset_password_button.dart';
 
-class ResetForm extends StatelessWidget {
-  const ResetForm({
+class ResetPasswordForm extends StatelessWidget {
+  const ResetPasswordForm({
     super.key,
-    required this.resetPasswordController,
   });
-  final ResetPasswordController resetPasswordController;
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    final emailController = TextEditingController();
     return Form(
-      key: resetPasswordController.formKey,
+      key: formKey,
       child: Column(
         children: [
+          const SizedBox(height: 15),
           EmailFormField(
-            resetPasswordController: resetPasswordController,
+            emailController: emailController,
           ),
           const SizedBox(height: 30),
-          const SizedBox(height: 30),
           SubmitResetPasswordButton(
-            resetPasswordController: resetPasswordController,
+            formKey: formKey,
+            emailController: emailController,
           ),
         ],
       ),
