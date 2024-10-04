@@ -13,7 +13,12 @@ class SnackBarService {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
 
     final snackBar = SnackBar(
-      content: Text(message),
+      content: Text(
+        message,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
       backgroundColor: error ? errorColor : okColor,
     );
 

@@ -18,13 +18,12 @@ class LoginState extends Equatable {
   LoginState copyWith({
     LoginStatus? status,
     bool? isPasswordHidden,
-    String? errorMessage,
-    bool? isValid,
+    ValueGetter<String?>? errorMessage,
   }) {
     return LoginState(
       status: status ?? this.status,
       isPasswordHidden: isPasswordHidden ?? this.isPasswordHidden,
-      errorMessage: errorMessage ?? this.errorMessage,
+      errorMessage: errorMessage != null ? errorMessage() : null,
     );
   }
 }

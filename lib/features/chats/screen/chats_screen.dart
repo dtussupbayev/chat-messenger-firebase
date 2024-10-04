@@ -34,29 +34,27 @@ class _ChatsScreenState extends State<ChatsScreen> {
 
     return ChangeNotifierProvider<ChatsController>.value(
       value: chatsController,
-      child:
-          Consumer<ChatsController>(builder: (context, chatsController, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(S.of(context).chats),
-            actions: [
-              if (user == null) const SizedBox() else const SearchButton(),
-              CMenuButton(user: user),
-            ],
-          ),
-          body: user != null
-              ? const ChatRoomList()
-              : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 60.0),
-                  child: Center(
+      child: Consumer<ChatsController>(
+        builder: (context, chatsController, child) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(S.of(context).chats),
+              actions: [
+                if (user == null) const SizedBox() else const SearchButton(),
+                CMenuButton(user: user),
+              ],
+            ),
+            body: user != null
+                ? const ChatRoomList()
+                : Center(
                     child: Text(
                       S.of(context).itemListAvailability,
                       textAlign: TextAlign.center,
                     ),
                   ),
-                ),
-        );
-      },),
+          );
+        },
+      ),
     );
   }
 }

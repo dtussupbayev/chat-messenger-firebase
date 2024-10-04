@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/widgets/app_button_loading_widget.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/bloc/reset_password_bloc.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,7 @@ class SubmitResetPasswordButton extends StatelessWidget {
           },
           child: Center(
             child: state.status == ResetPasswordStatus.loading
-                ? const CircularProgressIndicator()
+                ? const AppButtonLoadingWidget()
                 : Text(S.of(context).resetPasswordButtonText),
           ),
         );

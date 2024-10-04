@@ -24,7 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "account": MessageLookupByLibrary.simpleMessage("Profile"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("flutter_application_1"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel "),
@@ -42,14 +41,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name:"),
         "firstNameFormHintText":
-            MessageLookupByLibrary.simpleMessage("First Name"),
+            MessageLookupByLibrary.simpleMessage("Enter the first name"),
         "itemListAvailability": MessageLookupByLibrary.simpleMessage(
             "The list of chats is available only for those signed in the system"),
         "itemListEmpty": MessageLookupByLibrary.simpleMessage(
             "Your messages empty, try to send new message"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name:"),
         "lastNameFormHintText":
-            MessageLookupByLibrary.simpleMessage("Last Name"),
+            MessageLookupByLibrary.simpleMessage("Enter the last name"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "moreInformationHere":
             MessageLookupByLibrary.simpleMessage("More Information Here"),
@@ -61,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter the password again"),
         "passwordsDifferent":
             MessageLookupByLibrary.simpleMessage("Passwords must match"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "resetPasswordButtonText":
@@ -76,8 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "successResetPassword": MessageLookupByLibrary.simpleMessage(
             "Password reset. Check the mail"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("System Theme"),
+        "typeAMessage": MessageLookupByLibrary.simpleMessage("Type a message"),
         "undefinedError": MessageLookupByLibrary.simpleMessage(
-            "Unknown error!Try again or contact in support."),
+            "Unknown error! Try again or contact in support."),
         "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
             "User information not available"),
         "userNotFoundText":
@@ -87,7 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifyEmailScreenAppBarTitle":
             MessageLookupByLibrary.simpleMessage("Verification Email address"),
         "wrongEmailOrPasswordSnackBar": MessageLookupByLibrary.simpleMessage(
-            "Incorrect email or password.Try again"),
+            "Incorrect email or password. Try again"),
+        "you": MessageLookupByLibrary.simpleMessage("You"),
         "yourEmail": MessageLookupByLibrary.simpleMessage("Your email:")
       };
 }

@@ -43,7 +43,7 @@ class UsersSearchDelegate extends SearchDelegate<String> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator.adaptive(),
           );
         } else if (snapshot.hasError) {
           return Center(

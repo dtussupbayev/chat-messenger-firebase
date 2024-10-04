@@ -24,7 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("flutter_application_1"),
         "cancel": MessageLookupByLibrary.simpleMessage("Отменить"),
@@ -39,15 +38,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailFormValidatorText":
             MessageLookupByLibrary.simpleMessage("Введите правильную почту"),
         "enter": MessageLookupByLibrary.simpleMessage("Войти"),
-        "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "firstName": MessageLookupByLibrary.simpleMessage("Имя:"),
-        "firstNameFormHintText": MessageLookupByLibrary.simpleMessage("Имя"),
+        "firstNameFormHintText":
+            MessageLookupByLibrary.simpleMessage("Введите имя"),
         "itemListAvailability": MessageLookupByLibrary.simpleMessage(
             "Список чатов доступен только для вошедших в систему"),
         "itemListEmpty": MessageLookupByLibrary.simpleMessage(
             "Здесь нет чатов. Попробуйте отправить первое сообщение"),
         "lastName": MessageLookupByLibrary.simpleMessage("Фамилия:"),
-        "lastNameFormHintText": MessageLookupByLibrary.simpleMessage("Фамилия"),
+        "lastNameFormHintText":
+            MessageLookupByLibrary.simpleMessage("Введите фамилию"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
         "moreInformationHere":
             MessageLookupByLibrary.simpleMessage("Больше информации здесь"),
@@ -59,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Введите пароль еще раз"),
         "passwordsDifferent":
             MessageLookupByLibrary.simpleMessage("Пароли должны совпадать"),
+        "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "resend": MessageLookupByLibrary.simpleMessage("Повторно отправить"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
@@ -73,10 +75,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUpScreenAppBarTitle":
             MessageLookupByLibrary.simpleMessage("Зарегистрироваться"),
         "successResetPassword": MessageLookupByLibrary.simpleMessage(
-            "Сброс пароля осуществен. Проверьте почту"),
+            "Проверьте почту для сброса пароля"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("Системная тема"),
+        "typeAMessage":
+            MessageLookupByLibrary.simpleMessage("Введите сообщение"),
         "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
-            "User information not available"),
+            "Информация о пользователе недоступна"),
         "userNotFoundText": MessageLookupByLibrary.simpleMessage(
             "Такой email незарегистрирован!"),
         "verificationEmailResended": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Верификация Email адреса"),
         "wrongEmailOrPasswordSnackBar": MessageLookupByLibrary.simpleMessage(
             "Неправильный email или пароль. Повторите попытку"),
+        "you": MessageLookupByLibrary.simpleMessage("Вы"),
         "yourEmail": MessageLookupByLibrary.simpleMessage("Ваш Email:")
       };
 }

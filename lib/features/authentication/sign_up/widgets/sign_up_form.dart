@@ -25,6 +25,7 @@ class SignUpForm extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             EmailInput(emailTextEditingController: emailController),
             const SizedBox(height: 15),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/widgets/app_button_loading_widget.dart';
 import 'package:flutter_application_1/features/authentication/login/bloc/login_bloc.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,12 +32,7 @@ class SubmitLoginButton extends StatelessWidget {
           },
           child: Center(
             child: state.status == LoginStatus.loading
-                ? Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircularProgressIndicator(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  )
+                ? const AppButtonLoadingWidget()
                 : Text(S.of(context).enter),
           ),
         );

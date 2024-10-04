@@ -1,5 +1,5 @@
 import 'package:flutter_application_1/core/screens/splash_screen.dart';
-import 'package:flutter_application_1/features/profile/screens/account_screen.dart';
+import 'package:flutter_application_1/features/profile/screens/profile_screen.dart';
 import 'package:flutter_application_1/features/authentication/login/screen/login_screen.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/screens/reset_password_screen.dart';
 import 'package:flutter_application_1/features/authentication/sign_up/screens/sign_up_screen.dart';
@@ -16,8 +16,7 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       name: SplashScreen.routeName,
-      builder: (context, state) => SplashScreen(
-        currentPath: Uri.base.path,
+      builder: (context, state) => const SplashScreen(
       ),
     ),
     GoRoute(

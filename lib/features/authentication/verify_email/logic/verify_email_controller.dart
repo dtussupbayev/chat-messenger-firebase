@@ -56,7 +56,7 @@ class VerifyEmailController extends ChangeNotifier {
 
       canResendEmail = false;
       notifyListeners();
-      await Future.delayed(const Duration(seconds: 10));
+      await Future.delayed(const Duration(seconds: 20));
 
       // checkAuthTimer = Timer.periodic(const Duration(seconds: 5), (_) {
       //   context.read<AuthenticationBloc>().add(AuthenticationStatusCheck());

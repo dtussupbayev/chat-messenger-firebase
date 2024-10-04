@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/chat/screens/chat_screen.dart';
 import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
+import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -37,71 +38,49 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
   Widget build(BuildContext context) {
     return Consumer<ChatsController>(
       builder: (context, chatsController, _) {
-        return GestureDetector(
+        return InkWell(
           onTap: () {
-            if (context.mounted) {
-              context.goNamed(
-                ChatScreen.routeName,
-                pathParameters: {'uid': chatsController.id},
-                queryParameters: {
-                  'firstName': chatsController.firstName,
-                  'lastName': chatsController.lastName,
-                },
-              );
-            }
+            context.goNamed(
+              ChatScreen.routeName,
+              pathParameters: {'uid': chatsController.id},
+              queryParameters: {
+                'firstName': chatsController.firstName,
+                'lastName': chatsController.lastName,
+              },
+            );
           },
           child: Container(
-            margin: const EdgeInsets.only(bottom: 10.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 5.0,
+            ),
+            child: Stack(
               children: [
-                const SizedBox(
-                  width: 10.0,
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  child: Text(chatsController.firstLetters),
-                ),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                Column(
+                Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    CircleAvatar(
+                      radius: 30,
+                      child: Text(chatsController.firstLetters),
+                    ),
                     const SizedBox(
-                      height: 10.0,
+                      width: 10.0,
                     ),
-                    Text(
-                      '${chatsController.firstName} ${chatsController.lastName}',
-                      style: const TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width / 1.5,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.max,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (widget.lastMessageSendBy == widget.myUid)
-                            Text(
-                              'Вы: ',
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  )
-                                  .copyWith(fontWeight: FontWeight.bold),
-                            )
-                          else
-                            const SizedBox(),
+                          Text(
+                            '${chatsController.firstName} ${chatsController.lastName}',
+                            style: const TextStyle(
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                           Flexible(
                             child: Text(
-                              widget.lastMessage,
+                              '${widget.lastMessageSendBy == widget.myUid ? S.of(context).you : ''}: ${widget.lastMessage}',
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
@@ -117,10 +96,13 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                     ),
                   ],
                 ),
-                const Spacer(),
-                Text(
-                  widget.time,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Text(
+                    widget.time,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
               ],
             ),

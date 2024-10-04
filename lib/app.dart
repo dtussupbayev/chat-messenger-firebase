@@ -35,9 +35,7 @@ class App extends StatelessWidget {
                 }
               },
               child: MaterialApp.router(
-                routeInformationProvider: router.routeInformationProvider,
-                routerDelegate: router.routerDelegate,
-                routeInformationParser: router.routeInformationParser,
+                routerConfig: router,
                 localizationsDelegates: const [
                   S.delegate,
                   GlobalMaterialLocalizations.delegate,

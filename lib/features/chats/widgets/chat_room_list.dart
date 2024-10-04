@@ -14,37 +14,38 @@ class ChatRoomList extends StatelessWidget {
   Widget build(BuildContext context) {
     final chatsController = context.watch<ChatsController>();
     return StreamBuilder(
-        stream: chatsController.chatRoomsStream,
-        builder: (context, AsyncSnapshot snapshot) {
-          return snapshot.hasData
-              ? snapshot.data.docs.length > 0
-                  ? ListView.builder(
-                      padding: EdgeInsets.zero,
-                      itemCount: snapshot.data.docs.length,
-                      shrinkWrap: true,
-                      itemBuilder: ((context, index) {
-                        final DocumentSnapshot ds = snapshot.data.docs[index];
-                        return ChatRoomListTile(
-                          lastMessage: ds['lastMessage'],
-                          lastMessageSendBy: ds['lastMessageSendBy'] ?? '',
-                          chatRoomId: ds.id,
-                          myUid: chatsController.uid ?? '',
-                          time: ds['lastMessageSendTs'],
-                        );
-                      }),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60.0),
-                      child: Center(
-                        child: Text(
-                          S.of(context).itemListEmpty,
-                          textAlign: TextAlign.center,
-                        ),
+      stream: chatsController.chatRoomsStream,
+      builder: (context, AsyncSnapshot snapshot) {
+        return snapshot.hasData
+            ? snapshot.data.docs.length > 0
+                ? ListView.builder(
+                    padding: const EdgeInsets.only(top: 10),
+                    itemCount: snapshot.data.docs.length,
+                    shrinkWrap: true,
+                    itemBuilder: ((context, index) {
+                      final DocumentSnapshot ds = snapshot.data.docs[index];
+                      return ChatRoomListTile(
+                        lastMessage: ds['lastMessage'],
+                        lastMessageSendBy: ds['lastMessageSendBy'] ?? '',
+                        chatRoomId: ds.id,
+                        myUid: chatsController.uid ?? '',
+                        time: ds['lastMessageSendTs'],
+                      );
+                    }),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                    child: Center(
+                      child: Text(
+                        S.of(context).itemListEmpty,
+                        textAlign: TextAlign.center,
                       ),
-                    )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                );
-        },);
+                    ),
+                  )
+            : const Center(
+                child: CircularProgressIndicator.adaptive(),
+              );
+      },
+    );
   }
 }

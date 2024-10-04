@@ -14,7 +14,7 @@ class ProfileScreen extends StatefulWidget {
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 
-  static const routeName = 'account';
+  static const routeName = 'profile';
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -26,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: const ArrawBackButton(),
-          title: Text(S.of(context).account),
+          title: Text(S.of(context).profile),
           actions: const [
             SignOutButton(),
           ],
@@ -39,7 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 return const SizedBox(
                   width: 20,
                   height: 20,
-                  child: CircularProgressIndicator(strokeWidth: 2),
+                  child: CircularProgressIndicator.adaptive(strokeWidth: 2),
                 );
               } else if (state is ProfileError) {
                 return Text(state.message);

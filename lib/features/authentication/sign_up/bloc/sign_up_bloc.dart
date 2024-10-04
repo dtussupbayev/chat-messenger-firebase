@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/core/services/firestore_service.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 
@@ -52,14 +53,14 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         emit(
           state.copyWith(
             status: SignUpStatus.failure,
-            errorMessage: S.current.emailAlreadyInUseSnackBarText,
+            errorMessage: () => S.current.emailAlreadyInUseSnackBarText,
           ),
         );
       } else {
         emit(
           state.copyWith(
             status: SignUpStatus.failure,
-            errorMessage: S.current.undefinedError,
+            errorMessage: () => S.current.undefinedError,
           ),
         );
       }
@@ -70,13 +71,23 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     TogglePasswordVisibility event,
     Emitter<SignUpState> emit,
   ) {
-    emit(state.copyWith(isPasswordHidden: !state.isPasswordHidden));
+    emit(
+      state.copyWith(
+        status: SignUpStatus.initial,
+        isPasswordHidden: !state.isPasswordHidden,
+      ),
+    );
   }
 
   void _onToggleRepeatPasswordVisibility(
     ToggleRepeatPasswordVisibility event,
     Emitter<SignUpState> emit,
   ) {
-    emit(state.copyWith(isRepeatPasswordHidden: !state.isRepeatPasswordHidden));
+    emit(
+      state.copyWith(
+        status: SignUpStatus.initial,
+        isRepeatPasswordHidden: !state.isRepeatPasswordHidden,
+      ),
+    );
   }
 }

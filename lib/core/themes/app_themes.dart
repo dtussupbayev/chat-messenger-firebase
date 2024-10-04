@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-const Color primaryColor = Color(0xFF311B92);
+// Define the primary and accent colors
+const Color lightThemePrimaryColor =
+    Color(0xFF0277BD); // Cyan Blue for Light Theme
+const Color darkThemePrimaryColor =
+    Color(0xFF01579B); // Deep Blue for Dark Theme
+const Color accentColor =
+    Color(0xFFFFA000); // Golden Orange Accent for both themes
+
 MaterialColor createMaterialColor(Color color) {
   final List strengths = <double>[.05];
   final Map<int, Color> swatch = {};
@@ -23,17 +31,43 @@ MaterialColor createMaterialColor(Color color) {
   return MaterialColor(color.value, swatch);
 }
 
-MaterialColor customPurple = createMaterialColor(primaryColor);
+MaterialColor customLightPrimarySwatch =
+    createMaterialColor(lightThemePrimaryColor);
+MaterialColor customDarkPrimarySwatch =
+    createMaterialColor(darkThemePrimaryColor);
 
-// Светлая тема
+// Light Theme
 ThemeData lightTheme() {
   return ThemeData(
     brightness: Brightness.light,
-    primarySwatch: customPurple,
-    primaryColor: primaryColor,
+    primarySwatch: customLightPrimarySwatch,
+    primaryColor: lightThemePrimaryColor,
+    hintColor: accentColor,
     scaffoldBackgroundColor: Colors.white,
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+        backgroundColor: lightThemePrimaryColor,
+        foregroundColor: Colors.white,
+      ),
+    ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: primaryColor,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+      ),
+      iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: lightThemePrimaryColor,
       titleTextStyle: TextStyle(
         color: Colors.white,
         fontSize: 20,
@@ -44,66 +78,74 @@ ThemeData lightTheme() {
     ),
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
-        color: primaryColor,
+        color: lightThemePrimaryColor,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
       bodyLarge: TextStyle(
-        color: Colors.black87,
+        color: Colors.black,
         fontSize: 16,
       ),
       bodyMedium: TextStyle(
-        color: Colors.black54,
+        color: Colors.black,
         fontSize: 14,
       ),
     ),
     colorScheme: ColorScheme.fromSwatch(
-      primarySwatch: customPurple,
+      primarySwatch: customLightPrimarySwatch,
     ).copyWith(
-      secondary: customPurple[900], // Пример дополнительного акцентного цвета
-    ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: customPurple[900],
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: customPurple[900],
-        textStyle: const TextStyle(fontSize: 16),
-      ),
+      secondary: accentColor, // Set Accent color
     ),
     inputDecorationTheme: InputDecorationTheme(
+      prefixIconColor: lightThemePrimaryColor,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: const BorderSide(color: primaryColor),
+        borderSide: const BorderSide(color: lightThemePrimaryColor),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: const BorderSide(color: primaryColor),
+        borderSide: const BorderSide(color: lightThemePrimaryColor),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(color: customPurple.shade900),
+        borderSide: BorderSide(color: customLightPrimarySwatch.shade900),
       ),
     ),
-    cardTheme: CardTheme(
-      color: Colors.white,
-      shadowColor: Colors.grey.withOpacity(0.2),
-      elevation: 4,
-    ),
-    iconTheme: const IconThemeData(color: primaryColor),
   );
 }
 
-// Тёмная тема
+// Dark Theme
 ThemeData darkTheme() {
   return ThemeData(
     brightness: Brightness.dark,
-    primarySwatch: customPurple,
-    primaryColor: primaryColor,
-    scaffoldBackgroundColor: Colors.black,
+    primarySwatch: customDarkPrimarySwatch,
+    primaryColor: darkThemePrimaryColor,
+    hintColor: accentColor,
+    scaffoldBackgroundColor: const Color(0xFF191919),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+        backgroundColor: lightThemePrimaryColor,
+        foregroundColor: Colors.white,
+      ),
+    ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: primaryColor,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light, // For Android (light icons)
+        statusBarBrightness: Brightness.light, // For iOS (light icons)
+      ),
+      iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: darkThemePrimaryColor,
       titleTextStyle: TextStyle(
         color: Colors.white,
         fontSize: 20,
@@ -114,57 +156,41 @@ ThemeData darkTheme() {
     ),
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
-        color: Colors.white70,
+        color: Colors.white,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
       bodyLarge: TextStyle(
-        color: Colors.white70,
+        color: Colors.white,
         fontSize: 16,
       ),
       bodyMedium: TextStyle(
-        color: Colors.white60,
+        color: Colors.white,
         fontSize: 14,
       ),
     ),
     colorScheme: ColorScheme.fromSwatch(
-      primarySwatch: customPurple,
+      primarySwatch: customDarkPrimarySwatch,
       brightness: Brightness.dark,
     ).copyWith(
-      secondary: customPurple[900],
-    ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: customPurple[900],
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: customPurple[900],
-        textStyle: const TextStyle(fontSize: 16),
-      ),
-    ),
-    filledButtonTheme: FilledButtonThemeData(
-      style: FilledButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: primaryColor,
-        textStyle: const TextStyle(fontSize: 16),
-      ),
+      secondary: accentColor, // Set Accent color for dark theme too
     ),
     inputDecorationTheme: InputDecorationTheme(
+      prefixIconColor: darkThemePrimaryColor,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: const BorderSide(color: primaryColor),
+        borderSide: const BorderSide(color: darkThemePrimaryColor),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.0),
+        borderSide: const BorderSide(color: darkThemePrimaryColor),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(color: customPurple[900] ?? customPurple),
+        borderSide: BorderSide(
+          color: customDarkPrimarySwatch,
+        ),
       ),
     ),
-    cardTheme: CardTheme(
-      color: Colors.grey.shade900,
-      shadowColor: Colors.black.withOpacity(0.2),
-      elevation: 4,
-    ),
-    iconTheme: const IconThemeData(color: Colors.white70),
   );
 }

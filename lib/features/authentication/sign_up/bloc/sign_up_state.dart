@@ -22,14 +22,14 @@ class SignUpState extends Equatable {
     SignUpStatus? status,
     bool? isPasswordHidden,
     bool? isRepeatPasswordHidden,
-    String? errorMessage,
+    ValueGetter<String?>? errorMessage,
   }) {
     return SignUpState(
       status: status ?? this.status,
       isPasswordHidden: isPasswordHidden ?? this.isPasswordHidden,
       isRepeatPasswordHidden:
           isRepeatPasswordHidden ?? this.isRepeatPasswordHidden,
-      errorMessage: errorMessage ?? this.errorMessage,
+      errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
     );
   }
 }

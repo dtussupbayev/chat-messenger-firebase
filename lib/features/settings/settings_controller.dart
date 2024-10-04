@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -77,6 +78,14 @@ class SettingsController with ChangeNotifier {
     if (newThemeMode == _themeMode) return;
 
     _themeMode = newThemeMode;
+
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      ),
+    );
 
     notifyListeners();
 

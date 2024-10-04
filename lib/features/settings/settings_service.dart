@@ -10,8 +10,8 @@ class SettingsService {
 
   Future<ThemeMode> themeMode() async => ThemeMode.system;
   Future<Locale> systemLocale() async {
-    return S.delegate.supportedLocales.contains(Locale(Platform.localeName))
-        ? Locale(Platform.localeName)
+    return S.delegate.supportedLocales.contains(Locale(getSystemLocale()))
+        ? Locale(getSystemLocale())
         : const Locale('ru', '');
   }
 

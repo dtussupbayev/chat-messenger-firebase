@@ -15,22 +15,25 @@ class LoginForm extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
     return Form(
       key: formKey,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          EmailInput(emailTextEditingController: emailController),
-          const SizedBox(height: 15),
-          PasswordInput(passwordTextEditingController: passwordController),
-          const SizedBox(height: 30),
-          SubmitLoginButton(
-            emailController: emailController,
-            passwordController: passwordController,
-            formKey: formKey,
-          ),
-          const SizedBox(height: 15),
-          const NavigateSignUpButton(),
-          const NavigateResetPasswordButton(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            EmailInput(emailTextEditingController: emailController),
+            const SizedBox(height: 15),
+            PasswordInput(passwordTextEditingController: passwordController),
+            const SizedBox(height: 30),
+            SubmitLoginButton(
+              emailController: emailController,
+              passwordController: passwordController,
+              formKey: formKey,
+            ),
+            const SizedBox(height: 15),
+            const NavigateSignUpButton(),
+            const NavigateResetPasswordButton(),
+          ],
+        ),
       ),
     );
   }

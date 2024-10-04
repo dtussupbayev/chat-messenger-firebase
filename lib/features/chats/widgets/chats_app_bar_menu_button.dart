@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
-import '../../profile/screens/account_screen.dart';
+import '../../profile/screens/profile_screen.dart';
 import '../../settings/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
@@ -25,7 +25,7 @@ class CMenuButton extends StatelessWidget {
             SettingsScreen.routeName,
             extra: context.read<SettingsController>(),
           );
-        } else if (value == 'account') {
+        } else if (value == 'profile') {
           if ((user == null)) {
             context.push('/auth');
           } else {
@@ -36,8 +36,8 @@ class CMenuButton extends StatelessWidget {
       itemBuilder: (BuildContext context) {
         return [
           PopupMenuItem<String>(
-            value: 'account',
-            child: Text(S.of(context).account),
+            value: 'profile',
+            child: Text(S.of(context).profile),
           ),
           PopupMenuItem<String>(
             value: 'settings',

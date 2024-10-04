@@ -7,10 +7,8 @@ import 'package:go_router/go_router.dart';
 import '../services/bloc/authentication_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key, required this.currentPath});
+  const SplashScreen({super.key});
   static const routeName = '/';
-
-  final String currentPath;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -25,23 +23,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final currentPath =
+        GoRouter.of(context).routerDelegate.currentConfiguration.uri.toString();
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
         if (state is AuthenticationSuccess) {
           context.go(
-            widget.currentPath == '/' ||
-                    widget.currentPath == '/auth/sign-up' ||
-                    widget.currentPath == '/auth'
+            currentPath == '/' ||
+                    currentPath == '/auth/sign-up' ||
+                    currentPath == '/auth'
                 ? ChatsScreen.routeName
-                : widget.currentPath,
+                : currentPath,
           );
         } else if (state is AuthenticationNotVerified) {
           context.go(
-            widget.currentPath == '/' ||
-                    widget.currentPath == '/auth/sign-up' ||
-                    widget.currentPath == '/auth'
+            currentPath == '/' ||
+                    currentPath == '/auth/sign-up' ||
+                    currentPath == '/auth'
                 ? VerifyEmailScreen.routeName
-                : widget.currentPath,
+                : currentPath,
           );
         } else if (state is AuthenticationInitial) {
           context.go('/auth');
@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
       },
       child: const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator.adaptive(),
         ),
       ),
     );

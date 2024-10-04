@@ -19,9 +19,9 @@ class UserInformation extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('${S.of(context).yourEmail}$email'),
-        Text('${S.of(context).firstName}$firstName'),
-        Text('${S.of(context).lastName}$lastName'),
+        Text('${S.of(context).yourEmail} $email'),
+        Text('${S.of(context).firstName} $firstName'),
+        Text('${S.of(context).lastName} $lastName'),
         TextButton(
           onPressed: () => context.read<ProfileBloc>().add(SignOutEvent()),
           child: Text(S.of(context).signOut),

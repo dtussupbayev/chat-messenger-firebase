@@ -23,10 +23,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -56,11 +53,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
-    authDomain: 'flutter-application-1-e2362.firebaseapp.com',
-    projectId: 'flutter-application-1-e2362',
-    storageBucket: 'flutter-application-1-e2362.appspot.com',
+    appId: '1:987841922201:web:b4c8ff92a5892e01ba2408',
     messagingSenderId: '987841922201',
-    appId: '1:987841922201:web:fc09e673d952ff48ba2408',
+    projectId: 'flutter-application-1-e2362',
+    authDomain: 'flutter-application-1-e2362.firebaseapp.com',
+    storageBucket: 'flutter-application-1-e2362.appspot.com',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -71,4 +68,14 @@ class DefaultFirebaseOptions {
     authDomain: 'flutter-application-1-e2362.firebaseapp.com',
     storageBucket: 'flutter-application-1-e2362.appspot.com',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA29Rlv-5MPlepREmM0a2AqCDtZ0PCt4CI',
+    appId: '1:987841922201:ios:e35e6390b7a52f2fba2408',
+    messagingSenderId: '987841922201',
+    projectId: 'flutter-application-1-e2362',
+    storageBucket: 'flutter-application-1-e2362.appspot.com',
+    iosBundleId: 'com.example.flutterApplication1',
+  );
+
 }

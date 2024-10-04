@@ -75,7 +75,7 @@ class FirestoreService {
     String messageId,
     Map<String, dynamic> messageInfoMap,
   ) async {
-    return FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('chatRooms')
         .doc(chatRoomId)
         .collection('messages')

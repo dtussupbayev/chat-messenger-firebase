@@ -170,20 +170,20 @@ class S {
     );
   }
 
-  /// `Incorrect email or password.Try again`
+  /// `Incorrect email or password. Try again`
   String get wrongEmailOrPasswordSnackBar {
     return Intl.message(
-      'Incorrect email or password.Try again',
+      'Incorrect email or password. Try again',
       name: 'wrongEmailOrPasswordSnackBar',
       desc: '',
       args: [],
     );
   }
 
-  /// `Unknown error!Try again or contact in support.`
+  /// `Unknown error! Try again or contact in support.`
   String get undefinedError {
     return Intl.message(
-      'Unknown error!Try again or contact in support.',
+      'Unknown error! Try again or contact in support.',
       name: 'undefinedError',
       desc: '',
       args: [],
@@ -381,10 +381,10 @@ class S {
   }
 
   /// `Profile`
-  String get account {
+  String get profile {
     return Intl.message(
       'Profile',
-      name: 'account',
+      name: 'profile',
       desc: '',
       args: [],
     );
@@ -430,20 +430,20 @@ class S {
     );
   }
 
-  /// `First Name`
+  /// `Enter the first name`
   String get firstNameFormHintText {
     return Intl.message(
-      'First Name',
+      'Enter the first name',
       name: 'firstNameFormHintText',
       desc: '',
       args: [],
     );
   }
 
-  /// `Last Name`
+  /// `Enter the last name`
   String get lastNameFormHintText {
     return Intl.message(
-      'Last Name',
+      'Enter the last name',
       name: 'lastNameFormHintText',
       desc: '',
       args: [],
@@ -465,6 +465,26 @@ class S {
     return Intl.message(
       'User information not available',
       name: 'userInformationNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type a message`
+  String get typeAMessage {
+    return Intl.message(
+      'Type a message',
+      name: 'typeAMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You`
+  String get you {
+    return Intl.message(
+      'You',
+      name: 'you',
       desc: '',
       args: [],
     );

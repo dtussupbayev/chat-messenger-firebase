@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/utils/snack_bar_service.dart';
+import 'package:flutter_application_1/features/authentication/login/screen/login_screen.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/bloc/reset_password_bloc.dart';
 import 'package:flutter_application_1/features/authentication/reset_password/widgets/reset_password_form.dart';
-import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,7 +33,7 @@ class ResetPasswordScreen extends StatelessWidget {
               while (context.canPop()) {
                 context.pop();
               }
-              context.pushReplacementNamed(ChatsScreen.routeName);
+              context.pushReplacementNamed(LoginScreen.routeName);
             }
           }
         },

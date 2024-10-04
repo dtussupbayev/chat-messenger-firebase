@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/utils/snack_bar_service.dart';
+import 'package:flutter_application_1/core/widgets/app_button_loading_widget.dart';
 import 'package:flutter_application_1/features/authentication/sign_up/bloc/sign_up_bloc.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,7 +50,7 @@ class SubmitSignUpButton extends StatelessWidget {
           },
           child: Center(
             child: state.status == SignUpStatus.loading
-                ? const CircularProgressIndicator()
+                ? const AppButtonLoadingWidget()
                 : Text(S.of(context).signUp),
           ),
         );

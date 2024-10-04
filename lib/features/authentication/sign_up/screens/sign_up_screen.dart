@@ -22,18 +22,18 @@ class SignUpScreen extends StatelessWidget {
           }
         },
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           // appBar: AppBar(
           //   title: Text(S.of(context).signUpScreenAppBarTitle),
           // ),
-          body: Padding(
-            padding: const EdgeInsets.only(top: 30.0),
-            child: SingleChildScrollView(
-              child: SizedBox(
-                height: MediaQuery.sizeOf(context).height,
-                child: Center(
+          body: SafeArea(
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height -
+                  MediaQuery.paddingOf(context).top,
+              child: Center(
+                child: SingleChildScrollView(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         Icons.textsms_rounded,
@@ -43,13 +43,10 @@ class SignUpScreen extends StatelessWidget {
                       const SizedBox(height: 15),
                       Text(
                         'RealTimeChat',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium!
-                            .copyWith(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontWeight: FontWeight.w700,
-                            ),
+                        style:
+                            Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
                       ),
                       const SizedBox(height: 30),
                       const SignUpForm(),
