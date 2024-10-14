@@ -171,10 +171,10 @@ class S {
   }
 
   /// `Incorrect email or password. Try again`
-  String get wrongEmailOrPasswordSnackBar {
+  String get wrongEmailOrPassword {
     return Intl.message(
       'Incorrect email or password. Try again',
-      name: 'wrongEmailOrPasswordSnackBar',
+      name: 'wrongEmailOrPassword',
       desc: '',
       args: [],
     );
@@ -485,6 +485,86 @@ class S {
     return Intl.message(
       'You',
       name: 'you',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your first name`
+  String get enterYourFirstName {
+    return Intl.message(
+      'Enter your first name',
+      name: 'enterYourFirstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a Valid Name`
+  String get enterAValidName {
+    return Intl.message(
+      'Enter a Valid Name',
+      name: 'enterAValidName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your last name`
+  String get enterYourLastName {
+    return Intl.message(
+      'Enter your last name',
+      name: 'enterYourLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a Valid Last Name`
+  String get enterAValidLastName {
+    return Intl.message(
+      'Enter a Valid Last Name',
+      name: 'enterAValidLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let''s start`
+  String get letsStart {
+    return Intl.message(
+      'Let\'\'s start',
+      name: 'letsStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RealTimeChat: A real time messaging app for seamless real-time communication.`
+  String get welcomeText {
+    return Intl.message(
+      'RealTimeChat: A real time messaging app for seamless real-time communication.',
+      name: 'welcomeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Undefined login error.`
+  String get undefinedLoginError {
+    return Intl.message(
+      'Undefined login error.',
+      name: 'undefinedLoginError',
       desc: '',
       args: [],
     );

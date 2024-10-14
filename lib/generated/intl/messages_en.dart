@@ -38,6 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailFormValidatorText":
             MessageLookupByLibrary.simpleMessage("Enter the right email"),
         "enter": MessageLookupByLibrary.simpleMessage("Enter"),
+        "enterAValidLastName":
+            MessageLookupByLibrary.simpleMessage("Enter a Valid Last Name"),
+        "enterAValidName":
+            MessageLookupByLibrary.simpleMessage("Enter a Valid Name"),
+        "enterYourFirstName":
+            MessageLookupByLibrary.simpleMessage("Enter your first name"),
+        "enterYourLastName":
+            MessageLookupByLibrary.simpleMessage("Enter your last name"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "firstName": MessageLookupByLibrary.simpleMessage("First Name:"),
         "firstNameFormHintText":
@@ -49,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name:"),
         "lastNameFormHintText":
             MessageLookupByLibrary.simpleMessage("Enter the last name"),
+        "letsStart": MessageLookupByLibrary.simpleMessage("Let\'\'s start"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "moreInformationHere":
             MessageLookupByLibrary.simpleMessage("More Information Here"),
@@ -79,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeAMessage": MessageLookupByLibrary.simpleMessage("Type a message"),
         "undefinedError": MessageLookupByLibrary.simpleMessage(
             "Unknown error! Try again or contact in support."),
+        "undefinedLoginError":
+            MessageLookupByLibrary.simpleMessage("Undefined login error."),
         "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
             "User information not available"),
         "userNotFoundText":
@@ -87,7 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "A letter with verification was sent to your email."),
         "verifyEmailScreenAppBarTitle":
             MessageLookupByLibrary.simpleMessage("Verification Email address"),
-        "wrongEmailOrPasswordSnackBar": MessageLookupByLibrary.simpleMessage(
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "welcomeText": MessageLookupByLibrary.simpleMessage(
+            "RealTimeChat: A real time messaging app for seamless real-time communication."),
+        "wrongEmailOrPassword": MessageLookupByLibrary.simpleMessage(
             "Incorrect email or password. Try again"),
         "you": MessageLookupByLibrary.simpleMessage("You"),
         "yourEmail": MessageLookupByLibrary.simpleMessage("Your email:")

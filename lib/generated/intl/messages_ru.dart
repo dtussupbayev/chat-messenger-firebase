@@ -38,6 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailFormValidatorText":
             MessageLookupByLibrary.simpleMessage("Введите правильную почту"),
         "enter": MessageLookupByLibrary.simpleMessage("Войти"),
+        "enterAValidLastName":
+            MessageLookupByLibrary.simpleMessage("Введите правильную фамилию"),
+        "enterAValidName":
+            MessageLookupByLibrary.simpleMessage("Введите правильное имя"),
+        "enterYourFirstName":
+            MessageLookupByLibrary.simpleMessage("Введите свое имя"),
+        "enterYourLastName":
+            MessageLookupByLibrary.simpleMessage("Введите свою фамилию"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "firstName": MessageLookupByLibrary.simpleMessage("Имя:"),
         "firstNameFormHintText":
@@ -49,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastName": MessageLookupByLibrary.simpleMessage("Фамилия:"),
         "lastNameFormHintText":
             MessageLookupByLibrary.simpleMessage("Введите фамилию"),
+        "letsStart": MessageLookupByLibrary.simpleMessage("Давайте начнем"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
         "moreInformationHere":
             MessageLookupByLibrary.simpleMessage("Больше информации здесь"),
@@ -79,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "systemTheme": MessageLookupByLibrary.simpleMessage("Системная тема"),
         "typeAMessage":
             MessageLookupByLibrary.simpleMessage("Введите сообщение"),
+        "undefinedLoginError": MessageLookupByLibrary.simpleMessage(
+            "Неопределенная ошибка при входе."),
         "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
             "Информация о пользователе недоступна"),
         "userNotFoundText": MessageLookupByLibrary.simpleMessage(
@@ -87,7 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Письмо с подтверждением было отправлено на вашу электронную почту."),
         "verifyEmailScreenAppBarTitle":
             MessageLookupByLibrary.simpleMessage("Верификация Email адреса"),
-        "wrongEmailOrPasswordSnackBar": MessageLookupByLibrary.simpleMessage(
+        "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать"),
+        "welcomeText": MessageLookupByLibrary.simpleMessage(
+            "RealTimeChat: Приложение для обмена сообщениями в режиме реального времени для беспрепятственного общения в реальном времени."),
+        "wrongEmailOrPassword": MessageLookupByLibrary.simpleMessage(
             "Неправильный email или пароль. Повторите попытку"),
         "you": MessageLookupByLibrary.simpleMessage("Вы"),
         "yourEmail": MessageLookupByLibrary.simpleMessage("Ваш Email:")
