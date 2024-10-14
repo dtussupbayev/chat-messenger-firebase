@@ -1,5 +1,12 @@
 include: package:flutter_lints/flutter.yaml
+language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
 errors:
+    missing_required_param: error
+    missing_return: error
+    record_literal_one_positional_no_trailing_comma: error
     always_declare_return_types: error
     annotate_overrides: warning
     avoid_bool_literals_in_conditional_expressions: info
@@ -84,7 +91,6 @@ errors:
     noop_primitive_operations: warning
     null_check_on_nullable_type_parameter: error
     null_closures: error
-    one_member_abstracts: info
     only_throw_errors: error
     overridden_fields: error
     package_names: error
@@ -264,7 +270,6 @@ linter:
     - noop_primitive_operations
     - null_check_on_nullable_type_parameter
     - null_closures
-    - one_member_abstracts
     - only_throw_errors
     - overridden_fields
     - package_names
