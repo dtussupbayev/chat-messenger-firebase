@@ -65,11 +65,11 @@ final router = GoRouter(
           },
         ),
         GoRoute(
-          path: 'chat/:uid',
+          path: 'chat/:chatRoomId',
           name: ChatScreen.routeName,
           builder: (context, state) {
             return ChatScreen(
-              uid: state.pathParameters['uid'] ?? '',
+              chatRoomId: state.pathParameters['chatRoomId'] ?? '',
               firstName: state.uri.queryParameters['firstName'] ?? '',
               lastName: state.uri.queryParameters['lastName'] ?? '',
             );

@@ -28,7 +28,6 @@ class ChatRoomList extends StatelessWidget {
                         lastMessage: ds['lastMessage'],
                         lastMessageSendBy: ds['lastMessageSendBy'] ?? '',
                         chatRoomId: ds.id,
-                        myUid: chatsController.uid ?? '',
                         time: ds['lastMessageSendTs'],
                       );
                     }),

@@ -4,7 +4,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/device_preview_app.dart';
+import 'package:flutter_application_1/core/service_locator/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
@@ -28,14 +28,8 @@ void main() async {
 
   await settingsController.loadSettings();
 
-  // runApp(
-  //   App(
-  //     settingsController: settingsController,
-  //     prefs: prefs,
-  //   ),
-  // );
+  initDependencies();
 
-  // Run app in device preview mode
   runApp(
     App(
       settingsController: settingsController,

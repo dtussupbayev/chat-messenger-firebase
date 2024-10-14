@@ -1,5 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/chat/screens/chat_screen.dart';
+import 'package:flutter_application_1/features/chat/presentation/screens/chat_screen.dart';
 import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
@@ -11,13 +12,11 @@ class ChatRoomListTile extends StatefulWidget {
     required this.lastMessage,
     required this.lastMessageSendBy,
     required this.chatRoomId,
-    required this.myUid,
     required this.time,
   });
   final String lastMessage;
   final String lastMessageSendBy;
   final String chatRoomId;
-  final String myUid;
   final String time;
 
   @override
@@ -25,13 +24,12 @@ class ChatRoomListTile extends StatefulWidget {
 }
 
 class _ChatRoomListTileState extends State<ChatRoomListTile> {
+  final myUid = FirebaseAuth.instance.currentUser?.uid ?? '';
   @override
   void initState() {
     super.initState();
 
-    context
-        .read<ChatsController>()
-        .getThisUserInfo(widget.chatRoomId, widget.myUid);
+    context.read<ChatsController>().getThisUserInfo(widget.chatRoomId, myUid);
   }
 
   @override
@@ -42,7 +40,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
           onTap: () {
             context.goNamed(
               ChatScreen.routeName,
-              pathParameters: {'uid': chatsController.id},
+              pathParameters: {'chatRoomId': widget.chatRoomId},
               queryParameters: {
                 'firstName': chatsController.firstName,
                 'lastName': chatsController.lastName,
@@ -80,7 +78,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                           ),
                           Flexible(
                             child: Text(
-                              '${widget.lastMessageSendBy == widget.myUid ? S.of(context).you : ''}: ${widget.lastMessage}',
+                              '${widget.lastMessageSendBy == myUid ? '${S.of(context).you}: ' : ''}${widget.lastMessage}',
                               overflow: TextOverflow.ellipsis,
                               style: Theme.of(context)
                                   .textTheme
