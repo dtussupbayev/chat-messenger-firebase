@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/authentication/verify_email/screens/verify_email_screen.dart';
 import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
       },
       child: const Scaffold(
         body: Center(
-          child: CircularProgressIndicator.adaptive(),
+          child: CupertinoActivityIndicator(),
         ),
       ),
     );

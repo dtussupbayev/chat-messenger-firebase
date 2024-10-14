@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/profile/widgets/arraw_back_button.dart';
 import 'package:flutter_application_1/features/profile/widgets/sign_out_button.dart';
@@ -36,11 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             listener: (context, state) {},
             builder: (context, state) {
               if (state is ProfileLoading) {
-                return const SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator.adaptive(strokeWidth: 2),
-                );
+                return const CupertinoActivityIndicator();
               } else if (state is ProfileError) {
                 return Text(state.message);
               } else if (state is ProfileLoaded) {

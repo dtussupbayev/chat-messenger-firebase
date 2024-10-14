@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
 import 'package:flutter_application_1/features/chats/widgets/chat_room_list_tile.dart';
 import 'package:flutter_application_1/generated/l10n.dart';
@@ -43,7 +43,7 @@ class ChatRoomList extends StatelessWidget {
                     ),
                   )
             : const Center(
-                child: CircularProgressIndicator.adaptive(),
+                child: CupertinoActivityIndicator(),
               );
       },
     );

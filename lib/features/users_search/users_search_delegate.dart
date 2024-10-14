@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/services/firestore_service.dart';
-import '../chat/screens/chat_screen.dart';
+import '../chat/presentation/screens/chat_screen.dart';
 import 'users_search_controller.dart';
 
 class UsersSearchDelegate extends SearchDelegate<String> {
@@ -43,11 +45,11 @@ class UsersSearchDelegate extends SearchDelegate<String> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator.adaptive(),
+            child: CupertinoActivityIndicator(),
           );
         } else if (snapshot.hasError) {
           return Center(
-            child: Text('Error: ${snapshot.error}'),
+            child: Text('${S.current.error}: ${snapshot.error}'),
           );
         } else {
           return SearchResultListView(
