@@ -9,6 +9,10 @@ sealed class AuthenticationState extends Equatable {
 
 final class AuthenticationInitial extends AuthenticationState {}
 
+final class AuthenticationFirstRun extends AuthenticationState {}
+
+final class AuthenticationNotAuthenticated extends AuthenticationState {}
+
 final class AuthenticationSplash extends AuthenticationState {}
 
 final class AuthenticationNotVerified extends AuthenticationState {}

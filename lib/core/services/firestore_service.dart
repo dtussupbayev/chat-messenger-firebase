@@ -3,42 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class FirestoreService {
-  static Future<void> addUserDetails(
-    Map<String, dynamic> userInfoMap,
-    String uid,
-  ) async {
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(uid)
-        .set(userInfoMap);
-  }
-
-  static List<String> generateSearchKeywords(
-    String firstname,
-    String lastname,
-  ) {
-    final String lowercaseFirstName = firstname.toLowerCase();
-    final String lowercaseLastName = lastname.toLowerCase();
-
-    final Set<String> substrings = {}
-      ..add(lowercaseFirstName[0])
-      ..addAll(
-        Iterable.generate(
-          lowercaseFirstName.length,
-          (i) => lowercaseFirstName.substring(0, i + 1),
-        ),
-      )
-      ..add(lowercaseLastName[0])
-      ..addAll(
-        Iterable.generate(
-          lowercaseLastName.length,
-          (i) => lowercaseLastName.substring(0, i + 1),
-        ),
-      );
-
-    return substrings.toList();
-  }
-
   static Future<QuerySnapshot> searchUsers(String query) async {
     final String lowercaseQuery = query.toLowerCase();
 
@@ -70,19 +34,6 @@ class FirestoreService {
     }
   }
 
-  static Future<void> addMessage(
-    String chatRoomId,
-    String messageId,
-    Map<String, dynamic> messageInfoMap,
-  ) async {
-    await FirebaseFirestore.instance
-        .collection('chatRooms')
-        .doc(chatRoomId)
-        .collection('messages')
-        .doc(messageId)
-        .set(messageInfoMap);
-  }
-
   static Future<void> updateLastMessageSended(
     String chatRoomId,
     Map<String, dynamic> lastMessageInfoMap,
@@ -91,17 +42,6 @@ class FirestoreService {
         .collection('chatRooms')
         .doc(chatRoomId)
         .set(lastMessageInfoMap, SetOptions(merge: true));
-  }
-
-  static Future<Stream<QuerySnapshot>> getChatRoomMessages(
-    String chatRoomId,
-  ) async {
-    return FirebaseFirestore.instance
-        .collection('chatRooms')
-        .doc(chatRoomId)
-        .collection('messages')
-        .orderBy('time', descending: true)
-        .snapshots();
   }
 
   static Future<Stream<QuerySnapshot>> getChatRooms() async {

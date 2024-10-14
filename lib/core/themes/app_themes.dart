@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// Define the primary and accent colors
-const Color lightThemePrimaryColor =
-    Color(0xFF0277BD); // Cyan Blue for Light Theme
-const Color darkThemePrimaryColor =
-    Color(0xFF01579B); // Deep Blue for Dark Theme
-const Color accentColor =
-    Color(0xFFFFA000); // Golden Orange Accent for both themes
+const Color lightThemePrimaryColor = Color(0xFF713FFE);
+const Color darkThemePrimaryColor = Color(0xFF713FFE);
+const Color accentColor = Color(0xFF9B38FE);
 
 MaterialColor createMaterialColor(Color color) {
   final List strengths = <double>[.05];
@@ -36,7 +32,6 @@ MaterialColor customLightPrimarySwatch =
 MaterialColor customDarkPrimarySwatch =
     createMaterialColor(darkThemePrimaryColor);
 
-// Light Theme
 ThemeData lightTheme() {
   return ThemeData(
     brightness: Brightness.light,
@@ -63,8 +58,8 @@ ThemeData lightTheme() {
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
-        statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
       ),
       iconTheme: IconThemeData(color: Colors.white),
       backgroundColor: lightThemePrimaryColor,
@@ -94,7 +89,7 @@ ThemeData lightTheme() {
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: customLightPrimarySwatch,
     ).copyWith(
-      secondary: accentColor, // Set Accent color
+      secondary: accentColor,
     ),
     inputDecorationTheme: InputDecorationTheme(
       prefixIconColor: lightThemePrimaryColor,
@@ -114,7 +109,6 @@ ThemeData lightTheme() {
   );
 }
 
-// Dark Theme
 ThemeData darkTheme() {
   return ThemeData(
     brightness: Brightness.dark,
@@ -141,8 +135,8 @@ ThemeData darkTheme() {
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.light, // For Android (light icons)
-        statusBarBrightness: Brightness.light, // For iOS (light icons)
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
       ),
       iconTheme: IconThemeData(color: Colors.white),
       backgroundColor: darkThemePrimaryColor,
@@ -173,7 +167,7 @@ ThemeData darkTheme() {
       primarySwatch: customDarkPrimarySwatch,
       brightness: Brightness.dark,
     ).copyWith(
-      secondary: accentColor, // Set Accent color for dark theme too
+      secondary: accentColor,
     ),
     inputDecorationTheme: InputDecorationTheme(
       prefixIconColor: darkThemePrimaryColor,

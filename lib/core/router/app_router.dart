@@ -1,10 +1,11 @@
 import 'package:flutter_application_1/core/screens/splash_screen.dart';
+import 'package:flutter_application_1/features/onboarding/welcome_screen.dart';
 import 'package:flutter_application_1/features/profile/screens/profile_screen.dart';
-import 'package:flutter_application_1/features/authentication/login/screen/login_screen.dart';
-import 'package:flutter_application_1/features/authentication/reset_password/screens/reset_password_screen.dart';
-import 'package:flutter_application_1/features/authentication/sign_up/screens/sign_up_screen.dart';
-import 'package:flutter_application_1/features/authentication/verify_email/screens/verify_email_screen.dart';
-import 'package:flutter_application_1/features/chat/screens/chat_screen.dart';
+import 'package:flutter_application_1/features/authentication/presentation/login/screen/login_screen.dart';
+import 'package:flutter_application_1/features/authentication/presentation/reset_password/screens/reset_password_screen.dart';
+import 'package:flutter_application_1/features/authentication/presentation/sign_up/screens/sign_up_screen.dart';
+import 'package:flutter_application_1/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
+import 'package:flutter_application_1/features/chat/presentation/screens/chat_screen.dart';
 import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
 import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:flutter_application_1/features/settings/settings_screen.dart';
@@ -16,8 +17,11 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       name: SplashScreen.routeName,
-      builder: (context, state) => const SplashScreen(
-      ),
+      builder: (context, state) => const SplashScreen(),
+    ),
+    GoRoute(
+      path: '/welcome',
+      builder: (context, state) => const WelcomeScreen(),
     ),
     GoRoute(
       path: '/auth',
