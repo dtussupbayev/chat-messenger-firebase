@@ -1,5 +1,7 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/services/bloc/authentication_bloc.dart';
+import 'package:flutter_application_1/core/blocs/authentication_bloc.dart';
 import 'package:flutter_application_1/core/screens/splash_screen.dart';
 import 'package:flutter_application_1/core/themes/app_themes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,25 +36,31 @@ class App extends StatelessWidget {
                   router.go(SplashScreen.routeName);
                 }
               },
-              child: MaterialApp.router(
-                routerConfig: router,
-                localizationsDelegates: const [
-                  S.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                locale: settingsController.locale,
-                supportedLocales: const [
-                  Locale('en', ''),
-                  Locale('ru', ''),
-                ],
-                onGenerateTitle: (BuildContext context) =>
-                    S.of(context).appTitle,
-                theme: lightTheme(),
-                darkTheme: darkTheme(),
-                themeMode: settingsController.themeMode,
-                debugShowCheckedModeBanner: false,
+              child: DevicePreview(
+                enabled: !kReleaseMode,
+                builder: (context) => MaterialApp.router(
+                  // ignore: deprecated_member_use
+                  useInheritedMediaQuery: true,
+                  builder: DevicePreview.appBuilder,
+                  routerConfig: router,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  locale: settingsController.locale,
+                  supportedLocales: const [
+                    Locale('en', ''),
+                    Locale('ru', ''),
+                  ],
+                  onGenerateTitle: (BuildContext context) =>
+                      S.of(context).appTitle,
+                  theme: lightTheme(),
+                  darkTheme: darkTheme(),
+                  themeMode: settingsController.themeMode,
+                  debugShowCheckedModeBanner: false,
+                ),
               ),
             ),
           ),

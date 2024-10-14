@@ -37,7 +37,7 @@ void main() async {
 
   // Run app in device preview mode
   runApp(
-    DevicePreviewApp(
+    App(
       settingsController: settingsController,
       prefs: prefs,
     ),
