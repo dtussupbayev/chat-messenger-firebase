@@ -6,7 +6,7 @@ environment:
   sdk: '>=3.5.2 <4.0.0'
 dependencies:
   bloc: ^8.1.4
-  cloud_firestore: ^5.4.3
+  cloud_firestore: ^5.4.4
   day_night_themed_switch: ^1.0.0
   device_preview: ^1.2.0
   email_validator: ^3.0.0
