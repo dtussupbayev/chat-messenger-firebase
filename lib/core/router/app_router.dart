@@ -7,8 +7,7 @@ import 'package:flutter_application_1/features/authentication/presentation/sign_
 import 'package:flutter_application_1/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
 import 'package:flutter_application_1/features/chat/presentation/screens/chat_screen.dart';
 import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
-import 'package:flutter_application_1/features/settings/settings_controller.dart';
-import 'package:flutter_application_1/features/settings/settings_screen.dart';
+import 'package:flutter_application_1/features/settings/screens/settings_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
@@ -59,9 +58,7 @@ final router = GoRouter(
           name: 'settings',
           path: SettingsScreen.routeName,
           builder: (context, state) {
-            final SettingsController settingsController =
-                state.extra! as SettingsController;
-            return SettingsScreen(controller: settingsController);
+            return const SettingsScreen();
           },
         ),
         GoRoute(

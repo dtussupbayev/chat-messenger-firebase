@@ -5,12 +5,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/service_locator/service_locator.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
-import 'app.dart';
-import 'features/settings/settings_controller.dart';
-import 'features/settings/settings_service.dart';
+import 'features/app/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,21 +19,23 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  final prefs = await SharedPreferences.getInstance();
+  final appDir = await getApplicationDocumentsDirectory();
+  debugPrint(appDir.toString());
 
-  final settingsController = SettingsController(
-    settingsService: SettingsService(),
-    prefs: prefs,
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: kIsWeb
+        ? HydratedStorage.webStorageDirectory
+        : await getApplicationDocumentsDirectory(),
   );
-
-  await settingsController.loadSettings();
 
   initDependencies();
 
+  if (kDebugMode) {
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.clear();
+  }
+
   runApp(
-    App(
-      settingsController: settingsController,
-      prefs: prefs,
-    ),
+    const App(),
   );
 }

@@ -61,10 +61,9 @@ ThemeData lightTheme() {
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.dark,
       ),
-      iconTheme: IconThemeData(color: Colors.white),
-      backgroundColor: lightThemePrimaryColor,
+      backgroundColor: Colors.transparent,
       titleTextStyle: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
@@ -139,7 +138,7 @@ ThemeData darkTheme() {
         statusBarBrightness: Brightness.light,
       ),
       iconTheme: IconThemeData(color: Colors.white),
-      backgroundColor: darkThemePrimaryColor,
+      backgroundColor: Colors.transparent,
       titleTextStyle: TextStyle(
         color: Colors.white,
         fontSize: 20,

@@ -1,6 +1,6 @@
 import 'package:day_night_themed_switch/day_night_themed_switch.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/settings/settings_controller.dart';
+import 'package:flutter_application_1/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppThemeSwitcher extends StatelessWidget {
@@ -16,9 +16,13 @@ class AppThemeSwitcher extends StatelessWidget {
         value: Theme.of(context).brightness == Brightness.dark,
         onChanged: (val) {
           if (val) {
-            context.read<SettingsController>().updateThemeMode(ThemeMode.dark);
+            context
+                .read<ThemeBloc>()
+                .add(const UpdateThemeEvent(ThemeMode.dark));
           } else {
-            context.read<SettingsController>().updateThemeMode(ThemeMode.light);
+            context
+                .read<ThemeBloc>()
+                .add(const UpdateThemeEvent(ThemeMode.light));
           }
         },
       ),

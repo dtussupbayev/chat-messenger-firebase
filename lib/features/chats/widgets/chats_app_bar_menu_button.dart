@@ -1,12 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/settings/settings_controller.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 import '../../../generated/l10n.dart';
 import '../../profile/screens/profile_screen.dart';
-import '../../settings/settings_screen.dart';
+import '../../settings/screens/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
   const CMenuButton({
@@ -23,7 +21,6 @@ class CMenuButton extends StatelessWidget {
         if (value == 'settings') {
           context.goNamed(
             SettingsScreen.routeName,
-            extra: context.read<SettingsController>(),
           );
         } else if (value == 'profile') {
           if ((user == null)) {
