@@ -114,5 +114,7 @@
   "welcomeText": "RealTimeChat: Приложение для обмена сообщениями в режиме реального времени для беспрепятственного общения в реальном времени.",
   "@welcomeText": {},
   "undefinedLoginError": "Неопределенная ошибка при входе.",
-  "@undefinedLoginError": {}
+  "@undefinedLoginError": {},
+  "appearance": "Внешний вид",
+  "language": "Язык"
 }

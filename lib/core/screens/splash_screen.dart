@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/blocs/authentication_bloc.dart';
+import 'package:flutter_application_1/features/app/bloc/app_bloc.dart';
 import 'package:flutter_application_1/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
 import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,19 +18,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<AuthenticationBloc>().add(AuthenticationStatusCheck());
+    context.read<AppBloc>().add(const AppStatusChecked());
   }
 
   @override
   Widget build(BuildContext context) {
     final currentPath =
         GoRouter.of(context).routerDelegate.currentConfiguration.uri.toString();
-    return BlocListener<AuthenticationBloc, AuthenticationState>(
+    return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
-        if (state is AuthenticationFirstRun) {
+        if (state is AppOnBoardingRequired) {
           context.go('/welcome');
         }
-        else if (state is AuthenticationSuccess) {
+        else if (state is AppAuthenticated) {
           context.go(
             currentPath == '/' ||
                     currentPath == '/auth/sign-up' ||
@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ? ChatsScreen.routeName
                 : currentPath,
           );
-        } else if (state is AuthenticationNotVerified) {
+        } else if (state is AppNotVerified) {
           context.go(
             currentPath == '/' ||
                     currentPath == '/auth/sign-up' ||
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ? VerifyEmailScreen.routeName
                 : currentPath,
           );
-        } else if (state is AuthenticationNotAuthenticated) {
+        } else if (state is AppUnauthenticated) {
           context.go('/auth');
         }
       },

@@ -112,5 +112,9 @@
   "welcomeText": "RealTimeChat: A real time messaging app for seamless real-time communication.",
   "@welcomeText": {},
   "undefinedLoginError": "Undefined login error.",
-  "@undefinedLoginError": {}
+  "@undefinedLoginError": {},
+  "appearance": "Appearance",
+  "@appearance": {},
+  "language": "Language",
+  "@language": {}
 }

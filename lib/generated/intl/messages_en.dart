@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle":
             MessageLookupByLibrary.simpleMessage("flutter_application_1"),
+        "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel "),
         "chatDetails": MessageLookupByLibrary.simpleMessage("Chat Details"),
         "chatListTileTitle": m0,
@@ -54,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "The list of chats is available only for those signed in the system"),
         "itemListEmpty": MessageLookupByLibrary.simpleMessage(
             "Your messages empty, try to send new message"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name:"),
         "lastNameFormHintText":
             MessageLookupByLibrary.simpleMessage("Enter the last name"),
