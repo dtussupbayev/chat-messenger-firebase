@@ -3,8 +3,8 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_application_1/features/settings/utilities/web_platform_locale.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/settings/utilities/web_platform_locale.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 

@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/features/authentication/domain/entities/user_entity.dart';
+import 'package:realtime_chat_app/features/authentication/domain/entities/user_entity.dart';
 
 abstract interface class IAuthRepository {
   const IAuthRepository();

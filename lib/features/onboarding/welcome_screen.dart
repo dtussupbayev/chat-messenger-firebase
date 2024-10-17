@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/onboarding/welcome_painter.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatefulWidget {

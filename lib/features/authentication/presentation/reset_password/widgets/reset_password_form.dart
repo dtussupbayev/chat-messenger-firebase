@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/presentation/reset_password/widgets/email_form_field.dart';
-import 'package:flutter_application_1/features/authentication/presentation/reset_password/widgets/submit_reset_password_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/reset_password/widgets/email_form_field.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/reset_password/widgets/submit_reset_password_button.dart';
 
 class ResetPasswordForm extends StatelessWidget {
   const ResetPasswordForm({

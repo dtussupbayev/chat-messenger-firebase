@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/app/bloc/app_bloc.dart';
-import 'package:flutter_application_1/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
-import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
+import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
+import 'package:realtime_chat_app/features/chats/screen/chats_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -29,8 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       listener: (context, state) {
         if (state is AppOnBoardingRequired) {
           context.go('/welcome');
-        }
-        else if (state is AppAuthenticated) {
+        } else if (state is AppAuthenticated) {
           context.go(
             currentPath == '/' ||
                     currentPath == '/auth/sign-up' ||

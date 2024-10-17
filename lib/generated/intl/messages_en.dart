@@ -24,8 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle":
-            MessageLookupByLibrary.simpleMessage("flutter_application_1"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("realtime_chat_app"),
         "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel "),
         "chatDetails": MessageLookupByLibrary.simpleMessage("Chat Details"),
@@ -59,7 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastName": MessageLookupByLibrary.simpleMessage("Last Name:"),
         "lastNameFormHintText":
             MessageLookupByLibrary.simpleMessage("Enter the last name"),
-        "letsStart": MessageLookupByLibrary.simpleMessage("Let\'\'s start"),
+        "letsStart": MessageLookupByLibrary.simpleMessage("Let\'s start"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light Theme"),
         "moreInformationHere":
             MessageLookupByLibrary.simpleMessage("More Information Here"),
@@ -102,7 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Verification Email address"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcomeText": MessageLookupByLibrary.simpleMessage(
-            "RealTimeChat: A real time messaging app for seamless real-time communication."),
+            "RealtimeChat: A real time messaging app for seamless communication."),
         "wrongEmailOrPassword": MessageLookupByLibrary.simpleMessage(
             "Incorrect email or password. Try again"),
         "you": MessageLookupByLibrary.simpleMessage("You"),

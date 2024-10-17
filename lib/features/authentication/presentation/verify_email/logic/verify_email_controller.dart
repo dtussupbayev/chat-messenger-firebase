@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/chats/screen/chats_screen.dart';
+import 'package:realtime_chat_app/features/chats/screen/chats_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/snack_bar_service.dart';

@@ -1,6 +1,6 @@
-import 'package:flutter_application_1/core/domain/use_case/base_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/entites/message_entity.dart';
-import 'package:flutter_application_1/features/chat/domain/repositories/chat_repository.dart';
+import 'package:realtime_chat_app/core/domain/use_case/base_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/entites/message_entity.dart';
+import 'package:realtime_chat_app/features/chat/domain/repositories/chat_repository.dart';
 
 class DeleteMessageUseCase implements BaseUseCase<DeleteMessageParams, void> {
   DeleteMessageUseCase({required this.iChatRepository});

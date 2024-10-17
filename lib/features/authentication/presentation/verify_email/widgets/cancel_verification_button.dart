@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/presentation/verify_email/logic/verify_email_controller.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/verify_email/logic/verify_email_controller.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 class CancelVerificationButton extends StatelessWidget {
   const CancelVerificationButton({

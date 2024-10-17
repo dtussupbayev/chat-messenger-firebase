@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/chats/widgets/chat_room_list.dart';
-import 'package:flutter_application_1/features/chats/widgets/search_button.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/chats/widgets/chat_room_list.dart';
+import 'package:realtime_chat_app/features/chats/widgets/search_button.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/chats_app_bar_menu_button.dart';

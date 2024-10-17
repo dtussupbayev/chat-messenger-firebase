@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/core/exceptions/app_exception.dart';
+import 'package:realtime_chat_app/core/exceptions/app_exception.dart';
 
 class AuthException extends AppException {
   AuthException(super.message);

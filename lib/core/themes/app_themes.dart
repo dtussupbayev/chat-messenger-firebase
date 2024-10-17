@@ -70,6 +70,7 @@ ThemeData lightTheme() {
       elevation: 0,
       centerTitle: true,
     ),
+    fontFamily: 'Gilroy',
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         color: lightThemePrimaryColor,

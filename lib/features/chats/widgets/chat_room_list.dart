@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
-import 'package:flutter_application_1/features/chats/widgets/chat_room_list_tile.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/chats/logic/chats_controller.dart';
+import 'package:realtime_chat_app/features/chats/widgets/chat_room_list_tile.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class ChatRoomList extends StatelessWidget {

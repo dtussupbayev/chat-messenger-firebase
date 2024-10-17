@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `flutter_application_1`
+  /// `realtime_chat_app`
   String get appTitle {
     return Intl.message(
-      'flutter_application_1',
+      'realtime_chat_app',
       name: 'appTitle',
       desc: 'The title of the application',
       args: [],
@@ -540,20 +540,20 @@ class S {
     );
   }
 
-  /// `Let''s start`
+  /// `Let's start`
   String get letsStart {
     return Intl.message(
-      'Let\'\'s start',
+      'Let\'s start',
       name: 'letsStart',
       desc: '',
       args: [],
     );
   }
 
-  /// `RealTimeChat: A real time messaging app for seamless real-time communication.`
+  /// `RealtimeChat: A real time messaging app for seamless communication.`
   String get welcomeText {
     return Intl.message(
-      'RealTimeChat: A real time messaging app for seamless real-time communication.',
+      'RealtimeChat: A real time messaging app for seamless communication.',
       name: 'welcomeText',
       desc: '',
       args: [],

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/chat/presentation/screens/chat_screen.dart';
-import 'package:flutter_application_1/features/chats/logic/chats_controller.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
+import 'package:realtime_chat_app/features/chats/logic/chats_controller.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 

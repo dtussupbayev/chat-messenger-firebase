@@ -5,24 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_application_1",
+            "name": "realtime_chat_app",
             "request": "launch",
             "type": "dart",
         },
         {
-            "name": "flutter_application_1 Web",
+            "name": "realtime_chat_app Web",
             "request": "launch",
             "type": "dart",
             "args": ["--web-port", "5050"]
         },
         {
-            "name": "flutter_application_1 (profile mode)",
+            "name": "realtime_chat_app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "flutter_application_1 (release mode)",
+            "name": "realtime_chat_app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_application_1/core/exceptions/app_exception.dart';
-import 'package:flutter_application_1/features/authentication/data/exceptions/auth_exception.dart';
-import 'package:flutter_application_1/features/authentication/domain/entities/user_entity.dart';
-import 'package:flutter_application_1/features/authentication/domain/repositories/auth_repository.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/core/exceptions/app_exception.dart';
+import 'package:realtime_chat_app/features/authentication/data/exceptions/auth_exception.dart';
+import 'package:realtime_chat_app/features/authentication/domain/entities/user_entity.dart';
+import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 class AuthRepositoryImpl implements IAuthRepository {
   const AuthRepositoryImpl();

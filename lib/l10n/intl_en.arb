@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "flutter_application_1",
+  "appTitle": "realtime_chat_app",
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -107,9 +107,9 @@
   "@enterAValidLastName": {},
   "welcome": "Welcome",
   "@welcome": {},
-  "letsStart": "Let''s start",
+  "letsStart": "Let's start",
   "@letsStart": {},
-  "welcomeText": "RealTimeChat: A real time messaging app for seamless real-time communication.",
+  "welcomeText": "RealtimeChat: A real time messaging app for seamless communication.",
   "@welcomeText": {},
   "undefinedLoginError": "Undefined login error.",
   "@undefinedLoginError": {},

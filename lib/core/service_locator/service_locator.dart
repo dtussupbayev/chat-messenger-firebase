@@ -1,13 +1,13 @@
-import 'package:flutter_application_1/features/authentication/data/repositories/auth_repository_impl.dart';
-import 'package:flutter_application_1/features/authentication/domain/use_cases/login_use_case.dart';
-import 'package:flutter_application_1/features/authentication/domain/repositories/auth_repository.dart';
-import 'package:flutter_application_1/features/authentication/domain/use_cases/reset_password_use_case.dart';
-import 'package:flutter_application_1/features/authentication/domain/use_cases/sign_up_use_case.dart';
-import 'package:flutter_application_1/features/chat/data/repositories/chat_repository_impl.dart';
-import 'package:flutter_application_1/features/chat/domain/repositories/chat_repository.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/delete_message_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/get_message_list_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/send_message_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/data/repositories/auth_repository_impl.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/reset_password_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
+import 'package:realtime_chat_app/features/chat/data/repositories/chat_repository_impl.dart';
+import 'package:realtime_chat_app/features/chat/domain/repositories/chat_repository.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
 import 'package:get_it/get_it.dart';
 
 final serviceLocator = GetIt.instance;

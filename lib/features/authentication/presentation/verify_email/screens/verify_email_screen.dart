@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/authentication/presentation/verify_email/widgets/cancel_verification_button.dart';
-import 'package:flutter_application_1/features/authentication/presentation/verify_email/widgets/resend_verification_email_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/cancel_verification_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/resend_verification_email_button.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../generated/l10n.dart';

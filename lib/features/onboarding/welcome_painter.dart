@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:ui' as ui;
 
-// Animated Painter that appears at the start screen
-
 class WelcomePainter extends CustomPainter {
   WelcomePainter(this.ratio);
   double ratio = 1;

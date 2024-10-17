@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/onboarding/welcome_screen.dart';
-import 'package:flutter_application_1/core/service_locator/service_locator.dart';
-import 'package:flutter_application_1/core/utils/snack_bar_service.dart';
-import 'package:flutter_application_1/features/authentication/domain/use_cases/sign_up_use_case.dart';
-import 'package:flutter_application_1/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:flutter_application_1/features/authentication/presentation/sign_up/widgets/sign_up_form.dart';
+import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
+import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
+import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/sign_up_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpScreen extends StatelessWidget {

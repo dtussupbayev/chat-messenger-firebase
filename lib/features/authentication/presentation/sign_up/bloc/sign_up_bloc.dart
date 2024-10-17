@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:flutter_application_1/features/authentication/domain/use_cases/sign_up_use_case.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';

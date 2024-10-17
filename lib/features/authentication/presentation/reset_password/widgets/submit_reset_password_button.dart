@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/widgets/app_button_loading_widget.dart';
-import 'package:flutter_application_1/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/core/widgets/app_button_loading_widget.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubmitResetPasswordButton extends StatelessWidget {

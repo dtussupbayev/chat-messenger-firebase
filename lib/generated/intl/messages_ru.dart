@@ -24,8 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle":
-            MessageLookupByLibrary.simpleMessage("flutter_application_1"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("realtime_chat_app"),
         "appearance": MessageLookupByLibrary.simpleMessage("Внешний вид"),
         "cancel": MessageLookupByLibrary.simpleMessage("Отменить"),
         "chatDetails": MessageLookupByLibrary.simpleMessage("Детали чата"),
@@ -90,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "systemTheme": MessageLookupByLibrary.simpleMessage("Системная тема"),
         "typeAMessage":
             MessageLookupByLibrary.simpleMessage("Введите сообщение"),
+        "undefinedError": MessageLookupByLibrary.simpleMessage(
+            "Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку."),
         "undefinedLoginError": MessageLookupByLibrary.simpleMessage(
             "Неопределенная ошибка при входе."),
         "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
@@ -102,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Верификация Email адреса"),
         "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать"),
         "welcomeText": MessageLookupByLibrary.simpleMessage(
-            "RealTimeChat: Приложение для обмена сообщениями в режиме реального времени для беспрепятственного общения в реальном времени."),
+            "RealtimeChat: Приложение для обмена сообщениями в режиме реального времени."),
         "wrongEmailOrPassword": MessageLookupByLibrary.simpleMessage(
             "Неправильный email или пароль. Повторите попытку"),
         "you": MessageLookupByLibrary.simpleMessage("Вы"),

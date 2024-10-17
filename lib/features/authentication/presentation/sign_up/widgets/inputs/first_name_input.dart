@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 class FirstNameInput extends StatelessWidget {
   const FirstNameInput({

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/service_locator/service_locator.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/delete_message_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/get_message_list_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/send_message_use_case.dart';
-import 'package:flutter_application_1/features/chat/presentation/bloc/chat_bloc.dart';
-import 'package:flutter_application_1/features/chat/presentation/widgets/chat_bottom_input_panel.dart';
-import 'package:flutter_application_1/features/chat/presentation/widgets/chat_message_list.dart';
+import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
+import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
+import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_bottom_input_panel.dart';
+import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_message_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChatScreen extends StatelessWidget {

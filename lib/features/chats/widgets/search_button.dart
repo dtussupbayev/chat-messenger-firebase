@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/users_search/users_search_delegate.dart';
+import 'package:realtime_chat_app/features/users_search/users_search_delegate.dart';
 
 class SearchButton extends StatelessWidget {
   const SearchButton({

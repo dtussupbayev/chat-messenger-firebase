@@ -1,11 +1,11 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/screens/splash_screen.dart';
-import 'package:flutter_application_1/features/app/bloc/app_bloc.dart';
-import 'package:flutter_application_1/core/themes/app_themes.dart';
-import 'package:flutter_application_1/features/settings/blocs/locale_bloc/locale_bloc.dart';
-import 'package:flutter_application_1/features/settings/blocs/theme_bloc/theme_bloc.dart';
+import 'package:realtime_chat_app/core/screens/splash_screen.dart';
+import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
+import 'package:realtime_chat_app/core/themes/app_themes.dart';
+import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
+import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../../core/router/app_router.dart';

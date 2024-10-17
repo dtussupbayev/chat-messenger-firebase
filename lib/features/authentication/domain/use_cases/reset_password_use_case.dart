@@ -1,5 +1,5 @@
-import 'package:flutter_application_1/core/domain/use_case/base_use_case.dart';
-import 'package:flutter_application_1/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:realtime_chat_app/core/domain/use_case/base_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
 
 class ResetPasswordParams {
   const ResetPasswordParams({required this.email});

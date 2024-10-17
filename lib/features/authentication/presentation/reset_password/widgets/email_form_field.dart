@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/generated/l10n.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 class EmailFormField extends StatelessWidget {
   const EmailFormField({

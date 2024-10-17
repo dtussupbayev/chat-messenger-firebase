@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:flutter_application_1/features/authentication/domain/use_cases/login_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

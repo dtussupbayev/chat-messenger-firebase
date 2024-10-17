@@ -1,6 +1,6 @@
 {
   "@@locale": "ru",
-  "appTitle": "flutter_application_1",
+  "appTitle": "realtime_chat_app",
   "@appTitle": {
     "description": "Название приложения"
   },
@@ -35,6 +35,8 @@
   "@emailFormValidatorText": {},
   "wrongEmailOrPassword": "Неправильный email или пароль. Повторите попытку",
   "@wrongEmailOrPassword": {},
+  "undefinedError": "Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.",
+  "@undefinedError": {},
   "loginUndefinedError": "Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.",
   "@loginUndefinedError": {},
   "passwordFormValidatorText": "Минимум 6 символов",
@@ -111,10 +113,12 @@
   "@welcome": {},
   "letsStart": "Давайте начнем",
   "@letsStart": {},
-  "welcomeText": "RealTimeChat: Приложение для обмена сообщениями в режиме реального времени для беспрепятственного общения в реальном времени.",
+  "welcomeText": "RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.",
   "@welcomeText": {},
   "undefinedLoginError": "Неопределенная ошибка при входе.",
   "@undefinedLoginError": {},
   "appearance": "Внешний вид",
-  "language": "Язык"
+  "@appearance": {},
+  "language": "Язык",
+  "@language": {}
 }

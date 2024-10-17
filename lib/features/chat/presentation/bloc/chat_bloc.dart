@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:flutter_application_1/features/chat/domain/entites/message_entity.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/delete_message_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/get_message_list_use_case.dart';
-import 'package:flutter_application_1/features/chat/domain/use_cases/send_message_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/entites/message_entity.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
+import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
 
 part 'chat_event.dart';
 part 'chat_state.dart';
