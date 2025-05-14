@@ -1,0 +1,2 @@
+C:/Users/daule/FlutterProjects/chat-messenger-firebase/android/app/.cxx/Debug/363e181w/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/daule/FlutterProjects/chat-messenger-firebase/android/app/.cxx/Debug/363e181w/armeabi-v7a/CMakeFiles/rebuild_cache.dir

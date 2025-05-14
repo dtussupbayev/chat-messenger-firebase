@@ -138,7 +138,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 width: 0.5 * width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.white.withValues(alpha: 0.25),
                 ),
                 child: Center(
                   child: Text(
@@ -168,7 +168,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           child: Text(
             S.of(context).welcome,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
               fontWeight: FontWeight.w900,
               fontSize: 35,
             ),

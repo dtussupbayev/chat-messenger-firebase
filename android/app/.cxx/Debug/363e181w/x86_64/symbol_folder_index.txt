@@ -1,0 +1,1 @@
+C:\Users\daule\FlutterProjects\chat-messenger-firebase\build\app\intermediates\cxx\Debug\363e181w\obj\x86_64

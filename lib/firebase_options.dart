@@ -45,37 +45,37 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDKOj2OUNITpQjEevYb3iUqL1PbYnjX528',
-    appId: '1:987841922201:android:36a6a885ae374d72ba2408',
+    appId: '1:987841922201:android:2265d3f38f90ea1cba2408',
     messagingSenderId: '987841922201',
     projectId: 'flutter-application-1-e2362',
-    storageBucket: 'flutter-application-1-e2362.appspot.com',
+    storageBucket: 'flutter-application-1-e2362.firebasestorage.app',
   );
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
-    appId: '1:987841922201:web:b4c8ff92a5892e01ba2408',
+    apiKey: 'AIzaSyAhgXb8HJC6VxwsTj_ShYxXgqtCoyNiPGo',
+    appId: '1:987841922201:web:c8c3effaf826949bba2408',
     messagingSenderId: '987841922201',
     projectId: 'flutter-application-1-e2362',
     authDomain: 'flutter-application-1-e2362.firebaseapp.com',
-    storageBucket: 'flutter-application-1-e2362.appspot.com',
+    storageBucket: 'flutter-application-1-e2362.firebasestorage.app',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAiW7dhxmPm78IKF1FhpIPr8n2S_B2smXM',
-    appId: '1:987841922201:web:b4c8ff92a5892e01ba2408',
+    apiKey: 'AIzaSyAhgXb8HJC6VxwsTj_ShYxXgqtCoyNiPGo',
+    appId: '1:987841922201:web:c8c3effaf826949bba2408',
     messagingSenderId: '987841922201',
     projectId: 'flutter-application-1-e2362',
     authDomain: 'flutter-application-1-e2362.firebaseapp.com',
-    storageBucket: 'flutter-application-1-e2362.appspot.com',
+    storageBucket: 'flutter-application-1-e2362.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyA29Rlv-5MPlepREmM0a2AqCDtZ0PCt4CI',
-    appId: '1:987841922201:ios:e35e6390b7a52f2fba2408',
+    appId: '1:987841922201:ios:6b596995a99cccb0ba2408',
     messagingSenderId: '987841922201',
     projectId: 'flutter-application-1-e2362',
-    storageBucket: 'flutter-application-1-e2362.appspot.com',
-    iosBundleId: 'com.example.flutterApplication1',
+    storageBucket: 'flutter-application-1-e2362.firebasestorage.app',
+    iosBundleId: 'com.realtimechat.app',
   );
 
 }

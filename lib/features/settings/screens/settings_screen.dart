@@ -140,8 +140,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         return S.of(context).darkTheme;
       case ThemeMode.system:
         return S.of(context).systemTheme;
-      default:
-        return '';
     }
   }
 

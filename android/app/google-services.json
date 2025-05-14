@@ -2,14 +2,14 @@
   "project_info": {
     "project_number": "987841922201",
     "project_id": "flutter-application-1-e2362",
-    "storage_bucket": "flutter-application-1-e2362.appspot.com"
+    "storage_bucket": "flutter-application-1-e2362.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:987841922201:android:36a6a885ae374d72ba2408",
+        "mobilesdk_app_id": "1:987841922201:android:2265d3f38f90ea1cba2408",
         "android_client_info": {
-          "package_name": "com.example.realtime_chat_app"
+          "package_name": "com.realtimechat.app"
         }
       },
       "oauth_client": [],

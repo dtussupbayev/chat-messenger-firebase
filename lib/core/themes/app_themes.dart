@@ -8,9 +8,9 @@ const Color accentColor = Color(0xFF9B38FE);
 MaterialColor createMaterialColor(Color color) {
   final List strengths = <double>[.05];
   final Map<int, Color> swatch = {};
-  final int r = color.red;
-  final int g = color.green;
-  final int b = color.blue;
+  final double r = color.r;
+  final double g = color.g;
+  final double b = color.b;
 
   for (int i = 1; i < 10; i++) {
     strengths.add(i * 0.1);
@@ -18,13 +18,13 @@ MaterialColor createMaterialColor(Color color) {
   for (final strength in strengths) {
     final double ds = 0.5 - strength;
     swatch[(strength * 1000).round()] = Color.fromRGBO(
-      r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-      g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-      b + ((ds < 0 ? b : (255 - b)) * ds).round(),
+      r.round() + ((ds < 0 ? r : (255 - r)) * ds).round(),
+      g.round() + ((ds < 0 ? g : (255 - g)) * ds).round(),
+      b.round() + ((ds < 0 ? b : (255 - b)) * ds).round(),
       1,
     );
   }
-  return MaterialColor(color.value, swatch);
+  return MaterialColor(color.toARGB32(), swatch);
 }
 
 MaterialColor customLightPrimarySwatch =
