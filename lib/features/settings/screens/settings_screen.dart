@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtimechat_uikit/uikit.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
   static const routeName = 'settings';
 
   @override
@@ -77,57 +79,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   void _showThemeModeBottomSheet(BuildContext context, ThemeMode currentMode) {
-    showModalBottomSheet<void>(
-      showDragHandle: true,
+    SelectionBottomSheet.show(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-      ),
-      builder: (BuildContext context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: ThemeMode.values.map((mode) {
-            return RadioListTile<ThemeMode>(
-              title: Text(_themeModeToString(mode)),
-              value: mode,
-              groupValue: currentMode,
-              onChanged: (ThemeMode? value) {
-                if (value != null) {
-                  context.read<ThemeBloc>().add(UpdateThemeEvent(value));
-                  Navigator.pop(context);
-                }
-              },
-            );
-          }).toList(),
-        );
+      items: ThemeMode.values,
+      currentItem: currentMode,
+      itemLabelBuilder: _themeModeToString,
+      onItemSelected: (ThemeMode? value) {
+        if (value != null) {
+          context.read<ThemeBloc>().add(UpdateThemeEvent(value));
+        }
       },
     );
   }
 
   void _showLocaleModeBottomSheet(BuildContext context, Locale currentLocale) {
-    showModalBottomSheet<void>(
-      showDragHandle: true,
+    SelectionBottomSheet.show(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-      ),
-      builder: (BuildContext context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: S.delegate.supportedLocales.map((locale) {
-            return RadioListTile<Locale>(
-              title: Text(_localeToString(locale)),
-              value: locale,
-              groupValue: currentLocale,
-              onChanged: (Locale? locale) {
-                if (locale != null) {
-                  context.read<LocaleBloc>().add(UpdateLocale(locale));
-                  Navigator.pop(context);
-                }
-              },
-            );
-          }).toList(),
-        );
+      items: S.delegate.supportedLocales,
+      currentItem: currentLocale,
+      itemLabelBuilder: _localeToString,
+      onItemSelected: (Locale? value) {
+        if (value != null) {
+          context.read<LocaleBloc>().add(UpdateLocale(value));
+        }
       },
     );
   }
