@@ -1,17 +1,26 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/core/services/firestore_service.dart';
+import 'package:realtime_chat_app/core/domain/use_case/base_use_case.dart';
+import 'package:realtime_chat_app/features/chats/domain/use_cases/get_chat_rooms_use_case.dart';
+import 'package:realtime_chat_app/features/chats/domain/use_cases/get_user_info_use_case.dart';
 
 part 'chats_event.dart';
 part 'chats_state.dart';
 
 class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
-  ChatsBloc() : super(const ChatsState()) {
+  ChatsBloc({
+    required GetChatRoomsUseCase getChatRoomsUseCase,
+    required GetUserInfoUseCase getUserInfoUseCase,
+  })  : _getChatRoomsUseCase = getChatRoomsUseCase,
+        _getUserInfoUseCase = getUserInfoUseCase,
+        super(const ChatsState()) {
     on<LoadChats>(_onLoadChats);
     on<GetUserInfo>(_onGetUserInfo);
   }
+
+  final GetChatRoomsUseCase _getChatRoomsUseCase;
+  final GetUserInfoUseCase _getUserInfoUseCase;
 
   Future<void> _onLoadChats(
     LoadChats event,
@@ -19,10 +28,12 @@ class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
   ) async {
     emit(state.copyWith(isLoading: true));
     try {
-      final User? currentUser = FirebaseAuth.instance.currentUser;
+      final firebase_auth.User? currentUser =
+          firebase_auth.FirebaseAuth.instance.currentUser;
       final uid = currentUser?.uid;
 
-      final chatRoomsStream = await FirestoreService.getChatRooms();
+      final chatRoomsStream =
+          await _getChatRoomsUseCase.execute(const NoParams());
 
       emit(
         state.copyWith(
@@ -49,33 +60,30 @@ class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
       final id =
           event.chatRoomId.replaceFirst(event.myUid, '').replaceFirst('_', '');
 
-      final QuerySnapshot querySnapshot =
-          await FirestoreService.getUserInfo(id);
+      final user =
+          await _getUserInfoUseCase.execute(GetUserInfoParams(uid: id));
 
-      String firstName = '';
-      String lastName = '';
+      if (user != null) {
+        final firstName = user.firstName;
+        final lastName = user.lastName;
 
-      if (querySnapshot.docs.isNotEmpty) {
-        firstName = "${querySnapshot.docs[0]["firstName"]}";
-        lastName = "${querySnapshot.docs[0]["lastName"]}";
-      }
+        String firstLetters = '';
+        if (firstName.isNotEmpty) {
+          firstLetters += firstName[0].toUpperCase();
+        }
+        if (lastName.isNotEmpty) {
+          firstLetters += lastName[0].toUpperCase();
+        }
 
-      String firstLetters = '';
-      if (firstName.isNotEmpty) {
-        firstLetters += firstName[0].toUpperCase();
-      }
-      if (lastName.isNotEmpty) {
-        firstLetters += lastName[0].toUpperCase();
-      }
-
-      emit(
-        state.copyWith(
-          id: id,
-          firstName: firstName,
-          lastName: lastName,
+        final updatedUsers = Map<String, UserData>.from(state.users);
+        updatedUsers[id] = UserData(
+          firstName: user.firstName,
+          lastName: user.lastName,
           firstLetters: firstLetters,
-        ),
-      );
+        );
+
+        emit(state.copyWith(users: updatedUsers));
+      }
     } catch (e) {
       emit(state.copyWith(error: e.toString()));
     }

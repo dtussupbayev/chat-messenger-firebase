@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
+import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,7 +22,8 @@ void main() async {
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorageDirectory.web
-        : HydratedStorageDirectory((await getApplicationDocumentsDirectory()).path),
+        : HydratedStorageDirectory(
+            (await getApplicationDocumentsDirectory()).path,),
   );
 
   initDependencies();

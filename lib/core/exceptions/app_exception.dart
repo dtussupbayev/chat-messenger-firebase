@@ -1,5 +1,6 @@
 class AppException implements Exception {
-  AppException(this.message);
+  const AppException(this.message);
+
   final String message;
 
   @override

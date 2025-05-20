@@ -18,17 +18,20 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -60,81 +65,31 @@ class S {
     );
   }
 
+  /// `Appearance`
+  String get appearance {
+    return Intl.message('Appearance', name: 'appearance', desc: '', args: []);
+  }
+
+  /// `Ошибка авторизации: {code} - {message}`
+  String authError(Object code, Object message) {
+    return Intl.message(
+      'Ошибка авторизации: $code - $message',
+      name: 'authError',
+      desc: '',
+      args: [code, message],
+    );
+  }
+
+  /// `Cancel `
+  String get cancel {
+    return Intl.message('Cancel ', name: 'cancel', desc: '', args: []);
+  }
+
   /// `Chat Details`
   String get chatDetails {
     return Intl.message(
       'Chat Details',
       name: 'chatDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `More Information Here`
-  String get moreInformationHere {
-    return Intl.message(
-      'More Information Here',
-      name: 'moreInformationHere',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Chats`
-  String get chats {
-    return Intl.message(
-      'Chats',
-      name: 'chats',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Settings`
-  String get settings {
-    return Intl.message(
-      'Settings',
-      name: 'settings',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `System Theme`
-  String get systemTheme {
-    return Intl.message(
-      'System Theme',
-      name: 'systemTheme',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Light Theme`
-  String get lightTheme {
-    return Intl.message(
-      'Light Theme',
-      name: 'lightTheme',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dark Theme`
-  String get darkTheme {
-    return Intl.message(
-      'Dark Theme',
-      name: 'darkTheme',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign in`
-  String get signInAppBarTitle {
-    return Intl.message(
-      'Sign in',
-      name: 'signInAppBarTitle',
       desc: '',
       args: [],
     );
@@ -147,6 +102,26 @@ class S {
       name: 'chatListTileTitle',
       desc: '',
       args: [id],
+    );
+  }
+
+  /// `Chats`
+  String get chats {
+    return Intl.message('Chats', name: 'chats', desc: '', args: []);
+  }
+
+  /// `Dark Theme`
+  String get darkTheme {
+    return Intl.message('Dark Theme', name: 'darkTheme', desc: '', args: []);
+  }
+
+  /// `Such email is already used, repeat the attempt using another email`
+  String get emailAlreadyInUseSnackBarText {
+    return Intl.message(
+      'Such email is already used, repeat the attempt using another email',
+      name: 'emailAlreadyInUseSnackBarText',
+      desc: '',
+      args: [],
     );
   }
 
@@ -170,221 +145,106 @@ class S {
     );
   }
 
-  /// `Incorrect email or password. Try again`
-  String get wrongEmailOrPassword {
-    return Intl.message(
-      'Incorrect email or password. Try again',
-      name: 'wrongEmailOrPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Unknown error! Try again or contact in support.`
-  String get undefinedError {
-    return Intl.message(
-      'Unknown error! Try again or contact in support.',
-      name: 'undefinedError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `At least 6 characters`
-  String get passwordFormValidatorText {
-    return Intl.message(
-      'At least 6 characters',
-      name: 'passwordFormValidatorText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter the password`
-  String get passwordFormHintText {
-    return Intl.message(
-      'Enter the password',
-      name: 'passwordFormHintText',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Enter`
   String get enter {
+    return Intl.message('Enter', name: 'enter', desc: '', args: []);
+  }
+
+  /// `Enter a Valid Last Name`
+  String get enterAValidLastName {
     return Intl.message(
-      'Enter',
-      name: 'enter',
+      'Enter a Valid Last Name',
+      name: 'enterAValidLastName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign up`
-  String get signUp {
+  /// `Enter a Valid Name`
+  String get enterAValidName {
     return Intl.message(
-      'Sign up',
-      name: 'signUp',
+      'Enter a Valid Name',
+      name: 'enterAValidName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Reset password`
-  String get resetPassword {
+  /// `Enter your first name`
+  String get enterYourFirstName {
     return Intl.message(
-      'Reset password',
-      name: 'resetPassword',
+      'Enter your first name',
+      name: 'enterYourFirstName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Register`
-  String get signUpScreenAppBarTitle {
+  /// `Enter your last name`
+  String get enterYourLastName {
     return Intl.message(
-      'Register',
-      name: 'signUpScreenAppBarTitle',
+      'Enter your last name',
+      name: 'enterYourLastName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Reset password`
-  String get resetPasswordScreenAppBarTitle {
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `The wrong format email.`
+  String get firebase_auth_invalid_email {
     return Intl.message(
-      'Reset password',
-      name: 'resetPasswordScreenAppBarTitle',
+      'The wrong format email.',
+      name: 'firebase_auth_invalid_email',
       desc: '',
       args: [],
     );
   }
 
-  /// `Passwords must match`
-  String get passwordsDifferent {
+  /// `The account is disabled.`
+  String get firebase_auth_user_disabled {
     return Intl.message(
-      'Passwords must match',
-      name: 'passwordsDifferent',
+      'The account is disabled.',
+      name: 'firebase_auth_user_disabled',
       desc: '',
       args: [],
     );
   }
 
-  /// `Such email is already used, repeat the attempt using another email`
-  String get emailAlreadyInUseSnackBarText {
+  /// `User with such an email was not found.`
+  String get firebase_auth_user_not_found {
     return Intl.message(
-      'Such email is already used, repeat the attempt using another email',
-      name: 'emailAlreadyInUseSnackBarText',
+      'User with such an email was not found.',
+      name: 'firebase_auth_user_not_found',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter the password again`
-  String get passwordRepeatFormHintText {
+  /// `Wrong password.`
+  String get firebase_auth_wrong_password {
     return Intl.message(
-      'Enter the password again',
-      name: 'passwordRepeatFormHintText',
+      'Wrong password.',
+      name: 'firebase_auth_wrong_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Such email is unregistered!`
-  String get userNotFoundText {
-    return Intl.message(
-      'Such email is unregistered!',
-      name: 'userNotFoundText',
-      desc: '',
-      args: [],
-    );
+  /// `First Name:`
+  String get firstName {
+    return Intl.message('First Name:', name: 'firstName', desc: '', args: []);
   }
 
-  /// `Password reset. Check the mail`
-  String get successResetPassword {
+  /// `Enter the first name`
+  String get firstNameFormHintText {
     return Intl.message(
-      'Password reset. Check the mail',
-      name: 'successResetPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Reset password`
-  String get resetPasswordButtonText {
-    return Intl.message(
-      'Reset password',
-      name: 'resetPasswordButtonText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Resend`
-  String get resend {
-    return Intl.message(
-      'Resend',
-      name: 'resend',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `A letter with verification was sent to your email.`
-  String get verificationEmailResended {
-    return Intl.message(
-      'A letter with verification was sent to your email.',
-      name: 'verificationEmailResended',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Verification Email address`
-  String get verifyEmailScreenAppBarTitle {
-    return Intl.message(
-      'Verification Email address',
-      name: 'verifyEmailScreenAppBarTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Cancel `
-  String get cancel {
-    return Intl.message(
-      'Cancel ',
-      name: 'cancel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign out`
-  String get signOut {
-    return Intl.message(
-      'Sign out',
-      name: 'signOut',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your email:`
-  String get yourEmail {
-    return Intl.message(
-      'Your email:',
-      name: 'yourEmail',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Profile`
-  String get profile {
-    return Intl.message(
-      'Profile',
-      name: 'profile',
+      'Enter the first name',
+      name: 'firstNameFormHintText',
       desc: '',
       args: [],
     );
@@ -410,34 +270,14 @@ class S {
     );
   }
 
-  /// `First Name:`
-  String get firstName {
-    return Intl.message(
-      'First Name:',
-      name: 'firstName',
-      desc: '',
-      args: [],
-    );
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 
   /// `Last Name:`
   String get lastName {
-    return Intl.message(
-      'Last Name:',
-      name: 'lastName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter the first name`
-  String get firstNameFormHintText {
-    return Intl.message(
-      'Enter the first name',
-      name: 'firstNameFormHintText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Last Name:', name: 'lastName', desc: '', args: []);
   }
 
   /// `Enter the last name`
@@ -450,21 +290,161 @@ class S {
     );
   }
 
-  /// `Error`
-  String get error {
+  /// `Let's start`
+  String get letsStart {
+    return Intl.message('Let\'s start', name: 'letsStart', desc: '', args: []);
+  }
+
+  /// `Light Theme`
+  String get lightTheme {
+    return Intl.message('Light Theme', name: 'lightTheme', desc: '', args: []);
+  }
+
+  /// `More Information Here`
+  String get moreInformationHere {
     return Intl.message(
-      'Error',
-      name: 'error',
+      'More Information Here',
+      name: 'moreInformationHere',
       desc: '',
       args: [],
     );
   }
 
-  /// `User information not available`
-  String get userInformationNotAvailable {
+  /// `Enter the password`
+  String get passwordFormHintText {
     return Intl.message(
-      'User information not available',
-      name: 'userInformationNotAvailable',
+      'Enter the password',
+      name: 'passwordFormHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At least 6 characters`
+  String get passwordFormValidatorText {
+    return Intl.message(
+      'At least 6 characters',
+      name: 'passwordFormValidatorText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the password again`
+  String get passwordRepeatFormHintText {
+    return Intl.message(
+      'Enter the password again',
+      name: 'passwordRepeatFormHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords must match`
+  String get passwordsDifferent {
+    return Intl.message(
+      'Passwords must match',
+      name: 'passwordsDifferent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message('Resend', name: 'resend', desc: '', args: []);
+  }
+
+  /// `Reset password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPasswordAppBarTitle {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPasswordAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPasswordButtonText {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPasswordButtonText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get resetPasswordScreenAppBarTitle {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPasswordScreenAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Sign in`
+  String get signIn {
+    return Intl.message('Sign in', name: 'signIn', desc: '', args: []);
+  }
+
+  /// `Sign out`
+  String get signOut {
+    return Intl.message('Sign out', name: 'signOut', desc: '', args: []);
+  }
+
+  /// `Sign up`
+  String get signUp {
+    return Intl.message('Sign up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Register`
+  String get signUpScreenAppBarTitle {
+    return Intl.message(
+      'Register',
+      name: 'signUpScreenAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password reset. Check the mail`
+  String get successResetPassword {
+    return Intl.message(
+      'Password reset. Check the mail',
+      name: 'successResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System Theme`
+  String get systemTheme {
+    return Intl.message(
+      'System Theme',
+      name: 'systemTheme',
       desc: '',
       args: [],
     );
@@ -480,81 +460,11 @@ class S {
     );
   }
 
-  /// `You`
-  String get you {
+  /// `Unknown error! Try again or contact in support.`
+  String get undefinedError {
     return Intl.message(
-      'You',
-      name: 'you',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter your first name`
-  String get enterYourFirstName {
-    return Intl.message(
-      'Enter your first name',
-      name: 'enterYourFirstName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter a Valid Name`
-  String get enterAValidName {
-    return Intl.message(
-      'Enter a Valid Name',
-      name: 'enterAValidName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter your last name`
-  String get enterYourLastName {
-    return Intl.message(
-      'Enter your last name',
-      name: 'enterYourLastName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter a Valid Last Name`
-  String get enterAValidLastName {
-    return Intl.message(
-      'Enter a Valid Last Name',
-      name: 'enterAValidLastName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Welcome`
-  String get welcome {
-    return Intl.message(
-      'Welcome',
-      name: 'welcome',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Let's start`
-  String get letsStart {
-    return Intl.message(
-      'Let\'s start',
-      name: 'letsStart',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `RealtimeChat: A real time messaging app for seamless communication.`
-  String get welcomeText {
-    return Intl.message(
-      'RealtimeChat: A real time messaging app for seamless communication.',
-      name: 'welcomeText',
+      'Unknown error! Try again or contact in support.',
+      name: 'undefinedError',
       desc: '',
       args: [],
     );
@@ -570,24 +480,79 @@ class S {
     );
   }
 
-  /// `Appearance`
-  String get appearance {
+  /// `User information not available`
+  String get userInformationNotAvailable {
     return Intl.message(
-      'Appearance',
-      name: 'appearance',
+      'User information not available',
+      name: 'userInformationNotAvailable',
       desc: '',
       args: [],
     );
   }
 
-  /// `Language`
-  String get language {
+  /// `Such email is unregistered!`
+  String get userNotFoundText {
     return Intl.message(
-      'Language',
-      name: 'language',
+      'Such email is unregistered!',
+      name: 'userNotFoundText',
       desc: '',
       args: [],
     );
+  }
+
+  /// `A letter with verification was sent to your email.`
+  String get verificationEmailResended {
+    return Intl.message(
+      'A letter with verification was sent to your email.',
+      name: 'verificationEmailResended',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification Email address`
+  String get verifyEmailScreenAppBarTitle {
+    return Intl.message(
+      'Verification Email address',
+      name: 'verifyEmailScreenAppBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message('Welcome', name: 'welcome', desc: '', args: []);
+  }
+
+  /// `RealtimeChat: A real time messaging app for seamless communication.`
+  String get welcomeText {
+    return Intl.message(
+      'RealtimeChat: A real time messaging app for seamless communication.',
+      name: 'welcomeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect email or password. Try again`
+  String get wrongEmailOrPassword {
+    return Intl.message(
+      'Incorrect email or password. Try again',
+      name: 'wrongEmailOrPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You`
+  String get you {
+    return Intl.message('You', name: 'you', desc: '', args: []);
+  }
+
+  /// `Your email:`
+  String get yourEmail {
+    return Intl.message('Your email:', name: 'yourEmail', desc: '', args: []);
   }
 }
 

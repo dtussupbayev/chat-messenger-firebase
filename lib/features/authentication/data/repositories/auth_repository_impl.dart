@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:realtime_chat_app/core/exceptions/app_exception.dart';
-import 'package:realtime_chat_app/features/authentication/data/exceptions/auth_exception.dart';
+import 'package:realtime_chat_app/features/authentication/data/exceptions/auth_exception.dart'
+    show AuthException;
+import 'package:realtime_chat_app/features/authentication/data/exceptions/firebase_auth_exception_handler.dart'
+    show FirebaseAuthExceptionHandler;
 import 'package:realtime_chat_app/features/authentication/domain/entities/user_entity.dart';
 import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
 
 class AuthRepositoryImpl implements IAuthRepository {
   const AuthRepositoryImpl();
@@ -17,13 +18,9 @@ class AuthRepositoryImpl implements IAuthRepository {
         password: password.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'invalid-credential' || e.code == 'wrong-password') {
-        throw AuthException(S.current.wrongEmailOrPassword);
-      } else {
-        throw AuthException(S.current.undefinedLoginError);
-      }
+      throw FirebaseAuthExceptionHandler.handle(e);
     } catch (e) {
-      throw AppException(S.current.undefinedError);
+      throw AuthException(e.toString());
     }
   }
 

@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
 class FirestoreService {
   static Future<QuerySnapshot> searchUsers(String query) async {
@@ -42,26 +41,6 @@ class FirestoreService {
         .collection('chatRooms')
         .doc(chatRoomId)
         .set(lastMessageInfoMap, SetOptions(merge: true));
-  }
-
-  static Future<Stream<QuerySnapshot>> getChatRooms() async {
-    final User? user = FirebaseAuth.instance.currentUser;
-    debugPrint(user?.email);
-
-    final Stream<QuerySnapshot> sn = FirebaseFirestore.instance
-        .collection('chatRooms')
-        .orderBy('time', descending: true)
-        .where('users', arrayContains: user?.email)
-        .snapshots();
-    debugPrint('sn: $sn');
-    return sn;
-  }
-
-  static Future<QuerySnapshot> getUserInfo(String uid) async {
-    return FirebaseFirestore.instance
-        .collection('users')
-        .where('uid', isEqualTo: uid)
-        .get();
   }
 
   static String getChatRoomIdByUid(String uidTo, String s) {

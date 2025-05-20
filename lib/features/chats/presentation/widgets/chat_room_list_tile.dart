@@ -43,14 +43,17 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
   Widget build(BuildContext context) {
     return BlocBuilder<ChatsBloc, ChatsState>(
       builder: (context, state) {
+        final userId =
+            widget.chatRoomId.replaceFirst(myUid, '').replaceFirst('_', '');
+        final userData = state.users[userId] ?? const UserData.empty();
         return InkWell(
           onTap: () {
             context.goNamed(
               ChatScreen.routeName,
               pathParameters: {'chatRoomId': widget.chatRoomId},
               queryParameters: {
-                'firstName': state.firstName,
-                'lastName': state.lastName,
+                'firstName': userData.firstName,
+                'lastName': userData.lastName,
               },
             );
           },
@@ -66,7 +69,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      child: Text(state.firstLetters),
+                      child: Text(userData.firstLetters),
                     ),
                     const SizedBox(
                       width: 10.0,
@@ -77,7 +80,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '${state.firstName} ${state.lastName}',
+                            '${userData.firstName} ${userData.lastName}',
                             style: const TextStyle(
                               fontSize: 17.0,
                               fontWeight: FontWeight.w500,

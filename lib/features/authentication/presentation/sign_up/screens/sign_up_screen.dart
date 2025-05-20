@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
-import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
+import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
@@ -15,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          SignUpBloc(signUpUseCase: serviceLocator.get<SignUpUseCase>()),
+          SignUpBloc(signUpUseCase: getIt.get<SignUpUseCase>()),
       child: BlocListener<SignUpBloc, SignUpState>(
         listener: (context, state) {
           if (state.status == SignUpStatus.failure) {
@@ -47,10 +47,9 @@ class SignUpScreen extends StatelessWidget {
                       const SizedBox(height: 15),
                       Text(
                         'RealTimeChat',
-                        style:
-                            context.textTheme.headlineLarge!.copyWith(
-                                  color: context.colorScheme.primary,
-                                ),
+                        style: context.textTheme.headlineLarge!.copyWith(
+                          color: context.colorScheme.primary,
+                        ),
                       ),
                       const SizedBox(height: 30),
                       const SignUpForm(),
