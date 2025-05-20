@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../generated/l10n.dart';
-import '../../profile/screens/profile_screen.dart';
-import '../../settings/screens/settings_screen.dart';
+import '../../../../generated/l10n.dart';
+import '../../../profile/screens/profile_screen.dart';
+import '../../../settings/screens/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
   const CMenuButton({

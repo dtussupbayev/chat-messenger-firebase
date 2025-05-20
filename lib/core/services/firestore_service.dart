@@ -64,7 +64,7 @@ class FirestoreService {
         .get();
   }
 
-  static String getChatRoomIdbyUid(String uidTo, String s) {
+  static String getChatRoomIdByUid(String uidTo, String s) {
     final User? user = FirebaseAuth.instance.currentUser;
 
     final String currentUserUid = user!.uid;

@@ -1,14 +1,14 @@
+import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/screens/splash_screen.dart';
-import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
-import 'package:realtime_chat_app/features/profile/screens/profile_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/screen/login_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/screens/reset_password_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/screens/sign_up_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
-import 'package:realtime_chat_app/features/chats/screen/chats_screen.dart';
+import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
+import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
+import 'package:realtime_chat_app/features/profile/screens/profile_screen.dart';
 import 'package:realtime_chat_app/features/settings/screens/settings_screen.dart';
-import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
   initialLocation: '/',

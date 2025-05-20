@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/cancel_verification_button.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/resend_verification_email_button.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../../generated/l10n.dart';
-import '../../../../chats/screen/chats_screen.dart';
+import '../../../../chats/presentation/screen/chats_screen.dart';
 import '../logic/verify_email_controller.dart';
 
 class VerifyEmailScreen extends StatefulWidget {

@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
-import 'package:realtime_chat_app/features/chats/logic/chats_controller.dart';
+import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
 class ChatRoomListTile extends StatefulWidget {
   const ChatRoomListTile({
@@ -15,6 +15,7 @@ class ChatRoomListTile extends StatefulWidget {
     required this.chatRoomId,
     required this.time,
   });
+
   final String lastMessage;
   final String lastMessageSendBy;
   final String chatRoomId;
@@ -26,25 +27,30 @@ class ChatRoomListTile extends StatefulWidget {
 
 class _ChatRoomListTileState extends State<ChatRoomListTile> {
   final myUid = FirebaseAuth.instance.currentUser?.uid ?? '';
+
   @override
   void initState() {
     super.initState();
-
-    context.read<ChatsController>().getThisUserInfo(widget.chatRoomId, myUid);
+    context.read<ChatsBloc>().add(
+          GetUserInfo(
+            chatRoomId: widget.chatRoomId,
+            myUid: myUid,
+          ),
+        );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ChatsController>(
-      builder: (context, chatsController, _) {
+    return BlocBuilder<ChatsBloc, ChatsState>(
+      builder: (context, state) {
         return InkWell(
           onTap: () {
             context.goNamed(
               ChatScreen.routeName,
               pathParameters: {'chatRoomId': widget.chatRoomId},
               queryParameters: {
-                'firstName': chatsController.firstName,
-                'lastName': chatsController.lastName,
+                'firstName': state.firstName,
+                'lastName': state.lastName,
               },
             );
           },
@@ -60,7 +66,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      child: Text(chatsController.firstLetters),
+                      child: Text(state.firstLetters),
                     ),
                     const SizedBox(
                       width: 10.0,
@@ -71,7 +77,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '${chatsController.firstName} ${chatsController.lastName}',
+                            '${state.firstName} ${state.lastName}',
                             style: const TextStyle(
                               fontSize: 17.0,
                               fontWeight: FontWeight.w500,
@@ -81,11 +87,9 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                             child: Text(
                               '${widget.lastMessageSendBy == myUid ? '${S.of(context).you}: ' : ''}${widget.lastMessage}',
                               overflow: TextOverflow.ellipsis,
-                              style: context.textTheme.bodyMedium
-                                  ?.copyWith(
-                                    color:
-                                        context.colorScheme.secondary,
-                                  ),
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                color: context.colorScheme.secondary,
+                              ),
                             ),
                           ),
                         ],

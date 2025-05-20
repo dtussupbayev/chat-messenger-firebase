@@ -24,7 +24,7 @@ class UsersSearchController extends ChangeNotifier {
   }
 
   Future<void> createChatRoom(String uidTo, String emailTo) async {
-    final chatRoomId = FirestoreService.getChatRoomIdbyUid(uidTo, user!.uid);
+    final chatRoomId = FirestoreService.getChatRoomIdByUid(uidTo, user!.uid);
 
     final firstUserEmail = user!.email;
     final secondUserEmail = emailTo;
