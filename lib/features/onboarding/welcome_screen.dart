@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
@@ -190,8 +191,8 @@ class GradientIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color color1 = Theme.of(context).colorScheme.primary;
-    final Color color2 = Theme.of(context).colorScheme.secondary;
+    final Color color1 = context.colorScheme.primary;
+    final Color color2 = context.colorScheme.secondary;
 
     return ShaderMask(
       shaderCallback: (bounds) {

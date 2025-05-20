@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
@@ -52,7 +53,7 @@ class ChatScreen extends StatelessWidget {
                       return Center(
                         child: Text(
                           'Empty',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: context.textTheme.bodySmall,
                         ),
                       );
                     }

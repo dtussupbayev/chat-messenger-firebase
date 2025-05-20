@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
@@ -22,7 +23,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return CupertinoTheme(
       data: CupertinoThemeData(
-        brightness: Theme.of(context).brightness == Brightness.light
+        brightness: context.brightness == Brightness.light
             ? Brightness.light
             : Brightness.dark,
       ),
@@ -33,7 +34,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         body: ListView(
           children: [
             CupertinoListSection.insetGrouped(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: context.theme.scaffoldBackgroundColor,
               children: [
                 CupertinoListTile(
                   title: Text(S.of(context).appearance),
@@ -52,7 +53,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ],
             ),
             CupertinoListSection.insetGrouped(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              backgroundColor: context.theme.scaffoldBackgroundColor,
               children: [
                 CupertinoListTile(
                   title: Text(S.of(context).language),

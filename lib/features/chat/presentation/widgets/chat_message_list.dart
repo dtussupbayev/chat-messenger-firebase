@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:realtime_chat_app/features/chat/domain/entites/message_entity.dart';
+import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_message_tile.dart';
 
 class ChatMessageList extends StatelessWidget {

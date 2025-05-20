@@ -1,4 +1,4 @@
-import 'package:realtime_chat_app/features/chat/domain/entites/message_entity.dart';
+import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 
 abstract interface class IChatRepository {
   const IChatRepository();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,7 +16,7 @@ class NavigateToLoginButton extends StatelessWidget {
         S.of(context).enter,
         style: TextStyle(
           decoration: TextDecoration.underline,
-          decorationColor: Theme.of(context).primaryColor,
+          decorationColor: context.theme.primaryColor,
         ),
       ),
     );

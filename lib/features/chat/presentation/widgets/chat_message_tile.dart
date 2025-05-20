@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/features/chat/domain/entites/message_entity.dart';
-import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
+import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
+import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
 
 class ChatMessageTile extends StatelessWidget {
   const ChatMessageTile({
@@ -33,8 +34,8 @@ class ChatMessageTile extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               decoration: BoxDecoration(
                 color: sendByMe
-                    ? Theme.of(context).colorScheme.onSurfaceVariant
-                    : Theme.of(context).colorScheme.onSurface,
+                    ? context.colorScheme.onSurfaceVariant
+                    : context.colorScheme.onSurface,
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(24),
                   bottomRight:
@@ -49,7 +50,7 @@ class ChatMessageTile extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 15.0,
                   fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.surface,
+                  color: context.colorScheme.surface,
                 ),
               ),
             ),

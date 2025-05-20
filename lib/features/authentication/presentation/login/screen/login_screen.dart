@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
 import 'package:realtime_chat_app/core/service_locator/service_locator.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
             // title: Text(S.of(context).signInAppBarTitle),
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
             actions: const [
               Padding(
                 padding: EdgeInsets.only(right: 30.0),
@@ -74,8 +75,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       'RealTimeChat',
                       style:
-                          Theme.of(context).textTheme.headlineLarge!.copyWith(
-                                color: Theme.of(context).colorScheme.primary,
+                            context.textTheme.headlineLarge!.copyWith(
+                                color: context.colorScheme.primary,
                               ),
                     ),
                     const SizedBox(height: 40),

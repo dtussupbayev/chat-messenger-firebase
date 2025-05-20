@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:realtime_chat_app/features/chats/logic/chats_controller.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
@@ -80,12 +81,10 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                             child: Text(
                               '${widget.lastMessageSendBy == myUid ? '${S.of(context).you}: ' : ''}${widget.lastMessage}',
                               overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
+                              style: context.textTheme.bodyMedium
                                   ?.copyWith(
                                     color:
-                                        Theme.of(context).colorScheme.secondary,
+                                        context.colorScheme.secondary,
                                   ),
                             ),
                           ),
@@ -99,7 +98,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                   right: 0,
                   child: Text(
                     widget.time,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: context.textTheme.bodyMedium,
                   ),
                 ),
               ],
