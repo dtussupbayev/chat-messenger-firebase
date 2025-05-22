@@ -14,6 +14,7 @@ class SignUpSubmitted extends SignUpEvent {
     required this.firstName,
     required this.lastName,
   });
+
   final String email;
   final String password;
   final String firstName;

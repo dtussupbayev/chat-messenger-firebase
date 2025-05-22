@@ -31,11 +31,8 @@ class AuthRepositoryImpl implements IAuthRepository {
     String firstName,
     String lastName,
   ) async {
-    final UserCredential userCredential =
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+    final UserCredential userCredential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: password);
     final User? user = userCredential.user;
 
     final userEntity = UserEntity(
@@ -93,9 +90,7 @@ class AuthRepositoryImpl implements IAuthRepository {
   @override
   Future<void> sendResetPasswordEmail(String email) async {
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(
-        email: email.trim(),
-      );
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email.trim());
     } on FirebaseAuthException catch (e) {
       throw FirebaseAuthExceptionHandler.handle(e);
     } catch (e) {

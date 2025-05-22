@@ -12,7 +12,8 @@ part of 'locale_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$LocaleEvent {
@@ -20,47 +21,47 @@ mixin _$LocaleEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Locale? locale) updateLocale,
     required TResult Function() clearState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Locale? locale)? updateLocale,
     TResult? Function()? clearState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Locale? locale)? updateLocale,
+
     TResult Function()? clearState,
+
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UpdateLocale value) updateLocale,
     required TResult Function(ClearState value) clearState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UpdateLocale value)? updateLocale,
     TResult? Function(ClearState value)? clearState,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UpdateLocale value)? updateLocale,
     TResult Function(ClearState value)? clearState,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocaleEventCopyWith<$Res> {
   factory $LocaleEventCopyWith(
-          LocaleEvent value, $Res Function(LocaleEvent) then) =
-      _$LocaleEventCopyWithImpl<$Res, LocaleEvent>;
+    LocaleEvent value,
+    $Res Function(LocaleEvent) then,
+  ) = _$LocaleEventCopyWithImpl<$Res, LocaleEvent>;
 }
 
 /// @nodoc
@@ -80,8 +81,9 @@ class _$LocaleEventCopyWithImpl<$Res, $Val extends LocaleEvent>
 /// @nodoc
 abstract class _$$UpdateLocaleImplCopyWith<$Res> {
   factory _$$UpdateLocaleImplCopyWith(
-          _$UpdateLocaleImpl value, $Res Function(_$UpdateLocaleImpl) then) =
-      __$$UpdateLocaleImplCopyWithImpl<$Res>;
+    _$UpdateLocaleImpl value,
+    $Res Function(_$UpdateLocaleImpl) then,
+  ) = __$$UpdateLocaleImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Locale? locale});
 }
@@ -91,22 +93,23 @@ class __$$UpdateLocaleImplCopyWithImpl<$Res>
     extends _$LocaleEventCopyWithImpl<$Res, _$UpdateLocaleImpl>
     implements _$$UpdateLocaleImplCopyWith<$Res> {
   __$$UpdateLocaleImplCopyWithImpl(
-      _$UpdateLocaleImpl _value, $Res Function(_$UpdateLocaleImpl) _then)
-      : super(_value, _then);
+    _$UpdateLocaleImpl _value,
+    $Res Function(_$UpdateLocaleImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LocaleEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? locale = freezed,
-  }) {
-    return _then(_$UpdateLocaleImpl(
-      freezed == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as Locale?,
-    ));
+  $Res call({Object? locale = freezed}) {
+    return _then(
+      _$UpdateLocaleImpl(
+        freezed == locale
+            ? _value.locale
+            : locale // ignore: cast_nullable_to_non_nullable
+                  as Locale?,
+      ),
+    );
   }
 }
 
@@ -228,8 +231,9 @@ abstract class UpdateLocale implements LocaleEvent {
 /// @nodoc
 abstract class _$$ClearStateImplCopyWith<$Res> {
   factory _$$ClearStateImplCopyWith(
-          _$ClearStateImpl value, $Res Function(_$ClearStateImpl) then) =
-      __$$ClearStateImplCopyWithImpl<$Res>;
+    _$ClearStateImpl value,
+    $Res Function(_$ClearStateImpl) then,
+  ) = __$$ClearStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -237,8 +241,9 @@ class __$$ClearStateImplCopyWithImpl<$Res>
     extends _$LocaleEventCopyWithImpl<$Res, _$ClearStateImpl>
     implements _$$ClearStateImplCopyWith<$Res> {
   __$$ClearStateImplCopyWithImpl(
-      _$ClearStateImpl _value, $Res Function(_$ClearStateImpl) _then)
-      : super(_value, _then);
+    _$ClearStateImpl _value,
+    $Res Function(_$ClearStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LocaleEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -358,8 +363,9 @@ mixin _$LocaleState {
 /// @nodoc
 abstract class $LocaleStateCopyWith<$Res> {
   factory $LocaleStateCopyWith(
-          LocaleState value, $Res Function(LocaleState) then) =
-      _$LocaleStateCopyWithImpl<$Res, LocaleState>;
+    LocaleState value,
+    $Res Function(LocaleState) then,
+  ) = _$LocaleStateCopyWithImpl<$Res, LocaleState>;
   @useResult
   $Res call({@LocaleConverter() Locale locale});
 }
@@ -378,15 +384,16 @@ class _$LocaleStateCopyWithImpl<$Res, $Val extends LocaleState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? locale = null,
-  }) {
-    return _then(_value.copyWith(
-      locale: null == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as Locale,
-    ) as $Val);
+  $Res call({Object? locale = null}) {
+    return _then(
+      _value.copyWith(
+            locale: null == locale
+                ? _value.locale
+                : locale // ignore: cast_nullable_to_non_nullable
+                      as Locale,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -394,8 +401,9 @@ class _$LocaleStateCopyWithImpl<$Res, $Val extends LocaleState>
 abstract class _$$LocaleStateImplCopyWith<$Res>
     implements $LocaleStateCopyWith<$Res> {
   factory _$$LocaleStateImplCopyWith(
-          _$LocaleStateImpl value, $Res Function(_$LocaleStateImpl) then) =
-      __$$LocaleStateImplCopyWithImpl<$Res>;
+    _$LocaleStateImpl value,
+    $Res Function(_$LocaleStateImpl) then,
+  ) = __$$LocaleStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@LocaleConverter() Locale locale});
@@ -406,22 +414,23 @@ class __$$LocaleStateImplCopyWithImpl<$Res>
     extends _$LocaleStateCopyWithImpl<$Res, _$LocaleStateImpl>
     implements _$$LocaleStateImplCopyWith<$Res> {
   __$$LocaleStateImplCopyWithImpl(
-      _$LocaleStateImpl _value, $Res Function(_$LocaleStateImpl) _then)
-      : super(_value, _then);
+    _$LocaleStateImpl _value,
+    $Res Function(_$LocaleStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LocaleState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? locale = null,
-  }) {
-    return _then(_$LocaleStateImpl(
-      locale: null == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as Locale,
-    ));
+  $Res call({Object? locale = null}) {
+    return _then(
+      _$LocaleStateImpl(
+        locale: null == locale
+            ? _value.locale
+            : locale // ignore: cast_nullable_to_non_nullable
+                  as Locale,
+      ),
+    );
   }
 }
 
@@ -472,15 +481,14 @@ class _$LocaleStateImpl with DiagnosticableTreeMixin implements _LocaleState {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LocaleStateImplToJson(
-      this,
-    );
+    return _$$LocaleStateImplToJson(this);
   }
 }
 
 abstract class _LocaleState implements LocaleState {
-  const factory _LocaleState(
-      {@LocaleConverter() required final Locale locale}) = _$LocaleStateImpl;
+  const factory _LocaleState({
+    @LocaleConverter() required final Locale locale,
+  }) = _$LocaleStateImpl;
 
   factory _LocaleState.fromJson(Map<String, dynamic> json) =
       _$LocaleStateImpl.fromJson;

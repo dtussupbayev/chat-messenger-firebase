@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart';
-
 import 'dart:ui' as ui;
+
+import 'package:flutter/material.dart';
 
 class WelcomePainter extends CustomPainter {
   WelcomePainter(this.ratio);
+
   double ratio = 1;
+
   @override
   void paint(Canvas canvas, Size size) {
     final double x = size.width;
@@ -30,25 +32,17 @@ class WelcomePainter extends CustomPainter {
     const Color color2 = Color(0xFF9B38FE);
 
     final Paint paint1 = Paint()
-      ..shader = ui.Gradient.linear(
-        Offset.zero,
-        Offset(0, y * 0.275),
-        [
-          // Color(0xFFf17568),
-          // Color(0xFFe67b6e),
-          color1, color2,
-        ],
-      );
+      ..shader = ui.Gradient.linear(Offset.zero, Offset(0, y * 0.275), [
+        // Color(0xFFf17568),
+        // Color(0xFFe67b6e),
+        color1, color2,
+      ]);
 
     final Paint paint2 = Paint()
-      ..shader = ui.Gradient.linear(
-        Offset(x, y),
-        Offset(0, y * 0.675),
-        [
-          color2,
-          color1,
-        ],
-      );
+      ..shader = ui.Gradient.linear(Offset(x, y), Offset(0, y * 0.675), [
+        color2,
+        color1,
+      ]);
 
     canvas
       ..drawPath(path, paint1)

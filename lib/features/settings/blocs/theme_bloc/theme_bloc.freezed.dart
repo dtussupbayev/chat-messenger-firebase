@@ -12,43 +12,43 @@ part of 'theme_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$ThemeEvent {
   ThemeMode get themeMode => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) updateTheme,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ThemeMode themeMode)? updateTheme,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? updateTheme,
+
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UpdateThemeEvent value) updateTheme,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UpdateThemeEvent value)? updateTheme,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UpdateThemeEvent value)? updateTheme,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 
   /// Create a copy of ThemeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -60,8 +60,9 @@ mixin _$ThemeEvent {
 /// @nodoc
 abstract class $ThemeEventCopyWith<$Res> {
   factory $ThemeEventCopyWith(
-          ThemeEvent value, $Res Function(ThemeEvent) then) =
-      _$ThemeEventCopyWithImpl<$Res, ThemeEvent>;
+    ThemeEvent value,
+    $Res Function(ThemeEvent) then,
+  ) = _$ThemeEventCopyWithImpl<$Res, ThemeEvent>;
   @useResult
   $Res call({ThemeMode themeMode});
 }
@@ -80,24 +81,26 @@ class _$ThemeEventCopyWithImpl<$Res, $Val extends ThemeEvent>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? themeMode = null,
-  }) {
-    return _then(_value.copyWith(
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ) as $Val);
+  $Res call({Object? themeMode = null}) {
+    return _then(
+      _value.copyWith(
+            themeMode: null == themeMode
+                ? _value.themeMode
+                : themeMode // ignore: cast_nullable_to_non_nullable
+                      as ThemeMode,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$UpdateThemeEventImplCopyWith<$Res>
     implements $ThemeEventCopyWith<$Res> {
-  factory _$$UpdateThemeEventImplCopyWith(_$UpdateThemeEventImpl value,
-          $Res Function(_$UpdateThemeEventImpl) then) =
-      __$$UpdateThemeEventImplCopyWithImpl<$Res>;
+  factory _$$UpdateThemeEventImplCopyWith(
+    _$UpdateThemeEventImpl value,
+    $Res Function(_$UpdateThemeEventImpl) then,
+  ) = __$$UpdateThemeEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ThemeMode themeMode});
@@ -107,23 +110,24 @@ abstract class _$$UpdateThemeEventImplCopyWith<$Res>
 class __$$UpdateThemeEventImplCopyWithImpl<$Res>
     extends _$ThemeEventCopyWithImpl<$Res, _$UpdateThemeEventImpl>
     implements _$$UpdateThemeEventImplCopyWith<$Res> {
-  __$$UpdateThemeEventImplCopyWithImpl(_$UpdateThemeEventImpl _value,
-      $Res Function(_$UpdateThemeEventImpl) _then)
-      : super(_value, _then);
+  __$$UpdateThemeEventImplCopyWithImpl(
+    _$UpdateThemeEventImpl _value,
+    $Res Function(_$UpdateThemeEventImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ThemeEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? themeMode = null,
-  }) {
-    return _then(_$UpdateThemeEventImpl(
-      null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ));
+  $Res call({Object? themeMode = null}) {
+    return _then(
+      _$UpdateThemeEventImpl(
+        null == themeMode
+            ? _value.themeMode
+            : themeMode // ignore: cast_nullable_to_non_nullable
+                  as ThemeMode,
+      ),
+    );
   }
 }
 
@@ -159,7 +163,9 @@ class _$UpdateThemeEventImpl implements UpdateThemeEvent {
   @pragma('vm:prefer-inline')
   _$$UpdateThemeEventImplCopyWith<_$UpdateThemeEventImpl> get copyWith =>
       __$$UpdateThemeEventImplCopyWithImpl<_$UpdateThemeEventImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -254,8 +260,9 @@ mixin _$ThemeState {
 /// @nodoc
 abstract class $ThemeStateCopyWith<$Res> {
   factory $ThemeStateCopyWith(
-          ThemeState value, $Res Function(ThemeState) then) =
-      _$ThemeStateCopyWithImpl<$Res, ThemeState>;
+    ThemeState value,
+    $Res Function(ThemeState) then,
+  ) = _$ThemeStateCopyWithImpl<$Res, ThemeState>;
   @useResult
   $Res call({ThemeMode themeMode});
 }
@@ -274,15 +281,16 @@ class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? themeMode = null,
-  }) {
-    return _then(_value.copyWith(
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ) as $Val);
+  $Res call({Object? themeMode = null}) {
+    return _then(
+      _value.copyWith(
+            themeMode: null == themeMode
+                ? _value.themeMode
+                : themeMode // ignore: cast_nullable_to_non_nullable
+                      as ThemeMode,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -290,8 +298,9 @@ class _$ThemeStateCopyWithImpl<$Res, $Val extends ThemeState>
 abstract class _$$ThemeStateImplCopyWith<$Res>
     implements $ThemeStateCopyWith<$Res> {
   factory _$$ThemeStateImplCopyWith(
-          _$ThemeStateImpl value, $Res Function(_$ThemeStateImpl) then) =
-      __$$ThemeStateImplCopyWithImpl<$Res>;
+    _$ThemeStateImpl value,
+    $Res Function(_$ThemeStateImpl) then,
+  ) = __$$ThemeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ThemeMode themeMode});
@@ -302,22 +311,23 @@ class __$$ThemeStateImplCopyWithImpl<$Res>
     extends _$ThemeStateCopyWithImpl<$Res, _$ThemeStateImpl>
     implements _$$ThemeStateImplCopyWith<$Res> {
   __$$ThemeStateImplCopyWithImpl(
-      _$ThemeStateImpl _value, $Res Function(_$ThemeStateImpl) _then)
-      : super(_value, _then);
+    _$ThemeStateImpl _value,
+    $Res Function(_$ThemeStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ThemeState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? themeMode = null,
-  }) {
-    return _then(_$ThemeStateImpl(
-      themeMode: null == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode,
-    ));
+  $Res call({Object? themeMode = null}) {
+    return _then(
+      _$ThemeStateImpl(
+        themeMode: null == themeMode
+            ? _value.themeMode
+            : themeMode // ignore: cast_nullable_to_non_nullable
+                  as ThemeMode,
+      ),
+    );
   }
 }
 
@@ -360,9 +370,7 @@ class _$ThemeStateImpl implements _ThemeState {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ThemeStateImplToJson(
-      this,
-    );
+    return _$$ThemeStateImplToJson(this);
   }
 }
 

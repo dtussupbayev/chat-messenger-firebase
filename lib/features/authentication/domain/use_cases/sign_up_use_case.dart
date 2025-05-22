@@ -16,9 +16,8 @@ class SignUpParams {
 }
 
 class SignUpUseCase implements BaseUseCase<SignUpParams, void> {
-  SignUpUseCase({
-    required this.iAuthRepository,
-  });
+  SignUpUseCase({required this.iAuthRepository});
+
   final IAuthRepository iAuthRepository;
 
   @override

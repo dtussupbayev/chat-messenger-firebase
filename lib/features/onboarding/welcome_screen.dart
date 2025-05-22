@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -86,10 +86,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       body: Stack(
         children: [
           const Center(
-            child: GradientIcon(
-              iconData: Icons.textsms_rounded,
-              size: 96,
-            ),
+            child: GradientIcon(iconData: Icons.textsms_rounded, size: 96),
           ),
           CustomPaint(
             painter: WelcomePainter(painterAnimation.value),
@@ -123,10 +120,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           children: [
             Text(
               S.of(context).welcomeText,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ),
+              style: const TextStyle(color: Colors.white, fontSize: 15),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 0.05 * height),
@@ -144,10 +138,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 child: Center(
                   child: Text(
                     S.of(context).letsStart,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
               ),
@@ -181,11 +172,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 }
 
 class GradientIcon extends StatelessWidget {
-  const GradientIcon({
-    super.key,
-    required this.iconData,
-    this.size = 96.0,
-  });
+  const GradientIcon({super.key, required this.iconData, this.size = 96.0});
+
   final IconData iconData;
   final double size;
 
@@ -201,11 +189,7 @@ class GradientIcon extends StatelessWidget {
           tileMode: TileMode.clamp,
         ).createShader(bounds);
       },
-      child: Icon(
-        iconData,
-        size: size,
-        color: Colors.white,
-      ),
+      child: Icon(iconData, size: size, color: Colors.white),
     );
   }
 }

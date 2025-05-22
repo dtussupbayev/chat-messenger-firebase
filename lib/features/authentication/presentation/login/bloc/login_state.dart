@@ -8,6 +8,7 @@ class LoginState extends Equatable {
     this.isPasswordHidden = true,
     this.errorMessage,
   });
+
   final LoginStatus status;
   final bool isPasswordHidden;
   final String? errorMessage;

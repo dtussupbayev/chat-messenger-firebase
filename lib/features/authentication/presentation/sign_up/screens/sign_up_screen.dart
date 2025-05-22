@@ -33,7 +33,8 @@ class SignUpScreen extends StatelessWidget {
           // ),
           body: SafeArea(
             child: SizedBox(
-              height: MediaQuery.sizeOf(context).height -
+              height:
+                  MediaQuery.sizeOf(context).height -
                   MediaQuery.paddingOf(context).top,
               child: Center(
                 child: SingleChildScrollView(

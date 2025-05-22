@@ -32,19 +32,17 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
   void initState() {
     super.initState();
     context.read<ChatsBloc>().add(
-          GetUserInfo(
-            chatRoomId: widget.chatRoomId,
-            myUid: myUid,
-          ),
-        );
+      GetUserInfo(chatRoomId: widget.chatRoomId, myUid: myUid),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChatsBloc, ChatsState>(
       builder: (context, state) {
-        final userId =
-            widget.chatRoomId.replaceFirst(myUid, '').replaceFirst('_', '');
+        final userId = widget.chatRoomId
+            .replaceFirst(myUid, '')
+            .replaceFirst('_', '');
         final userData = state.users[userId] ?? const UserData.empty();
         return InkWell(
           onTap: () {
@@ -71,9 +69,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                       radius: 30,
                       child: Text(userData.firstLetters),
                     ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
+                    const SizedBox(width: 10.0),
                     Expanded(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -103,10 +99,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                 Positioned(
                   top: 0,
                   right: 0,
-                  child: Text(
-                    widget.time,
-                    style: context.textTheme.bodyMedium,
-                  ),
+                  child: Text(widget.time, style: context.textTheme.bodyMedium),
                 ),
               ],
             ),

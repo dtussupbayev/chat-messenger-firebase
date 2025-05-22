@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'buttons/navigate_to_login_button.dart';
+import 'buttons/submit_sign_up_button.dart';
 import 'inputs/email_input.dart';
 import 'inputs/first_name_input.dart';
 import 'inputs/last_name_input.dart';
-import 'buttons/navigate_to_login_button.dart';
 import 'inputs/password_input.dart';
 import 'inputs/password_repeat_input.dart';
-import 'buttons/submit_sign_up_button.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});

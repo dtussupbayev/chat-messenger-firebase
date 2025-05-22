@@ -15,6 +15,7 @@ class ProfileLoaded extends ProfileState {
     required this.firstName,
     required this.lastName,
   });
+
   final String email;
   final String firstName;
   final String lastName;
@@ -27,6 +28,7 @@ class ProfileSignedOut extends ProfileState {}
 
 class ProfileError extends ProfileState {
   ProfileError(this.message);
+
   final String message;
 
   @override

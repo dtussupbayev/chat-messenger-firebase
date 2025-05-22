@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-
 import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
 
 part 'chat_event.dart';
+
 part 'chat_state.dart';
 
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
@@ -21,6 +21,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     on<ChatMessageSended>(_onMessageSended);
     on<ChatMessageDeleted>(_onMessageDeleted);
   }
+
   final GetMessageListUseCase getMessageListUseCase;
   final SendMessageUseCase sendMessageUseCase;
   final DeleteMessageUseCase deleteMessageUseCase;
@@ -33,13 +34,9 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
 
     await emit.forEach<List<MessageEntity>>(
       getMessageListUseCase.execute(event.chatRoomId),
-      onData: (messages) => state.copyWith(
-        status: ChatStatus.success,
-        messages: messages,
-      ),
-      onError: (_, __) => state.copyWith(
-        status: ChatStatus.failure,
-      ),
+      onData: (messages) =>
+          state.copyWith(status: ChatStatus.success, messages: messages),
+      onError: (_, __) => state.copyWith(status: ChatStatus.failure),
     );
   }
 
@@ -57,10 +54,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
     Emitter<ChatState> emit,
   ) async {
     await deleteMessageUseCase.execute(
-      DeleteMessageParams(
-        message: event.message,
-        chatRoomId: event.chatRoomId,
-      ),
+      DeleteMessageParams(message: event.message, chatRoomId: event.chatRoomId),
     );
   }
 }

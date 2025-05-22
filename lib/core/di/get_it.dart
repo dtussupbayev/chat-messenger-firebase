@@ -19,19 +19,11 @@ final getIt = GetIt.instance;
 
 void initDependencies() {
   getIt
-    ..registerLazySingleton<ChatsDataSource>(
-      ChatsFirebaseDataSource.new,
-    )
-    ..registerLazySingleton<IAuthRepository>(
-      () => const AuthRepositoryImpl(),
-    )
-    ..registerLazySingleton<IChatRepository>(
-      () => const ChatRepositoryImpl(),
-    )
+    ..registerLazySingleton<ChatsDataSource>(ChatsFirebaseDataSource.new)
+    ..registerLazySingleton<IAuthRepository>(() => const AuthRepositoryImpl())
+    ..registerLazySingleton<IChatRepository>(() => const ChatRepositoryImpl())
     ..registerLazySingleton<ChatsRepository>(
-      () => ChatsRepositoryImpl(
-        dataSource: getIt.get<ChatsDataSource>(),
-      ),
+      () => ChatsRepositoryImpl(dataSource: getIt.get<ChatsDataSource>()),
     )
     ..registerLazySingleton<LoginUseCase>(
       () => LoginUseCase(iAuthRepository: getIt.get<IAuthRepository>()),
@@ -40,33 +32,22 @@ void initDependencies() {
       () => SignUpUseCase(iAuthRepository: getIt.get<IAuthRepository>()),
     )
     ..registerLazySingleton<ResetPasswordUseCase>(
-      () => ResetPasswordUseCase(
-        iAuthRepository: getIt.get<IAuthRepository>(),
-      ),
+      () => ResetPasswordUseCase(iAuthRepository: getIt.get<IAuthRepository>()),
     )
     ..registerLazySingleton<SendMessageUseCase>(
-      () => SendMessageUseCase(
-        iChatRepository: getIt.get<IChatRepository>(),
-      ),
+      () => SendMessageUseCase(iChatRepository: getIt.get<IChatRepository>()),
     )
     ..registerLazySingleton<GetMessageListUseCase>(
-      () => GetMessageListUseCase(
-        iChatRepository: getIt.get<IChatRepository>(),
-      ),
+      () =>
+          GetMessageListUseCase(iChatRepository: getIt.get<IChatRepository>()),
     )
     ..registerLazySingleton<DeleteMessageUseCase>(
-      () => DeleteMessageUseCase(
-        iChatRepository: getIt.get<IChatRepository>(),
-      ),
+      () => DeleteMessageUseCase(iChatRepository: getIt.get<IChatRepository>()),
     )
     ..registerLazySingleton<GetChatRoomsUseCase>(
-      () => GetChatRoomsUseCase(
-        repository: getIt.get<ChatsRepository>(),
-      ),
+      () => GetChatRoomsUseCase(repository: getIt.get<ChatsRepository>()),
     )
     ..registerLazySingleton<GetUserInfoUseCase>(
-      () => GetUserInfoUseCase(
-        repository: getIt.get<ChatsRepository>(),
-      ),
+      () => GetUserInfoUseCase(repository: getIt.get<ChatsRepository>()),
     );
 }

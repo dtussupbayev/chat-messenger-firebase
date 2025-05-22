@@ -3,10 +3,7 @@ import 'package:realtime_chat_app/features/authentication/domain/entities/user_e
 abstract interface class IAuthRepository {
   const IAuthRepository();
 
-  Future<void> signInWithEmailAndPassword(
-    String email,
-    String password,
-  );
+  Future<void> signInWithEmailAndPassword(String email, String password);
 
   Future<UserEntity> createUserWithEmailAndPassword(
     String email,

@@ -5,8 +5,9 @@ class FirestoreService {
   static Future<QuerySnapshot> searchUsers(String query) async {
     final String lowercaseQuery = query.toLowerCase();
 
-    final CollectionReference users =
-        FirebaseFirestore.instance.collection('users');
+    final CollectionReference users = FirebaseFirestore.instance.collection(
+      'users',
+    );
 
     final QuerySnapshot querySnapshot = await users
         .where('searchKeywords', arrayContains: lowercaseQuery)

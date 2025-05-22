@@ -19,7 +19,10 @@ class UsersSearchController extends ChangeNotifier {
     return firstLetters;
   }
 
-  Map<String, dynamic> getUserData(AsyncSnapshot<QuerySnapshot<Object?>> snapshot, int index) {
+  Map<String, dynamic> getUserData(
+    AsyncSnapshot<QuerySnapshot<Object?>> snapshot,
+    int index,
+  ) {
     return snapshot.data!.docs[index].data()! as Map<String, dynamic>;
   }
 

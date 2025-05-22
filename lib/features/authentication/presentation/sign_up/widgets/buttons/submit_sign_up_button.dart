@@ -39,13 +39,13 @@ class SubmitSignUpButton extends StatelessWidget {
             }
             if (formKey.currentState!.validate()) {
               context.read<SignUpBloc>().add(
-                    SignUpSubmitted(
-                      email: emailController.text,
-                      password: passwordController.text,
-                      firstName: firstNameController.text,
-                      lastName: lastNameController.text,
-                    ),
-                  );
+                SignUpSubmitted(
+                  email: emailController.text,
+                  password: passwordController.text,
+                  firstName: firstNameController.text,
+                  lastName: lastNameController.text,
+                ),
+              );
             }
           },
           child: Center(

@@ -7,10 +7,7 @@ import '../../../profile/screens/profile_screen.dart';
 import '../../../settings/screens/settings_screen.dart';
 
 class CMenuButton extends StatelessWidget {
-  const CMenuButton({
-    super.key,
-    required this.user,
-  });
+  const CMenuButton({super.key, required this.user});
 
   final User? user;
 
@@ -19,9 +16,7 @@ class CMenuButton extends StatelessWidget {
     return PopupMenuButton<String>(
       onSelected: (value) {
         if (value == 'settings') {
-          context.goNamed(
-            SettingsScreen.routeName,
-          );
+          context.goNamed(SettingsScreen.routeName);
         } else if (value == 'profile') {
           if ((user == null)) {
             context.push('/auth');

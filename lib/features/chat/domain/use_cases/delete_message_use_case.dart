@@ -6,6 +6,7 @@ class DeleteMessageUseCase implements BaseUseCase<DeleteMessageParams, void> {
   DeleteMessageUseCase({required this.iChatRepository});
 
   final IChatRepository iChatRepository;
+
   @override
   Future<void> execute(DeleteMessageParams params) async {
     await iChatRepository.deleteMessage(params.message, params.chatRoomId);

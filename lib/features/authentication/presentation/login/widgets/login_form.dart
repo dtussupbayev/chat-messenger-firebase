@@ -22,13 +22,9 @@ class LoginForm extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            EmailInput(
-              emailTextEditingController: emailController,
-            ),
+            EmailInput(emailTextEditingController: emailController),
             const SizedBox(height: 15),
-            PasswordInput(
-              passwordTextEditingController: passwordController,
-            ),
+            PasswordInput(passwordTextEditingController: passwordController),
             const SizedBox(height: 30),
             SubmitLoginButton(
               emailController: emailController,

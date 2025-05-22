@@ -14,15 +14,15 @@ class ChatRepositoryImpl implements IChatRepository {
         .orderBy('timestamp')
         .snapshots()
         .map((snapshot) {
-      return snapshot.docs.map((doc) {
-        return MessageEntity(
-          messageId: doc.id,
-          messageText: doc['message'],
-          sendBy: doc['sendBy'],
-          timestamp: (doc['timestamp'] as Timestamp).toDate(),
-        );
-      }).toList();
-    });
+          return snapshot.docs.map((doc) {
+            return MessageEntity(
+              messageId: doc.id,
+              messageText: doc['message'],
+              sendBy: doc['sendBy'],
+              timestamp: (doc['timestamp'] as Timestamp).toDate(),
+            );
+          }).toList();
+        });
   }
 
   @override

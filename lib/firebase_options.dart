@@ -77,5 +77,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-application-1-e2362.firebasestorage.app',
     iosBundleId: 'com.realtimechat.app',
   );
-
 }

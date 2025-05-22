@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class EmailFormField extends StatelessWidget {
-  const EmailFormField({
-    super.key,
-    required this.emailController,
-  });
+  const EmailFormField({super.key, required this.emailController});
+
   final TextEditingController emailController;
 
   @override

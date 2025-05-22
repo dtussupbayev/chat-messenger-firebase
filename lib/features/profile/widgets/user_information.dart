@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/profile/bloc/profile_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserInformation extends StatelessWidget {
   const UserInformation({
@@ -10,6 +10,7 @@ class UserInformation extends StatelessWidget {
     required this.firstName,
     required this.lastName,
   });
+
   final String email;
   final String firstName;
   final String lastName;

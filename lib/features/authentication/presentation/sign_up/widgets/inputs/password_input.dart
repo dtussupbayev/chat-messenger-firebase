@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PasswordInput extends StatelessWidget {
-  const PasswordInput({
-    super.key,
-    required this.passwordTextEditingController,
-  });
+  const PasswordInput({super.key, required this.passwordTextEditingController});
 
   final TextEditingController passwordTextEditingController;
 

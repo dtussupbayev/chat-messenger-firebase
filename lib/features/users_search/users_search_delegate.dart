@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 import '../../core/services/firestore_service.dart';
 import '../chat/presentation/screens/chat_screen.dart';
@@ -44,17 +44,11 @@ class UsersSearchDelegate extends SearchDelegate<String> {
       future: FirestoreService.searchUsers(query),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: CupertinoActivityIndicator(),
-          );
+          return const Center(child: CupertinoActivityIndicator());
         } else if (snapshot.hasError) {
-          return Center(
-            child: Text('${S.current.error}: ${snapshot.error}'),
-          );
+          return Center(child: Text('${S.current.error}: ${snapshot.error}'));
         } else {
-          return SearchResultListView(
-            snapshot: snapshot,
-          );
+          return SearchResultListView(snapshot: snapshot);
         }
       },
     );
@@ -62,10 +56,8 @@ class UsersSearchDelegate extends SearchDelegate<String> {
 }
 
 class SearchResultListView extends StatefulWidget {
-  const SearchResultListView({
-    super.key,
-    required this.snapshot,
-  });
+  const SearchResultListView({super.key, required this.snapshot});
+
   final AsyncSnapshot<QuerySnapshot<Object?>> snapshot;
 
   @override
@@ -82,22 +74,16 @@ class _SearchResultListViewState extends State<SearchResultListView> {
         ? ListView.builder(
             itemCount: widget.snapshot.data!.docs.length,
             itemBuilder: (context, index) {
-              final Map<String, dynamic> userData =
-                  searchDelegateController.getUserData(
-                widget.snapshot,
-                index,
-              );
+              final Map<String, dynamic> userData = searchDelegateController
+                  .getUserData(widget.snapshot, index);
 
               final String firstName = userData['firstName'] ?? '';
               final String lastName = userData['lastName'] ?? '';
               final String uid = userData['uid'] ?? '';
               final String email = userData['email'] ?? '';
 
-              final String firstLetters =
-                  searchDelegateController.getFirstLetters(
-                firstName,
-                lastName,
-              );
+              final String firstLetters = searchDelegateController
+                  .getFirstLetters(firstName, lastName);
 
               return GestureDetector(
                 onTap: () async {
@@ -115,16 +101,12 @@ class _SearchResultListViewState extends State<SearchResultListView> {
                   }
                 },
                 child: ListTile(
-                  leading: CircleAvatar(
-                    child: Text(firstLetters),
-                  ),
+                  leading: CircleAvatar(child: Text(firstLetters)),
                   title: Text('$firstName $lastName'),
                 ),
               );
             },
           )
-        : const Center(
-            child: Text(''),
-          );
+        : const Center(child: Text(''));
   }
 }

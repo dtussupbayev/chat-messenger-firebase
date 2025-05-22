@@ -18,10 +18,7 @@ class CancelVerificationButton extends StatelessWidget {
         verifyEmailController.timer?.cancel();
         await FirebaseAuth.instance.signOut();
       },
-      child: Text(
-        S.of(context).cancel,
-        style: const TextStyle(),
-      ),
+      child: Text(S.of(context).cancel, style: const TextStyle()),
     );
   }
 }

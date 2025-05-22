@@ -12,10 +12,7 @@ class LoadChats extends ChatsEvent {
 }
 
 class GetUserInfo extends ChatsEvent {
-  const GetUserInfo({
-    required this.chatRoomId,
-    required this.myUid,
-  });
+  const GetUserInfo({required this.chatRoomId, required this.myUid});
 
   final String chatRoomId;
   final String myUid;

@@ -14,10 +14,7 @@ class SendMessageUseCase implements BaseUseCase<SendMessageParams, void> {
 }
 
 class SendMessageParams {
-  const SendMessageParams({
-    required this.message,
-    required this.chatRoomId,
-  });
+  const SendMessageParams({required this.message, required this.chatRoomId});
 
   final MessageEntity message;
   final String chatRoomId;

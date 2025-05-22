@@ -6,15 +6,16 @@ import 'package:realtime_chat_app/features/chats/domain/use_cases/get_chat_rooms
 import 'package:realtime_chat_app/features/chats/domain/use_cases/get_user_info_use_case.dart';
 
 part 'chats_event.dart';
+
 part 'chats_state.dart';
 
 class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
   ChatsBloc({
     required GetChatRoomsUseCase getChatRoomsUseCase,
     required GetUserInfoUseCase getUserInfoUseCase,
-  })  : _getChatRoomsUseCase = getChatRoomsUseCase,
-        _getUserInfoUseCase = getUserInfoUseCase,
-        super(const ChatsState()) {
+  }) : _getChatRoomsUseCase = getChatRoomsUseCase,
+       _getUserInfoUseCase = getUserInfoUseCase,
+       super(const ChatsState()) {
     on<LoadChats>(_onLoadChats);
     on<GetUserInfo>(_onGetUserInfo);
   }
@@ -22,18 +23,16 @@ class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
   final GetChatRoomsUseCase _getChatRoomsUseCase;
   final GetUserInfoUseCase _getUserInfoUseCase;
 
-  Future<void> _onLoadChats(
-    LoadChats event,
-    Emitter<ChatsState> emit,
-  ) async {
+  Future<void> _onLoadChats(LoadChats event, Emitter<ChatsState> emit) async {
     emit(state.copyWith(isLoading: true));
     try {
       final firebase_auth.User? currentUser =
           firebase_auth.FirebaseAuth.instance.currentUser;
       final uid = currentUser?.uid;
 
-      final chatRoomsStream =
-          await _getChatRoomsUseCase.execute(const NoParams());
+      final chatRoomsStream = await _getChatRoomsUseCase.execute(
+        const NoParams(),
+      );
 
       emit(
         state.copyWith(
@@ -43,12 +42,7 @@ class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
         ),
       );
     } catch (e) {
-      emit(
-        state.copyWith(
-          isLoading: false,
-          error: e.toString(),
-        ),
-      );
+      emit(state.copyWith(isLoading: false, error: e.toString()));
     }
   }
 
@@ -57,11 +51,13 @@ class ChatsBloc extends Bloc<ChatsEvent, ChatsState> {
     Emitter<ChatsState> emit,
   ) async {
     try {
-      final id =
-          event.chatRoomId.replaceFirst(event.myUid, '').replaceFirst('_', '');
+      final id = event.chatRoomId
+          .replaceFirst(event.myUid, '')
+          .replaceFirst('_', '');
 
-      final user =
-          await _getUserInfoUseCase.execute(GetUserInfoParams(uid: id));
+      final user = await _getUserInfoUseCase.execute(
+        GetUserInfoParams(uid: id),
+      );
 
       if (user != null) {
         final firstName = user.firstName;

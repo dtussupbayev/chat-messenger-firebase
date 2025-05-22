@@ -12,9 +12,7 @@ import 'package:realtime_chat_app/generated/l10n.dart';
 import '../widgets/chats_app_bar_menu_button.dart';
 
 class ChatsScreen extends StatelessWidget {
-  const ChatsScreen({
-    super.key,
-  });
+  const ChatsScreen({super.key});
 
   static const routeName = '/chats';
 

@@ -50,9 +50,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   children: [
                     Text(
                       S.of(context).verificationEmailResended,
-                      style: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      style: const TextStyle(fontSize: 20),
                     ),
                     const SizedBox(height: 20),
                     const ResendVerificationEmailButton(),

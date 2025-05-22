@@ -34,10 +34,7 @@ class ChatScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             '$firstName $lastName',
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
         ),
         body: Column(
@@ -66,9 +63,7 @@ class ChatScreen extends StatelessWidget {
                 },
               ),
             ),
-            ChatBottomInputPanel(
-              chatRoomId: chatRoomId,
-            ),
+            ChatBottomInputPanel(chatRoomId: chatRoomId),
           ],
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/widgets/app_button_loading_widget.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubmitResetPasswordButton extends StatelessWidget {
   const SubmitResetPasswordButton({
@@ -10,6 +10,7 @@ class SubmitResetPasswordButton extends StatelessWidget {
     required this.formKey,
     required this.emailController,
   });
+
   final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
 
@@ -21,10 +22,8 @@ class SubmitResetPasswordButton extends StatelessWidget {
           onPressed: () {
             if (formKey.currentState!.validate()) {
               context.read<ResetPasswordBloc>().add(
-                    ResetPasswordSubmitted(
-                      email: emailController.text,
-                    ),
-                  );
+                ResetPasswordSubmitted(email: emailController.text),
+              );
             }
           },
           child: Center(

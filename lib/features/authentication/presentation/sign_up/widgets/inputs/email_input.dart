@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class EmailInput extends StatelessWidget {
-  const EmailInput({
-    super.key,
-    required this.emailTextEditingController,
-  });
+  const EmailInput({super.key, required this.emailTextEditingController});
 
   final TextEditingController emailTextEditingController;
 

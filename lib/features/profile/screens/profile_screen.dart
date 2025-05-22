@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtime_chat_app/features/profile/bloc/profile_bloc.dart';
 import 'package:realtime_chat_app/features/profile/widgets/arraw_back_button.dart';
 import 'package:realtime_chat_app/features/profile/widgets/sign_out_button.dart';
 import 'package:realtime_chat_app/features/profile/widgets/user_information.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:realtime_chat_app/features/profile/bloc/profile_bloc.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -28,9 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         appBar: AppBar(
           leading: const ArrawBackButton(),
           title: Text(S.of(context).profile),
-          actions: const [
-            SignOutButton(),
-          ],
+          actions: const [SignOutButton()],
         ),
         body: Center(
           child: BlocConsumer<ProfileBloc, ProfileState>(

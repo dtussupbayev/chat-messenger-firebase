@@ -1,15 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:provider/provider.dart';
 
 class ChatBottomInputPanel extends StatelessWidget {
-  ChatBottomInputPanel({
-    super.key,
-    required this.chatRoomId,
-  });
+  ChatBottomInputPanel({super.key, required this.chatRoomId});
 
   final String chatRoomId;
   final TextEditingController controller = TextEditingController();
@@ -24,9 +21,7 @@ class ChatBottomInputPanel extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         child: Container(
           padding: const EdgeInsets.fromLTRB(10, 12, 10, 8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-          ),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
           child: TextField(
             controller: controller,
             decoration: InputDecoration(
@@ -45,11 +40,8 @@ class ChatBottomInputPanel extends StatelessWidget {
                     timestamp: DateTime.now(),
                   );
                   context.read<ChatBloc>().add(
-                        ChatMessageSended(
-                          message: message,
-                          chatRoomId: chatRoomId,
-                        ),
-                      );
+                    ChatMessageSended(message: message, chatRoomId: chatRoomId),
+                  );
                   controller.clear();
                 },
                 child: const Icon(Icons.send_rounded),

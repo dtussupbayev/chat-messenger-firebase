@@ -28,9 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             : Brightness.dark,
       ),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.of(context).settings),
-        ),
+        appBar: AppBar(title: Text(S.of(context).settings)),
         body: ListView(
           children: [
             CupertinoListSection.insetGrouped(
@@ -42,9 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     padding: EdgeInsets.zero,
                     child: Text(
                       _themeModeToString(themeMode),
-                      style: const TextStyle(
-                        color: CupertinoColors.activeBlue,
-                      ),
+                      style: const TextStyle(color: CupertinoColors.activeBlue),
                     ),
                     onPressed: () =>
                         _showThemeModeBottomSheet(context, themeMode),
@@ -61,9 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     padding: EdgeInsets.zero,
                     child: Text(
                       _localeToString(context.watch<LocaleBloc>().state.locale),
-                      style: const TextStyle(
-                        color: CupertinoColors.activeBlue,
-                      ),
+                      style: const TextStyle(color: CupertinoColors.activeBlue),
                     ),
                     onPressed: () => _showLocaleModeBottomSheet(
                       context,

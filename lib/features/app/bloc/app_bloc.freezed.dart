@@ -12,7 +12,8 @@ part of 'app_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$AppState {
@@ -24,8 +25,8 @@ mixin _$AppState {
     required TResult Function(User user) authenticated,
     required TResult Function() unAuthenticated,
     required TResult Function() notVerified,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -34,19 +35,24 @@ mixin _$AppState {
     TResult? Function(User user)? authenticated,
     TResult? Function()? unAuthenticated,
     TResult? Function()? notVerified,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+
     TResult Function()? splash,
+
     TResult Function()? onBoardingRequired,
+
     TResult Function(User user)? authenticated,
+
     TResult Function()? unAuthenticated,
+
     TResult Function()? notVerified,
+
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppInitial value) initial,
@@ -55,8 +61,8 @@ mixin _$AppState {
     required TResult Function(AppAuthenticated value) authenticated,
     required TResult Function(AppUnauthenticated value) unAuthenticated,
     required TResult Function(AppNotVerified value) notVerified,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppInitial value)? initial,
@@ -65,8 +71,7 @@ mixin _$AppState {
     TResult? Function(AppAuthenticated value)? authenticated,
     TResult? Function(AppUnauthenticated value)? unAuthenticated,
     TResult? Function(AppNotVerified value)? notVerified,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppInitial value)? initial,
@@ -76,8 +81,7 @@ mixin _$AppState {
     TResult Function(AppUnauthenticated value)? unAuthenticated,
     TResult Function(AppNotVerified value)? notVerified,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -103,8 +107,9 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 /// @nodoc
 abstract class _$$AppInitialImplCopyWith<$Res> {
   factory _$$AppInitialImplCopyWith(
-          _$AppInitialImpl value, $Res Function(_$AppInitialImpl) then) =
-      __$$AppInitialImplCopyWithImpl<$Res>;
+    _$AppInitialImpl value,
+    $Res Function(_$AppInitialImpl) then,
+  ) = __$$AppInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -112,8 +117,9 @@ class __$$AppInitialImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppInitialImpl>
     implements _$$AppInitialImplCopyWith<$Res> {
   __$$AppInitialImplCopyWithImpl(
-      _$AppInitialImpl _value, $Res Function(_$AppInitialImpl) _then)
-      : super(_value, _then);
+    _$AppInitialImpl _value,
+    $Res Function(_$AppInitialImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -232,8 +238,9 @@ abstract class AppInitial implements AppState {
 /// @nodoc
 abstract class _$$AppSplashImplCopyWith<$Res> {
   factory _$$AppSplashImplCopyWith(
-          _$AppSplashImpl value, $Res Function(_$AppSplashImpl) then) =
-      __$$AppSplashImplCopyWithImpl<$Res>;
+    _$AppSplashImpl value,
+    $Res Function(_$AppSplashImpl) then,
+  ) = __$$AppSplashImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -241,8 +248,9 @@ class __$$AppSplashImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppSplashImpl>
     implements _$$AppSplashImplCopyWith<$Res> {
   __$$AppSplashImplCopyWithImpl(
-      _$AppSplashImpl _value, $Res Function(_$AppSplashImpl) _then)
-      : super(_value, _then);
+    _$AppSplashImpl _value,
+    $Res Function(_$AppSplashImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -361,18 +369,19 @@ abstract class AppSplash implements AppState {
 /// @nodoc
 abstract class _$$AppOnBoardingRequiredImplCopyWith<$Res> {
   factory _$$AppOnBoardingRequiredImplCopyWith(
-          _$AppOnBoardingRequiredImpl value,
-          $Res Function(_$AppOnBoardingRequiredImpl) then) =
-      __$$AppOnBoardingRequiredImplCopyWithImpl<$Res>;
+    _$AppOnBoardingRequiredImpl value,
+    $Res Function(_$AppOnBoardingRequiredImpl) then,
+  ) = __$$AppOnBoardingRequiredImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AppOnBoardingRequiredImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppOnBoardingRequiredImpl>
     implements _$$AppOnBoardingRequiredImplCopyWith<$Res> {
-  __$$AppOnBoardingRequiredImplCopyWithImpl(_$AppOnBoardingRequiredImpl _value,
-      $Res Function(_$AppOnBoardingRequiredImpl) _then)
-      : super(_value, _then);
+  __$$AppOnBoardingRequiredImplCopyWithImpl(
+    _$AppOnBoardingRequiredImpl _value,
+    $Res Function(_$AppOnBoardingRequiredImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -491,9 +500,10 @@ abstract class AppOnBoardingRequired implements AppState {
 
 /// @nodoc
 abstract class _$$AppAuthenticatedImplCopyWith<$Res> {
-  factory _$$AppAuthenticatedImplCopyWith(_$AppAuthenticatedImpl value,
-          $Res Function(_$AppAuthenticatedImpl) then) =
-      __$$AppAuthenticatedImplCopyWithImpl<$Res>;
+  factory _$$AppAuthenticatedImplCopyWith(
+    _$AppAuthenticatedImpl value,
+    $Res Function(_$AppAuthenticatedImpl) then,
+  ) = __$$AppAuthenticatedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
 }
@@ -502,23 +512,24 @@ abstract class _$$AppAuthenticatedImplCopyWith<$Res> {
 class __$$AppAuthenticatedImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppAuthenticatedImpl>
     implements _$$AppAuthenticatedImplCopyWith<$Res> {
-  __$$AppAuthenticatedImplCopyWithImpl(_$AppAuthenticatedImpl _value,
-      $Res Function(_$AppAuthenticatedImpl) _then)
-      : super(_value, _then);
+  __$$AppAuthenticatedImplCopyWithImpl(
+    _$AppAuthenticatedImpl _value,
+    $Res Function(_$AppAuthenticatedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? user = null,
-  }) {
-    return _then(_$AppAuthenticatedImpl(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
+  $Res call({Object? user = null}) {
+    return _then(
+      _$AppAuthenticatedImpl(
+        null == user
+            ? _value.user
+            : user // ignore: cast_nullable_to_non_nullable
+                  as User,
+      ),
+    );
   }
 }
 
@@ -553,7 +564,9 @@ class _$AppAuthenticatedImpl implements AppAuthenticated {
   @pragma('vm:prefer-inline')
   _$$AppAuthenticatedImplCopyWith<_$AppAuthenticatedImpl> get copyWith =>
       __$$AppAuthenticatedImplCopyWithImpl<_$AppAuthenticatedImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -656,18 +669,20 @@ abstract class AppAuthenticated implements AppState {
 
 /// @nodoc
 abstract class _$$AppUnauthenticatedImplCopyWith<$Res> {
-  factory _$$AppUnauthenticatedImplCopyWith(_$AppUnauthenticatedImpl value,
-          $Res Function(_$AppUnauthenticatedImpl) then) =
-      __$$AppUnauthenticatedImplCopyWithImpl<$Res>;
+  factory _$$AppUnauthenticatedImplCopyWith(
+    _$AppUnauthenticatedImpl value,
+    $Res Function(_$AppUnauthenticatedImpl) then,
+  ) = __$$AppUnauthenticatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AppUnauthenticatedImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppUnauthenticatedImpl>
     implements _$$AppUnauthenticatedImplCopyWith<$Res> {
-  __$$AppUnauthenticatedImplCopyWithImpl(_$AppUnauthenticatedImpl _value,
-      $Res Function(_$AppUnauthenticatedImpl) _then)
-      : super(_value, _then);
+  __$$AppUnauthenticatedImplCopyWithImpl(
+    _$AppUnauthenticatedImpl _value,
+    $Res Function(_$AppUnauthenticatedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -785,9 +800,10 @@ abstract class AppUnauthenticated implements AppState {
 
 /// @nodoc
 abstract class _$$AppNotVerifiedImplCopyWith<$Res> {
-  factory _$$AppNotVerifiedImplCopyWith(_$AppNotVerifiedImpl value,
-          $Res Function(_$AppNotVerifiedImpl) then) =
-      __$$AppNotVerifiedImplCopyWithImpl<$Res>;
+  factory _$$AppNotVerifiedImplCopyWith(
+    _$AppNotVerifiedImpl value,
+    $Res Function(_$AppNotVerifiedImpl) then,
+  ) = __$$AppNotVerifiedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -795,8 +811,9 @@ class __$$AppNotVerifiedImplCopyWithImpl<$Res>
     extends _$AppStateCopyWithImpl<$Res, _$AppNotVerifiedImpl>
     implements _$$AppNotVerifiedImplCopyWith<$Res> {
   __$$AppNotVerifiedImplCopyWithImpl(
-      _$AppNotVerifiedImpl _value, $Res Function(_$AppNotVerifiedImpl) _then)
-      : super(_value, _then);
+    _$AppNotVerifiedImpl _value,
+    $Res Function(_$AppNotVerifiedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppState
   /// with the given fields replaced by the non-null parameter values.
@@ -917,35 +934,29 @@ mixin _$AppEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() statusCheck,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? statusCheck,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? statusCheck,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppStatusChecked value) statusCheck,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppStatusChecked value)? statusCheck,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AppStatusChecked value)? statusCheck,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -970,18 +981,20 @@ class _$AppEventCopyWithImpl<$Res, $Val extends AppEvent>
 
 /// @nodoc
 abstract class _$$AppStatusCheckedImplCopyWith<$Res> {
-  factory _$$AppStatusCheckedImplCopyWith(_$AppStatusCheckedImpl value,
-          $Res Function(_$AppStatusCheckedImpl) then) =
-      __$$AppStatusCheckedImplCopyWithImpl<$Res>;
+  factory _$$AppStatusCheckedImplCopyWith(
+    _$AppStatusCheckedImpl value,
+    $Res Function(_$AppStatusCheckedImpl) then,
+  ) = __$$AppStatusCheckedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$AppStatusCheckedImplCopyWithImpl<$Res>
     extends _$AppEventCopyWithImpl<$Res, _$AppStatusCheckedImpl>
     implements _$$AppStatusCheckedImplCopyWith<$Res> {
-  __$$AppStatusCheckedImplCopyWithImpl(_$AppStatusCheckedImpl _value,
-      $Res Function(_$AppStatusCheckedImpl) _then)
-      : super(_value, _then);
+  __$$AppStatusCheckedImplCopyWithImpl(
+    _$AppStatusCheckedImpl _value,
+    $Res Function(_$AppStatusCheckedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AppEvent
   /// with the given fields replaced by the non-null parameter values.

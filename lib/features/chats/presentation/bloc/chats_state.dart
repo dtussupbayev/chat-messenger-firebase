@@ -32,13 +32,7 @@ class ChatsState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [
-        chatRoomsStream,
-        uid,
-        users,
-        isLoading,
-        error,
-      ];
+  List<Object?> get props => [chatRoomsStream, uid, users, isLoading, error];
 }
 
 class UserData extends Equatable {
@@ -48,10 +42,7 @@ class UserData extends Equatable {
     required this.firstLetters,
   });
 
-  const UserData.empty()
-      : firstName = '',
-        lastName = '',
-        firstLetters = '';
+  const UserData.empty() : firstName = '', lastName = '', firstLetters = '';
   final String firstName;
   final String lastName;
   final String firstLetters;

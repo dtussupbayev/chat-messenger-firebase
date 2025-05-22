@@ -3,17 +3,20 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-import 'package:realtime_chat_app/features/settings/utilities/web_platform_locale.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:realtime_chat_app/features/settings/utilities/web_platform_locale.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 import 'locale_converter.dart';
 
-part 'locale_event.dart';
-part 'locale_state.dart';
 part 'locale_bloc.freezed.dart';
+
 part 'locale_bloc.g.dart';
+
+part 'locale_event.dart';
+
+part 'locale_state.dart';
 
 class LocaleBloc extends HydratedBloc<LocaleEvent, LocaleState> {
   LocaleBloc() : super(LocaleState(locale: _getInitialLocale())) {

@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m1(id) => "Chat ${id}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("realtime_chat_app"),
     "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),

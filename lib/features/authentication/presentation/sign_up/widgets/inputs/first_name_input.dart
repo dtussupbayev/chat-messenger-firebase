@@ -8,6 +8,7 @@ class FirstNameInput extends StatelessWidget {
   });
 
   final TextEditingController firstNameTextEditingController;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -15,8 +16,8 @@ class FirstNameInput extends StatelessWidget {
       validator: (value) => value!.isEmpty
           ? S.of(context).enterYourFirstName
           : RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]').hasMatch(value)
-              ? S.of(context).enterAValidName
-              : null,
+          ? S.of(context).enterAValidName
+          : null,
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.person),
         hintText: S.of(context).firstNameFormHintText,

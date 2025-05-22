@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 part 'profile_event.dart';
+
 part 'profile_state.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
@@ -12,6 +13,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<LoadProfileInfoEvent>(_onLoadProfileInfo);
     on<SignOutEvent>(_onSignOut);
   }
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> _onLoadProfileInfo(

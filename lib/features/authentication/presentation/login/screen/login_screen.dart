@@ -12,9 +12,7 @@ import 'package:realtime_chat_app/features/chats/presentation/screen/chats_scree
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({
-    super.key,
-  });
+  const LoginScreen({super.key});
 
   static const routeName = '/login';
 
@@ -26,9 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginBloc(
-        loginUseCase: getIt.get<LoginUseCase>(),
-      ),
+      create: (context) => LoginBloc(loginUseCase: getIt.get<LoginUseCase>()),
       child: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

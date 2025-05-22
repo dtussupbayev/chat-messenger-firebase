@@ -15,11 +15,7 @@ class ResetPasswordSubmitted extends ResetPasswordEvent {
   @override
   List<Object> get props => [email];
 
-  ResetPasswordSubmitted copyWith({
-    String? email,
-  }) {
-    return ResetPasswordSubmitted(
-      email: email ?? this.email,
-    );
+  ResetPasswordSubmitted copyWith({String? email}) {
+    return ResetPasswordSubmitted(email: email ?? this.email);
   }
 }

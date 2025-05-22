@@ -5,9 +5,7 @@ import 'package:realtime_chat_app/features/chats/presentation/widgets/chat_room_
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class ChatRoomList extends StatelessWidget {
-  const ChatRoomList({
-    super.key,
-  });
+  const ChatRoomList({super.key});
 
   static const String kLastMessage = 'lastMessage';
   static const String kLastMessageSendBy = 'lastMessageSendBy';
@@ -18,18 +16,14 @@ class ChatRoomList extends StatelessWidget {
     return BlocBuilder<ChatsBloc, ChatsState>(
       builder: (context, state) {
         if (state.isLoading) {
-          return const Center(
-            child: CupertinoActivityIndicator(),
-          );
+          return const Center(child: CupertinoActivityIndicator());
         }
 
         return StreamBuilder(
           stream: state.chatRoomsStream,
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CupertinoActivityIndicator(),
-              );
+              return const Center(child: CupertinoActivityIndicator());
             }
 
             if (snapshot.hasError) {

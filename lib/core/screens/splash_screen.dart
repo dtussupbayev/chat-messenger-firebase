@@ -24,8 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final currentPath =
-        GoRouter.of(context).routerDelegate.currentConfiguration.uri.toString();
+    final currentPath = GoRouter.of(
+      context,
+    ).routerDelegate.currentConfiguration.uri.toString();
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state is AppOnBoardingRequired) {
@@ -50,11 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
           context.go('/auth');
         }
       },
-      child: const Scaffold(
-        body: Center(
-          child: CupertinoActivityIndicator(),
-        ),
-      ),
+      child: const Scaffold(body: Center(child: CupertinoActivityIndicator())),
     );
   }
 }

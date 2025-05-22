@@ -27,10 +27,12 @@ MaterialColor createMaterialColor(Color color) {
   return MaterialColor(color.toARGB32(), swatch);
 }
 
-MaterialColor customLightPrimarySwatch =
-    createMaterialColor(lightThemePrimaryColor);
-MaterialColor customDarkPrimarySwatch =
-    createMaterialColor(darkThemePrimaryColor);
+MaterialColor customLightPrimarySwatch = createMaterialColor(
+  lightThemePrimaryColor,
+);
+MaterialColor customDarkPrimarySwatch = createMaterialColor(
+  darkThemePrimaryColor,
+);
 
 ThemeData lightTheme() {
   return ThemeData(
@@ -77,20 +79,12 @@ ThemeData lightTheme() {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
-      bodyLarge: TextStyle(
-        color: Colors.black,
-        fontSize: 16,
-      ),
-      bodyMedium: TextStyle(
-        color: Colors.black,
-        fontSize: 14,
-      ),
+      bodyLarge: TextStyle(color: Colors.black, fontSize: 16),
+      bodyMedium: TextStyle(color: Colors.black, fontSize: 14),
     ),
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: customLightPrimarySwatch,
-    ).copyWith(
-      secondary: accentColor,
-    ),
+    ).copyWith(secondary: accentColor),
     inputDecorationTheme: InputDecorationTheme(
       prefixIconColor: lightThemePrimaryColor,
       border: OutlineInputBorder(
@@ -154,21 +148,13 @@ ThemeData darkTheme() {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
-      bodyLarge: TextStyle(
-        color: Colors.white,
-        fontSize: 16,
-      ),
-      bodyMedium: TextStyle(
-        color: Colors.white,
-        fontSize: 14,
-      ),
+      bodyLarge: TextStyle(color: Colors.white, fontSize: 16),
+      bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
     ),
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: customDarkPrimarySwatch,
       brightness: Brightness.dark,
-    ).copyWith(
-      secondary: accentColor,
-    ),
+    ).copyWith(secondary: accentColor),
     inputDecorationTheme: InputDecorationTheme(
       prefixIconColor: darkThemePrimaryColor,
       border: OutlineInputBorder(
@@ -181,9 +167,7 @@ ThemeData darkTheme() {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(
-          color: customDarkPrimarySwatch,
-        ),
+        borderSide: BorderSide(color: customDarkPrimarySwatch),
       ),
     ),
   );

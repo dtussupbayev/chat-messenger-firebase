@@ -17,10 +17,7 @@ class ChatSubscriptionRequested extends ChatEvent {
 }
 
 class ChatMessageSended extends ChatEvent {
-  const ChatMessageSended({
-    required this.message,
-    required this.chatRoomId,
-  });
+  const ChatMessageSended({required this.message, required this.chatRoomId});
 
   final MessageEntity message;
   final String chatRoomId;
@@ -30,10 +27,7 @@ class ChatMessageSended extends ChatEvent {
 }
 
 class ChatMessageDeleted extends ChatEvent {
-  const ChatMessageDeleted({
-    required this.message,
-    required this.chatRoomId,
-  });
+  const ChatMessageDeleted({required this.message, required this.chatRoomId});
 
   final MessageEntity message;
   final String chatRoomId;

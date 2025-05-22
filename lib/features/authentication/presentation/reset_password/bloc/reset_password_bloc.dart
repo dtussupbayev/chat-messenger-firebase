@@ -5,12 +5,12 @@ import 'package:equatable/equatable.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/reset_password_use_case.dart';
 
 part 'reset_password_event.dart';
+
 part 'reset_password_state.dart';
 
 class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
-  ResetPasswordBloc({
-    required this.resetPasswordUseCase,
-  }) : super(const ResetPasswordState()) {
+  ResetPasswordBloc({required this.resetPasswordUseCase})
+    : super(const ResetPasswordState()) {
     on<ResetPasswordSubmitted>(_onResetPasswordSubmitted);
   }
 

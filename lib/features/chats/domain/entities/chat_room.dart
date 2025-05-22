@@ -20,11 +20,11 @@ class ChatRoom extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        lastMessage,
-        lastMessageSendBy,
-        lastMessageSendTs,
-        users,
-        time,
-      ];
+    id,
+    lastMessage,
+    lastMessageSendBy,
+    lastMessageSendTs,
+    users,
+    time,
+  ];
 }

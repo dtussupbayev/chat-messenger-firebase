@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/widgets/app_button_loading_widget.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/bloc/login_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubmitLoginButton extends StatelessWidget {
   const SubmitLoginButton({
@@ -11,6 +11,7 @@ class SubmitLoginButton extends StatelessWidget {
     required this.passwordController,
     required this.formKey,
   });
+
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final GlobalKey<FormState> formKey;
@@ -23,11 +24,11 @@ class SubmitLoginButton extends StatelessWidget {
           onPressed: () {
             if (formKey.currentState!.validate()) {
               context.read<LoginBloc>().add(
-                    LoginSubmitted(
-                      email: emailController.text,
-                      password: passwordController.text,
-                    ),
-                  );
+                LoginSubmitted(
+                  email: emailController.text,
+                  password: passwordController.text,
+                ),
+              );
             }
           },
           child: Center(

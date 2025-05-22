@@ -12,9 +12,7 @@ _$ThemeStateImpl _$$ThemeStateImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$ThemeStateImplToJson(_$ThemeStateImpl instance) =>
-    <String, dynamic>{
-      'themeMode': _$ThemeModeEnumMap[instance.themeMode],
-    };
+    <String, dynamic>{'themeMode': _$ThemeModeEnumMap[instance.themeMode]};
 
 const _$ThemeModeEnumMap = {
   ThemeMode.system: 'system',
