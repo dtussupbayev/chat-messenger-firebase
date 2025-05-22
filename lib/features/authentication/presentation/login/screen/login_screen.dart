@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SnackBarService.showSnackBar(
                   context,
                   state.errorMessage ?? '',
-                  error: true,
+                  isError: true,
                 );
               } else if (state.status == LoginStatus.success) {
                 if (context.mounted) {

@@ -68,7 +68,7 @@ class VerifyEmailController extends ChangeNotifier {
         SnackBarService.showSnackBar(
           context,
           '$e',
-          error: true,
+          isError: true,
         );
       }
     }

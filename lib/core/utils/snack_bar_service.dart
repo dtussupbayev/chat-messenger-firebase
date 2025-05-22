@@ -7,7 +7,7 @@ class SnackBarService {
   static void showSnackBar(
     BuildContext context,
     String message, {
-    required bool error,
+    required bool isError,
   }) {
     FocusScope.of(context).unfocus();
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
@@ -19,7 +19,7 @@ class SnackBarService {
           color: Colors.white,
         ),
       ),
-      backgroundColor: error ? errorColor : okColor,
+      backgroundColor: isError ? errorColor : okColor,
     );
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);

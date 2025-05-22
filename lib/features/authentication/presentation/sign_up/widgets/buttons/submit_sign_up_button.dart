@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/core/widgets/app_button_loading_widget.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubmitSignUpButton extends StatelessWidget {
   const SubmitSignUpButton({
@@ -33,7 +33,7 @@ class SubmitSignUpButton extends StatelessWidget {
               SnackBarService.showSnackBar(
                 context,
                 S.of(context).passwordsDifferent,
-                error: true,
+                isError: true,
               );
               return;
             }

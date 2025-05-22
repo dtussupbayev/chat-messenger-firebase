@@ -37,7 +37,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get darkTheme => 'Темная тема';
 
   @override
-  String get emailAlreadyInUseSnackBarText => 'Такой Email уже используется, повторите попытку с использованием другого Email';
+  String get emailAlreadyInUseSnackBarText =>
+      'Такой Email уже используется, повторите попытку с использованием другого Email';
 
   @override
   String get emailFormHintText => 'Введите почту';
@@ -70,7 +71,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get firebase_auth_user_disabled => 'Учетная запись отключена.';
 
   @override
-  String get firebase_auth_user_not_found => 'Пользователь с таким email не найден.';
+  String get firebase_auth_user_not_found =>
+      'Пользователь с таким email не найден.';
 
   @override
   String get firebase_auth_wrong_password => 'Неверный пароль.';
@@ -82,10 +84,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get firstNameFormHintText => 'Введите имя';
 
   @override
-  String get itemListAvailability => 'Список чатов доступен только для вошедших в систему';
+  String get itemListAvailability =>
+      'Список чатов доступен только для вошедших в систему';
 
   @override
-  String get itemListEmpty => 'Здесь нет чатов. Попробуйте отправить первое сообщение';
+  String get itemListEmpty =>
+      'Здесь нет чатов. Попробуйте отправить первое сообщение';
 
   @override
   String get language => 'Язык';
@@ -160,19 +164,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get typeAMessage => 'Введите сообщение';
 
   @override
-  String get undefinedError => 'Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.';
+  String get undefinedError =>
+      'Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.';
 
   @override
   String get undefinedLoginError => 'Неопределенная ошибка при входе.';
 
   @override
-  String get userInformationNotAvailable => 'Информация о пользователе недоступна';
+  String get userInformationNotAvailable =>
+      'Информация о пользователе недоступна';
 
   @override
   String get userNotFoundText => 'Такой email не зарегистрирован!';
 
   @override
-  String get verificationEmailResended => 'Письмо с подтверждением было отправлено на вашу электронную почту.';
+  String get verificationEmailResended =>
+      'Письмо с подтверждением было отправлено на вашу электронную почту.';
 
   @override
   String get verifyEmailScreenAppBarTitle => 'Верификация Email адреса';
@@ -181,10 +188,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcome => 'Добро пожаловать';
 
   @override
-  String get welcomeText => 'RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.';
+  String get welcomeText =>
+      'RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.';
 
   @override
-  String get wrongEmailOrPassword => 'Неправильный email или пароль. Повторите попытку';
+  String get wrongEmailOrPassword =>
+      'Неправильный email или пароль. Повторите попытку';
 
   @override
   String get you => 'Вы';

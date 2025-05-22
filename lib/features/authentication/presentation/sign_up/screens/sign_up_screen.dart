@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
-import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
+import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/sign_up_form.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -22,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
             SnackBarService.showSnackBar(
               context,
               state.errorMessage ?? '',
-              error: true,
+              isError: true,
             );
           }
         },

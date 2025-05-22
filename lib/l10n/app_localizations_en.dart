@@ -37,7 +37,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkTheme => 'Dark Theme';
 
   @override
-  String get emailAlreadyInUseSnackBarText => 'Such email is already used, repeat the attempt using another email';
+  String get emailAlreadyInUseSnackBarText =>
+      'Such email is already used, repeat the attempt using another email';
 
   @override
   String get emailFormHintText => 'Enter the email';
@@ -70,7 +71,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firebase_auth_user_disabled => 'The account is disabled.';
 
   @override
-  String get firebase_auth_user_not_found => 'User with such an email was not found.';
+  String get firebase_auth_user_not_found =>
+      'User with such an email was not found.';
 
   @override
   String get firebase_auth_wrong_password => 'Wrong password.';
@@ -82,7 +84,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firstNameFormHintText => 'Enter the first name';
 
   @override
-  String get itemListAvailability => 'The list of chats is available only for those signed in the system';
+  String get itemListAvailability =>
+      'The list of chats is available only for those signed in the system';
 
   @override
   String get itemListEmpty => 'Your messages empty, try to send new message';
@@ -160,7 +163,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get typeAMessage => 'Type a message';
 
   @override
-  String get undefinedError => 'Unknown error! Try again or contact in support.';
+  String get undefinedError =>
+      'Unknown error! Try again or contact in support.';
 
   @override
   String get undefinedLoginError => 'Undefined login error.';
@@ -172,7 +176,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get userNotFoundText => 'Such email is unregistered!';
 
   @override
-  String get verificationEmailResended => 'A letter with verification was sent to your email.';
+  String get verificationEmailResended =>
+      'A letter with verification was sent to your email.';
 
   @override
   String get verifyEmailScreenAppBarTitle => 'Verification Email address';
@@ -181,7 +186,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcome => 'Welcome';
 
   @override
-  String get welcomeText => 'RealtimeChat: A real time messaging app for seamless communication.';
+  String get welcomeText =>
+      'RealtimeChat: A real time messaging app for seamless communication.';
 
   @override
   String get wrongEmailOrPassword => 'Incorrect email or password. Try again';

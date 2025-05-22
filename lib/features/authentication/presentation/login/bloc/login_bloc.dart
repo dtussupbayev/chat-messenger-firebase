@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
 
 part 'login_event.dart';
+
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {

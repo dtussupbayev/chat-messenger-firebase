@@ -18,7 +18,7 @@ class FirebaseAuthExceptionHandler {
         return AuthException(
           S.current.authError(
             e.code,
-            e.message ?? S.current.undefinedLoginError,
+            e.message ?? S.current.undefinedError,
           ),
         );
     }

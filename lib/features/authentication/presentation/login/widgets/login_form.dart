@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/email_input.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/buttons/submit_login_button.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/password_input.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/buttons/navigate_reset_password_button.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/buttons/navigate_sign_up_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/buttons/submit_login_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/email_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/password_input.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -14,6 +14,7 @@ class LoginForm extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
     final formKey = GlobalKey<FormState>();
     formKey.currentState?.reset();
+
     return Form(
       key: formKey,
       child: Padding(
