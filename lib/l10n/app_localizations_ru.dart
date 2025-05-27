@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -201,4 +200,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get yourEmail => 'Ваш Email:';
+
+  @override
+  String get search => 'Поиск';
+
+  @override
+  String get noUsersFound => 'Пользователи не найдены';
+
+  @override
+  String errorCreatingChat(Object error) {
+    return 'Ошибка при создании чата: $error';
+  }
+
+  @override
+  String get currentUserNotFoundOrEmailIsMissing =>
+      'Current user not found or email is missing';
 }

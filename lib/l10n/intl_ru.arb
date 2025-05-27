@@ -1,16 +1,9 @@
 {
   "@@locale": "ru",
+  "appTitle": "realtime_chat_app",
   "@appTitle": {
     "description": "Название приложения"
   },
-  "@chatListTileTitle": {
-    "placeholders": {
-      "id": {
-        "type": "int"
-      }
-    }
-  },
-  "appTitle": "realtime_chat_app",
   "appearance": "Внешний вид",
   "authError": "Ошибка авторизации: {code} - {message}",
   "@authErrorDetailed": {
@@ -26,6 +19,13 @@
   "cancel": "Отменить",
   "chatDetails": "Детали чата",
   "chatListTileTitle": "Чат {id}",
+  "@chatListTileTitle": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
   "chats": "Чаты",
   "darkTheme": "Темная тема",
   "emailAlreadyInUseSnackBarText": "Такой Email уже используется, повторите попытку с использованием другого Email",
@@ -79,5 +79,16 @@
   "welcomeText": "RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.",
   "wrongEmailOrPassword": "Неправильный email или пароль. Повторите попытку",
   "you": "Вы",
-  "yourEmail": "Ваш Email:"
+  "yourEmail": "Ваш Email:",
+  "search": "Поиск",
+  "noUsersFound": "Пользователи не найдены",
+  "@noUsersFound": {
+    "description": "Отображается, когда не найдено ни одного пользователя"
+  },
+  "errorCreatingChat": "Ошибка при создании чата: {error}",
+  "@errorCreatingChat": {
+    "description": "Отображается при ошибке создания комнаты чата"
+  },
+  "currentUserNotFoundOrEmailIsMissing": "Текущий пользователь не найден или электронная почта отсутствует",
+  "enter_search_query": "Введите запрос для поиска"
 }

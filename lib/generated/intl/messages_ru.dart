@@ -24,8 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(id) => "Чат ${id}";
 
-  final messages = _notInlinedMessages(_notInlinedMessages);
+  static String m2(error) => "Ошибка при создании чата: ${error}";
 
+  final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("realtime_chat_app"),
     "appearance": MessageLookupByLibrary.simpleMessage("Внешний вид"),
@@ -34,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "chatDetails": MessageLookupByLibrary.simpleMessage("Детали чата"),
     "chatListTileTitle": m1,
     "chats": MessageLookupByLibrary.simpleMessage("Чаты"),
+    "currentUserNotFoundOrEmailIsMissing": MessageLookupByLibrary.simpleMessage(
+      "Текущий пользователь не найден или электронная почта отсутствует",
+    ),
     "darkTheme": MessageLookupByLibrary.simpleMessage("Темная тема"),
     "emailAlreadyInUseSnackBarText": MessageLookupByLibrary.simpleMessage(
       "Такой Email уже используется, повторите попытку с использованием другого Email",
@@ -55,7 +59,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourLastName": MessageLookupByLibrary.simpleMessage(
       "Введите свою фамилию",
     ),
+    "enter_search_query": MessageLookupByLibrary.simpleMessage(
+      "Введите запрос для поиска",
+    ),
     "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+    "errorCreatingChat": m2,
     "firebase_auth_invalid_email": MessageLookupByLibrary.simpleMessage(
       "Неверный формат email.",
     ),
@@ -88,6 +96,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "moreInformationHere": MessageLookupByLibrary.simpleMessage(
       "Больше информации здесь",
     ),
+    "noUsersFound": MessageLookupByLibrary.simpleMessage(
+      "Пользователи не найдены",
+    ),
     "passwordFormHintText": MessageLookupByLibrary.simpleMessage(
       "Введите пароль",
     ),
@@ -112,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPasswordScreenAppBarTitle": MessageLookupByLibrary.simpleMessage(
       "Сброс пароля",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("Поиск"),
     "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
     "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
     "signOut": MessageLookupByLibrary.simpleMessage("Выйти"),

@@ -1,5 +1,5 @@
 {
-  "@@locale": "en",
+  "@@locale": "enc",
   "appTitle": "realtime_chat_app",
   "@appTitle": {
     "description": "The title of the application"
@@ -79,5 +79,16 @@
   "welcomeText": "RealtimeChat: A real time messaging app for seamless communication.",
   "wrongEmailOrPassword": "Incorrect email or password. Try again",
   "you": "You",
-  "yourEmail": "Your email:"
+  "yourEmail": "Your email:",
+  "search": "Search",
+  "noUsersFound": "No users found",
+  "@noUsersFound": {
+    "description": "Displayed when no users are found in search"
+  },
+  "errorCreatingChat": "Error creating chat: {error}",
+  "@errorCreatingChat": {
+    "description": "Displayed when chat room creation fails"
+  },
+  "currentUserNotFoundOrEmailIsMissing": "Current user not found or email is missing",
+  "enter_search_query": "Please enter a search query"
 }

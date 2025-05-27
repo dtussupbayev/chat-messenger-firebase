@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -29,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -554,6 +554,51 @@ class S {
   String get yourEmail {
     return Intl.message('Your email:', name: 'yourEmail', desc: '', args: []);
   }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `No users found`
+  String get noUsersFound {
+    return Intl.message(
+      'No users found',
+      name: 'noUsersFound',
+      desc: 'Displayed when no users are found in search',
+      args: [],
+    );
+  }
+
+  /// `Error creating chat: {error}`
+  String errorCreatingChat(Object error) {
+    return Intl.message(
+      'Error creating chat: $error',
+      name: 'errorCreatingChat',
+      desc: 'Displayed when chat room creation fails',
+      args: [error],
+    );
+  }
+
+  /// `Current user not found or email is missing`
+  String get currentUserNotFoundOrEmailIsMissing {
+    return Intl.message(
+      'Current user not found or email is missing',
+      name: 'currentUserNotFoundOrEmailIsMissing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a search query`
+  String get enter_search_query {
+    return Intl.message(
+      'Please enter a search query',
+      name: 'enter_search_query',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -568,10 +613,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<S> load(Locale locale) => S.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:realtime_chat_app/features/authentication/data/repositories/auth_repository_impl.dart';
 import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
@@ -14,11 +16,18 @@ import 'package:realtime_chat_app/features/chats/data/repositories/chats_reposit
 import 'package:realtime_chat_app/features/chats/domain/repositories/chats_repository.dart';
 import 'package:realtime_chat_app/features/chats/domain/use_cases/get_chat_rooms_use_case.dart';
 import 'package:realtime_chat_app/features/chats/domain/use_cases/get_user_info_use_case.dart';
+import 'package:realtime_chat_app/features/users_search/data/datasources/users_search_remote_data_source.dart';
+import 'package:realtime_chat_app/features/users_search/data/repositories/users_search_repository_impl.dart';
+import 'package:realtime_chat_app/features/users_search/domain/repositories/users_search_repository.dart';
+import 'package:realtime_chat_app/features/users_search/domain/usecases/create_chat_room_usecase.dart';
+import 'package:realtime_chat_app/features/users_search/domain/usecases/search_users_usecase.dart';
 
 final getIt = GetIt.instance;
 
 void initDependencies() {
   getIt
+    ..registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance)
+    ..registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance)
     ..registerLazySingleton<ChatsDataSource>(ChatsFirebaseDataSource.new)
     ..registerLazySingleton<IAuthRepository>(() => const AuthRepositoryImpl())
     ..registerLazySingleton<IChatRepository>(() => const ChatRepositoryImpl())
@@ -49,5 +58,24 @@ void initDependencies() {
     )
     ..registerLazySingleton<GetUserInfoUseCase>(
       () => GetUserInfoUseCase(repository: getIt.get<ChatsRepository>()),
+    )
+    ..registerLazySingleton<UsersSearchRemoteDataSource>(
+      () => UsersSearchRemoteDataSourceImpl(
+        firestore: getIt.get<FirebaseFirestore>(),
+        auth: getIt.get<FirebaseAuth>(),
+      ),
+    )
+    ..registerLazySingleton<UsersSearchRepository>(
+      () => UsersSearchRepositoryImpl(
+        remoteDataSource: getIt.get<UsersSearchRemoteDataSource>(),
+        auth: getIt.get<FirebaseAuth>(),
+      ),
+    )
+    ..registerLazySingleton<CreateChatRoomUseCase>(
+      () =>
+          CreateChatRoomUseCase(repository: getIt.get<UsersSearchRepository>()),
+    )
+    ..registerLazySingleton<SearchUsersUseCase>(
+      () => SearchUsersUseCase(repository: getIt.get<UsersSearchRepository>()),
     );
 }

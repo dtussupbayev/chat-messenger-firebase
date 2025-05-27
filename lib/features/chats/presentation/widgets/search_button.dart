@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/features/users_search/users_search_delegate.dart';
 
 class SearchButton extends StatelessWidget {
@@ -9,7 +10,13 @@ class SearchButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(Icons.search),
       onPressed: () {
-        showSearch(context: context, delegate: UsersSearchDelegate());
+        showSearch(
+          context: context,
+          delegate: UsersSearchDelegate(
+            searchUsersUseCase: getIt.get(),
+            createChatRoomUseCase: getIt.get(),
+          ),
+        );
       },
     );
   }

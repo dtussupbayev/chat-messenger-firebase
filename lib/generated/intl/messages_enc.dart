@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a enc locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,7 +18,7 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'enc';
 
   static String m0(code, message) => "Ошибка авторизации: ${code} - ${message}";
 
@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enterYourLastName": MessageLookupByLibrary.simpleMessage(
       "Enter your last name",
+    ),
+    "enter_search_query": MessageLookupByLibrary.simpleMessage(
+      "Please enter a search query",
     ),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "errorCreatingChat": m2,

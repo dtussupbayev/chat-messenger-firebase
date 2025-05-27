@@ -457,6 +457,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your email:'**
   String get yourEmail;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// Displayed when no users are found in search
+  ///
+  /// In en, this message translates to:
+  /// **'No users found'**
+  String get noUsersFound;
+
+  /// Displayed when chat room creation fails
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating chat: {error}'**
+  String errorCreatingChat(Object error);
+
+  /// No description provided for @currentUserNotFoundOrEmailIsMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Current user not found or email is missing'**
+  String get currentUserNotFoundOrEmailIsMissing;
 }
 
 class _AppLocalizationsDelegate
