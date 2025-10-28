@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
 import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
+import 'package:flutter/cupertino.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
