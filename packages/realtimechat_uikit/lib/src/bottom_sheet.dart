@@ -16,7 +16,8 @@ class SelectionBottomSheet<T> {
       isScrollControlled: isScrollControlled,
       showDragHandle: showDragHandle,
       shape: RoundedRectangleBorder(
-        borderRadius: borderRadius ?? BorderRadius.vertical(top: Radius.circular(15)),
+        borderRadius:
+            borderRadius ?? BorderRadius.vertical(top: Radius.circular(15)),
       ),
       builder: (context) {
         return SafeArea(
