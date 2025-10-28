@@ -1,0 +1,31 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  code-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Repository
+        uses: actions/checkout@v5
+      - name: Set up Flutter
+        uses: kuhnroyal/flutter-fvm-config-action/setup@v3
+      - name: Get Flutter packages
+        run: |
+          flutter pub get
+
+      - name: Verify Formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Flutter Analyze
+        run: flutter analyze --no-fatal-infos --fatal-warnings
