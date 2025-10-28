@@ -212,4 +212,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get currentUserNotFoundOrEmailIsMissing =>
       'Current user not found or email is missing';
+
+  @override
+  String get enter_search_query => 'Please enter a search query';
 }

@@ -481,6 +481,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Current user not found or email is missing'**
   String get currentUserNotFoundOrEmailIsMissing;
+
+  /// No description provided for @enter_search_query.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a search query'**
+  String get enter_search_query;
 }
 
 class _AppLocalizationsDelegate

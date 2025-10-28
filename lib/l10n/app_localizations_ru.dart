@@ -214,5 +214,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get currentUserNotFoundOrEmailIsMissing =>
-      'Current user not found or email is missing';
+      'Текущий пользователь не найден или электронная почта отсутствует';
+
+  @override
+  String get enter_search_query => 'Введите запрос для поиска';
 }

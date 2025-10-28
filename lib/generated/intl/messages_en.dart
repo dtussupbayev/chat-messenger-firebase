@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourLastName": MessageLookupByLibrary.simpleMessage(
       "Enter your last name",
     ),
+    "enter_search_query": MessageLookupByLibrary.simpleMessage(
+      "Please enter a search query",
+    ),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "errorCreatingChat": m2,
     "firebase_auth_invalid_email": MessageLookupByLibrary.simpleMessage(

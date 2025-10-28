@@ -1,5 +1,5 @@
 {
-  "@@locale": "enc",
+  "@@locale": "en",
   "appTitle": "realtime_chat_app",
   "@appTitle": {
     "description": "The title of the application"
