@@ -21,8 +21,8 @@ class UserModel extends UserEntity {
   }
 
   Map<String, dynamic> toDocument() => {
-        'email': email,
-        'firstName': firstName,
-        'lastName': lastName,
-      };
+    'email': email,
+    'firstName': firstName,
+    'lastName': lastName,
+  };
 }
