@@ -7,7 +7,6 @@ import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 part 'profile_event.dart';
-
 part 'profile_state.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
