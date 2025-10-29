@@ -7,7 +7,7 @@ import 'package:realtime_chat_app/features/authentication/presentation/verify_em
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
-import 'package:realtime_chat_app/features/profile/screens/profile_screen.dart';
+import 'package:realtime_chat_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:realtime_chat_app/features/settings/screens/settings_screen.dart';
 
 final router = GoRouter(

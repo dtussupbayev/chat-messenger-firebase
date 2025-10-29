@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/features/profile/bloc/profile_bloc.dart';
-import 'package:realtime_chat_app/features/profile/widgets/arraw_back_button.dart';
-import 'package:realtime_chat_app/features/profile/widgets/sign_out_button.dart';
-import 'package:realtime_chat_app/features/profile/widgets/user_information.dart';
-
-import '../../../generated/l10n.dart';
+import 'package:realtime_chat_app/features/profile/presentation/bloc/profile_bloc.dart';
+import 'package:realtime_chat_app/features/profile/presentation/widgets/arraw_back_button.dart';
+import 'package:realtime_chat_app/features/profile/presentation/widgets/sign_out_button.dart';
+import 'package:realtime_chat_app/features/profile/presentation/widgets/user_information.dart';
+import 'package:realtime_chat_app/generated/l10n.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

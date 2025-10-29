@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/features/profile/bloc/profile_bloc.dart';
+import 'package:realtime_chat_app/features/profile/presentation/bloc/profile_bloc.dart';
 
 class SignOutButton extends StatelessWidget {
   const SignOutButton({super.key});
