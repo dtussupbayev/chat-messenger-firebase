@@ -21,6 +21,12 @@ import 'package:realtime_chat_app/features/users_search/data/repositories/users_
 import 'package:realtime_chat_app/features/users_search/domain/repositories/users_search_repository.dart';
 import 'package:realtime_chat_app/features/users_search/domain/usecases/create_chat_room_usecase.dart';
 import 'package:realtime_chat_app/features/users_search/domain/usecases/search_users_usecase.dart';
+import 'package:realtime_chat_app/features/profile/data/data_sources/profile_remote_data_source.dart';
+import 'package:realtime_chat_app/features/profile/data/data_sources/profile_remote_data_source_impl.dart';
+import 'package:realtime_chat_app/features/profile/data/repositories/profile_repository_impl.dart';
+import 'package:realtime_chat_app/features/profile/domain/repositories/profile_repository.dart';
+import 'package:realtime_chat_app/features/profile/domain/use_cases/get_profile_info_use_case.dart';
+import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use_case.dart';
 
 final getIt = GetIt.instance;
 
@@ -77,5 +83,22 @@ void initDependencies() {
     )
     ..registerLazySingleton<SearchUsersUseCase>(
       () => SearchUsersUseCase(repository: getIt.get<UsersSearchRepository>()),
+    )
+    ..registerLazySingleton<ProfileRemoteDataSource>(
+      () => ProfileRemoteDataSourceImpl(
+        auth: getIt.get<FirebaseAuth>(),
+        firestore: getIt.get<FirebaseFirestore>(),
+      ),
+    )
+    ..registerLazySingleton<ProfileRepository>(
+      () => ProfileRepositoryImpl(
+        remoteDataSource: getIt.get<ProfileRemoteDataSource>(),
+      ),
+    )
+    ..registerLazySingleton<GetProfileInfoUseCase>(
+      () => GetProfileInfoUseCase(repository: getIt.get<ProfileRepository>()),
+    )
+    ..registerLazySingleton<SignOutUseCase>(
+      () => SignOutUseCase(repository: getIt.get<ProfileRepository>()),
     );
 }

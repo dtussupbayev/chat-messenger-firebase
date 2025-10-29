@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:realtime_chat_app/core/di/get_it.dart';
+import 'package:realtime_chat_app/core/exceptions/app_exception.dart';
+import 'package:realtime_chat_app/features/profile/domain/use_cases/get_profile_info_use_case.dart';
+import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use_case.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 part 'profile_event.dart';
@@ -14,7 +16,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<SignOutEvent>(_onSignOut);
   }
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt.get<GetProfileInfoUseCase>();
+  final SignOutUseCase _signOutUseCase = getIt.get<SignOutUseCase>();
 
   Future<void> _onLoadProfileInfo(
     LoadProfileInfoEvent event,
@@ -22,29 +25,16 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async {
     emit(ProfileLoading());
     try {
-      final User? user = _auth.currentUser;
-      if (user != null) {
-        final snapshot = await FirebaseFirestore.instance
-            .collection('users')
-            .doc(user.uid)
-            .get();
-
-        final data = snapshot.data();
-        if (data != null) {
-          emit(
-            ProfileLoaded(
-              email: user.email ?? '',
-              firstName: data['firstName'] ?? '',
-              lastName: data['lastName'] ?? '',
-            ),
-          );
-        } else {
-          add(SignOutEvent());
-          emit(ProfileError(S.current.userInformationNotAvailable));
-        }
-      } else {
-        emit(ProfileError(S.current.userInformationNotAvailable));
-      }
+      final userEntity = await _getProfileInfoUseCase.call();
+      emit(
+        ProfileLoaded(
+          email: userEntity.email,
+          firstName: userEntity.firstName,
+          lastName: userEntity.lastName,
+        ),
+      );
+    } on AppException catch (e) {
+      emit(ProfileError(e.message));
     } catch (e) {
       emit(ProfileError('${S.current.error}:$e'));
     }
@@ -55,7 +45,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     Emitter<ProfileState> emit,
   ) async {
     try {
-      await _auth.signOut();
+      await _signOutUseCase.call();
       emit(ProfileSignedOut());
     } catch (e) {
       emit(ProfileError('${S.current.error}:$e'));
