@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/verify_email/logic/verify_email_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/verify_email/bloc/verify_email_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class ResendVerificationEmailButton extends StatelessWidget {
@@ -8,11 +8,12 @@ class ResendVerificationEmailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<VerifyEmailController>(
-      builder: (context, verifyEmailController, child) {
+    return BlocBuilder<VerifyEmailBloc, VerifyEmailState>(
+      builder: (context, state) {
         return ElevatedButton.icon(
-          onPressed: verifyEmailController.canResendEmail
-              ? () => verifyEmailController.sendVerificationEmail(context)
+          onPressed: state.canResendEmail
+              ? () =>
+                    context.read<VerifyEmailBloc>().add(SendVerificationEmail())
               : null,
           icon: const Icon(Icons.email),
           label: Text(S.of(context).resend),
