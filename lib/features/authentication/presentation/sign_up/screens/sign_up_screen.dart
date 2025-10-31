@@ -22,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
             SnackBarService.showSnackBar(
               context,
               state.errorMessage ?? '',
-              isError: true,
+              type: SnackBarType.error,
             );
           }
         },
