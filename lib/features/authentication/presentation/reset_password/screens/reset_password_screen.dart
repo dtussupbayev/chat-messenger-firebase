@@ -25,13 +25,13 @@ class ResetPasswordScreen extends StatelessWidget {
             SnackBarService.showSnackBar(
               context,
               state.errorMessage ?? 'Unknown Failure',
-              isError: true,
+              type: SnackBarType.error,
             );
           } else if (state.status == ResetPasswordStatus.success) {
             SnackBarService.showSnackBar(
               context,
               S.of(context).successResetPassword,
-              isError: false,
+              type: SnackBarType.success,
             );
             if (context.mounted) {
               while (context.canPop()) {

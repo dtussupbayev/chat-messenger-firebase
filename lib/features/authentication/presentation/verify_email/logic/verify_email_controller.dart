@@ -65,7 +65,7 @@ class VerifyEmailController extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       if (context.mounted) {
-        SnackBarService.showSnackBar(context, '$e', isError: true);
+        SnackBarService.showSnackBar(context, '$e', type: SnackBarType.error);
       }
     }
   }

@@ -33,7 +33,7 @@ class SubmitSignUpButton extends StatelessWidget {
               SnackBarService.showSnackBar(
                 context,
                 S.of(context).passwordsDifferent,
-                isError: true,
+                type: SnackBarType.error,
               );
               return;
             }
