@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'features/app/app.dart';
 import 'firebase_options.dart';
 
@@ -14,23 +12,16 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  final appDir = await getApplicationDocumentsDirectory();
-  debugPrint(appDir.toString());
+  final appDocumentsDirectory = await getApplicationDocumentsDirectory();
+  debugPrint('Application Documents Directory: ${appDocumentsDirectory.path}');
 
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorageDirectory.web
-        : HydratedStorageDirectory(
-            (await getApplicationDocumentsDirectory()).path,
-          ),
+        : HydratedStorageDirectory(appDocumentsDirectory.path),
   );
 
   initDependencies();
-
-  if (kDebugMode) {
-    final SharedPreferences preferences = await SharedPreferences.getInstance();
-    await preferences.clear();
-  }
 
   runApp(const App());
 }
