@@ -36,7 +36,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       getMessageListUseCase.execute(event.chatRoomId),
       onData: (messages) =>
           state.copyWith(status: ChatStatus.success, messages: messages),
-      onError: (_, __) => state.copyWith(status: ChatStatus.failure),
+      onError: (_, _) => state.copyWith(status: ChatStatus.failure),
     );
   }
 

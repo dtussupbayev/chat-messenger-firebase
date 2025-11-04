@@ -6,12 +6,10 @@ part of 'theme_bloc.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ThemeStateImpl _$$ThemeStateImplFromJson(Map<String, dynamic> json) =>
-    _$ThemeStateImpl(
-      themeMode: $enumDecode(_$ThemeModeEnumMap, json['themeMode']),
-    );
+_ThemeState _$ThemeStateFromJson(Map<String, dynamic> json) =>
+    _ThemeState(themeMode: $enumDecode(_$ThemeModeEnumMap, json['themeMode']));
 
-Map<String, dynamic> _$$ThemeStateImplToJson(_$ThemeStateImpl instance) =>
+Map<String, dynamic> _$ThemeStateToJson(_ThemeState instance) =>
     <String, dynamic>{'themeMode': _$ThemeModeEnumMap[instance.themeMode]};
 
 const _$ThemeModeEnumMap = {
