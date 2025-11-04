@@ -26,6 +26,8 @@ jobs:
 
       - name: Set up Flutter
         uses: kuhnroyal/flutter-fvm-config-action/setup@v3
+        with:
+          cache: true
 
       - name: Get Flutter packages
         run: |
