@@ -27,9 +27,7 @@ class ChatRoomList extends StatelessWidget {
             }
 
             if (snapshot.hasError) {
-              return Center(
-                child: Text('${S.current.error}: ${snapshot.error}'),
-              );
+              return Center(child: Text('${S.current.error}: ${snapshot.error}'));
             }
 
             final chatRooms = snapshot.data;
@@ -38,10 +36,7 @@ class ChatRoomList extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 60.0),
                 child: Center(
-                  child: Text(
-                    S.of(context).itemListEmpty,
-                    textAlign: TextAlign.center,
-                  ),
+                  child: Text(S.of(context).itemListEmpty, textAlign: TextAlign.center),
                 ),
               );
             }

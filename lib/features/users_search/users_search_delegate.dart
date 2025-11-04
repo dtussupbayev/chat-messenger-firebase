@@ -9,10 +9,7 @@ import 'package:realtime_chat_app/generated/l10n.dart';
 import '../chat/presentation/screens/chat_screen.dart';
 
 class UsersSearchDelegate extends SearchDelegate<String> {
-  UsersSearchDelegate({
-    required this.searchUsersUseCase,
-    required this.createChatRoomUseCase,
-  });
+  UsersSearchDelegate({required this.searchUsersUseCase, required this.createChatRoomUseCase});
 
   final SearchUsersUseCase searchUsersUseCase;
   final CreateChatRoomUseCase createChatRoomUseCase;
@@ -77,24 +74,19 @@ class UsersSearchDelegate extends SearchDelegate<String> {
                 subtitle: Text(user.email),
                 onTap: () async {
                   try {
-                    final chatRoomId = await createChatRoomUseCase.execute(
-                      user,
-                    );
+                    final chatRoomId = await createChatRoomUseCase.execute(user);
                     if (context.mounted) {
                       context.goNamed(
                         ChatScreen.routeName,
                         pathParameters: {'chatRoomId': chatRoomId},
-                        queryParameters: {
-                          'firstName': user.firstName,
-                          'lastName': user.lastName,
-                        },
+                        queryParameters: {'firstName': user.firstName, 'lastName': user.lastName},
                       );
                     }
                   } catch (e) {
                     if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(S.current.errorCreatingChat(e))),
-                      );
+                      ScaffoldMessenger.of(
+                        context,
+                      ).showSnackBar(SnackBar(content: Text(S.current.errorCreatingChat(e))));
                     }
                   }
                 },

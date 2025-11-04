@@ -11,8 +11,7 @@ class WelcomeScreen extends StatefulWidget {
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen>
-    with TickerProviderStateMixin {
+class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateMixin {
   late AnimationController animationController;
 
   late Animation buttonAnimation;
@@ -85,17 +84,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          const Center(
-            child: GradientIcon(iconData: Icons.textsms_rounded, size: 96),
-          ),
+          const Center(child: GradientIcon(iconData: Icons.textsms_rounded, size: 96)),
           CustomPaint(
             painter: WelcomePainter(painterAnimation.value),
             child: Stack(
               children: [
-                if (textAnimation.value > 0.0)
-                  _buildWelcomeText()
-                else
-                  Container(),
+                if (textAnimation.value > 0.0) _buildWelcomeText() else Container(),
                 if (fadeTextAnimation.value > 0)
                   _buildDetailTextAndButton(context)
                 else

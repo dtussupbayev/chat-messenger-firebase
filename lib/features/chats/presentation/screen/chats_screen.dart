@@ -35,12 +35,7 @@ class ChatsScreen extends StatelessWidget {
         ),
         body: user != null
             ? const ChatRoomList()
-            : Center(
-                child: Text(
-                  S.of(context).itemListAvailability,
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            : Center(child: Text(S.of(context).itemListAvailability, textAlign: TextAlign.center)),
       ),
     );
   }

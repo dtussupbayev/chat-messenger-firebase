@@ -39,10 +39,7 @@ class WelcomePainter extends CustomPainter {
       ]);
 
     final Paint paint2 = Paint()
-      ..shader = ui.Gradient.linear(Offset(x, y), Offset(0, y * 0.675), [
-        color2,
-        color1,
-      ]);
+      ..shader = ui.Gradient.linear(Offset(x, y), Offset(0, y * 0.675), [color2, color1]);
 
     canvas
       ..drawPath(path, paint1)

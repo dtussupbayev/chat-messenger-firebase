@@ -47,18 +47,12 @@ class LocaleBloc extends HydratedBloc<LocaleEvent, LocaleState> {
     return state.toJson();
   }
 
-  Future<void> _onUpdateLocale(
-    UpdateLocale event,
-    Emitter<LocaleState> emit,
-  ) async {
+  Future<void> _onUpdateLocale(UpdateLocale event, Emitter<LocaleState> emit) async {
     if (event.locale == null) return;
     emit(LocaleState(locale: event.locale!));
   }
 
-  Future<void> _onClearState(
-    ClearState event,
-    Emitter<LocaleState> emit,
-  ) async {
+  Future<void> _onClearState(ClearState event, Emitter<LocaleState> emit) async {
     await HydratedBloc.storage.delete(storageToken);
     emit(LocaleState(locale: _getInitialLocale()));
   }

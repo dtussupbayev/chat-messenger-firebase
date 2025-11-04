@@ -15,33 +15,18 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   final LoginUseCase loginUseCase;
 
-  Future<void> _onLoginSubmitted(
-    LoginSubmitted event,
-    Emitter<LoginState> emit,
-  ) async {
+  Future<void> _onLoginSubmitted(LoginSubmitted event, Emitter<LoginState> emit) async {
     emit(state.copyWith(status: LoginStatus.loading));
 
     try {
-      await loginUseCase.execute(
-        LoginParams(email: event.email, password: event.password),
-      );
+      await loginUseCase.execute(LoginParams(email: event.email, password: event.password));
       emit(state.copyWith(status: LoginStatus.success));
     } catch (e) {
-      emit(
-        state.copyWith(status: LoginStatus.failure, errorMessage: e.toString()),
-      );
+      emit(state.copyWith(status: LoginStatus.failure, errorMessage: e.toString()));
     }
   }
 
-  void _onTogglePasswordVisibility(
-    TogglePasswordVisibility event,
-    Emitter<LoginState> emit,
-  ) {
-    emit(
-      state.copyWith(
-        status: LoginStatus.initial,
-        isPasswordHidden: !state.isPasswordHidden,
-      ),
-    );
+  void _onTogglePasswordVisibility(TogglePasswordVisibility event, Emitter<LoginState> emit) {
+    emit(state.copyWith(status: LoginStatus.initial, isPasswordHidden: !state.isPasswordHidden));
   }
 }

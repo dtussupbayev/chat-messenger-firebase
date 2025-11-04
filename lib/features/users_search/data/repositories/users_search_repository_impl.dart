@@ -6,10 +6,7 @@ import 'package:realtime_chat_app/features/users_search/domain/repositories/user
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class UsersSearchRepositoryImpl implements UsersSearchRepository {
-  UsersSearchRepositoryImpl({
-    required this.remoteDataSource,
-    required this.auth,
-  });
+  UsersSearchRepositoryImpl({required this.remoteDataSource, required this.auth});
 
   final UsersSearchRemoteDataSource remoteDataSource;
   final FirebaseAuth auth;

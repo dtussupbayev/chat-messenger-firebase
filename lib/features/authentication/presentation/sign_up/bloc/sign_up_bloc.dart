@@ -20,10 +20,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
   final SignUpUseCase signUpUseCase;
 
-  Future<void> _onSignUpSubmitted(
-    SignUpSubmitted event,
-    Emitter<SignUpState> emit,
-  ) async {
+  Future<void> _onSignUpSubmitted(SignUpSubmitted event, Emitter<SignUpState> emit) async {
     emit(state.copyWith(status: SignUpStatus.loading));
 
     try {
@@ -45,26 +42,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           ),
         );
       } else {
-        emit(
-          state.copyWith(
-            status: SignUpStatus.failure,
-            errorMessage: S.current.undefinedError,
-          ),
-        );
+        emit(state.copyWith(status: SignUpStatus.failure, errorMessage: S.current.undefinedError));
       }
     }
   }
 
-  void _onTogglePasswordVisibility(
-    TogglePasswordVisibility event,
-    Emitter<SignUpState> emit,
-  ) {
-    emit(
-      state.copyWith(
-        status: SignUpStatus.initial,
-        isPasswordHidden: !state.isPasswordHidden,
-      ),
-    );
+  void _onTogglePasswordVisibility(TogglePasswordVisibility event, Emitter<SignUpState> emit) {
+    emit(state.copyWith(status: SignUpStatus.initial, isPasswordHidden: !state.isPasswordHidden));
   }
 
   void _onToggleRepeatPasswordVisibility(

@@ -9,8 +9,7 @@ class CancelVerificationButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () =>
-          context.read<VerifyEmailBloc>().add(const CancelVerification()),
+      onPressed: () => context.read<VerifyEmailBloc>().add(const CancelVerification()),
       child: Text(S.of(context).cancel, style: const TextStyle()),
     );
   }

@@ -16,8 +16,7 @@ class SignUpForm extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
-    final TextEditingController repeatPasswordController =
-        TextEditingController();
+    final TextEditingController repeatPasswordController = TextEditingController();
     final TextEditingController firstNameController = TextEditingController();
     final TextEditingController lastNameController = TextEditingController();
     return Form(
@@ -31,9 +30,7 @@ class SignUpForm extends StatelessWidget {
             const SizedBox(height: 15),
             PasswordInput(passwordTextEditingController: passwordController),
             const SizedBox(height: 15),
-            PasswordRepeatInput(
-              repeatPasswordTextEditingController: repeatPasswordController,
-            ),
+            PasswordRepeatInput(repeatPasswordTextEditingController: repeatPasswordController),
             const SizedBox(height: 15),
             FirstNameInput(firstNameTextEditingController: firstNameController),
             const SizedBox(height: 15),

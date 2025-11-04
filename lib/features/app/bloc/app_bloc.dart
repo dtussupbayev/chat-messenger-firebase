@@ -14,10 +14,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     on<AppStatusChecked>(_onAppStatusChecked);
   }
 
-  Future<void> _onAppStatusChecked(
-    AppStatusChecked event,
-    Emitter<AppState> emit,
-  ) async {
+  Future<void> _onAppStatusChecked(AppStatusChecked event, Emitter<AppState> emit) async {
     final prefs = await SharedPreferences.getInstance();
     final showWelcome = prefs.getBool('showWelcome') ?? true;
     if (showWelcome) {

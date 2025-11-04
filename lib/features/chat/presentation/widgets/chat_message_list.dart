@@ -4,11 +4,7 @@ import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.d
 import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_message_tile.dart';
 
 class ChatMessageList extends StatelessWidget {
-  const ChatMessageList({
-    super.key,
-    required this.messages,
-    required this.chatRoomId,
-  });
+  const ChatMessageList({super.key, required this.messages, required this.chatRoomId});
 
   final List<MessageEntity> messages;
   final String chatRoomId;
@@ -32,8 +28,7 @@ class ChatMessageList extends StatelessWidget {
             final MessageEntity message = messages.reversed.toList()[index];
             return ChatMessageTile(
               message: message,
-              sendByMe:
-                  FirebaseAuth.instance.currentUser?.uid == message.sendBy,
+              sendByMe: FirebaseAuth.instance.currentUser?.uid == message.sendBy,
               chatRoomId: chatRoomId,
             );
           },

@@ -17,24 +17,17 @@ class PasswordInput extends StatelessWidget {
           autocorrect: false,
           controller: passwordTextEditingController,
           obscureText: state.isPasswordHidden,
-          validator: (value) => value != null && value.length < 6
-              ? S.of(context).passwordFormValidatorText
-              : null,
+          validator: (value) =>
+              value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.lock),
             hintText: S.of(context).passwordFormHintText,
             suffix: InkWell(
               onTap: () {
-                context.read<SignUpBloc>().add(
-                  const TogglePasswordVisibility(),
-                );
+                context.read<SignUpBloc>().add(const TogglePasswordVisibility());
               },
-              child: Icon(
-                state.isPasswordHidden
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
+              child: Icon(state.isPasswordHidden ? Icons.visibility_off : Icons.visibility),
             ),
           ),
         );

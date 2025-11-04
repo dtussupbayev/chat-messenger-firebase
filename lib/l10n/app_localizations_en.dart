@@ -71,8 +71,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firebase_auth_user_disabled => 'The account is disabled.';
 
   @override
-  String get firebase_auth_user_not_found =>
-      'User with such an email was not found.';
+  String get firebase_auth_user_not_found => 'User with such an email was not found.';
 
   @override
   String get firebase_auth_wrong_password => 'Wrong password.';
@@ -163,8 +162,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get typeAMessage => 'Type a message';
 
   @override
-  String get undefinedError =>
-      'Unknown error! Try again or contact in support.';
+  String get undefinedError => 'Unknown error! Try again or contact in support.';
 
   @override
   String get undefinedLoginError => 'Undefined login error.';
@@ -176,8 +174,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get userNotFoundText => 'Such email is unregistered!';
 
   @override
-  String get verificationEmailResended =>
-      'A letter with verification was sent to your email.';
+  String get verificationEmailResended => 'A letter with verification was sent to your email.';
 
   @override
   String get verifyEmailScreenAppBarTitle => 'Verification Email address';
@@ -186,8 +183,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcome => 'Welcome';
 
   @override
-  String get welcomeText =>
-      'RealtimeChat: A real time messaging app for seamless communication.';
+  String get welcomeText => 'RealtimeChat: A real time messaging app for seamless communication.';
 
   @override
   String get wrongEmailOrPassword => 'Incorrect email or password. Try again';
@@ -210,8 +206,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get currentUserNotFoundOrEmailIsMissing =>
-      'Current user not found or email is missing';
+  String get currentUserNotFoundOrEmailIsMissing => 'Current user not found or email is missing';
 
   @override
   String get enter_search_query => 'Please enter a search query';

@@ -14,8 +14,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          SignUpBloc(signUpUseCase: getIt.get<SignUpUseCase>()),
+      create: (context) => SignUpBloc(signUpUseCase: getIt.get<SignUpUseCase>()),
       child: BlocListener<SignUpBloc, SignUpState>(
         listener: (context, state) {
           if (state.status == SignUpStatus.failure) {
@@ -33,18 +32,13 @@ class SignUpScreen extends StatelessWidget {
           // ),
           body: SafeArea(
             child: SizedBox(
-              height:
-                  MediaQuery.sizeOf(context).height -
-                  MediaQuery.paddingOf(context).top,
+              height: MediaQuery.sizeOf(context).height - MediaQuery.paddingOf(context).top,
               child: Center(
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const GradientIcon(
-                        iconData: Icons.textsms_rounded,
-                        size: 96,
-                      ),
+                      const GradientIcon(iconData: Icons.textsms_rounded, size: 96),
                       const SizedBox(height: 15),
                       Text(
                         'RealTimeChat',

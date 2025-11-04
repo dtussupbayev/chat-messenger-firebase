@@ -15,10 +15,7 @@ abstract class UsersSearchRemoteDataSource {
 }
 
 class UsersSearchRemoteDataSourceImpl implements UsersSearchRemoteDataSource {
-  UsersSearchRemoteDataSourceImpl({
-    required this.firestore,
-    required this.auth,
-  });
+  UsersSearchRemoteDataSourceImpl({required this.firestore, required this.auth});
 
   final FirebaseFirestore firestore;
   final FirebaseAuth auth;

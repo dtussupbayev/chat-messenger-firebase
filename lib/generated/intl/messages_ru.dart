@@ -43,43 +43,25 @@ class MessageLookup extends MessageLookupByLibrary {
       "Такой Email уже используется, повторите попытку с использованием другого Email",
     ),
     "emailFormHintText": MessageLookupByLibrary.simpleMessage("Введите почту"),
-    "emailFormValidatorText": MessageLookupByLibrary.simpleMessage(
-      "Введите правильную почту",
-    ),
+    "emailFormValidatorText": MessageLookupByLibrary.simpleMessage("Введите правильную почту"),
     "enter": MessageLookupByLibrary.simpleMessage("Войти"),
-    "enterAValidLastName": MessageLookupByLibrary.simpleMessage(
-      "Введите правильную фамилию",
-    ),
-    "enterAValidName": MessageLookupByLibrary.simpleMessage(
-      "Введите правильное имя",
-    ),
-    "enterYourFirstName": MessageLookupByLibrary.simpleMessage(
-      "Введите свое имя",
-    ),
-    "enterYourLastName": MessageLookupByLibrary.simpleMessage(
-      "Введите свою фамилию",
-    ),
-    "enter_search_query": MessageLookupByLibrary.simpleMessage(
-      "Введите запрос для поиска",
-    ),
+    "enterAValidLastName": MessageLookupByLibrary.simpleMessage("Введите правильную фамилию"),
+    "enterAValidName": MessageLookupByLibrary.simpleMessage("Введите правильное имя"),
+    "enterYourFirstName": MessageLookupByLibrary.simpleMessage("Введите свое имя"),
+    "enterYourLastName": MessageLookupByLibrary.simpleMessage("Введите свою фамилию"),
+    "enter_search_query": MessageLookupByLibrary.simpleMessage("Введите запрос для поиска"),
     "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
     "errorCreatingChat": m2,
-    "firebase_auth_invalid_email": MessageLookupByLibrary.simpleMessage(
-      "Неверный формат email.",
-    ),
+    "firebase_auth_invalid_email": MessageLookupByLibrary.simpleMessage("Неверный формат email."),
     "firebase_auth_user_disabled": MessageLookupByLibrary.simpleMessage(
       "Учетная запись отключена.",
     ),
     "firebase_auth_user_not_found": MessageLookupByLibrary.simpleMessage(
       "Пользователь с таким email не найден.",
     ),
-    "firebase_auth_wrong_password": MessageLookupByLibrary.simpleMessage(
-      "Неверный пароль.",
-    ),
+    "firebase_auth_wrong_password": MessageLookupByLibrary.simpleMessage("Неверный пароль."),
     "firstName": MessageLookupByLibrary.simpleMessage("Имя:"),
-    "firstNameFormHintText": MessageLookupByLibrary.simpleMessage(
-      "Введите имя",
-    ),
+    "firstNameFormHintText": MessageLookupByLibrary.simpleMessage("Введите имя"),
     "itemListAvailability": MessageLookupByLibrary.simpleMessage(
       "Список чатов доступен только для вошедших в систему",
     ),
@@ -88,49 +70,27 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("Язык"),
     "lastName": MessageLookupByLibrary.simpleMessage("Фамилия:"),
-    "lastNameFormHintText": MessageLookupByLibrary.simpleMessage(
-      "Введите фамилию",
-    ),
+    "lastNameFormHintText": MessageLookupByLibrary.simpleMessage("Введите фамилию"),
     "letsStart": MessageLookupByLibrary.simpleMessage("Давайте начнем"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
-    "moreInformationHere": MessageLookupByLibrary.simpleMessage(
-      "Больше информации здесь",
-    ),
-    "noUsersFound": MessageLookupByLibrary.simpleMessage(
-      "Пользователи не найдены",
-    ),
-    "passwordFormHintText": MessageLookupByLibrary.simpleMessage(
-      "Введите пароль",
-    ),
-    "passwordFormValidatorText": MessageLookupByLibrary.simpleMessage(
-      "Минимум 6 символов",
-    ),
-    "passwordRepeatFormHintText": MessageLookupByLibrary.simpleMessage(
-      "Введите пароль еще раз",
-    ),
-    "passwordsDifferent": MessageLookupByLibrary.simpleMessage(
-      "Пароли должны совпадать",
-    ),
+    "moreInformationHere": MessageLookupByLibrary.simpleMessage("Больше информации здесь"),
+    "noUsersFound": MessageLookupByLibrary.simpleMessage("Пользователи не найдены"),
+    "passwordFormHintText": MessageLookupByLibrary.simpleMessage("Введите пароль"),
+    "passwordFormValidatorText": MessageLookupByLibrary.simpleMessage("Минимум 6 символов"),
+    "passwordRepeatFormHintText": MessageLookupByLibrary.simpleMessage("Введите пароль еще раз"),
+    "passwordsDifferent": MessageLookupByLibrary.simpleMessage("Пароли должны совпадать"),
     "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
     "resend": MessageLookupByLibrary.simpleMessage("Повторно отправить"),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
-    "resetPasswordAppBarTitle": MessageLookupByLibrary.simpleMessage(
-      "Сброс пароля",
-    ),
-    "resetPasswordButtonText": MessageLookupByLibrary.simpleMessage(
-      "Сбросить пароль",
-    ),
-    "resetPasswordScreenAppBarTitle": MessageLookupByLibrary.simpleMessage(
-      "Сброс пароля",
-    ),
+    "resetPasswordAppBarTitle": MessageLookupByLibrary.simpleMessage("Сброс пароля"),
+    "resetPasswordButtonText": MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
+    "resetPasswordScreenAppBarTitle": MessageLookupByLibrary.simpleMessage("Сброс пароля"),
     "search": MessageLookupByLibrary.simpleMessage("Поиск"),
     "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
     "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
     "signOut": MessageLookupByLibrary.simpleMessage("Выйти"),
     "signUp": MessageLookupByLibrary.simpleMessage("Регистрация"),
-    "signUpScreenAppBarTitle": MessageLookupByLibrary.simpleMessage(
-      "Зарегистрироваться",
-    ),
+    "signUpScreenAppBarTitle": MessageLookupByLibrary.simpleMessage("Зарегистрироваться"),
     "successResetPassword": MessageLookupByLibrary.simpleMessage(
       "Проверьте почту для сброса пароля",
     ),
@@ -139,15 +99,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "undefinedError": MessageLookupByLibrary.simpleMessage(
       "Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.",
     ),
-    "undefinedLoginError": MessageLookupByLibrary.simpleMessage(
-      "Неопределенная ошибка при входе.",
-    ),
+    "undefinedLoginError": MessageLookupByLibrary.simpleMessage("Неопределенная ошибка при входе."),
     "userInformationNotAvailable": MessageLookupByLibrary.simpleMessage(
       "Информация о пользователе недоступна",
     ),
-    "userNotFoundText": MessageLookupByLibrary.simpleMessage(
-      "Такой email не зарегистрирован!",
-    ),
+    "userNotFoundText": MessageLookupByLibrary.simpleMessage("Такой email не зарегистрирован!"),
     "verificationEmailResended": MessageLookupByLibrary.simpleMessage(
       "Письмо с подтверждением было отправлено на вашу электронную почту.",
     ),

@@ -24,26 +24,20 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final currentPath = GoRouter.of(
-      context,
-    ).routerDelegate.currentConfiguration.uri.toString();
+    final currentPath = GoRouter.of(context).routerDelegate.currentConfiguration.uri.toString();
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state is AppOnBoardingRequired) {
           context.go('/welcome');
         } else if (state is AppAuthenticated) {
           context.go(
-            currentPath == '/' ||
-                    currentPath == '/auth/sign-up' ||
-                    currentPath == '/auth'
+            currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth'
                 ? ChatsScreen.routeName
                 : currentPath,
           );
         } else if (state is AppNotVerified) {
           context.go(
-            currentPath == '/' ||
-                    currentPath == '/auth/sign-up' ||
-                    currentPath == '/auth'
+            currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth'
                 ? VerifyEmailScreen.routeName
                 : currentPath,
           );

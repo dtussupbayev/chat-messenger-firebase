@@ -33,9 +33,7 @@ class VerifyEmailScreen extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            title: Text(S.of(context).verifyEmailScreenAppBarTitle),
-          ),
+          appBar: AppBar(title: Text(S.of(context).verifyEmailScreenAppBarTitle)),
           body: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(20),

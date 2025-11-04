@@ -47,8 +47,7 @@ class App extends StatelessWidget {
                     ],
                     locale: localeState.locale,
                     supportedLocales: S.delegate.supportedLocales,
-                    onGenerateTitle: (BuildContext context) =>
-                        S.of(context).appTitle,
+                    onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
                     theme: lightTheme(),
                     darkTheme: darkTheme(),
                     themeMode: themeState.themeMode,

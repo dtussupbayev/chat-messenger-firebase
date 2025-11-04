@@ -57,10 +57,7 @@ class AuthRepositoryImpl implements IAuthRepository {
       'searchKeywords': generateSearchKeywords(user.firstName, user.lastName),
     };
 
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc(user.uid)
-        .set(userInfoMap);
+    await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userInfoMap);
   }
 
   @override
@@ -71,17 +68,11 @@ class AuthRepositoryImpl implements IAuthRepository {
     final substrings = <String>{}
       ..add(lowercaseFirstName[0])
       ..addAll(
-        Iterable.generate(
-          lowercaseFirstName.length,
-          (i) => lowercaseFirstName.substring(0, i + 1),
-        ),
+        Iterable.generate(lowercaseFirstName.length, (i) => lowercaseFirstName.substring(0, i + 1)),
       )
       ..add(lowercaseLastName[0])
       ..addAll(
-        Iterable.generate(
-          lowercaseLastName.length,
-          (i) => lowercaseLastName.substring(0, i + 1),
-        ),
+        Iterable.generate(lowercaseLastName.length, (i) => lowercaseLastName.substring(0, i + 1)),
       );
 
     return substrings.toList();

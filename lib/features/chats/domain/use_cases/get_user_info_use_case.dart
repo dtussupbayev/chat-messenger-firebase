@@ -12,8 +12,7 @@ class GetUserInfoParams extends Equatable {
   List<Object?> get props => [uid];
 }
 
-class GetUserInfoUseCase
-    implements BaseUseCase<GetUserInfoParams, Future<User?>> {
+class GetUserInfoUseCase implements BaseUseCase<GetUserInfoParams, Future<User?>> {
   GetUserInfoUseCase({required this.repository});
 
   final ChatsRepository repository;

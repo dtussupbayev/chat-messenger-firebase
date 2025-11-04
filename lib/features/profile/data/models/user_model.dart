@@ -2,11 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:realtime_chat_app/features/profile/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {
-  const UserModel({
-    required super.email,
-    required super.firstName,
-    required super.lastName,
-  });
+  const UserModel({required super.email, required super.firstName, required super.lastName});
 
   factory UserModel.fromSnapshot(DocumentSnapshot snap) {
     final snapshot = snap.data() as Map<String, dynamic>?;

@@ -18,10 +18,7 @@ final router = GoRouter(
       name: SplashScreen.routeName,
       builder: (context, state) => const SplashScreen(),
     ),
-    GoRoute(
-      path: '/welcome',
-      builder: (context, state) => const WelcomeScreen(),
-    ),
+    GoRoute(path: '/welcome', builder: (context, state) => const WelcomeScreen()),
     GoRoute(
       path: '/auth',
       name: LoginScreen.routeName,

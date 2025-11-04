@@ -31,44 +31,31 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
   @override
   void initState() {
     super.initState();
-    context.read<ChatsBloc>().add(
-      GetUserInfo(chatRoomId: widget.chatRoomId, myUid: myUid),
-    );
+    context.read<ChatsBloc>().add(GetUserInfo(chatRoomId: widget.chatRoomId, myUid: myUid));
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChatsBloc, ChatsState>(
       builder: (context, state) {
-        final userId = widget.chatRoomId
-            .replaceFirst(myUid, '')
-            .replaceFirst('_', '');
+        final userId = widget.chatRoomId.replaceFirst(myUid, '').replaceFirst('_', '');
         final userData = state.users[userId] ?? UserData.empty();
         return InkWell(
           onTap: () {
             context.goNamed(
               ChatScreen.routeName,
               pathParameters: {'chatRoomId': widget.chatRoomId},
-              queryParameters: {
-                'firstName': userData.firstName,
-                'lastName': userData.lastName,
-              },
+              queryParameters: {'firstName': userData.firstName, 'lastName': userData.lastName},
             );
           },
           child: Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10.0,
-              horizontal: 5.0,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
             child: Stack(
               children: [
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                      child: Text(userData.firstLetters),
-                    ),
+                    CircleAvatar(radius: 30, child: Text(userData.firstLetters)),
                     const SizedBox(width: 10.0),
                     Expanded(
                       child: Column(
@@ -77,10 +64,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                         children: [
                           Text(
                             '${userData.firstName} ${userData.lastName}',
-                            style: const TextStyle(
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.w500),
                           ),
                           Flexible(
                             child: Text(

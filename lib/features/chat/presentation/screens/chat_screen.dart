@@ -48,18 +48,10 @@ class ChatScreen extends StatelessWidget {
                     } else if (state.status != ChatStatus.success) {
                       return const SizedBox();
                     } else {
-                      return Center(
-                        child: Text(
-                          'Empty',
-                          style: context.textTheme.bodySmall,
-                        ),
-                      );
+                      return Center(child: Text('Empty', style: context.textTheme.bodySmall));
                     }
                   }
-                  return ChatMessageList(
-                    messages: state.messages,
-                    chatRoomId: chatRoomId,
-                  );
+                  return ChatMessageList(messages: state.messages, chatRoomId: chatRoomId);
                 },
               ),
             ),

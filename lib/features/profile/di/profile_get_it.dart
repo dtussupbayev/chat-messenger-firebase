@@ -9,15 +9,10 @@ import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use
 void initProfileDependencies(GetIt getIt) {
   getIt
     ..registerLazySingleton<ProfileRemoteDataSource>(
-      () => ProfileRemoteDataSourceImpl(
-        auth: getIt.get(),
-        firestore: getIt.get(),
-      ),
+      () => ProfileRemoteDataSourceImpl(auth: getIt.get(), firestore: getIt.get()),
     )
     ..registerLazySingleton<ProfileRepository>(
-      () => ProfileRepositoryImpl(
-        remoteDataSource: getIt.get<ProfileRemoteDataSource>(),
-      ),
+      () => ProfileRepositoryImpl(remoteDataSource: getIt.get<ProfileRemoteDataSource>()),
     )
     ..registerLazySingleton<GetProfileInfoUseCase>(
       () => GetProfileInfoUseCase(repository: getIt.get<ProfileRepository>()),

@@ -370,3 +370,6 @@ linter:
 analyzer:
   exclude:
     - lib/generated/**
+
+formatter:
+  page_width: 100

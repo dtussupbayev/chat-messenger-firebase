@@ -12,11 +12,9 @@ abstract class ChatsDataSource {
 }
 
 class ChatsFirebaseDataSource implements ChatsDataSource {
-  ChatsFirebaseDataSource({
-    FirebaseFirestore? firestore,
-    firebase_auth.FirebaseAuth? auth,
-  }) : _firestore = firestore ?? FirebaseFirestore.instance,
-       _auth = auth ?? firebase_auth.FirebaseAuth.instance;
+  ChatsFirebaseDataSource({FirebaseFirestore? firestore, firebase_auth.FirebaseAuth? auth})
+    : _firestore = firestore ?? FirebaseFirestore.instance,
+      _auth = auth ?? firebase_auth.FirebaseAuth.instance;
 
   final FirebaseFirestore _firestore;
   final firebase_auth.FirebaseAuth _auth;
@@ -38,10 +36,7 @@ class ChatsFirebaseDataSource implements ChatsDataSource {
 
   @override
   Future<User?> getUserInfo(String uid) async {
-    final querySnapshot = await _firestore
-        .collection('users')
-        .where('uid', isEqualTo: uid)
-        .get();
+    final querySnapshot = await _firestore.collection('users').where('uid', isEqualTo: uid).get();
     if (querySnapshot.docs.isNotEmpty) {
       return UserModel.fromSnapshot(querySnapshot.docs.first);
     } else {

@@ -26,14 +26,8 @@ class CMenuButton extends StatelessWidget {
       },
       itemBuilder: (BuildContext context) {
         return [
-          PopupMenuItem<String>(
-            value: 'profile',
-            child: Text(S.of(context).profile),
-          ),
-          PopupMenuItem<String>(
-            value: 'settings',
-            child: Text(S.of(context).settings),
-          ),
+          PopupMenuItem<String>(value: 'profile', child: Text(S.of(context).profile)),
+          PopupMenuItem<String>(value: 'settings', child: Text(S.of(context).settings)),
         ];
       },
       offset: const Offset(0, kToolbarHeight - 10),
