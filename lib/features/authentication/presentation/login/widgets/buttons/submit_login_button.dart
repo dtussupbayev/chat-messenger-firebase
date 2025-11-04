@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/core/widgets/app_button_loading_widget.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/bloc/login_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class SubmitLoginButton extends StatelessWidget {
   const SubmitLoginButton({

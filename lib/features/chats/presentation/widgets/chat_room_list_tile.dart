@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class ChatRoomListTile extends StatefulWidget {
   const ChatRoomListTile({

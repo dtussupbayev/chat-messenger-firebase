@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class ChatMessageTile extends StatelessWidget {
   const ChatMessageTile({

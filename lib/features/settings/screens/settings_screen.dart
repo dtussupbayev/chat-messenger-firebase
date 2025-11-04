@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtimechat_uikit/uikit.dart';
 
 class SettingsScreen extends StatefulWidget {

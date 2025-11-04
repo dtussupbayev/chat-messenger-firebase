@@ -10,7 +10,7 @@ part 'reset_password_bloc.freezed.dart';
 
 class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
   ResetPasswordBloc({required this.resetPasswordUseCase})
-      : super(const ResetPasswordState()) {
+    : super(const ResetPasswordState()) {
     on<ResetPasswordSubmitted>(_onResetPasswordSubmitted);
   }
 
