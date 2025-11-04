@@ -2,29 +2,11 @@ part of 'login_bloc.dart';
 
 enum LoginStatus { initial, loading, success, failure }
 
-class LoginState extends Equatable {
-  const LoginState({
-    this.status = LoginStatus.initial,
-    this.isPasswordHidden = true,
-    this.errorMessage,
-  });
-
-  final LoginStatus status;
-  final bool isPasswordHidden;
-  final String? errorMessage;
-
-  @override
-  List<Object?> get props => [status, isPasswordHidden, errorMessage];
-
-  LoginState copyWith({
-    LoginStatus? status,
-    bool? isPasswordHidden,
-    ValueGetter<String?>? errorMessage,
-  }) {
-    return LoginState(
-      status: status ?? this.status,
-      isPasswordHidden: isPasswordHidden ?? this.isPasswordHidden,
-      errorMessage: errorMessage != null ? errorMessage() : null,
-    );
-  }
+@freezed
+class LoginState with _$LoginState {
+  const factory LoginState({
+    @Default(LoginStatus.initial) LoginStatus status,
+    @Default(true) bool isPasswordHidden,
+    String? errorMessage,
+  }) = _LoginState;
 }

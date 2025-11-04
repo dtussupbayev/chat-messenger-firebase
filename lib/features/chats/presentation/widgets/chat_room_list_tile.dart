@@ -43,7 +43,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
         final userId = widget.chatRoomId
             .replaceFirst(myUid, '')
             .replaceFirst('_', '');
-        final userData = state.users[userId] ?? const UserData.empty();
+        final userData = state.users[userId] ?? UserData.empty();
         return InkWell(
           onTap: () {
             context.goNamed(

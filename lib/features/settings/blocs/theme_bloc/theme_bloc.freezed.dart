@@ -18,12 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ThemeEvent {
   ThemeMode get themeMode => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ThemeMode themeMode) updateTheme,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ThemeMode themeMode)? updateTheme,
@@ -31,15 +29,12 @@ mixin _$ThemeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ThemeMode themeMode)? updateTheme,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UpdateThemeEvent value) updateTheme,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UpdateThemeEvent value)? updateTheme,

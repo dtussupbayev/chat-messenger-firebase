@@ -13,7 +13,7 @@ class ResendVerificationEmailButton extends StatelessWidget {
         return ElevatedButton.icon(
           onPressed: state.canResendEmail
               ? () =>
-                    context.read<VerifyEmailBloc>().add(SendVerificationEmail())
+                    context.read<VerifyEmailBloc>().add(const SendVerificationEmail())
               : null,
           icon: const Icon(Icons.email),
           label: Text(S.of(context).resend),

@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
 
 part 'chat_event.dart';
-
 part 'chat_state.dart';
+part 'chat_bloc.freezed.dart';
 
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
   ChatBloc({
