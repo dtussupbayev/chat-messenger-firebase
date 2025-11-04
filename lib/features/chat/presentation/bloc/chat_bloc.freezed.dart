@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,762 +9,665 @@ part of 'chat_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$ChatEvent {
-  String get chatRoomId => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String chatRoomId) subscriptionRequested,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageSended,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageDeleted,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String chatRoomId)? subscriptionRequested,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageDeleted,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String chatRoomId)? subscriptionRequested,
-    TResult Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult Function(MessageEntity message, String chatRoomId)? messageDeleted,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatSubscriptionRequested value)
-    subscriptionRequested,
-    required TResult Function(ChatMessageSended value) messageSended,
-    required TResult Function(ChatMessageDeleted value) messageDeleted,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult? Function(ChatMessageSended value)? messageSended,
-    TResult? Function(ChatMessageDeleted value)? messageDeleted,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult Function(ChatMessageSended value)? messageSended,
-    TResult Function(ChatMessageDeleted value)? messageDeleted,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatEventCopyWith<ChatEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get chatRoomId;
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatEventCopyWith<ChatEvent> get copyWith => _$ChatEventCopyWithImpl<ChatEvent>(this as ChatEvent, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatEvent&&(identical(other.chatRoomId, chatRoomId) || other.chatRoomId == chatRoomId));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,chatRoomId);
+
+@override
+String toString() {
+  return 'ChatEvent(chatRoomId: $chatRoomId)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatEventCopyWith<$Res> {
-  factory $ChatEventCopyWith(ChatEvent value, $Res Function(ChatEvent) then) =
-      _$ChatEventCopyWithImpl<$Res, ChatEvent>;
-  @useResult
-  $Res call({String chatRoomId});
-}
+abstract mixin class $ChatEventCopyWith<$Res>  {
+  factory $ChatEventCopyWith(ChatEvent value, $Res Function(ChatEvent) _then) = _$ChatEventCopyWithImpl;
+@useResult
+$Res call({
+ String chatRoomId
+});
 
+
+
+
+}
 /// @nodoc
-class _$ChatEventCopyWithImpl<$Res, $Val extends ChatEvent>
+class _$ChatEventCopyWithImpl<$Res>
     implements $ChatEventCopyWith<$Res> {
-  _$ChatEventCopyWithImpl(this._value, this._then);
+  _$ChatEventCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatEvent _self;
+  final $Res Function(ChatEvent) _then;
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? chatRoomId = null}) {
-    return _then(
-      _value.copyWith(
-            chatRoomId: null == chatRoomId
-                ? _value.chatRoomId
-                : chatRoomId // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? chatRoomId = null,}) {
+  return _then(_self.copyWith(
+chatRoomId: null == chatRoomId ? _self.chatRoomId : chatRoomId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ChatSubscriptionRequestedImplCopyWith<$Res>
-    implements $ChatEventCopyWith<$Res> {
-  factory _$$ChatSubscriptionRequestedImplCopyWith(
-    _$ChatSubscriptionRequestedImpl value,
-    $Res Function(_$ChatSubscriptionRequestedImpl) then,
-  ) = __$$ChatSubscriptionRequestedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String chatRoomId});
 }
 
-/// @nodoc
-class __$$ChatSubscriptionRequestedImplCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$ChatSubscriptionRequestedImpl>
-    implements _$$ChatSubscriptionRequestedImplCopyWith<$Res> {
-  __$$ChatSubscriptionRequestedImplCopyWithImpl(
-    _$ChatSubscriptionRequestedImpl _value,
-    $Res Function(_$ChatSubscriptionRequestedImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? chatRoomId = null}) {
-    return _then(
-      _$ChatSubscriptionRequestedImpl(
-        chatRoomId: null == chatRoomId
-            ? _value.chatRoomId
-            : chatRoomId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
+/// Adds pattern-matching-related methods to [ChatEvent].
+extension ChatEventPatterns on ChatEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ChatSubscriptionRequested value)?  subscriptionRequested,TResult Function( ChatMessageSended value)?  messageSended,TResult Function( ChatMessageDeleted value)?  messageDeleted,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested() when subscriptionRequested != null:
+return subscriptionRequested(_that);case ChatMessageSended() when messageSended != null:
+return messageSended(_that);case ChatMessageDeleted() when messageDeleted != null:
+return messageDeleted(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ChatSubscriptionRequested value)  subscriptionRequested,required TResult Function( ChatMessageSended value)  messageSended,required TResult Function( ChatMessageDeleted value)  messageDeleted,}){
+final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested():
+return subscriptionRequested(_that);case ChatMessageSended():
+return messageSended(_that);case ChatMessageDeleted():
+return messageDeleted(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ChatSubscriptionRequested value)?  subscriptionRequested,TResult? Function( ChatMessageSended value)?  messageSended,TResult? Function( ChatMessageDeleted value)?  messageDeleted,}){
+final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested() when subscriptionRequested != null:
+return subscriptionRequested(_that);case ChatMessageSended() when messageSended != null:
+return messageSended(_that);case ChatMessageDeleted() when messageDeleted != null:
+return messageDeleted(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String chatRoomId)?  subscriptionRequested,TResult Function( MessageEntity message,  String chatRoomId)?  messageSended,TResult Function( MessageEntity message,  String chatRoomId)?  messageDeleted,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested() when subscriptionRequested != null:
+return subscriptionRequested(_that.chatRoomId);case ChatMessageSended() when messageSended != null:
+return messageSended(_that.message,_that.chatRoomId);case ChatMessageDeleted() when messageDeleted != null:
+return messageDeleted(_that.message,_that.chatRoomId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String chatRoomId)  subscriptionRequested,required TResult Function( MessageEntity message,  String chatRoomId)  messageSended,required TResult Function( MessageEntity message,  String chatRoomId)  messageDeleted,}) {final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested():
+return subscriptionRequested(_that.chatRoomId);case ChatMessageSended():
+return messageSended(_that.message,_that.chatRoomId);case ChatMessageDeleted():
+return messageDeleted(_that.message,_that.chatRoomId);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String chatRoomId)?  subscriptionRequested,TResult? Function( MessageEntity message,  String chatRoomId)?  messageSended,TResult? Function( MessageEntity message,  String chatRoomId)?  messageDeleted,}) {final _that = this;
+switch (_that) {
+case ChatSubscriptionRequested() when subscriptionRequested != null:
+return subscriptionRequested(_that.chatRoomId);case ChatMessageSended() when messageSended != null:
+return messageSended(_that.message,_that.chatRoomId);case ChatMessageDeleted() when messageDeleted != null:
+return messageDeleted(_that.message,_that.chatRoomId);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-
-class _$ChatSubscriptionRequestedImpl implements ChatSubscriptionRequested {
-  const _$ChatSubscriptionRequestedImpl({required this.chatRoomId});
-
-  @override
-  final String chatRoomId;
-
-  @override
-  String toString() {
-    return 'ChatEvent.subscriptionRequested(chatRoomId: $chatRoomId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatSubscriptionRequestedImpl &&
-            (identical(other.chatRoomId, chatRoomId) ||
-                other.chatRoomId == chatRoomId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, chatRoomId);
-
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatSubscriptionRequestedImplCopyWith<_$ChatSubscriptionRequestedImpl>
-  get copyWith =>
-      __$$ChatSubscriptionRequestedImplCopyWithImpl<
-        _$ChatSubscriptionRequestedImpl
-      >(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String chatRoomId) subscriptionRequested,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageSended,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageDeleted,
-  }) {
-    return subscriptionRequested(chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String chatRoomId)? subscriptionRequested,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageDeleted,
-  }) {
-    return subscriptionRequested?.call(chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String chatRoomId)? subscriptionRequested,
-    TResult Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult Function(MessageEntity message, String chatRoomId)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (subscriptionRequested != null) {
-      return subscriptionRequested(chatRoomId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatSubscriptionRequested value)
-    subscriptionRequested,
-    required TResult Function(ChatMessageSended value) messageSended,
-    required TResult Function(ChatMessageDeleted value) messageDeleted,
-  }) {
-    return subscriptionRequested(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult? Function(ChatMessageSended value)? messageSended,
-    TResult? Function(ChatMessageDeleted value)? messageDeleted,
-  }) {
-    return subscriptionRequested?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult Function(ChatMessageSended value)? messageSended,
-    TResult Function(ChatMessageDeleted value)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (subscriptionRequested != null) {
-      return subscriptionRequested(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChatSubscriptionRequested implements ChatEvent {
-  const factory ChatSubscriptionRequested({required final String chatRoomId}) =
-      _$ChatSubscriptionRequestedImpl;
-
-  @override
-  String get chatRoomId;
-
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatSubscriptionRequestedImplCopyWith<_$ChatSubscriptionRequestedImpl>
-  get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChatMessageSendedImplCopyWith<$Res>
-    implements $ChatEventCopyWith<$Res> {
-  factory _$$ChatMessageSendedImplCopyWith(
-    _$ChatMessageSendedImpl value,
-    $Res Function(_$ChatMessageSendedImpl) then,
-  ) = __$$ChatMessageSendedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({MessageEntity message, String chatRoomId});
-}
-
-/// @nodoc
-class __$$ChatMessageSendedImplCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$ChatMessageSendedImpl>
-    implements _$$ChatMessageSendedImplCopyWith<$Res> {
-  __$$ChatMessageSendedImplCopyWithImpl(
-    _$ChatMessageSendedImpl _value,
-    $Res Function(_$ChatMessageSendedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null, Object? chatRoomId = null}) {
-    return _then(
-      _$ChatMessageSendedImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as MessageEntity,
-        chatRoomId: null == chatRoomId
-            ? _value.chatRoomId
-            : chatRoomId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$ChatMessageSendedImpl implements ChatMessageSended {
-  const _$ChatMessageSendedImpl({
-    required this.message,
-    required this.chatRoomId,
-  });
 
-  @override
-  final MessageEntity message;
-  @override
-  final String chatRoomId;
+class ChatSubscriptionRequested implements ChatEvent {
+  const ChatSubscriptionRequested({required this.chatRoomId});
+  
 
-  @override
-  String toString() {
-    return 'ChatEvent.messageSended(message: $message, chatRoomId: $chatRoomId)';
-  }
+@override final  String chatRoomId;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatMessageSendedImpl &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.chatRoomId, chatRoomId) ||
-                other.chatRoomId == chatRoomId));
-  }
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatSubscriptionRequestedCopyWith<ChatSubscriptionRequested> get copyWith => _$ChatSubscriptionRequestedCopyWithImpl<ChatSubscriptionRequested>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message, chatRoomId);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessageSendedImplCopyWith<_$ChatMessageSendedImpl> get copyWith =>
-      __$$ChatMessageSendedImplCopyWithImpl<_$ChatMessageSendedImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String chatRoomId) subscriptionRequested,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageSended,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageDeleted,
-  }) {
-    return messageSended(message, chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String chatRoomId)? subscriptionRequested,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageDeleted,
-  }) {
-    return messageSended?.call(message, chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String chatRoomId)? subscriptionRequested,
-    TResult Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult Function(MessageEntity message, String chatRoomId)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (messageSended != null) {
-      return messageSended(message, chatRoomId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatSubscriptionRequested value)
-    subscriptionRequested,
-    required TResult Function(ChatMessageSended value) messageSended,
-    required TResult Function(ChatMessageDeleted value) messageDeleted,
-  }) {
-    return messageSended(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult? Function(ChatMessageSended value)? messageSended,
-    TResult? Function(ChatMessageDeleted value)? messageDeleted,
-  }) {
-    return messageSended?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult Function(ChatMessageSended value)? messageSended,
-    TResult Function(ChatMessageDeleted value)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (messageSended != null) {
-      return messageSended(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatSubscriptionRequested&&(identical(other.chatRoomId, chatRoomId) || other.chatRoomId == chatRoomId));
 }
 
-abstract class ChatMessageSended implements ChatEvent {
-  const factory ChatMessageSended({
-    required final MessageEntity message,
-    required final String chatRoomId,
-  }) = _$ChatMessageSendedImpl;
 
-  MessageEntity get message;
-  @override
-  String get chatRoomId;
+@override
+int get hashCode => Object.hash(runtimeType,chatRoomId);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatMessageSendedImplCopyWith<_$ChatMessageSendedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ChatEvent.subscriptionRequested(chatRoomId: $chatRoomId)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$ChatMessageDeletedImplCopyWith<$Res>
-    implements $ChatEventCopyWith<$Res> {
-  factory _$$ChatMessageDeletedImplCopyWith(
-    _$ChatMessageDeletedImpl value,
-    $Res Function(_$ChatMessageDeletedImpl) then,
-  ) = __$$ChatMessageDeletedImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({MessageEntity message, String chatRoomId});
+abstract mixin class $ChatSubscriptionRequestedCopyWith<$Res> implements $ChatEventCopyWith<$Res> {
+  factory $ChatSubscriptionRequestedCopyWith(ChatSubscriptionRequested value, $Res Function(ChatSubscriptionRequested) _then) = _$ChatSubscriptionRequestedCopyWithImpl;
+@override @useResult
+$Res call({
+ String chatRoomId
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChatSubscriptionRequestedCopyWithImpl<$Res>
+    implements $ChatSubscriptionRequestedCopyWith<$Res> {
+  _$ChatSubscriptionRequestedCopyWithImpl(this._self, this._then);
+
+  final ChatSubscriptionRequested _self;
+  final $Res Function(ChatSubscriptionRequested) _then;
+
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? chatRoomId = null,}) {
+  return _then(ChatSubscriptionRequested(
+chatRoomId: null == chatRoomId ? _self.chatRoomId : chatRoomId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-class __$$ChatMessageDeletedImplCopyWithImpl<$Res>
-    extends _$ChatEventCopyWithImpl<$Res, _$ChatMessageDeletedImpl>
-    implements _$$ChatMessageDeletedImplCopyWith<$Res> {
-  __$$ChatMessageDeletedImplCopyWithImpl(
-    _$ChatMessageDeletedImpl _value,
-    $Res Function(_$ChatMessageDeletedImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null, Object? chatRoomId = null}) {
-    return _then(
-      _$ChatMessageDeletedImpl(
-        message: null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as MessageEntity,
-        chatRoomId: null == chatRoomId
-            ? _value.chatRoomId
-            : chatRoomId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 
-class _$ChatMessageDeletedImpl implements ChatMessageDeleted {
-  const _$ChatMessageDeletedImpl({
-    required this.message,
-    required this.chatRoomId,
-  });
 
-  @override
-  final MessageEntity message;
-  @override
-  final String chatRoomId;
+class ChatMessageSended implements ChatEvent {
+  const ChatMessageSended({required this.message, required this.chatRoomId});
+  
 
-  @override
-  String toString() {
-    return 'ChatEvent.messageDeleted(message: $message, chatRoomId: $chatRoomId)';
-  }
+ final  MessageEntity message;
+@override final  String chatRoomId;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatMessageDeletedImpl &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.chatRoomId, chatRoomId) ||
-                other.chatRoomId == chatRoomId));
-  }
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatMessageSendedCopyWith<ChatMessageSended> get copyWith => _$ChatMessageSendedCopyWithImpl<ChatMessageSended>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message, chatRoomId);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatMessageDeletedImplCopyWith<_$ChatMessageDeletedImpl> get copyWith =>
-      __$$ChatMessageDeletedImplCopyWithImpl<_$ChatMessageDeletedImpl>(
-        this,
-        _$identity,
-      );
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String chatRoomId) subscriptionRequested,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageSended,
-    required TResult Function(MessageEntity message, String chatRoomId)
-    messageDeleted,
-  }) {
-    return messageDeleted(message, chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String chatRoomId)? subscriptionRequested,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult? Function(MessageEntity message, String chatRoomId)? messageDeleted,
-  }) {
-    return messageDeleted?.call(message, chatRoomId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String chatRoomId)? subscriptionRequested,
-    TResult Function(MessageEntity message, String chatRoomId)? messageSended,
-    TResult Function(MessageEntity message, String chatRoomId)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (messageDeleted != null) {
-      return messageDeleted(message, chatRoomId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChatSubscriptionRequested value)
-    subscriptionRequested,
-    required TResult Function(ChatMessageSended value) messageSended,
-    required TResult Function(ChatMessageDeleted value) messageDeleted,
-  }) {
-    return messageDeleted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult? Function(ChatMessageSended value)? messageSended,
-    TResult? Function(ChatMessageDeleted value)? messageDeleted,
-  }) {
-    return messageDeleted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChatSubscriptionRequested value)? subscriptionRequested,
-    TResult Function(ChatMessageSended value)? messageSended,
-    TResult Function(ChatMessageDeleted value)? messageDeleted,
-    required TResult orElse(),
-  }) {
-    if (messageDeleted != null) {
-      return messageDeleted(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatMessageSended&&(identical(other.message, message) || other.message == message)&&(identical(other.chatRoomId, chatRoomId) || other.chatRoomId == chatRoomId));
 }
 
-abstract class ChatMessageDeleted implements ChatEvent {
-  const factory ChatMessageDeleted({
-    required final MessageEntity message,
-    required final String chatRoomId,
-  }) = _$ChatMessageDeletedImpl;
 
-  MessageEntity get message;
-  @override
-  String get chatRoomId;
+@override
+int get hashCode => Object.hash(runtimeType,message,chatRoomId);
 
-  /// Create a copy of ChatEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatMessageDeletedImplCopyWith<_$ChatMessageDeletedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ChatEvent.messageSended(message: $message, chatRoomId: $chatRoomId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ChatMessageSendedCopyWith<$Res> implements $ChatEventCopyWith<$Res> {
+  factory $ChatMessageSendedCopyWith(ChatMessageSended value, $Res Function(ChatMessageSended) _then) = _$ChatMessageSendedCopyWithImpl;
+@override @useResult
+$Res call({
+ MessageEntity message, String chatRoomId
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChatMessageSendedCopyWithImpl<$Res>
+    implements $ChatMessageSendedCopyWith<$Res> {
+  _$ChatMessageSendedCopyWithImpl(this._self, this._then);
+
+  final ChatMessageSended _self;
+  final $Res Function(ChatMessageSended) _then;
+
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? message = null,Object? chatRoomId = null,}) {
+  return _then(ChatMessageSended(
+message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as MessageEntity,chatRoomId: null == chatRoomId ? _self.chatRoomId : chatRoomId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class ChatMessageDeleted implements ChatEvent {
+  const ChatMessageDeleted({required this.message, required this.chatRoomId});
+  
+
+ final  MessageEntity message;
+@override final  String chatRoomId;
+
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatMessageDeletedCopyWith<ChatMessageDeleted> get copyWith => _$ChatMessageDeletedCopyWithImpl<ChatMessageDeleted>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatMessageDeleted&&(identical(other.message, message) || other.message == message)&&(identical(other.chatRoomId, chatRoomId) || other.chatRoomId == chatRoomId));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message,chatRoomId);
+
+@override
+String toString() {
+  return 'ChatEvent.messageDeleted(message: $message, chatRoomId: $chatRoomId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ChatMessageDeletedCopyWith<$Res> implements $ChatEventCopyWith<$Res> {
+  factory $ChatMessageDeletedCopyWith(ChatMessageDeleted value, $Res Function(ChatMessageDeleted) _then) = _$ChatMessageDeletedCopyWithImpl;
+@override @useResult
+$Res call({
+ MessageEntity message, String chatRoomId
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChatMessageDeletedCopyWithImpl<$Res>
+    implements $ChatMessageDeletedCopyWith<$Res> {
+  _$ChatMessageDeletedCopyWithImpl(this._self, this._then);
+
+  final ChatMessageDeleted _self;
+  final $Res Function(ChatMessageDeleted) _then;
+
+/// Create a copy of ChatEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? message = null,Object? chatRoomId = null,}) {
+  return _then(ChatMessageDeleted(
+message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as MessageEntity,chatRoomId: null == chatRoomId ? _self.chatRoomId : chatRoomId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$ChatState {
-  ChatStatus get status => throw _privateConstructorUsedError;
-  List<MessageEntity> get messages => throw _privateConstructorUsedError;
 
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ChatStateCopyWith<ChatState> get copyWith =>
-      throw _privateConstructorUsedError;
+ ChatStatus get status; List<MessageEntity> get messages;
+/// Create a copy of ChatState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChatStateCopyWith<ChatState> get copyWith => _$ChatStateCopyWithImpl<ChatState>(this as ChatState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChatState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.messages, messages));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(messages));
+
+@override
+String toString() {
+  return 'ChatState(status: $status, messages: $messages)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ChatStateCopyWith<$Res> {
-  factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) then) =
-      _$ChatStateCopyWithImpl<$Res, ChatState>;
-  @useResult
-  $Res call({ChatStatus status, List<MessageEntity> messages});
-}
+abstract mixin class $ChatStateCopyWith<$Res>  {
+  factory $ChatStateCopyWith(ChatState value, $Res Function(ChatState) _then) = _$ChatStateCopyWithImpl;
+@useResult
+$Res call({
+ ChatStatus status, List<MessageEntity> messages
+});
 
+
+
+
+}
 /// @nodoc
-class _$ChatStateCopyWithImpl<$Res, $Val extends ChatState>
+class _$ChatStateCopyWithImpl<$Res>
     implements $ChatStateCopyWith<$Res> {
-  _$ChatStateCopyWithImpl(this._value, this._then);
+  _$ChatStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ChatState _self;
+  final $Res Function(ChatState) _then;
 
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? status = null, Object? messages = null}) {
-    return _then(
-      _value.copyWith(
-            status: null == status
-                ? _value.status
-                : status // ignore: cast_nullable_to_non_nullable
-                      as ChatStatus,
-            messages: null == messages
-                ? _value.messages
-                : messages // ignore: cast_nullable_to_non_nullable
-                      as List<MessageEntity>,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of ChatState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? messages = null,}) {
+  return _then(_self.copyWith(
+status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as ChatStatus,messages: null == messages ? _self.messages : messages // ignore: cast_nullable_to_non_nullable
+as List<MessageEntity>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [ChatState].
+extension ChatStatePatterns on ChatState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ChatState value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ChatState() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ChatState value)  $default,){
+final _that = this;
+switch (_that) {
+case _ChatState():
+return $default(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ChatState value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ChatState() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ChatStatus status,  List<MessageEntity> messages)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ChatState() when $default != null:
+return $default(_that.status,_that.messages);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ChatStatus status,  List<MessageEntity> messages)  $default,) {final _that = this;
+switch (_that) {
+case _ChatState():
+return $default(_that.status,_that.messages);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ChatStatus status,  List<MessageEntity> messages)?  $default,) {final _that = this;
+switch (_that) {
+case _ChatState() when $default != null:
+return $default(_that.status,_that.messages);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$ChatStateImplCopyWith<$Res>
-    implements $ChatStateCopyWith<$Res> {
-  factory _$$ChatStateImplCopyWith(
-    _$ChatStateImpl value,
-    $Res Function(_$ChatStateImpl) then,
-  ) = __$$ChatStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ChatStatus status, List<MessageEntity> messages});
+
+
+class _ChatState implements ChatState {
+  const _ChatState({this.status = ChatStatus.initial, final  List<MessageEntity> messages = const []}): _messages = messages;
+  
+
+@override@JsonKey() final  ChatStatus status;
+ final  List<MessageEntity> _messages;
+@override@JsonKey() List<MessageEntity> get messages {
+  if (_messages is EqualUnmodifiableListView) return _messages;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_messages);
+}
+
+
+/// Create a copy of ChatState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ChatStateCopyWith<_ChatState> get copyWith => __$ChatStateCopyWithImpl<_ChatState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ChatState&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._messages, _messages));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_messages));
+
+@override
+String toString() {
+  return 'ChatState(status: $status, messages: $messages)';
+}
+
+
 }
 
 /// @nodoc
-class __$$ChatStateImplCopyWithImpl<$Res>
-    extends _$ChatStateCopyWithImpl<$Res, _$ChatStateImpl>
-    implements _$$ChatStateImplCopyWith<$Res> {
-  __$$ChatStateImplCopyWithImpl(
-    _$ChatStateImpl _value,
-    $Res Function(_$ChatStateImpl) _then,
-  ) : super(_value, _then);
+abstract mixin class _$ChatStateCopyWith<$Res> implements $ChatStateCopyWith<$Res> {
+  factory _$ChatStateCopyWith(_ChatState value, $Res Function(_ChatState) _then) = __$ChatStateCopyWithImpl;
+@override @useResult
+$Res call({
+ ChatStatus status, List<MessageEntity> messages
+});
 
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? status = null, Object? messages = null}) {
-    return _then(
-      _$ChatStateImpl(
-        status: null == status
-            ? _value.status
-            : status // ignore: cast_nullable_to_non_nullable
-                  as ChatStatus,
-        messages: null == messages
-            ? _value._messages
-            : messages // ignore: cast_nullable_to_non_nullable
-                  as List<MessageEntity>,
-      ),
-    );
-  }
+
+
+
 }
-
 /// @nodoc
+class __$ChatStateCopyWithImpl<$Res>
+    implements _$ChatStateCopyWith<$Res> {
+  __$ChatStateCopyWithImpl(this._self, this._then);
 
-class _$ChatStateImpl implements _ChatState {
-  const _$ChatStateImpl({
-    this.status = ChatStatus.initial,
-    final List<MessageEntity> messages = const [],
-  }) : _messages = messages;
+  final _ChatState _self;
+  final $Res Function(_ChatState) _then;
 
-  @override
-  @JsonKey()
-  final ChatStatus status;
-  final List<MessageEntity> _messages;
-  @override
-  @JsonKey()
-  List<MessageEntity> get messages {
-    if (_messages is EqualUnmodifiableListView) return _messages;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_messages);
-  }
-
-  @override
-  String toString() {
-    return 'ChatState(status: $status, messages: $messages)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChatStateImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    status,
-    const DeepCollectionEquality().hash(_messages),
-  );
-
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
-      __$$ChatStateImplCopyWithImpl<_$ChatStateImpl>(this, _$identity);
+/// Create a copy of ChatState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? messages = null,}) {
+  return _then(_ChatState(
+status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as ChatStatus,messages: null == messages ? _self._messages : messages // ignore: cast_nullable_to_non_nullable
+as List<MessageEntity>,
+  ));
 }
 
-abstract class _ChatState implements ChatState {
-  const factory _ChatState({
-    final ChatStatus status,
-    final List<MessageEntity> messages,
-  }) = _$ChatStateImpl;
 
-  @override
-  ChatStatus get status;
-  @override
-  List<MessageEntity> get messages;
-
-  /// Create a copy of ChatState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ChatStateImplCopyWith<_$ChatStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
+
+// dart format on
