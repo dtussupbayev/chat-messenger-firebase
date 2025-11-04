@@ -29,7 +29,7 @@ class PasswordRepeatInput extends StatelessWidget {
             suffix: InkWell(
               onTap: () {
                 context.read<SignUpBloc>().add(
-                  ToggleRepeatPasswordVisibility(),
+                  const ToggleRepeatPasswordVisibility(),
                 );
               },
               child: Icon(

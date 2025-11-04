@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
 
 part 'login_event.dart';
-
 part 'login_state.dart';
+part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc({required this.loginUseCase}) : super(const LoginState()) {
@@ -28,7 +28,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(status: LoginStatus.success));
     } catch (e) {
       emit(
-        state.copyWith(status: LoginStatus.failure, errorMessage: e.toString),
+        state.copyWith(status: LoginStatus.failure, errorMessage: e.toString()),
       );
     }
   }

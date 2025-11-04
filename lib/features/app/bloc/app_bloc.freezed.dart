@@ -16,6 +16,157 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
+mixin _$AppEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() statusCheck,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? statusCheck,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? statusCheck,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppStatusChecked value) statusCheck,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppStatusChecked value)? statusCheck,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppStatusChecked value)? statusCheck,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppEventCopyWith<$Res> {
+  factory $AppEventCopyWith(AppEvent value, $Res Function(AppEvent) then) =
+      _$AppEventCopyWithImpl<$Res, AppEvent>;
+}
+
+/// @nodoc
+class _$AppEventCopyWithImpl<$Res, $Val extends AppEvent>
+    implements $AppEventCopyWith<$Res> {
+  _$AppEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$AppStatusCheckedImplCopyWith<$Res> {
+  factory _$$AppStatusCheckedImplCopyWith(
+    _$AppStatusCheckedImpl value,
+    $Res Function(_$AppStatusCheckedImpl) then,
+  ) = __$$AppStatusCheckedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AppStatusCheckedImplCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res, _$AppStatusCheckedImpl>
+    implements _$$AppStatusCheckedImplCopyWith<$Res> {
+  __$$AppStatusCheckedImplCopyWithImpl(
+    _$AppStatusCheckedImpl _value,
+    $Res Function(_$AppStatusCheckedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of AppEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AppStatusCheckedImpl implements AppStatusChecked {
+  const _$AppStatusCheckedImpl();
+
+  @override
+  String toString() {
+    return 'AppEvent.statusCheck()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AppStatusCheckedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() statusCheck,
+  }) {
+    return statusCheck();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? statusCheck,
+  }) {
+    return statusCheck?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? statusCheck,
+    required TResult orElse(),
+  }) {
+    if (statusCheck != null) {
+      return statusCheck();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppStatusChecked value) statusCheck,
+  }) {
+    return statusCheck(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AppStatusChecked value)? statusCheck,
+  }) {
+    return statusCheck?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppStatusChecked value)? statusCheck,
+    required TResult orElse(),
+  }) {
+    if (statusCheck != null) {
+      return statusCheck(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppStatusChecked implements AppEvent {
+  const factory AppStatusChecked() = _$AppStatusCheckedImpl;
+}
+
+/// @nodoc
 mixin _$AppState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -26,7 +177,6 @@ mixin _$AppState {
     required TResult Function() unAuthenticated,
     required TResult Function() notVerified,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -39,20 +189,13 @@ mixin _$AppState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-
     TResult Function()? splash,
-
     TResult Function()? onBoardingRequired,
-
     TResult Function(User user)? authenticated,
-
     TResult Function()? unAuthenticated,
-
     TResult Function()? notVerified,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AppInitial value) initial,
@@ -62,7 +205,6 @@ mixin _$AppState {
     required TResult Function(AppUnauthenticated value) unAuthenticated,
     required TResult Function(AppNotVerified value) notVerified,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AppInitial value)? initial,
@@ -927,155 +1069,4 @@ class _$AppNotVerifiedImpl implements AppNotVerified {
 
 abstract class AppNotVerified implements AppState {
   const factory AppNotVerified() = _$AppNotVerifiedImpl;
-}
-
-/// @nodoc
-mixin _$AppEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() statusCheck,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? statusCheck,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? statusCheck,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AppStatusChecked value) statusCheck,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppStatusChecked value)? statusCheck,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppStatusChecked value)? statusCheck,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AppEventCopyWith<$Res> {
-  factory $AppEventCopyWith(AppEvent value, $Res Function(AppEvent) then) =
-      _$AppEventCopyWithImpl<$Res, AppEvent>;
-}
-
-/// @nodoc
-class _$AppEventCopyWithImpl<$Res, $Val extends AppEvent>
-    implements $AppEventCopyWith<$Res> {
-  _$AppEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AppEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$AppStatusCheckedImplCopyWith<$Res> {
-  factory _$$AppStatusCheckedImplCopyWith(
-    _$AppStatusCheckedImpl value,
-    $Res Function(_$AppStatusCheckedImpl) then,
-  ) = __$$AppStatusCheckedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AppStatusCheckedImplCopyWithImpl<$Res>
-    extends _$AppEventCopyWithImpl<$Res, _$AppStatusCheckedImpl>
-    implements _$$AppStatusCheckedImplCopyWith<$Res> {
-  __$$AppStatusCheckedImplCopyWithImpl(
-    _$AppStatusCheckedImpl _value,
-    $Res Function(_$AppStatusCheckedImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of AppEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$AppStatusCheckedImpl implements AppStatusChecked {
-  const _$AppStatusCheckedImpl();
-
-  @override
-  String toString() {
-    return 'AppEvent.statusCheck()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppStatusCheckedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() statusCheck,
-  }) {
-    return statusCheck();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? statusCheck,
-  }) {
-    return statusCheck?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? statusCheck,
-    required TResult orElse(),
-  }) {
-    if (statusCheck != null) {
-      return statusCheck();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AppStatusChecked value) statusCheck,
-  }) {
-    return statusCheck(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AppStatusChecked value)? statusCheck,
-  }) {
-    return statusCheck?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppStatusChecked value)? statusCheck,
-    required TResult orElse(),
-  }) {
-    if (statusCheck != null) {
-      return statusCheck(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AppStatusChecked implements AppEvent {
-  const factory AppStatusChecked() = _$AppStatusCheckedImpl;
 }

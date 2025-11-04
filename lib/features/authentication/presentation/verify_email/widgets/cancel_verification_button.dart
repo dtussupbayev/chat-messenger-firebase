@@ -10,7 +10,7 @@ class CancelVerificationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () =>
-          context.read<VerifyEmailBloc>().add(CancelVerification()),
+          context.read<VerifyEmailBloc>().add(const CancelVerification()),
       child: Text(S.of(context).cancel, style: const TextStyle()),
     );
   }

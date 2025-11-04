@@ -1,52 +1,25 @@
 part of 'chats_bloc.dart';
 
-class ChatsState extends Equatable {
-  const ChatsState({
-    this.chatRoomsStream,
-    this.uid,
-    this.users = const {},
-    this.isLoading = false,
-    this.error,
-  });
-
-  final Stream? chatRoomsStream;
-  final String? uid;
-  final Map<String, UserData> users;
-  final bool isLoading;
-  final String? error;
-
-  ChatsState copyWith({
+@freezed
+class ChatsState with _$ChatsState {
+  const factory ChatsState({
     Stream? chatRoomsStream,
     String? uid,
-    Map<String, UserData>? users,
-    bool? isLoading,
+    @Default({}) Map<String, UserData> users,
+    @Default(false) bool isLoading,
     String? error,
-  }) {
-    return ChatsState(
-      chatRoomsStream: chatRoomsStream ?? this.chatRoomsStream,
-      uid: uid ?? this.uid,
-      users: users ?? this.users,
-      isLoading: isLoading ?? this.isLoading,
-      error: error,
-    );
-  }
-
-  @override
-  List<Object?> get props => [chatRoomsStream, uid, users, isLoading, error];
+  }) = _ChatsState;
 }
 
-class UserData extends Equatable {
-  const UserData({
-    required this.firstName,
-    required this.lastName,
-    required this.firstLetters,
-  });
+@freezed
+class UserData with _$UserData {
+  const factory UserData({
+    required String firstName,
+    required String lastName,
+    required String firstLetters,
+  }) = _UserData;
 
-  const UserData.empty() : firstName = '', lastName = '', firstLetters = '';
-  final String firstName;
-  final String lastName;
-  final String firstLetters;
+  const UserData._();
 
-  @override
-  List<Object?> get props => [firstName, lastName, firstLetters];
+  factory UserData.empty() => const UserData(firstName: '', lastName: '', firstLetters: '');
 }

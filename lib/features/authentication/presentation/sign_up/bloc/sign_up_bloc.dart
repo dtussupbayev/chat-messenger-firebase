@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 part 'sign_up_event.dart';
-
 part 'sign_up_state.dart';
+part 'sign_up_bloc.freezed.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc({required this.signUpUseCase}) : super(const SignUpState()) {
@@ -41,14 +41,14 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         emit(
           state.copyWith(
             status: SignUpStatus.failure,
-            errorMessage: () => S.current.emailAlreadyInUseSnackBarText,
+            errorMessage: S.current.emailAlreadyInUseSnackBarText,
           ),
         );
       } else {
         emit(
           state.copyWith(
             status: SignUpStatus.failure,
-            errorMessage: () => S.current.undefinedError,
+            errorMessage: S.current.undefinedError,
           ),
         );
       }

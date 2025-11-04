@@ -24,7 +24,7 @@ class UserInformation extends StatelessWidget {
         Text('${S.of(context).firstName} $firstName'),
         Text('${S.of(context).lastName} $lastName'),
         TextButton(
-          onPressed: () => context.read<ProfileBloc>().add(SignOutEvent()),
+          onPressed: () => context.read<ProfileBloc>().add(const SignOutEvent()),
           child: Text(S.of(context).signOut),
         ),
       ],

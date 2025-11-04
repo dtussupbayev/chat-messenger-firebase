@@ -22,7 +22,6 @@ mixin _$LocaleEvent {
     required TResult Function(Locale? locale) updateLocale,
     required TResult Function() clearState,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Locale? locale)? updateLocale,
@@ -31,18 +30,14 @@ mixin _$LocaleEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Locale? locale)? updateLocale,
-
     TResult Function()? clearState,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UpdateLocale value) updateLocale,
     required TResult Function(ClearState value) clearState,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(UpdateLocale value)? updateLocale,
@@ -262,7 +257,7 @@ class _$ClearStateImpl with DiagnosticableTreeMixin implements ClearState {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'LocaleEvent.clearState'));
+    properties..add(DiagnosticsProperty('type', 'LocaleEvent.clearState'));
   }
 
   @override

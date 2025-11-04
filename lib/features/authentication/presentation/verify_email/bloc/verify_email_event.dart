@@ -1,14 +1,8 @@
 part of 'verify_email_bloc.dart';
 
-abstract class VerifyEmailEvent extends Equatable {
-  const VerifyEmailEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class VerifyEmailEvent with _$VerifyEmailEvent {
+  const factory VerifyEmailEvent.sendVerificationEmail() = SendVerificationEmail;
+  const factory VerifyEmailEvent.checkEmailVerified() = CheckEmailVerified;
+  const factory VerifyEmailEvent.cancelVerification() = CancelVerification;
 }
-
-class SendVerificationEmail extends VerifyEmailEvent {}
-
-class CheckEmailVerified extends VerifyEmailEvent {}
-
-class CancelVerification extends VerifyEmailEvent {}

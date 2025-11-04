@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProfileBloc()..add(LoadProfileInfoEvent()),
+      create: (context) => ProfileBloc()..add(const LoadProfileInfoEvent()),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
