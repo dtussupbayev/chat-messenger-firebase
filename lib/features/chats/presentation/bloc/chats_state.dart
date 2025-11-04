@@ -21,5 +21,6 @@ abstract class UserData with _$UserData {
 
   const UserData._();
 
-  factory UserData.empty() => const UserData(firstName: '', lastName: '', firstLetters: '');
+  factory UserData.empty() =>
+      const UserData(firstName: '', lastName: '', firstLetters: '');
 }

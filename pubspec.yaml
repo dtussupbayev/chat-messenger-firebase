@@ -11,6 +11,8 @@ dependencies:
   device_preview: ^1.2.0
   email_validator: ^3.0.0
   equatable: ^2.0.7
+  example:
+    path: packages/realtimechat_uikit/example
   firebase_auth: ^6.1.2
   firebase_auth_web: ^6.1.0
   firebase_core: ^4.2.1

@@ -1,8 +1,8 @@
 import 'package:day_night_themed_switch/day_night_themed_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class AppThemeSwitcher extends StatelessWidget {
   const AppThemeSwitcher({super.key});

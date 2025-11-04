@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

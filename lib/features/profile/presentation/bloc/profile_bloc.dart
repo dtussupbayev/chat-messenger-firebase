@@ -16,7 +16,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<SignOutEvent>(_onSignOut);
   }
 
-  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt.get<GetProfileInfoUseCase>();
+  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt
+      .get<GetProfileInfoUseCase>();
   final SignOutUseCase _signOutUseCase = getIt.get<SignOutUseCase>();
 
   Future<void> _onLoadProfileInfo(

@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/core/screens/splash_screen.dart';
 import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
-import 'package:realtime_chat_app/core/themes/app_themes.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -26,8 +26,9 @@ class PasswordInput extends StatelessWidget {
             prefixIcon: const Icon(Icons.lock),
             hintText: S.of(context).passwordFormHintText,
             suffix: InkWell(
-              onTap: () =>
-                  context.read<LoginBloc>().add(const TogglePasswordVisibility()),
+              onTap: () => context.read<LoginBloc>().add(
+                const TogglePasswordVisibility(),
+              ),
               child: Icon(isHidden ? Icons.visibility_off : Icons.visibility),
             ),
           ),

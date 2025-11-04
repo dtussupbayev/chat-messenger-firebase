@@ -13,7 +13,8 @@ class SignOutButton extends StatelessWidget {
           return IconButton(
             icon: const Icon(Icons.logout),
             tooltip: 'Sign Out Icon',
-            onPressed: () => context.read<ProfileBloc>().add(const SignOutEvent()),
+            onPressed: () =>
+                context.read<ProfileBloc>().add(const SignOutEvent()),
           );
         } else {
           return const SizedBox();

@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
-import 'package:realtime_chat_app/core/themes/app_theme_extension.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/delete_message_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/get_message_list_use_case.dart';
 import 'package:realtime_chat_app/features/chat/domain/use_cases/send_message_use_case.dart';
 import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
 import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_bottom_input_panel.dart';
 import 'package:realtime_chat_app/features/chat/presentation/widgets/chat_message_list.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({
