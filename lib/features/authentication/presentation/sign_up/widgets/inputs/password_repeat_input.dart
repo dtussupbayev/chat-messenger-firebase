@@ -4,10 +4,7 @@ import 'package:realtime_chat_app/features/authentication/presentation/sign_up/b
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class PasswordRepeatInput extends StatelessWidget {
-  const PasswordRepeatInput({
-    super.key,
-    required this.repeatPasswordTextEditingController,
-  });
+  const PasswordRepeatInput({super.key, required this.repeatPasswordTextEditingController});
 
   final TextEditingController repeatPasswordTextEditingController;
 
@@ -20,23 +17,16 @@ class PasswordRepeatInput extends StatelessWidget {
           controller: repeatPasswordTextEditingController,
           obscureText: state.isRepeatPasswordHidden,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          validator: (value) => value != null && value.length < 6
-              ? S.of(context).passwordFormValidatorText
-              : null,
+          validator: (value) =>
+              value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.lock_clock_rounded),
             hintText: S.of(context).passwordRepeatFormHintText,
             suffix: InkWell(
               onTap: () {
-                context.read<SignUpBloc>().add(
-                  const ToggleRepeatPasswordVisibility(),
-                );
+                context.read<SignUpBloc>().add(const ToggleRepeatPasswordVisibility());
               },
-              child: Icon(
-                state.isRepeatPasswordHidden
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
+              child: Icon(state.isRepeatPasswordHidden ? Icons.visibility_off : Icons.visibility),
             ),
           ),
         );

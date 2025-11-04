@@ -15,9 +15,7 @@ class FirebaseAuthExceptionHandler {
       case FirebaseErrorCodes.wrongPassword:
         return AuthException(S.current.firebase_auth_wrong_password);
       default:
-        return AuthException(
-          S.current.authError(e.code, e.message ?? S.current.undefinedError),
-        );
+        return AuthException(S.current.authError(e.code, e.message ?? S.current.undefinedError));
     }
   }
 }

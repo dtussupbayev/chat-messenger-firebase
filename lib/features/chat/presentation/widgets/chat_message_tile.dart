@@ -20,14 +20,10 @@ class ChatMessageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onHorizontalDragStart: (_) {
-        context.read<ChatBloc>().add(
-          ChatMessageDeleted(message: message, chatRoomId: chatRoomId),
-        );
+        context.read<ChatBloc>().add(ChatMessageDeleted(message: message, chatRoomId: chatRoomId));
       },
       child: Row(
-        mainAxisAlignment: sendByMe
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
+        mainAxisAlignment: sendByMe ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           Flexible(
             child: Container(
@@ -39,13 +35,9 @@ class ChatMessageTile extends StatelessWidget {
                     : context.colorScheme.onSurface,
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(24),
-                  bottomRight: sendByMe
-                      ? Radius.zero
-                      : const Radius.circular(24),
+                  bottomRight: sendByMe ? Radius.zero : const Radius.circular(24),
                   topRight: const Radius.circular(24),
-                  bottomLeft: sendByMe
-                      ? const Radius.circular(24)
-                      : Radius.zero,
+                  bottomLeft: sendByMe ? const Radius.circular(24) : Radius.zero,
                 ),
               ),
               child: Text(

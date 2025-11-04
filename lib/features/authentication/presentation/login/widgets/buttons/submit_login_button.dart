@@ -24,10 +24,7 @@ class SubmitLoginButton extends StatelessWidget {
           onPressed: () {
             if (formKey.currentState!.validate()) {
               context.read<LoginBloc>().add(
-                LoginSubmitted(
-                  email: emailController.text,
-                  password: passwordController.text,
-                ),
+                LoginSubmitted(email: emailController.text, password: passwordController.text),
               );
             }
           },

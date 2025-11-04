@@ -19,12 +19,5 @@ class ChatRoom extends Equatable {
   final Timestamp time;
 
   @override
-  List<Object?> get props => [
-    id,
-    lastMessage,
-    lastMessageSendBy,
-    lastMessageSendTs,
-    users,
-    time,
-  ];
+  List<Object?> get props => [id, lastMessage, lastMessageSendBy, lastMessageSendTs, users, time];
 }

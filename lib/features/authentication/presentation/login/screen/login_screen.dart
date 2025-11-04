@@ -35,10 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // title: Text(S.of(context).signInAppBarTitle),
             backgroundColor: context.theme.scaffoldBackgroundColor,
             actions: const [
-              Padding(
-                padding: EdgeInsets.only(right: 30.0),
-                child: AppThemeSwitcher(),
-              ),
+              Padding(padding: EdgeInsets.only(right: 30.0), child: AppThemeSwitcher()),
             ],
           ),
           body: BlocListener<LoginBloc, LoginState>(
@@ -63,10 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const GradientIcon(
-                      iconData: Icons.textsms_rounded,
-                      size: 96,
-                    ),
+                    const GradientIcon(iconData: Icons.textsms_rounded, size: 96),
                     const SizedBox(height: 20),
                     Text(
                       'RealTimeChat',

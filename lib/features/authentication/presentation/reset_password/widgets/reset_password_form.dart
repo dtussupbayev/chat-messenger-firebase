@@ -16,10 +16,7 @@ class ResetPasswordForm extends StatelessWidget {
           const SizedBox(height: 15),
           EmailFormField(emailController: emailController),
           const SizedBox(height: 30),
-          SubmitResetPasswordButton(
-            formKey: formKey,
-            emailController: emailController,
-          ),
+          SubmitResetPasswordButton(formKey: formKey, emailController: emailController),
         ],
       ),
     );

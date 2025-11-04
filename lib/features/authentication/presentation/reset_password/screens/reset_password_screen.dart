@@ -16,9 +16,8 @@ class ResetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ResetPasswordBloc(
-        resetPasswordUseCase: getIt.get<ResetPasswordUseCase>(),
-      ),
+      create: (context) =>
+          ResetPasswordBloc(resetPasswordUseCase: getIt.get<ResetPasswordUseCase>()),
       child: BlocListener<ResetPasswordBloc, ResetPasswordState>(
         listener: (context, state) {
           if (state.status == ResetPasswordStatus.failure) {
@@ -43,13 +42,8 @@ class ResetPasswordScreen extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            title: Text(S.of(context).resetPasswordScreenAppBarTitle),
-          ),
-          body: const Padding(
-            padding: EdgeInsets.all(30.0),
-            child: ResetPasswordForm(),
-          ),
+          appBar: AppBar(title: Text(S.of(context).resetPasswordScreenAppBarTitle)),
+          body: const Padding(padding: EdgeInsets.all(30.0), child: ResetPasswordForm()),
         ),
       ),
     );

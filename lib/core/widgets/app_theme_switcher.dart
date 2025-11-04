@@ -15,13 +15,9 @@ class AppThemeSwitcher extends StatelessWidget {
         value: context.brightness == Brightness.dark,
         onChanged: (val) {
           if (val) {
-            context.read<ThemeBloc>().add(
-              const UpdateThemeEvent(ThemeMode.dark),
-            );
+            context.read<ThemeBloc>().add(const UpdateThemeEvent(ThemeMode.dark));
           } else {
-            context.read<ThemeBloc>().add(
-              const UpdateThemeEvent(ThemeMode.light),
-            );
+            context.read<ThemeBloc>().add(const UpdateThemeEvent(ThemeMode.light));
           }
         },
       ),

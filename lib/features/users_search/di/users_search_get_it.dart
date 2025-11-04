@@ -8,10 +8,7 @@ import 'package:realtime_chat_app/features/users_search/domain/usecases/search_u
 void initUsersSearchDependencies(GetIt getIt) {
   getIt
     ..registerLazySingleton<UsersSearchRemoteDataSource>(
-      () => UsersSearchRemoteDataSourceImpl(
-        firestore: getIt.get(),
-        auth: getIt.get(),
-      ),
+      () => UsersSearchRemoteDataSourceImpl(firestore: getIt.get(), auth: getIt.get()),
     )
     ..registerLazySingleton<UsersSearchRepository>(
       () => UsersSearchRepositoryImpl(
@@ -20,8 +17,7 @@ void initUsersSearchDependencies(GetIt getIt) {
       ),
     )
     ..registerLazySingleton<CreateChatRoomUseCase>(
-      () =>
-          CreateChatRoomUseCase(repository: getIt.get<UsersSearchRepository>()),
+      () => CreateChatRoomUseCase(repository: getIt.get<UsersSearchRepository>()),
     )
     ..registerLazySingleton<SearchUsersUseCase>(
       () => SearchUsersUseCase(repository: getIt.get<UsersSearchRepository>()),

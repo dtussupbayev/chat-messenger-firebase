@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -87,22 +84,12 @@ class S {
 
   /// `Chat Details`
   String get chatDetails {
-    return Intl.message(
-      'Chat Details',
-      name: 'chatDetails',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Chat Details', name: 'chatDetails', desc: '', args: []);
   }
 
   /// `Chat {id}`
   String chatListTileTitle(int id) {
-    return Intl.message(
-      'Chat $id',
-      name: 'chatListTileTitle',
-      desc: '',
-      args: [id],
-    );
+    return Intl.message('Chat $id', name: 'chatListTileTitle', desc: '', args: [id]);
   }
 
   /// `Chats`
@@ -127,12 +114,7 @@ class S {
 
   /// `Enter the email`
   String get emailFormHintText {
-    return Intl.message(
-      'Enter the email',
-      name: 'emailFormHintText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter the email', name: 'emailFormHintText', desc: '', args: []);
   }
 
   /// `Enter the right email`
@@ -152,42 +134,22 @@ class S {
 
   /// `Enter a Valid Last Name`
   String get enterAValidLastName {
-    return Intl.message(
-      'Enter a Valid Last Name',
-      name: 'enterAValidLastName',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter a Valid Last Name', name: 'enterAValidLastName', desc: '', args: []);
   }
 
   /// `Enter a Valid Name`
   String get enterAValidName {
-    return Intl.message(
-      'Enter a Valid Name',
-      name: 'enterAValidName',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter a Valid Name', name: 'enterAValidName', desc: '', args: []);
   }
 
   /// `Enter your first name`
   String get enterYourFirstName {
-    return Intl.message(
-      'Enter your first name',
-      name: 'enterYourFirstName',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter your first name', name: 'enterYourFirstName', desc: '', args: []);
   }
 
   /// `Enter your last name`
   String get enterYourLastName {
-    return Intl.message(
-      'Enter your last name',
-      name: 'enterYourLastName',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter your last name', name: 'enterYourLastName', desc: '', args: []);
   }
 
   /// `Error`
@@ -242,12 +204,7 @@ class S {
 
   /// `Enter the first name`
   String get firstNameFormHintText {
-    return Intl.message(
-      'Enter the first name',
-      name: 'firstNameFormHintText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter the first name', name: 'firstNameFormHintText', desc: '', args: []);
   }
 
   /// `The list of chats is available only for those signed in the system`
@@ -282,12 +239,7 @@ class S {
 
   /// `Enter the last name`
   String get lastNameFormHintText {
-    return Intl.message(
-      'Enter the last name',
-      name: 'lastNameFormHintText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter the last name', name: 'lastNameFormHintText', desc: '', args: []);
   }
 
   /// `Let's start`
@@ -302,22 +254,12 @@ class S {
 
   /// `More Information Here`
   String get moreInformationHere {
-    return Intl.message(
-      'More Information Here',
-      name: 'moreInformationHere',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('More Information Here', name: 'moreInformationHere', desc: '', args: []);
   }
 
   /// `Enter the password`
   String get passwordFormHintText {
-    return Intl.message(
-      'Enter the password',
-      name: 'passwordFormHintText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Enter the password', name: 'passwordFormHintText', desc: '', args: []);
   }
 
   /// `At least 6 characters`
@@ -342,12 +284,7 @@ class S {
 
   /// `Passwords must match`
   String get passwordsDifferent {
-    return Intl.message(
-      'Passwords must match',
-      name: 'passwordsDifferent',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Passwords must match', name: 'passwordsDifferent', desc: '', args: []);
   }
 
   /// `Profile`
@@ -362,32 +299,17 @@ class S {
 
   /// `Reset password`
   String get resetPassword {
-    return Intl.message(
-      'Reset password',
-      name: 'resetPassword',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Reset password', name: 'resetPassword', desc: '', args: []);
   }
 
   /// `Reset password`
   String get resetPasswordAppBarTitle {
-    return Intl.message(
-      'Reset password',
-      name: 'resetPasswordAppBarTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Reset password', name: 'resetPasswordAppBarTitle', desc: '', args: []);
   }
 
   /// `Reset password`
   String get resetPasswordButtonText {
-    return Intl.message(
-      'Reset password',
-      name: 'resetPasswordButtonText',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Reset password', name: 'resetPasswordButtonText', desc: '', args: []);
   }
 
   /// `Reset password`
@@ -422,12 +344,7 @@ class S {
 
   /// `Register`
   String get signUpScreenAppBarTitle {
-    return Intl.message(
-      'Register',
-      name: 'signUpScreenAppBarTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Register', name: 'signUpScreenAppBarTitle', desc: '', args: []);
   }
 
   /// `Password reset. Check the mail`
@@ -442,22 +359,12 @@ class S {
 
   /// `System Theme`
   String get systemTheme {
-    return Intl.message(
-      'System Theme',
-      name: 'systemTheme',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('System Theme', name: 'systemTheme', desc: '', args: []);
   }
 
   /// `Type a message`
   String get typeAMessage {
-    return Intl.message(
-      'Type a message',
-      name: 'typeAMessage',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Type a message', name: 'typeAMessage', desc: '', args: []);
   }
 
   /// `Unknown error! Try again or contact in support.`
@@ -472,12 +379,7 @@ class S {
 
   /// `Undefined login error.`
   String get undefinedLoginError {
-    return Intl.message(
-      'Undefined login error.',
-      name: 'undefinedLoginError',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Undefined login error.', name: 'undefinedLoginError', desc: '', args: []);
   }
 
   /// `User information not available`

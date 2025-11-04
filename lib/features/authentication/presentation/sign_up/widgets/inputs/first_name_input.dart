@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/generated/l10n.dart';
 
 class FirstNameInput extends StatelessWidget {
-  const FirstNameInput({
-    super.key,
-    required this.firstNameTextEditingController,
-  });
+  const FirstNameInput({super.key, required this.firstNameTextEditingController});
 
   final TextEditingController firstNameTextEditingController;
 

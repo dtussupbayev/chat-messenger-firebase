@@ -12,8 +12,7 @@ void initChatDependencies(GetIt getIt) {
       () => SendMessageUseCase(iChatRepository: getIt.get<IChatRepository>()),
     )
     ..registerLazySingleton<GetMessageListUseCase>(
-      () =>
-          GetMessageListUseCase(iChatRepository: getIt.get<IChatRepository>()),
+      () => GetMessageListUseCase(iChatRepository: getIt.get<IChatRepository>()),
     )
     ..registerLazySingleton<DeleteMessageUseCase>(
       () => DeleteMessageUseCase(iChatRepository: getIt.get<IChatRepository>()),

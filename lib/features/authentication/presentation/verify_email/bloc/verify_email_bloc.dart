@@ -31,12 +31,7 @@ class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
       await Future.delayed(const Duration(seconds: 20));
       emit(state.copyWith(canResendEmail: true));
     } catch (e) {
-      emit(
-        state.copyWith(
-          status: VerifyEmailStatus.failure,
-          errorMessage: e.toString(),
-        ),
-      );
+      emit(state.copyWith(status: VerifyEmailStatus.failure, errorMessage: e.toString()));
     }
   }
 
@@ -68,10 +63,7 @@ class VerifyEmailBloc extends Bloc<VerifyEmailEvent, VerifyEmailState> {
   }
 
   void _startEmailVerificationCheck() {
-    _timer = Timer.periodic(
-      const Duration(seconds: 5),
-      (_) => add(const CheckEmailVerified()),
-    );
+    _timer = Timer.periodic(const Duration(seconds: 5), (_) => add(const CheckEmailVerified()));
   }
 
   @override

@@ -23,9 +23,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return CupertinoTheme(
       data: CupertinoThemeData(
-        brightness: context.brightness == Brightness.light
-            ? Brightness.light
-            : Brightness.dark,
+        brightness: context.brightness == Brightness.light ? Brightness.light : Brightness.dark,
       ),
       child: Scaffold(
         appBar: AppBar(title: Text(S.of(context).settings)),
@@ -42,8 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       _themeModeToString(themeMode),
                       style: const TextStyle(color: CupertinoColors.activeBlue),
                     ),
-                    onPressed: () =>
-                        _showThemeModeBottomSheet(context, themeMode),
+                    onPressed: () => _showThemeModeBottomSheet(context, themeMode),
                   ),
                 ),
               ],

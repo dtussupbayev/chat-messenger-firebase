@@ -15,10 +15,7 @@ class ThemeBloc extends HydratedBloc<ThemeEvent, ThemeState> {
     on<UpdateThemeEvent>(_onUpdateTheme);
   }
 
-  Future<void> _onUpdateTheme(
-    UpdateThemeEvent event,
-    Emitter<ThemeState> emit,
-  ) async {
+  Future<void> _onUpdateTheme(UpdateThemeEvent event, Emitter<ThemeState> emit) async {
     emit(ThemeState(themeMode: event.themeMode));
   }
 

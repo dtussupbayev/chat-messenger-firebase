@@ -34,25 +34,18 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
 
     await emit.forEach<List<MessageEntity>>(
       getMessageListUseCase.execute(event.chatRoomId),
-      onData: (messages) =>
-          state.copyWith(status: ChatStatus.success, messages: messages),
+      onData: (messages) => state.copyWith(status: ChatStatus.success, messages: messages),
       onError: (_, _) => state.copyWith(status: ChatStatus.failure),
     );
   }
 
-  Future<void> _onMessageSended(
-    ChatMessageSended event,
-    Emitter<ChatState> emit,
-  ) async {
+  Future<void> _onMessageSended(ChatMessageSended event, Emitter<ChatState> emit) async {
     await sendMessageUseCase.execute(
       SendMessageParams(message: event.message, chatRoomId: event.chatRoomId),
     );
   }
 
-  Future<void> _onMessageDeleted(
-    ChatMessageDeleted event,
-    Emitter<ChatState> emit,
-  ) async {
+  Future<void> _onMessageDeleted(ChatMessageDeleted event, Emitter<ChatState> emit) async {
     await deleteMessageUseCase.execute(
       DeleteMessageParams(message: event.message, chatRoomId: event.chatRoomId),
     );

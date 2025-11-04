@@ -16,14 +16,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<SignOutEvent>(_onSignOut);
   }
 
-  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt
-      .get<GetProfileInfoUseCase>();
+  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt.get<GetProfileInfoUseCase>();
   final SignOutUseCase _signOutUseCase = getIt.get<SignOutUseCase>();
 
-  Future<void> _onLoadProfileInfo(
-    LoadProfileInfoEvent event,
-    Emitter<ProfileState> emit,
-  ) async {
+  Future<void> _onLoadProfileInfo(LoadProfileInfoEvent event, Emitter<ProfileState> emit) async {
     emit(const ProfileState.loading());
     try {
       final userEntity = await _getProfileInfoUseCase.call();
@@ -41,10 +37,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
   }
 
-  Future<void> _onSignOut(
-    SignOutEvent event,
-    Emitter<ProfileState> emit,
-  ) async {
+  Future<void> _onSignOut(SignOutEvent event, Emitter<ProfileState> emit) async {
     try {
       await _signOutUseCase.call();
       emit(const ProfileState.signedOut());

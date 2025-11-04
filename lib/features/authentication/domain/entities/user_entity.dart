@@ -11,27 +11,18 @@ class UserEntity {
   final String lastName;
   final List<String> searchKeywords;
 
-  static List<String> _generateSearchKeywords(
-    String firstName,
-    String lastName,
-  ) {
+  static List<String> _generateSearchKeywords(String firstName, String lastName) {
     final lowercaseFirstName = firstName.toLowerCase();
     final lowercaseLastName = lastName.toLowerCase();
 
     final Set<String> substrings = {}
       ..add(lowercaseFirstName[0])
       ..addAll(
-        Iterable.generate(
-          lowercaseFirstName.length,
-          (i) => lowercaseFirstName.substring(0, i + 1),
-        ),
+        Iterable.generate(lowercaseFirstName.length, (i) => lowercaseFirstName.substring(0, i + 1)),
       )
       ..add(lowercaseLastName[0])
       ..addAll(
-        Iterable.generate(
-          lowercaseLastName.length,
-          (i) => lowercaseLastName.substring(0, i + 1),
-        ),
+        Iterable.generate(lowercaseLastName.length, (i) => lowercaseLastName.substring(0, i + 1)),
       );
 
     return substrings.toList();

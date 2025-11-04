@@ -16,10 +16,7 @@ class LoginUseCase implements BaseUseCase<LoginParams, void> {
   @override
   Future<void> execute(LoginParams params) async {
     try {
-      await iAuthRepository.signInWithEmailAndPassword(
-        params.email,
-        params.password,
-      );
+      await iAuthRepository.signInWithEmailAndPassword(params.email, params.password);
     } catch (e) {
       rethrow;
     }
