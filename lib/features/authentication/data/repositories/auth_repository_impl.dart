@@ -4,7 +4,6 @@ import 'package:realtime_chat_app/features/authentication/data/exceptions/auth_e
     show AuthException;
 import 'package:realtime_chat_app/features/authentication/data/exceptions/firebase_auth_exception_handler.dart'
     show FirebaseAuthExceptionHandler;
-import 'package:realtime_chat_app/features/authentication/data/dtos/user_dto.dart';
 import 'package:realtime_chat_app/features/authentication/domain/entities/user_entity.dart';
 import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
 
@@ -41,7 +40,6 @@ class AuthRepositoryImpl implements IAuthRepository {
       email: email,
       firstName: firstName,
       lastName: lastName,
-      searchKeywords: generateSearchKeywords(firstName, lastName),
     );
 
     await addUserDetails(userEntity);
@@ -51,15 +49,15 @@ class AuthRepositoryImpl implements IAuthRepository {
 
   @override
   Future<void> addUserDetails(UserEntity user) async {
-    final userDto = UserDto(
-      uid: user.uid,
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      searchKeywords: user.searchKeywords,
-    );
+    final userInfoMap = {
+      'uid': user.uid,
+      'email': user.email,
+      'firstName': user.firstName,
+      'lastName': user.lastName,
+      'searchKeywords': generateSearchKeywords(user.firstName, user.lastName),
+    };
 
-    await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userDto.toJson());
+    await FirebaseFirestore.instance.collection('users').doc(user.uid).set(userInfoMap);
   }
 
   @override
