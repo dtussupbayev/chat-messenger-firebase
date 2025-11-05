@@ -1,5 +1,3 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:realtime_chat_app/core/screens/splash_screen.dart';
 import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
@@ -32,27 +30,21 @@ class App extends StatelessWidget {
                     router.go(SplashScreen.routeName);
                   }
                 },
-                child: DevicePreview(
-                  enabled: !kReleaseMode,
-                  builder: (context) => MaterialApp.router(
-                    // ignore: deprecated_member_use
-                    useInheritedMediaQuery: true,
-                    builder: DevicePreview.appBuilder,
-                    routerConfig: router,
-                    localizationsDelegates: const [
-                      S.delegate,
-                      GlobalMaterialLocalizations.delegate,
-                      GlobalWidgetsLocalizations.delegate,
-                      GlobalCupertinoLocalizations.delegate,
-                    ],
-                    locale: localeState.locale,
-                    supportedLocales: S.delegate.supportedLocales,
-                    onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
-                    theme: lightTheme(),
-                    darkTheme: darkTheme(),
-                    themeMode: themeState.themeMode,
-                    debugShowCheckedModeBanner: false,
-                  ),
+                child: MaterialApp.router(
+                  routerConfig: router,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  locale: localeState.locale,
+                  supportedLocales: S.delegate.supportedLocales,
+                  onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
+                  theme: lightTheme(),
+                  darkTheme: darkTheme(),
+                  themeMode: themeState.themeMode,
+                  debugShowCheckedModeBanner: false,
                 ),
               );
             },
