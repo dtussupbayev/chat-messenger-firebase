@@ -5,9 +5,8 @@ import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import '../../core/router/app_router.dart';
-import '../../generated/l10n.dart';
+import '../../l10n/app_localizations.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -32,15 +31,10 @@ class App extends StatelessWidget {
                 },
                 child: MaterialApp.router(
                   routerConfig: router,
-                  localizationsDelegates: const [
-                    S.delegate,
-                    GlobalMaterialLocalizations.delegate,
-                    GlobalWidgetsLocalizations.delegate,
-                    GlobalCupertinoLocalizations.delegate,
-                  ],
+                  localizationsDelegates: AppLocalizations.localizationsDelegates,
                   locale: localeState.locale,
-                  supportedLocales: S.delegate.supportedLocales,
-                  onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
+                  supportedLocales: AppLocalizations.supportedLocales,
+                  onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appTitle,
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
                   themeMode: themeState.themeMode,

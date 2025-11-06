@@ -7,7 +7,7 @@ import 'package:realtime_chat_app/features/authentication/presentation/verify_em
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/resend_verification_email_button.dart';
 import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
 
-import '../../../../../generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -33,7 +33,7 @@ class VerifyEmailScreen extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(title: Text(S.of(context).verifyEmailScreenAppBarTitle)),
+          appBar: AppBar(title: Text(AppLocalizations.of(context).verifyEmailScreenAppBarTitle)),
           body: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(20),
@@ -41,7 +41,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    S.of(context).verificationEmailResended,
+                    AppLocalizations.of(context).verificationEmailResended,
                     style: const TextStyle(fontSize: 20),
                   ),
                   const SizedBox(height: 20),

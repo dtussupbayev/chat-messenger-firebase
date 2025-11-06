@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
 import 'package:realtime_chat_app/features/chats/presentation/widgets/chat_room_list_tile.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
+import 'package:realtime_chat_app/core/locale_helper.dart';
 
 class ChatRoomList extends StatelessWidget {
   const ChatRoomList({super.key});
@@ -27,7 +28,7 @@ class ChatRoomList extends StatelessWidget {
             }
 
             if (snapshot.hasError) {
-              return Center(child: Text('${S.current.error}: ${snapshot.error}'));
+              return Center(child: Text('${LocaleStrings.current.error}: ${snapshot.error}'));
             }
 
             final chatRooms = snapshot.data;
@@ -36,7 +37,10 @@ class ChatRoomList extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 60.0),
                 child: Center(
-                  child: Text(S.of(context).itemListEmpty, textAlign: TextAlign.center),
+                  child: Text(
+                    AppLocalizations.of(context).itemListEmpty,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               );
             }

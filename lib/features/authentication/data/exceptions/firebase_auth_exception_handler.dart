@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:realtime_chat_app/generated/l10n.dart' show S;
+import 'package:realtime_chat_app/core/locale_helper.dart';
 
 import 'auth_exception.dart' show AuthException;
 
@@ -7,15 +7,20 @@ class FirebaseAuthExceptionHandler {
   static AuthException handle(FirebaseAuthException e) {
     switch (e.code) {
       case FirebaseErrorCodes.invalidEmail:
-        return AuthException(S.current.firebase_auth_invalid_email);
+        return AuthException(LocaleStrings.current.firebase_auth_invalid_email);
       case FirebaseErrorCodes.userDisabled:
-        return AuthException(S.current.firebase_auth_user_disabled);
+        return AuthException(LocaleStrings.current.firebase_auth_user_disabled);
       case FirebaseErrorCodes.userNotFound:
-        return AuthException(S.current.firebase_auth_user_not_found);
+        return AuthException(LocaleStrings.current.firebase_auth_user_not_found);
       case FirebaseErrorCodes.wrongPassword:
-        return AuthException(S.current.firebase_auth_wrong_password);
+        return AuthException(LocaleStrings.current.firebase_auth_wrong_password);
       default:
-        return AuthException(S.current.authError(e.code, e.message ?? S.current.undefinedError));
+        return AuthException(
+          LocaleStrings.current.authError(
+            e.code,
+            e.message ?? LocaleStrings.current.undefinedError,
+          ),
+        );
     }
   }
 }

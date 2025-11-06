@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:realtime_chat_app/features/chat/domain/entities/message_entity.dart';
 import 'package:realtime_chat_app/features/chat/presentation/bloc/chat_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class ChatBottomInputPanel extends StatelessWidget {
   ChatBottomInputPanel({super.key, required this.chatRoomId});
@@ -28,7 +28,7 @@ class ChatBottomInputPanel extends StatelessWidget {
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
-              hintText: S.current.typeAMessage,
+              hintText: AppLocalizations.of(context).typeAMessage,
               suffixIcon: InkWell(
                 borderRadius: BorderRadius.circular(16.0),
                 onTap: () {

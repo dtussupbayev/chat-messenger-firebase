@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class EmailInput extends StatelessWidget {
   const EmailInput({super.key, required this.emailTextEditingController});
@@ -14,11 +14,11 @@ class EmailInput extends StatelessWidget {
       autocorrect: false,
       controller: emailTextEditingController,
       validator: (email) => email != null && !EmailValidator.validate(email)
-          ? S.of(context).emailFormValidatorText
+          ? AppLocalizations.of(context).emailFormValidatorText
           : null,
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.email),
-        hintText: S.of(context).emailFormHintText,
+        hintText: AppLocalizations.of(context).emailFormHintText,
       ),
     );
   }

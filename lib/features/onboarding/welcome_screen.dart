@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -113,7 +113,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              S.of(context).welcomeText,
+              AppLocalizations.of(context).welcomeText,
               style: const TextStyle(color: Colors.white, fontSize: 15),
               textAlign: TextAlign.center,
             ),
@@ -131,7 +131,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                 ),
                 child: Center(
                   child: Text(
-                    S.of(context).letsStart,
+                    AppLocalizations.of(context).letsStart,
                     style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
@@ -152,7 +152,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
         opacity: textAnimation.value,
         child: Center(
           child: Text(
-            S.of(context).welcome,
+            AppLocalizations.of(context).welcome,
             style: TextStyle(
               color: Colors.white.withValues(alpha: 0.8),
               fontWeight: FontWeight.w900,

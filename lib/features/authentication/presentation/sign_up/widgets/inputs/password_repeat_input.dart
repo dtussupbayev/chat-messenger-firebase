@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class PasswordRepeatInput extends StatelessWidget {
   const PasswordRepeatInput({super.key, required this.repeatPasswordTextEditingController});
@@ -17,11 +17,12 @@ class PasswordRepeatInput extends StatelessWidget {
           controller: repeatPasswordTextEditingController,
           obscureText: state.isRepeatPasswordHidden,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          validator: (value) =>
-              value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
+          validator: (value) => value != null && value.length < 6
+              ? AppLocalizations.of(context).passwordFormValidatorText
+              : null,
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.lock_clock_rounded),
-            hintText: S.of(context).passwordRepeatFormHintText,
+            hintText: AppLocalizations.of(context).passwordRepeatFormHintText,
             suffix: InkWell(
               onTap: () {
                 context.read<SignUpBloc>().add(const ToggleRepeatPasswordVisibility());

@@ -8,7 +8,7 @@ import 'package:realtime_chat_app/features/authentication/presentation/login/scr
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/widgets/reset_password_form.dart';
 
-import '../../../../../generated/l10n.dart';
+import '../../../../../l10n/app_localizations.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});
@@ -29,7 +29,7 @@ class ResetPasswordScreen extends StatelessWidget {
           } else if (state.status == ResetPasswordStatus.success) {
             SnackBarService.showSnackBar(
               context,
-              S.of(context).successResetPassword,
+              AppLocalizations.of(context).successResetPassword,
               type: SnackBarType.success,
             );
             if (context.mounted) {
@@ -42,7 +42,7 @@ class ResetPasswordScreen extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(title: Text(S.of(context).resetPasswordScreenAppBarTitle)),
+          appBar: AppBar(title: Text(AppLocalizations.of(context).resetPasswordScreenAppBarTitle)),
           body: const Padding(padding: EdgeInsets.all(30.0), child: ResetPasswordForm()),
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class PasswordInput extends StatelessWidget {
   const PasswordInput({super.key, required this.passwordTextEditingController});
@@ -17,12 +17,13 @@ class PasswordInput extends StatelessWidget {
           autocorrect: false,
           controller: passwordTextEditingController,
           obscureText: state.isPasswordHidden,
-          validator: (value) =>
-              value != null && value.length < 6 ? S.of(context).passwordFormValidatorText : null,
+          validator: (value) => value != null && value.length < 6
+              ? AppLocalizations.of(context).passwordFormValidatorText
+              : null,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.lock),
-            hintText: S.of(context).passwordFormHintText,
+            hintText: AppLocalizations.of(context).passwordFormHintText,
             suffix: InkWell(
               onTap: () {
                 context.read<SignUpBloc>().add(const TogglePasswordVisibility());

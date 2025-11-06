@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/bloc/verify_email_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class ResendVerificationEmailButton extends StatelessWidget {
   const ResendVerificationEmailButton({super.key});
@@ -15,7 +15,7 @@ class ResendVerificationEmailButton extends StatelessWidget {
               ? () => context.read<VerifyEmailBloc>().add(const SendVerificationEmail())
               : null,
           icon: const Icon(Icons.email),
-          label: Text(S.of(context).resend),
+          label: Text(AppLocalizations.of(context).resend),
         );
       },
     );

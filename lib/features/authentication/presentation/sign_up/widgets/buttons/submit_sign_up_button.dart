@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class SubmitSignUpButton extends StatelessWidget {
@@ -32,7 +32,7 @@ class SubmitSignUpButton extends StatelessWidget {
             if (passwordController.text != repeatPasswordController.text) {
               SnackBarService.showSnackBar(
                 context,
-                S.of(context).passwordsDifferent,
+                AppLocalizations.of(context).passwordsDifferent,
                 type: SnackBarType.error,
               );
               return;
@@ -51,7 +51,7 @@ class SubmitSignUpButton extends StatelessWidget {
           child: Center(
             child: state.status == SignUpStatus.loading
                 ? const AppButtonLoadingWidget()
-                : Text(S.of(context).signUp),
+                : Text(AppLocalizations.of(context).signUp),
           ),
         );
       },

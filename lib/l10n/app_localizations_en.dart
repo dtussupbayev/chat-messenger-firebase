@@ -15,7 +15,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appearance => 'Appearance';
 
   @override
-  String authError(Object code, Object message) {
+  String authError(String code, String message) {
     return 'Ошибка авторизации: $code - $message';
   }
 
@@ -37,7 +37,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkTheme => 'Dark Theme';
 
   @override
-  String get emailAlreadyInUseSnackBarText => 'Such email is already used, repeat the attempt using another email';
+  String get emailAlreadyInUseSnackBarText =>
+      'Such email is already used, repeat the attempt using another email';
 
   @override
   String get emailFormHintText => 'Enter the email';
@@ -82,7 +83,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firstNameFormHintText => 'Enter the first name';
 
   @override
-  String get itemListAvailability => 'The list of chats is available only for those signed in the system';
+  String get itemListAvailability =>
+      'The list of chats is available only for those signed in the system';
 
   @override
   String get itemListEmpty => 'Your messages empty, try to send new message';
@@ -205,6 +207,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get currentUserNotFoundOrEmailIsMissing => 'Current user not found or email is missing';
+
+  @override
+  String get noMessages => 'No messages yet';
+
+  @override
+  String get startConversation => 'Say hello to start the conversation';
+
+  @override
+  String get startChat => 'Start chat';
 
   @override
   String get enter_search_query => 'Please enter a search query';

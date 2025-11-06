@@ -6,7 +6,7 @@
   },
   "appearance": "Внешний вид",
   "authError": "Ошибка авторизации: {code} - {message}",
-  "@authErrorDetailed": {
+  "@authError": {
     "placeholders": {
       "code": {
         "type": "String"
@@ -90,5 +90,17 @@
     "description": "Отображается при ошибке создания комнаты чата"
   },
   "currentUserNotFoundOrEmailIsMissing": "Текущий пользователь не найден или электронная почта отсутствует",
+  "noMessages": "Здесь пока нет сообщений",
+  "@noMessages": {
+    "description": "Отображается, когда в чате нет сообщений"
+  },
+  "startConversation": "Скажите \"Привет\", чтобы начать разговор",
+  "@startConversation": {
+    "description": "Подсказка начать разговор"
+  },
+  "startChat": "Начать чат",
+  "@startChat": {
+    "description": "Метка действия для начала чата"
+  },
   "enter_search_query": "Введите запрос для поиска"
 }

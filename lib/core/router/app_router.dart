@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/navigation.dart';
 import 'package:realtime_chat_app/core/screens/splash_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/screen/login_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/screens/reset_password_screen.dart';
@@ -11,6 +12,7 @@ import 'package:realtime_chat_app/features/profile/presentation/screens/profile_
 import 'package:realtime_chat_app/features/settings/screens/settings_screen.dart';
 
 final router = GoRouter(
+  navigatorKey: navigatorKey,
   initialLocation: '/',
   routes: [
     GoRoute(
