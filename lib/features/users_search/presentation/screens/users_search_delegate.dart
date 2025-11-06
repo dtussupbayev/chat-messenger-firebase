@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:realtime_chat_app/features/users_search/presentation/bloc/users_search_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
+import 'package:realtime_chat_app/core/locale_helper.dart';
 
 class UsersSearchDelegate extends SearchDelegate<String> {
   UsersSearchDelegate({required this.usersSearchBloc});
@@ -12,7 +13,7 @@ class UsersSearchDelegate extends SearchDelegate<String> {
   final UsersSearchBloc usersSearchBloc;
 
   @override
-  String get searchFieldLabel => S.current.search;
+  String get searchFieldLabel => LocaleStrings.current.search;
 
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -48,7 +49,7 @@ class UsersSearchDelegate extends SearchDelegate<String> {
 
   Widget _buildSearchResults(BuildContext context) {
     if (query.trim().isEmpty) {
-      return Center(child: Text(S.of(context).enter_search_query));
+      return Center(child: Text(AppLocalizations.of(context).enter_search_query));
     }
     usersSearchBloc.add(UsersSearchEvent.searchUsers(query));
     return BlocListener<UsersSearchBloc, UsersSearchState>(
@@ -77,7 +78,7 @@ class UsersSearchDelegate extends SearchDelegate<String> {
             case Success():
               final users = state.users;
               if (users.isEmpty) {
-                return Center(child: Text(S.current.noUsersFound));
+                return Center(child: Text(LocaleStrings.current.noUsersFound));
               }
               return ListView.builder(
                 itemCount: users.length,
@@ -94,7 +95,7 @@ class UsersSearchDelegate extends SearchDelegate<String> {
                 },
               );
             case Error():
-              return Center(child: Text('${S.current.error}: ${state.message}'));
+              return Center(child: Text('${LocaleStrings.current.error}: ${state.message}'));
             case ChatRoomCreated():
               return const Center(child: CupertinoActivityIndicator());
           }

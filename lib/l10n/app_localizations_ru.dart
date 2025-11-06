@@ -15,7 +15,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get appearance => 'Внешний вид';
 
   @override
-  String authError(Object code, Object message) {
+  String authError(String code, String message) {
     return 'Ошибка авторизации: $code - $message';
   }
 
@@ -37,7 +37,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get darkTheme => 'Темная тема';
 
   @override
-  String get emailAlreadyInUseSnackBarText => 'Такой Email уже используется, повторите попытку с использованием другого Email';
+  String get emailAlreadyInUseSnackBarText =>
+      'Такой Email уже используется, повторите попытку с использованием другого Email';
 
   @override
   String get emailFormHintText => 'Введите почту';
@@ -172,7 +173,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get userNotFoundText => 'Такой email не зарегистрирован!';
 
   @override
-  String get verificationEmailResended => 'Письмо с подтверждением было отправлено на вашу электронную почту.';
+  String get verificationEmailResended =>
+      'Письмо с подтверждением было отправлено на вашу электронную почту.';
 
   @override
   String get verifyEmailScreenAppBarTitle => 'Верификация Email адреса';
@@ -181,7 +183,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcome => 'Добро пожаловать';
 
   @override
-  String get welcomeText => 'RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.';
+  String get welcomeText =>
+      'RealtimeChat: Приложение для обмена сообщениями в режиме реального времени.';
 
   @override
   String get wrongEmailOrPassword => 'Неправильный email или пароль. Повторите попытку';
@@ -204,7 +207,17 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get currentUserNotFoundOrEmailIsMissing => 'Текущий пользователь не найден или электронная почта отсутствует';
+  String get currentUserNotFoundOrEmailIsMissing =>
+      'Текущий пользователь не найден или электронная почта отсутствует';
+
+  @override
+  String get noMessages => 'Здесь пока нет сообщений';
+
+  @override
+  String get startConversation => 'Скажите \"Привет\", чтобы начать разговор';
+
+  @override
+  String get startChat => 'Начать чат';
 
   @override
   String get enter_search_query => 'Введите запрос для поиска';

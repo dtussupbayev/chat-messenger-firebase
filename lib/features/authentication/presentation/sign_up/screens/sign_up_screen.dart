@@ -27,9 +27,6 @@ class SignUpScreen extends StatelessWidget {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
-          // appBar: AppBar(
-          //   title: Text(S.of(context).signUpScreenAppBarTitle),
-          // ),
           body: SafeArea(
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height - MediaQuery.paddingOf(context).top,

@@ -55,4 +55,4 @@ flutter:
   uses-material-design: true
 
 lint_staged:
-  'lib/**.dart': dart format --fix && dart fix --apply
+  'lib/**.dart': dart format fix && dart fix --apply

@@ -7,7 +7,7 @@ import 'package:realtime_chat_app/features/chats/domain/use_cases/get_user_info_
 import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
 import 'package:realtime_chat_app/features/chats/presentation/widgets/chat_room_list.dart';
 import 'package:realtime_chat_app/features/chats/presentation/widgets/search_button.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 import '../widgets/chats_app_bar_menu_button.dart';
 
@@ -27,7 +27,7 @@ class ChatsScreen extends StatelessWidget {
       )..add(const LoadChats()),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(S.of(context).chats),
+          title: Text(AppLocalizations.of(context).chats),
           actions: [
             if (user == null) const SizedBox() else const SearchButton(),
             CMenuButton(user: user),
@@ -35,7 +35,12 @@ class ChatsScreen extends StatelessWidget {
         ),
         body: user != null
             ? const ChatRoomList()
-            : Center(child: Text(S.of(context).itemListAvailability, textAlign: TextAlign.center)),
+            : Center(
+                child: Text(
+                  AppLocalizations.of(context).itemListAvailability,
+                  textAlign: TextAlign.center,
+                ),
+              ),
       ),
     );
   }

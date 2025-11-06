@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:realtime_chat_app/features/settings/utilities/web_platform_locale.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 import 'locale_converter.dart';
 
@@ -32,7 +32,7 @@ class LocaleBloc extends HydratedBloc<LocaleEvent, LocaleState> {
       localeName = Platform.localeName;
     }
 
-    return S.delegate.supportedLocales.contains(Locale(localeName))
+    return AppLocalizations.supportedLocales.contains(Locale(localeName))
         ? Locale(localeName)
         : const Locale('ru');
   }

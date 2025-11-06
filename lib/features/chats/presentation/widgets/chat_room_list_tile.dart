@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class ChatRoomListTile extends StatefulWidget {
@@ -68,7 +68,7 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
                           ),
                           Flexible(
                             child: Text(
-                              '${widget.lastMessageSendBy == myUid ? '${S.of(context).you}: ' : ''}${widget.lastMessage}',
+                              '${widget.lastMessageSendBy == myUid ? '${AppLocalizations.of(context).you}: ' : ''}${widget.lastMessage}',
                               overflow: TextOverflow.ellipsis,
                               style: context.textTheme.bodyMedium?.copyWith(
                                 color: context.colorScheme.secondary,

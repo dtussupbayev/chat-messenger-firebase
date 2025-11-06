@@ -30,16 +30,13 @@ class _LoginScreenState extends State<LoginScreen> {
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
-          appBar: AppBar(
-            // title: Text(S.of(context).signInAppBarTitle),
-            backgroundColor: context.theme.scaffoldBackgroundColor,
-          ),
+          appBar: AppBar(backgroundColor: context.theme.scaffoldBackgroundColor),
           body: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
               if (state.status == LoginStatus.failure) {
                 SnackBarService.showSnackBar(
                   context,
-                  state.errorMessage ?? '',
+                  state.errorMessage ?? '-',
                   type: SnackBarType.error,
                 );
               } else if (state.status == LoginStatus.success) {

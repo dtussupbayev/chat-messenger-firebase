@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtimechat_uikit/uikit.dart';
 
@@ -26,14 +26,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
         brightness: context.brightness == Brightness.light ? Brightness.light : Brightness.dark,
       ),
       child: Scaffold(
-        appBar: AppBar(title: Text(S.of(context).settings)),
+        appBar: AppBar(title: Text(AppLocalizations.of(context).settings)),
         body: ListView(
           children: [
             CupertinoListSection.insetGrouped(
               backgroundColor: context.theme.scaffoldBackgroundColor,
               children: [
                 CupertinoListTile(
-                  title: Text(S.of(context).appearance),
+                  title: Text(AppLocalizations.of(context).appearance),
                   trailing: CupertinoButton(
                     padding: EdgeInsets.zero,
                     child: Text(
@@ -49,7 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               backgroundColor: context.theme.scaffoldBackgroundColor,
               children: [
                 CupertinoListTile(
-                  title: Text(S.of(context).language),
+                  title: Text(AppLocalizations.of(context).language),
                   trailing: CupertinoButton(
                     padding: EdgeInsets.zero,
                     child: Text(
@@ -87,7 +87,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void _showLocaleModeBottomSheet(BuildContext context, Locale currentLocale) {
     SelectionBottomSheet.show(
       context: context,
-      items: S.delegate.supportedLocales,
+      items: AppLocalizations.supportedLocales,
       currentItem: currentLocale,
       itemLabelBuilder: _localeToString,
       onItemSelected: (Locale? value) {
@@ -101,11 +101,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _themeModeToString(ThemeMode mode) {
     switch (mode) {
       case ThemeMode.light:
-        return S.of(context).lightTheme;
+        return AppLocalizations.of(context).lightTheme;
       case ThemeMode.dark:
-        return S.of(context).darkTheme;
+        return AppLocalizations.of(context).darkTheme;
       case ThemeMode.system:
-        return S.of(context).systemTheme;
+        return AppLocalizations.of(context).systemTheme;
     }
   }
 

@@ -3,7 +3,7 @@ import 'package:realtime_chat_app/features/users_search/data/datasources/users_s
 import 'package:realtime_chat_app/features/users_search/data/models/user_model.dart';
 import 'package:realtime_chat_app/features/users_search/domain/entities/user_entity.dart';
 import 'package:realtime_chat_app/features/users_search/domain/repositories/users_search_repository.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/core/locale_helper.dart';
 
 class UsersSearchRepositoryImpl implements UsersSearchRepository {
   UsersSearchRepositoryImpl({required this.remoteDataSource, required this.auth});
@@ -21,7 +21,7 @@ class UsersSearchRepositoryImpl implements UsersSearchRepository {
   Future<String> createChatRoomWithUser(UserEntity selectedUser) async {
     final currentUser = auth.currentUser;
     if (currentUser == null || currentUser.email == null) {
-      throw Exception(S.current.currentUserNotFoundOrEmailIsMissing);
+      throw Exception(LocaleStrings.current.currentUserNotFoundOrEmailIsMissing);
     }
     return remoteDataSource.createChatRoom(
       currentUser.uid,

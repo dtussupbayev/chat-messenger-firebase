@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/generated/l10n.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class FirstNameInput extends StatelessWidget {
   const FirstNameInput({super.key, required this.firstNameTextEditingController});
@@ -11,13 +11,13 @@ class FirstNameInput extends StatelessWidget {
     return TextFormField(
       controller: firstNameTextEditingController,
       validator: (value) => value!.isEmpty
-          ? S.of(context).enterYourFirstName
+          ? AppLocalizations.of(context).enterYourFirstName
           : RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]').hasMatch(value)
-          ? S.of(context).enterAValidName
+          ? AppLocalizations.of(context).enterAValidName
           : null,
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.person),
-        hintText: S.of(context).firstNameFormHintText,
+        hintText: AppLocalizations.of(context).firstNameFormHintText,
       ),
     );
   }

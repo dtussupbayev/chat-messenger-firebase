@@ -6,7 +6,7 @@
   },
   "appearance": "Appearance",
   "authError": "Ошибка авторизации: {code} - {message}",
-  "@authErrorDetailed": {
+  "@authError": {
     "placeholders": {
       "code": {
         "type": "String"
@@ -90,5 +90,17 @@
     "description": "Displayed when chat room creation fails"
   },
   "currentUserNotFoundOrEmailIsMissing": "Current user not found or email is missing",
+  "noMessages": "No messages yet",
+  "@noMessages": {
+    "description": "Displayed when a chat has no messages"
+  },
+  "startConversation": "Say hello to start the conversation",
+  "@startConversation": {
+    "description": "Subtitle prompting user to start a conversation"
+  },
+  "startChat": "Start chat",
+  "@startChat": {
+    "description": "Action label to start a chat"
+  },
   "enter_search_query": "Please enter a search query"
 }
