@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
-import 'package:realtime_chat_app/core/widgets/app_theme_switcher.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/bloc/login_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/login_form.dart';
@@ -34,9 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
           appBar: AppBar(
             // title: Text(S.of(context).signInAppBarTitle),
             backgroundColor: context.theme.scaffoldBackgroundColor,
-            actions: const [
-              Padding(padding: EdgeInsets.only(right: 30.0), child: AppThemeSwitcher()),
-            ],
           ),
           body: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
