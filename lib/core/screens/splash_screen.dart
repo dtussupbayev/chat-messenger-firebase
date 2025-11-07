@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/verify_email/screens/verify_email_screen.dart';
-import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,21 +27,17 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state is AppOnBoardingRequired) {
-          context.go('/welcome');
+          const WelcomeRoute().go(context);
         } else if (state is AppAuthenticated) {
-          context.go(
-            currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth'
-                ? ChatsScreen.routeName
-                : currentPath,
-          );
+          (currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth')
+              ? const ChatsRoute().go(context)
+              : context.go(currentPath);
         } else if (state is AppNotVerified) {
-          context.go(
-            currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth'
-                ? VerifyEmailScreen.routeName
-                : currentPath,
-          );
+          (currentPath == '/' || currentPath == '/auth/sign-up' || currentPath == '/auth')
+              ? const VerifyEmailRoute().go(context)
+              : context.go(currentPath);
         } else if (state is AppUnauthenticated) {
-          context.go('/auth');
+          const LoginRoute().go(context);
         }
       },
       child: const Scaffold(body: Center(child: CupertinoActivityIndicator())),

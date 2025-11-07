@@ -1,4 +1,4 @@
-// dart format width=80
+// dart format width=100
 
 /// GENERATED CODE - DO NOT MODIFY BY HAND
 /// *****************************************************
@@ -15,8 +15,7 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/flutter_logo.png
-  AssetGenImage get flutterLogo =>
-      const AssetGenImage('assets/images/flutter_logo.png');
+  AssetGenImage get flutterLogo => const AssetGenImage('assets/images/flutter_logo.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [flutterLogo];
@@ -29,12 +28,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-    this.animation,
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}, this.animation});
 
   final String _assetName;
 

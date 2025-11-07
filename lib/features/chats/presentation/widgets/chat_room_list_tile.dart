@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/features/chats/presentation/bloc/chats_bloc.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
@@ -42,11 +41,11 @@ class _ChatRoomListTileState extends State<ChatRoomListTile> {
         final userData = state.users[userId] ?? UserData.empty();
         return InkWell(
           onTap: () {
-            context.goNamed(
-              ChatScreen.routeName,
-              pathParameters: {'chatRoomId': widget.chatRoomId},
-              queryParameters: {'firstName': userData.firstName, 'lastName': userData.lastName},
-            );
+            ChatRoute(
+              chatRoomId: widget.chatRoomId,
+              firstName: userData.firstName,
+              lastName: userData.lastName,
+            ).go(context);
           },
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/bloc/login_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/login_form.dart';
-import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   while (context.canPop()) {
                     context.pop();
                   }
-                  context.pushReplacement(ChatsScreen.routeName);
+                  const ChatsRoute().pushReplacement(context);
                 }
               }
             },
