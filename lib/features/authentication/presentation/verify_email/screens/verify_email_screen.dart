@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/bloc/verify_email_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/cancel_verification_button.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/verify_email/widgets/resend_verification_email_button.dart';
-import 'package:realtime_chat_app/features/chats/presentation/screen/chats_screen.dart';
 
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
@@ -28,7 +27,7 @@ class VerifyEmailScreen extends StatelessWidget {
             );
           }
           if (state.status == VerifyEmailStatus.emailVerified) {
-            context.go(ChatsScreen.routeName);
+            const ChatsRoute().go(context);
           }
         },
         child: Scaffold(

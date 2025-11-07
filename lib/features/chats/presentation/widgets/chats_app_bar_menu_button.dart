@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/features/profile/presentation/screens/profile_screen.dart';
-import 'package:realtime_chat_app/features/settings/screens/settings_screen.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class CMenuButton extends StatelessWidget {
@@ -15,12 +13,12 @@ class CMenuButton extends StatelessWidget {
     return PopupMenuButton<String>(
       onSelected: (value) {
         if (value == 'settings') {
-          context.goNamed(SettingsScreen.routeName);
+          const SettingsRoute().go(context);
         } else if (value == 'profile') {
           if ((user == null)) {
-            context.push('/auth');
+            const LoginRoute().push(context);
           } else {
-            context.goNamed(ProfileScreen.routeName);
+            const ProfileRoute().go(context);
           }
         }
       },
