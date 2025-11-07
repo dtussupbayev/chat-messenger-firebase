@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
@@ -9,7 +9,7 @@ class NavigateSignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => context.go('/auth/sign-up'),
+      onPressed: () => const SignUpRoute().go(context),
       child: Text(
         AppLocalizations.of(context).signUp,
         style: TextStyle(

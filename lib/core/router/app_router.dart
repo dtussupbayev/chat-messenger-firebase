@@ -55,8 +55,7 @@ class ResetPasswordRoute extends GoRouteData with $ResetPasswordRoute {
   const ResetPasswordRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const ResetPasswordScreen();
+  Widget build(BuildContext context, GoRouterState state) => const ResetPasswordScreen();
 }
 
 @TypedGoRoute<VerifyEmailRoute>(path: '/verify_email')
@@ -64,8 +63,7 @@ class VerifyEmailRoute extends GoRouteData with $VerifyEmailRoute {
   const VerifyEmailRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const VerifyEmailScreen();
+  Widget build(BuildContext context, GoRouterState state) => const VerifyEmailScreen();
 }
 
 @TypedGoRoute<ChatsRoute>(
@@ -98,26 +96,15 @@ class SettingsRoute extends GoRouteData with $SettingsRoute {
 }
 
 class ChatRoute extends GoRouteData with $ChatRoute {
-  const ChatRoute({
-    this.chatRoomId,
-    this.firstName,
-    this.lastName,
-  });
+  const ChatRoute({required this.chatRoomId, this.firstName, this.lastName});
 
-  final String? chatRoomId;
+  final String chatRoomId;
   final String? firstName;
   final String? lastName;
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => ChatScreen(
-        chatRoomId: chatRoomId ?? '',
-        firstName: firstName ?? '',
-        lastName: lastName ?? '',
-      );
+  Widget build(BuildContext context, GoRouterState state) =>
+      ChatScreen(chatRoomId: chatRoomId, firstName: firstName ?? '', lastName: lastName ?? '');
 }
 
-final router = GoRouter(
-  navigatorKey: navigatorKey,
-  initialLocation: '/',
-  routes: $appRoutes,
-);
+final router = GoRouter(navigatorKey: navigatorKey, initialLocation: '/', routes: $appRoutes);

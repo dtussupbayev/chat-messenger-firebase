@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class NavigateResetPasswordButton extends StatelessWidget {
@@ -8,7 +8,7 @@ class NavigateResetPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => context.go('/auth/reset-password'),
+      onPressed: () => const ResetPasswordRoute().go(context),
       child: Text(AppLocalizations.of(context).resetPassword),
     );
   }

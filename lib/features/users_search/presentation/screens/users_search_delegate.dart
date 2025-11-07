@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/features/chat/presentation/screens/chat_screen.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/features/users_search/presentation/bloc/users_search_bloc.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtime_chat_app/core/locale_helper.dart';
@@ -57,11 +56,11 @@ class UsersSearchDelegate extends SearchDelegate<String> {
       listener: (context, state) {
         switch (state) {
           case ChatRoomCreated():
-            context.goNamed(
-              ChatScreen.routeName,
-              pathParameters: {'chatRoomId': state.chatRoomId},
-              queryParameters: {'firstName': state.user.firstName, 'lastName': state.user.lastName},
-            );
+            ChatRoute(
+              chatRoomId: state.chatRoomId,
+              firstName: state.user.firstName,
+              lastName: state.user.lastName,
+            ).go(context);
           case Error():
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
           default:
