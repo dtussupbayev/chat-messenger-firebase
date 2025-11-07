@@ -234,7 +234,7 @@ mixin $SettingsRoute on GoRouteData {
 
 mixin $ChatRoute on GoRouteData {
   static ChatRoute _fromState(GoRouterState state) => ChatRoute(
-    chatRoomId: state.pathParameters['chatRoomId'],
+    chatRoomId: state.pathParameters['chatRoomId']!,
     firstName: state.uri.queryParameters['first-name'],
     lastName: state.uri.queryParameters['last-name'],
   );
@@ -243,7 +243,7 @@ mixin $ChatRoute on GoRouteData {
 
   @override
   String get location => GoRouteData.$location(
-    '/chats/chat/${Uri.encodeComponent(_self.chatRoomId ?? '')}',
+    '/chats/chat/${Uri.encodeComponent(_self.chatRoomId)}',
     queryParams: {
       if (_self.firstName != null) 'first-name': _self.firstName,
       if (_self.lastName != null) 'last-name': _self.lastName,

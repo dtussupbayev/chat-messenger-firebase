@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_painter.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
@@ -120,7 +120,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
             SizedBox(height: 0.05 * height),
             InkWell(
               onTap: () {
-                context.pushReplacement('/');
+                const SplashRoute().pushReplacement(context);
               },
               child: Container(
                 height: 0.06 * height,
