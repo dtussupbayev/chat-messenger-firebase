@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
-import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 
 class SubmitSignUpButton extends StatelessWidget {
   const SubmitSignUpButton({

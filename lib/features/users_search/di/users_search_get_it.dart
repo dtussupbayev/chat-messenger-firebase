@@ -25,7 +25,8 @@ void initUsersSearchDependencies(GetIt getIt) {
     )
     ..registerFactory<UsersSearchBloc>(
       () => UsersSearchBloc(
-          searchUsersUseCase: getIt.get<SearchUsersUseCase>(),
-          createChatRoomUseCase: getIt.get<CreateChatRoomUseCase>()),
+        searchUsersUseCase: getIt.get<SearchUsersUseCase>(),
+        createChatRoomUseCase: getIt.get<CreateChatRoomUseCase>(),
+      ),
     );
 }
