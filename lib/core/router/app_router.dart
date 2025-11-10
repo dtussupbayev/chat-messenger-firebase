@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:realtime_chat_app/core/navigation.dart';
+
 import 'package:realtime_chat_app/features/app/presentation/screens/splash_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/screen/login_screen.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/screens/reset_password_screen.dart';
@@ -106,5 +106,7 @@ class ChatRoute extends GoRouteData with $ChatRoute {
   Widget build(BuildContext context, GoRouterState state) =>
       ChatScreen(chatRoomId: chatRoomId, firstName: firstName ?? '', lastName: lastName ?? '');
 }
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 final router = GoRouter(navigatorKey: navigatorKey, initialLocation: '/', routes: $appRoutes);
