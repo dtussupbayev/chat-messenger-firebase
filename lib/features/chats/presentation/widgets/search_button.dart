@@ -12,9 +12,7 @@ class SearchButton extends StatelessWidget {
       onPressed: () {
         showSearch(
           context: context,
-          delegate: UsersSearchDelegate(
-            usersSearchBloc: getIt.get(),
-          ),
+          delegate: UsersSearchDelegate(usersSearchBloc: getIt.get()),
         );
       },
     );

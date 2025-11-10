@@ -37,7 +37,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkTheme => 'Dark Theme';
 
   @override
-  String get emailAlreadyInUseSnackBarText => 'Such email is already used, repeat the attempt using another email';
+  String get emailAlreadyInUseSnackBarText =>
+      'Such email is already used, repeat the attempt using another email';
 
   @override
   String get emailFormHintText => 'Enter the email';
@@ -82,7 +83,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firstNameFormHintText => 'Enter the first name';
 
   @override
-  String get itemListAvailability => 'The list of chats is available only for those signed in the system';
+  String get itemListAvailability =>
+      'The list of chats is available only for those signed in the system';
 
   @override
   String get itemListEmpty => 'Your messages empty, try to send new message';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat_app/core/screens/splash_screen.dart';
+import 'package:realtime_chat_app/features/app/presentation/screens/splash_screen.dart';
 import 'package:realtime_chat_app/features/app/bloc/app_bloc.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';

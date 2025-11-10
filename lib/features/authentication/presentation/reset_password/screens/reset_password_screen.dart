@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/core/router/app_router.dart';
-import 'package:realtime_chat_app/core/utils/snack_bar_service.dart';
+import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/authentication/domain/use_cases/reset_password_use_case.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/widgets/reset_password_form.dart';

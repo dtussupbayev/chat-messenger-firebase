@@ -14,8 +14,7 @@ List<RouteBase> get $appRoutes => [
   $chatsRoute,
 ];
 
-RouteBase get $splashRoute =>
-    GoRouteData.$route(path: '/', factory: $SplashRoute._fromState);
+RouteBase get $splashRoute => GoRouteData.$route(path: '/', factory: $SplashRoute._fromState);
 
 mixin $SplashRoute on GoRouteData {
   static SplashRoute _fromState(GoRouterState state) => const SplashRoute();
@@ -30,8 +29,7 @@ mixin $SplashRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -53,8 +51,7 @@ mixin $WelcomeRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -65,10 +62,7 @@ RouteBase get $loginRoute => GoRouteData.$route(
   factory: $LoginRoute._fromState,
   routes: [
     GoRouteData.$route(path: 'sign-up', factory: $SignUpRoute._fromState),
-    GoRouteData.$route(
-      path: 'reset-password',
-      factory: $ResetPasswordRoute._fromState,
-    ),
+    GoRouteData.$route(path: 'reset-password', factory: $ResetPasswordRoute._fromState),
   ],
 );
 
@@ -85,8 +79,7 @@ mixin $LoginRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -105,16 +98,14 @@ mixin $SignUpRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
 }
 
 mixin $ResetPasswordRoute on GoRouteData {
-  static ResetPasswordRoute _fromState(GoRouterState state) =>
-      const ResetPasswordRoute();
+  static ResetPasswordRoute _fromState(GoRouterState state) => const ResetPasswordRoute();
 
   @override
   String get location => GoRouteData.$location('/auth/reset-password');
@@ -126,21 +117,17 @@ mixin $ResetPasswordRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $verifyEmailRoute => GoRouteData.$route(
-  path: '/verify_email',
-  factory: $VerifyEmailRoute._fromState,
-);
+RouteBase get $verifyEmailRoute =>
+    GoRouteData.$route(path: '/verify_email', factory: $VerifyEmailRoute._fromState);
 
 mixin $VerifyEmailRoute on GoRouteData {
-  static VerifyEmailRoute _fromState(GoRouterState state) =>
-      const VerifyEmailRoute();
+  static VerifyEmailRoute _fromState(GoRouterState state) => const VerifyEmailRoute();
 
   @override
   String get location => GoRouteData.$location('/verify_email');
@@ -152,8 +139,7 @@ mixin $VerifyEmailRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -165,10 +151,7 @@ RouteBase get $chatsRoute => GoRouteData.$route(
   routes: [
     GoRouteData.$route(path: 'account', factory: $ProfileRoute._fromState),
     GoRouteData.$route(path: 'settings', factory: $SettingsRoute._fromState),
-    GoRouteData.$route(
-      path: 'chat/:chatRoomId',
-      factory: $ChatRoute._fromState,
-    ),
+    GoRouteData.$route(path: 'chat/:chatRoomId', factory: $ChatRoute._fromState),
   ],
 );
 
@@ -185,8 +168,7 @@ mixin $ChatsRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -205,8 +187,7 @@ mixin $ProfileRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -225,8 +206,7 @@ mixin $SettingsRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
@@ -257,8 +237,7 @@ mixin $ChatRoute on GoRouteData {
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
   @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+  void pushReplacement(BuildContext context) => context.pushReplacement(location);
 
   @override
   void replace(BuildContext context) => context.replace(location);
