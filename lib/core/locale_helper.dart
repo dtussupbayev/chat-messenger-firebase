@@ -1,5 +1,5 @@
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
-import 'package:realtime_chat_app/core/navigation.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
 
 /// Helper to access current localized strings from places where BuildContext is not available
 class LocaleStrings {
