@@ -32,19 +32,18 @@ class _LoginScreenState extends State<LoginScreen> {
           appBar: AppBar(backgroundColor: context.theme.scaffoldBackgroundColor),
           body: BlocListener<LoginBloc, LoginState>(
             listener: (context, state) {
-              if (state.status == LoginStatus.failure) {
-                SnackBarService.showSnackBar(
-                  context,
-                  state.errorMessage ?? '-',
-                  type: SnackBarType.error,
-                );
-              } else if (state.status == LoginStatus.success) {
-                if (context.mounted) {
-                  while (context.canPop()) {
-                    context.pop();
+              switch (state) {
+                case LoginFailure(errorMessage: final errorMessage):
+                  SnackBarService.showSnackBar(context, errorMessage, type: SnackBarType.error);
+                case LoginSuccess():
+                  if (context.mounted) {
+                    while (context.canPop()) {
+                      context.pop();
+                    }
+                    const ChatsRoute().pushReplacement(context);
                   }
-                  const ChatsRoute().pushReplacement(context);
-                }
+                default:
+                  break;
               }
             },
             child: Center(
