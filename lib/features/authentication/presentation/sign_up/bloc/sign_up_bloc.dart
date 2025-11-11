@@ -12,16 +12,14 @@ part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc({required this.signUpUseCase}) : super(const SignUpState()) {
+  SignUpBloc({required this.signUpUseCase}) : super(const SignUpState.initial()) {
     on<SignUpSubmitted>(_onSignUpSubmitted);
-    on<TogglePasswordVisibility>(_onTogglePasswordVisibility);
-    on<ToggleRepeatPasswordVisibility>(_onToggleRepeatPasswordVisibility);
   }
 
   final SignUpUseCase signUpUseCase;
 
   Future<void> _onSignUpSubmitted(SignUpSubmitted event, Emitter<SignUpState> emit) async {
-    emit(state.copyWith(status: SignUpStatus.loading));
+    emit(const SignUpState.loading());
 
     try {
       await signUpUseCase.execute(
@@ -32,39 +30,15 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           lastName: event.lastName,
         ),
       );
-      emit(state.copyWith(status: SignUpStatus.success));
+      emit(const SignUpState.success());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         emit(
-          state.copyWith(
-            status: SignUpStatus.failure,
-            errorMessage: LocaleStrings.current.emailAlreadyInUseSnackBarText,
-          ),
+          SignUpState.failure(errorMessage: LocaleStrings.current.emailAlreadyInUseSnackBarText),
         );
       } else {
-        emit(
-          state.copyWith(
-            status: SignUpStatus.failure,
-            errorMessage: LocaleStrings.current.undefinedError,
-          ),
-        );
+        emit(SignUpState.failure(errorMessage: LocaleStrings.current.undefinedError));
       }
     }
-  }
-
-  void _onTogglePasswordVisibility(TogglePasswordVisibility event, Emitter<SignUpState> emit) {
-    emit(state.copyWith(status: SignUpStatus.initial, isPasswordHidden: !state.isPasswordHidden));
-  }
-
-  void _onToggleRepeatPasswordVisibility(
-    ToggleRepeatPasswordVisibility event,
-    Emitter<SignUpState> emit,
-  ) {
-    emit(
-      state.copyWith(
-        status: SignUpStatus.initial,
-        isRepeatPasswordHidden: !state.isRepeatPasswordHidden,
-      ),
-    );
   }
 }
