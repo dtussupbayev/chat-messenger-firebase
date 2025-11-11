@@ -5,31 +5,42 @@ import 'package:realtime_chat_app/features/authentication/presentation/login/wid
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/email_input.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/inputs/password_input.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final formKey = GlobalKey<FormState>();
-    formKey.currentState?.reset();
+  State<LoginForm> createState() => _LoginFormState();
+}
 
+class _LoginFormState extends State<LoginForm> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: _formKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            EmailInput(emailTextEditingController: emailController),
+            EmailInput(emailTextEditingController: _emailController),
             const SizedBox(height: 15),
-            PasswordInput(passwordTextEditingController: passwordController),
+            PasswordInput(passwordTextEditingController: _passwordController),
             const SizedBox(height: 30),
             SubmitLoginButton(
-              emailController: emailController,
-              passwordController: passwordController,
-              formKey: formKey,
+              emailController: _emailController,
+              passwordController: _passwordController,
+              formKey: _formKey,
             ),
             const SizedBox(height: 15),
             const NavigateSignUpButton(),

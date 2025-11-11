@@ -8,41 +8,57 @@ import 'inputs/last_name_input.dart';
 import 'inputs/password_input.dart';
 import 'inputs/password_repeat_input.dart';
 
-class SignUpForm extends StatelessWidget {
+class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
 
   @override
+  State<SignUpForm> createState() => _SignUpFormState();
+}
+
+class _SignUpFormState extends State<SignUpForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _repeatPasswordController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _repeatPasswordController.dispose();
+    _firstNameController.dispose();
+    _lastNameController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final TextEditingController repeatPasswordController = TextEditingController();
-    final TextEditingController firstNameController = TextEditingController();
-    final TextEditingController lastNameController = TextEditingController();
     return Form(
-      key: formKey,
+      key: _formKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            EmailInput(emailTextEditingController: emailController),
+            EmailInput(emailTextEditingController: _emailController),
             const SizedBox(height: 15),
-            PasswordInput(passwordTextEditingController: passwordController),
+            PasswordInput(passwordTextEditingController: _passwordController),
             const SizedBox(height: 15),
-            PasswordRepeatInput(repeatPasswordTextEditingController: repeatPasswordController),
+            PasswordRepeatInput(repeatPasswordTextEditingController: _repeatPasswordController),
             const SizedBox(height: 15),
-            FirstNameInput(firstNameTextEditingController: firstNameController),
+            FirstNameInput(firstNameTextEditingController: _firstNameController),
             const SizedBox(height: 15),
-            LastNameInput(lastNameTextEditingController: lastNameController),
+            LastNameInput(lastNameTextEditingController: _lastNameController),
             const SizedBox(height: 30),
             SubmitSignUpButton(
-              formKey: formKey,
-              emailController: emailController,
-              passwordController: passwordController,
-              repeatPasswordController: repeatPasswordController,
-              firstNameController: firstNameController,
-              lastNameController: lastNameController,
+              formKey: _formKey,
+              emailController: _emailController,
+              passwordController: _passwordController,
+              repeatPasswordController: _repeatPasswordController,
+              firstNameController: _firstNameController,
+              lastNameController: _lastNameController,
             ),
             const SizedBox(height: 15),
             const NavigateToLoginButton(),
