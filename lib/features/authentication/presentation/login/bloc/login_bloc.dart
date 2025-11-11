@@ -8,25 +8,20 @@ part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc({required this.loginUseCase}) : super(const LoginState()) {
+  LoginBloc({required this.loginUseCase}) : super(const LoginState.initial()) {
     on<LoginSubmitted>(_onLoginSubmitted);
-    on<TogglePasswordVisibility>(_onTogglePasswordVisibility);
   }
 
   final LoginUseCase loginUseCase;
 
   Future<void> _onLoginSubmitted(LoginSubmitted event, Emitter<LoginState> emit) async {
-    emit(state.copyWith(status: LoginStatus.loading));
+    emit(const LoginState.loading());
 
     try {
       await loginUseCase.execute(LoginParams(email: event.email, password: event.password));
-      emit(state.copyWith(status: LoginStatus.success));
+      emit(const LoginState.success());
     } catch (e) {
-      emit(state.copyWith(status: LoginStatus.failure, errorMessage: e.toString()));
+      emit(LoginState.failure(errorMessage: e.toString()));
     }
-  }
-
-  void _onTogglePasswordVisibility(TogglePasswordVisibility event, Emitter<LoginState> emit) {
-    emit(state.copyWith(status: LoginStatus.initial, isPasswordHidden: !state.isPasswordHidden));
   }
 }

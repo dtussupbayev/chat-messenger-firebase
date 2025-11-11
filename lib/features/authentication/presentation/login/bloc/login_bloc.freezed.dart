@@ -14,36 +14,68 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LoginEvent implements DiagnosticableTreeMixin {
 
-
+ String get email; String get password;
+/// Create a copy of LoginEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LoginEventCopyWith<LoginEvent> get copyWith => _$LoginEventCopyWithImpl<LoginEvent>(this as LoginEvent, _$identity);
 
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'LoginEvent'))
-    ;
+    ..add(DiagnosticsProperty('email', email))..add(DiagnosticsProperty('password', password));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginEvent);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginEvent&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,email,password);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LoginEvent()';
+  return 'LoginEvent(email: $email, password: $password)';
 }
 
 
 }
 
 /// @nodoc
-class $LoginEventCopyWith<$Res>  {
-$LoginEventCopyWith(LoginEvent _, $Res Function(LoginEvent) __);
+abstract mixin class $LoginEventCopyWith<$Res>  {
+  factory $LoginEventCopyWith(LoginEvent value, $Res Function(LoginEvent) _then) = _$LoginEventCopyWithImpl;
+@useResult
+$Res call({
+ String email, String password
+});
+
+
+
+
+}
+/// @nodoc
+class _$LoginEventCopyWithImpl<$Res>
+    implements $LoginEventCopyWith<$Res> {
+  _$LoginEventCopyWithImpl(this._self, this._then);
+
+  final LoginEvent _self;
+  final $Res Function(LoginEvent) _then;
+
+/// Create a copy of LoginEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? password = null,}) {
+  return _then(_self.copyWith(
+email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
 }
 
 
@@ -61,12 +93,11 @@ extension LoginEventPatterns on LoginEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoginSubmitted value)?  loginSubmitted,TResult Function( TogglePasswordVisibility value)?  togglePasswordVisibility,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoginSubmitted value)?  loginSubmitted,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case LoginSubmitted() when loginSubmitted != null:
-return loginSubmitted(_that);case TogglePasswordVisibility() when togglePasswordVisibility != null:
-return togglePasswordVisibility(_that);case _:
+return loginSubmitted(_that);case _:
   return orElse();
 
 }
@@ -84,12 +115,11 @@ return togglePasswordVisibility(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoginSubmitted value)  loginSubmitted,required TResult Function( TogglePasswordVisibility value)  togglePasswordVisibility,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoginSubmitted value)  loginSubmitted,}){
 final _that = this;
 switch (_that) {
 case LoginSubmitted():
-return loginSubmitted(_that);case TogglePasswordVisibility():
-return togglePasswordVisibility(_that);}
+return loginSubmitted(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -103,12 +133,11 @@ return togglePasswordVisibility(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoginSubmitted value)?  loginSubmitted,TResult? Function( TogglePasswordVisibility value)?  togglePasswordVisibility,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoginSubmitted value)?  loginSubmitted,}){
 final _that = this;
 switch (_that) {
 case LoginSubmitted() when loginSubmitted != null:
-return loginSubmitted(_that);case TogglePasswordVisibility() when togglePasswordVisibility != null:
-return togglePasswordVisibility(_that);case _:
+return loginSubmitted(_that);case _:
   return null;
 
 }
@@ -125,11 +154,10 @@ return togglePasswordVisibility(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String email,  String password)?  loginSubmitted,TResult Function()?  togglePasswordVisibility,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String email,  String password)?  loginSubmitted,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case LoginSubmitted() when loginSubmitted != null:
-return loginSubmitted(_that.email,_that.password);case TogglePasswordVisibility() when togglePasswordVisibility != null:
-return togglePasswordVisibility();case _:
+return loginSubmitted(_that.email,_that.password);case _:
   return orElse();
 
 }
@@ -147,11 +175,10 @@ return togglePasswordVisibility();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String email,  String password)  loginSubmitted,required TResult Function()  togglePasswordVisibility,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String email,  String password)  loginSubmitted,}) {final _that = this;
 switch (_that) {
 case LoginSubmitted():
-return loginSubmitted(_that.email,_that.password);case TogglePasswordVisibility():
-return togglePasswordVisibility();}
+return loginSubmitted(_that.email,_that.password);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -165,11 +192,10 @@ return togglePasswordVisibility();}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String email,  String password)?  loginSubmitted,TResult? Function()?  togglePasswordVisibility,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String email,  String password)?  loginSubmitted,}) {final _that = this;
 switch (_that) {
 case LoginSubmitted() when loginSubmitted != null:
-return loginSubmitted(_that.email,_that.password);case TogglePasswordVisibility() when togglePasswordVisibility != null:
-return togglePasswordVisibility();case _:
+return loginSubmitted(_that.email,_that.password);case _:
   return null;
 
 }
@@ -184,12 +210,12 @@ class LoginSubmitted with DiagnosticableTreeMixin implements LoginEvent {
   const LoginSubmitted({required this.email, required this.password});
   
 
- final  String email;
- final  String password;
+@override final  String email;
+@override final  String password;
 
 /// Create a copy of LoginEvent
 /// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
+@override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $LoginSubmittedCopyWith<LoginSubmitted> get copyWith => _$LoginSubmittedCopyWithImpl<LoginSubmitted>(this, _$identity);
 
@@ -221,7 +247,7 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 abstract mixin class $LoginSubmittedCopyWith<$Res> implements $LoginEventCopyWith<$Res> {
   factory $LoginSubmittedCopyWith(LoginSubmitted value, $Res Function(LoginSubmitted) _then) = _$LoginSubmittedCopyWithImpl;
-@useResult
+@override @useResult
 $Res call({
  String email, String password
 });
@@ -240,7 +266,7 @@ class _$LoginSubmittedCopyWithImpl<$Res>
 
 /// Create a copy of LoginEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? email = null,Object? password = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? password = null,}) {
   return _then(LoginSubmitted(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
@@ -252,12 +278,7 @@ as String,
 }
 
 /// @nodoc
-
-
-class TogglePasswordVisibility with DiagnosticableTreeMixin implements LoginEvent {
-  const TogglePasswordVisibility();
-  
-
+mixin _$LoginState implements DiagnosticableTreeMixin {
 
 
 
@@ -265,13 +286,13 @@ class TogglePasswordVisibility with DiagnosticableTreeMixin implements LoginEven
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'LoginEvent.togglePasswordVisibility'))
+    ..add(DiagnosticsProperty('type', 'LoginState'))
     ;
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TogglePasswordVisibility);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginState);
 }
 
 
@@ -280,81 +301,15 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LoginEvent.togglePasswordVisibility()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-mixin _$LoginState implements DiagnosticableTreeMixin {
-
- LoginStatus get status; bool get isPasswordHidden; String? get errorMessage;
-/// Create a copy of LoginState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$LoginStateCopyWith<LoginState> get copyWith => _$LoginStateCopyWithImpl<LoginState>(this as LoginState, _$identity);
-
-
-@override
-void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
-    ..add(DiagnosticsProperty('type', 'LoginState'))
-    ..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('isPasswordHidden', isPasswordHidden))..add(DiagnosticsProperty('errorMessage', errorMessage));
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginState&&(identical(other.status, status) || other.status == status)&&(identical(other.isPasswordHidden, isPasswordHidden) || other.isPasswordHidden == isPasswordHidden)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,status,isPasswordHidden,errorMessage);
-
-@override
-String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LoginState(status: $status, isPasswordHidden: $isPasswordHidden, errorMessage: $errorMessage)';
+  return 'LoginState()';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $LoginStateCopyWith<$Res>  {
-  factory $LoginStateCopyWith(LoginState value, $Res Function(LoginState) _then) = _$LoginStateCopyWithImpl;
-@useResult
-$Res call({
- LoginStatus status, bool isPasswordHidden, String? errorMessage
-});
-
-
-
-
-}
-/// @nodoc
-class _$LoginStateCopyWithImpl<$Res>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._self, this._then);
-
-  final LoginState _self;
-  final $Res Function(LoginState) _then;
-
-/// Create a copy of LoginState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? isPasswordHidden = null,Object? errorMessage = freezed,}) {
-  return _then(_self.copyWith(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as LoginStatus,isPasswordHidden: null == isPasswordHidden ? _self.isPasswordHidden : isPasswordHidden // ignore: cast_nullable_to_non_nullable
-as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
+class $LoginStateCopyWith<$Res>  {
+$LoginStateCopyWith(LoginState _, $Res Function(LoginState) __);
 }
 
 
@@ -372,11 +327,14 @@ extension LoginStatePatterns on LoginState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LoginState value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( LoginInitial value)?  initial,TResult Function( LoginLoading value)?  loading,TResult Function( LoginSuccess value)?  success,TResult Function( LoginFailure value)?  failure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _LoginState() when $default != null:
-return $default(_that);case _:
+case LoginInitial() when initial != null:
+return initial(_that);case LoginLoading() when loading != null:
+return loading(_that);case LoginSuccess() when success != null:
+return success(_that);case LoginFailure() when failure != null:
+return failure(_that);case _:
   return orElse();
 
 }
@@ -394,11 +352,14 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LoginState value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( LoginInitial value)  initial,required TResult Function( LoginLoading value)  loading,required TResult Function( LoginSuccess value)  success,required TResult Function( LoginFailure value)  failure,}){
 final _that = this;
 switch (_that) {
-case _LoginState():
-return $default(_that);}
+case LoginInitial():
+return initial(_that);case LoginLoading():
+return loading(_that);case LoginSuccess():
+return success(_that);case LoginFailure():
+return failure(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -412,11 +373,14 @@ return $default(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LoginState value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( LoginInitial value)?  initial,TResult? Function( LoginLoading value)?  loading,TResult? Function( LoginSuccess value)?  success,TResult? Function( LoginFailure value)?  failure,}){
 final _that = this;
 switch (_that) {
-case _LoginState() when $default != null:
-return $default(_that);case _:
+case LoginInitial() when initial != null:
+return initial(_that);case LoginLoading() when loading != null:
+return loading(_that);case LoginSuccess() when success != null:
+return success(_that);case LoginFailure() when failure != null:
+return failure(_that);case _:
   return null;
 
 }
@@ -433,10 +397,13 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( LoginStatus status,  bool isPasswordHidden,  String? errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function()?  success,TResult Function( String errorMessage)?  failure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _LoginState() when $default != null:
-return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);case _:
+case LoginInitial() when initial != null:
+return initial();case LoginLoading() when loading != null:
+return loading();case LoginSuccess() when success != null:
+return success();case LoginFailure() when failure != null:
+return failure(_that.errorMessage);case _:
   return orElse();
 
 }
@@ -454,10 +421,13 @@ return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( LoginStatus status,  bool isPasswordHidden,  String? errorMessage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function()  success,required TResult Function( String errorMessage)  failure,}) {final _that = this;
 switch (_that) {
-case _LoginState():
-return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);}
+case LoginInitial():
+return initial();case LoginLoading():
+return loading();case LoginSuccess():
+return success();case LoginFailure():
+return failure(_that.errorMessage);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -471,10 +441,13 @@ return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( LoginStatus status,  bool isPasswordHidden,  String? errorMessage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function()?  success,TResult? Function( String errorMessage)?  failure,}) {final _that = this;
 switch (_that) {
-case _LoginState() when $default != null:
-return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);case _:
+case LoginInitial() when initial != null:
+return initial();case LoginLoading() when loading != null:
+return loading();case LoginSuccess() when success != null:
+return success();case LoginFailure() when failure != null:
+return failure(_that.errorMessage);case _:
   return null;
 
 }
@@ -485,51 +458,163 @@ return $default(_that.status,_that.isPasswordHidden,_that.errorMessage);case _:
 /// @nodoc
 
 
-class _LoginState with DiagnosticableTreeMixin implements LoginState {
-  const _LoginState({this.status = LoginStatus.initial, this.isPasswordHidden = true, this.errorMessage});
+class LoginInitial with DiagnosticableTreeMixin implements LoginState {
+  const LoginInitial();
   
 
-@override@JsonKey() final  LoginStatus status;
-@override@JsonKey() final  bool isPasswordHidden;
-@override final  String? errorMessage;
 
-/// Create a copy of LoginState
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$LoginStateCopyWith<_LoginState> get copyWith => __$LoginStateCopyWithImpl<_LoginState>(this, _$identity);
+
 
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'LoginState'))
-    ..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('isPasswordHidden', isPasswordHidden))..add(DiagnosticsProperty('errorMessage', errorMessage));
+    ..add(DiagnosticsProperty('type', 'LoginState.initial'))
+    ;
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginState&&(identical(other.status, status) || other.status == status)&&(identical(other.isPasswordHidden, isPasswordHidden) || other.isPasswordHidden == isPasswordHidden)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginInitial);
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,isPasswordHidden,errorMessage);
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LoginState(status: $status, isPasswordHidden: $isPasswordHidden, errorMessage: $errorMessage)';
+  return 'LoginState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LoginLoading with DiagnosticableTreeMixin implements LoginState {
+  const LoginLoading();
+  
+
+
+
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'LoginState.loading'))
+    ;
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'LoginState.loading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LoginSuccess with DiagnosticableTreeMixin implements LoginState {
+  const LoginSuccess();
+  
+
+
+
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'LoginState.success'))
+    ;
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginSuccess);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'LoginState.success()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class LoginFailure with DiagnosticableTreeMixin implements LoginState {
+  const LoginFailure({required this.errorMessage});
+  
+
+ final  String errorMessage;
+
+/// Create a copy of LoginState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LoginFailureCopyWith<LoginFailure> get copyWith => _$LoginFailureCopyWithImpl<LoginFailure>(this, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'LoginState.failure'))
+    ..add(DiagnosticsProperty('errorMessage', errorMessage));
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginFailure&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,errorMessage);
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'LoginState.failure(errorMessage: $errorMessage)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
-  factory _$LoginStateCopyWith(_LoginState value, $Res Function(_LoginState) _then) = __$LoginStateCopyWithImpl;
-@override @useResult
+abstract mixin class $LoginFailureCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+  factory $LoginFailureCopyWith(LoginFailure value, $Res Function(LoginFailure) _then) = _$LoginFailureCopyWithImpl;
+@useResult
 $Res call({
- LoginStatus status, bool isPasswordHidden, String? errorMessage
+ String errorMessage
 });
 
 
@@ -537,21 +622,19 @@ $Res call({
 
 }
 /// @nodoc
-class __$LoginStateCopyWithImpl<$Res>
-    implements _$LoginStateCopyWith<$Res> {
-  __$LoginStateCopyWithImpl(this._self, this._then);
+class _$LoginFailureCopyWithImpl<$Res>
+    implements $LoginFailureCopyWith<$Res> {
+  _$LoginFailureCopyWithImpl(this._self, this._then);
 
-  final _LoginState _self;
-  final $Res Function(_LoginState) _then;
+  final LoginFailure _self;
+  final $Res Function(LoginFailure) _then;
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? isPasswordHidden = null,Object? errorMessage = freezed,}) {
-  return _then(_LoginState(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as LoginStatus,isPasswordHidden: null == isPasswordHidden ? _self.isPasswordHidden : isPasswordHidden // ignore: cast_nullable_to_non_nullable
-as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,
+@pragma('vm:prefer-inline') $Res call({Object? errorMessage = null,}) {
+  return _then(LoginFailure(
+errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
