@@ -9,7 +9,8 @@ part 'reset_password_state.dart';
 part 'reset_password_bloc.freezed.dart';
 
 class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
-  ResetPasswordBloc({required this.resetPasswordUseCase}) : super(const ResetPasswordState()) {
+  ResetPasswordBloc({required this.resetPasswordUseCase})
+    : super(const ResetPasswordState.initial()) {
     on<ResetPasswordSubmitted>(_onResetPasswordSubmitted);
   }
 
@@ -19,12 +20,12 @@ class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
     ResetPasswordSubmitted event,
     Emitter<ResetPasswordState> emit,
   ) async {
-    emit(state.copyWith(status: ResetPasswordStatus.loading));
+    emit(const ResetPasswordState.loading());
     try {
       await resetPasswordUseCase.execute(ResetPasswordParams(email: event.email));
-      emit(state.copyWith(status: ResetPasswordStatus.success));
+      emit(const ResetPasswordState.success());
     } catch (e) {
-      emit(state.copyWith(status: ResetPasswordStatus.failure, errorMessage: e.toString()));
+      emit(ResetPasswordState.failure(errorMessage: e.toString()));
     }
   }
 }
