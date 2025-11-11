@@ -27,9 +27,10 @@ class SubmitResetPasswordButton extends StatelessWidget {
             }
           },
           child: Center(
-            child: state.status == ResetPasswordStatus.loading
-                ? const AppButtonLoadingWidget()
-                : Text(AppLocalizations.of(context).resetPasswordButtonText),
+            child: switch (state) {
+              ResetPasswordLoading() => const AppButtonLoadingWidget(),
+              _ => Text(AppLocalizations.of(context).resetPasswordButtonText),
+            },
           ),
         );
       },

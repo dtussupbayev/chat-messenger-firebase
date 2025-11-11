@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
-class PasswordRepeatInput extends StatelessWidget {
+class PasswordRepeatInput extends StatefulWidget {
   const PasswordRepeatInput({super.key, required this.repeatPasswordTextEditingController});
 
   final TextEditingController repeatPasswordTextEditingController;
 
   @override
+  State<PasswordRepeatInput> createState() => _PasswordRepeatInputState();
+}
+
+class _PasswordRepeatInputState extends State<PasswordRepeatInput> {
+  final ValueNotifier<bool> _isRepeatPasswordHidden = ValueNotifier<bool>(true);
+
+  @override
+  void dispose() {
+    _isRepeatPasswordHidden.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SignUpBloc, SignUpState>(
-      builder: (context, state) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: _isRepeatPasswordHidden,
+      builder: (context, isHidden, child) {
         return TextFormField(
           autocorrect: false,
-          controller: repeatPasswordTextEditingController,
-          obscureText: state.isRepeatPasswordHidden,
+          controller: widget.repeatPasswordTextEditingController,
+          obscureText: isHidden,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: (value) => value != null && value.length < 6
               ? AppLocalizations.of(context).passwordFormValidatorText
@@ -24,10 +36,8 @@ class PasswordRepeatInput extends StatelessWidget {
             prefixIcon: const Icon(Icons.lock_clock_rounded),
             hintText: AppLocalizations.of(context).passwordRepeatFormHintText,
             suffix: InkWell(
-              onTap: () {
-                context.read<SignUpBloc>().add(const ToggleRepeatPasswordVisibility());
-              },
-              child: Icon(state.isRepeatPasswordHidden ? Icons.visibility_off : Icons.visibility),
+              onTap: () => _isRepeatPasswordHidden.value = !isHidden,
+              child: Icon(isHidden ? Icons.visibility_off : Icons.visibility),
             ),
           ),
         );

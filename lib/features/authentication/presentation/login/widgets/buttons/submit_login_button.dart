@@ -29,9 +29,10 @@ class SubmitLoginButton extends StatelessWidget {
             }
           },
           child: Center(
-            child: state.status == LoginStatus.loading
-                ? const AppButtonLoadingWidget()
-                : Text(AppLocalizations.of(context).enter),
+            child: switch (state) {
+              LoginLoading() => const AppButtonLoadingWidget(),
+              _ => Text(AppLocalizations.of(context).enter),
+            },
           ),
         );
       },

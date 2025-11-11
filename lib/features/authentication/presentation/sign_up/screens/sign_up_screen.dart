@@ -16,12 +16,11 @@ class SignUpScreen extends StatelessWidget {
       create: (context) => SignUpBloc(signUpUseCase: getIt.get<SignUpUseCase>()),
       child: BlocListener<SignUpBloc, SignUpState>(
         listener: (context, state) {
-          if (state.status == SignUpStatus.failure) {
-            SnackBarService.showSnackBar(
-              context,
-              state.errorMessage ?? '',
-              type: SnackBarType.error,
-            );
+          switch (state) {
+            case SignUpFailure(errorMessage: final errorMessage):
+              SnackBarService.showSnackBar(context, errorMessage, type: SnackBarType.error);
+            default:
+              break;
           }
         },
         child: Scaffold(

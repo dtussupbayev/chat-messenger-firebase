@@ -48,9 +48,10 @@ class SubmitSignUpButton extends StatelessWidget {
             }
           },
           child: Center(
-            child: state.status == SignUpStatus.loading
-                ? const AppButtonLoadingWidget()
-                : Text(AppLocalizations.of(context).signUp),
+            child: switch (state) {
+              SignUpLoading() => const AppButtonLoadingWidget(),
+              _ => Text(AppLocalizations.of(context).signUp),
+            },
           ),
         );
       },

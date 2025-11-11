@@ -8,6 +8,4 @@ sealed class SignUpEvent with _$SignUpEvent {
     required String firstName,
     required String lastName,
   }) = SignUpSubmitted;
-  const factory SignUpEvent.togglePasswordVisibility() = TogglePasswordVisibility;
-  const factory SignUpEvent.toggleRepeatPasswordVisibility() = ToggleRepeatPasswordVisibility;
 }
