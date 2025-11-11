@@ -265,62 +265,30 @@ as String,
 /// @nodoc
 mixin _$ResetPasswordState {
 
- ResetPasswordStatus get status; String? get errorMessage;
-/// Create a copy of ResetPasswordState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ResetPasswordStateCopyWith<ResetPasswordState> get copyWith => _$ResetPasswordStateCopyWithImpl<ResetPasswordState>(this as ResetPasswordState, _$identity);
+
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordState&&(identical(other.status, status) || other.status == status)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordState);
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,errorMessage);
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ResetPasswordState(status: $status, errorMessage: $errorMessage)';
+  return 'ResetPasswordState()';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ResetPasswordStateCopyWith<$Res>  {
-  factory $ResetPasswordStateCopyWith(ResetPasswordState value, $Res Function(ResetPasswordState) _then) = _$ResetPasswordStateCopyWithImpl;
-@useResult
-$Res call({
- ResetPasswordStatus status, String? errorMessage
-});
-
-
-
-
-}
-/// @nodoc
-class _$ResetPasswordStateCopyWithImpl<$Res>
-    implements $ResetPasswordStateCopyWith<$Res> {
-  _$ResetPasswordStateCopyWithImpl(this._self, this._then);
-
-  final ResetPasswordState _self;
-  final $Res Function(ResetPasswordState) _then;
-
-/// Create a copy of ResetPasswordState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? errorMessage = freezed,}) {
-  return _then(_self.copyWith(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as ResetPasswordStatus,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
+class $ResetPasswordStateCopyWith<$Res>  {
+$ResetPasswordStateCopyWith(ResetPasswordState _, $Res Function(ResetPasswordState) __);
 }
 
 
@@ -338,11 +306,14 @@ extension ResetPasswordStatePatterns on ResetPasswordState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ResetPasswordState value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ResetPasswordInitial value)?  initial,TResult Function( ResetPasswordLoading value)?  loading,TResult Function( ResetPasswordSuccess value)?  success,TResult Function( ResetPasswordFailure value)?  failure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _ResetPasswordState() when $default != null:
-return $default(_that);case _:
+case ResetPasswordInitial() when initial != null:
+return initial(_that);case ResetPasswordLoading() when loading != null:
+return loading(_that);case ResetPasswordSuccess() when success != null:
+return success(_that);case ResetPasswordFailure() when failure != null:
+return failure(_that);case _:
   return orElse();
 
 }
@@ -360,11 +331,14 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ResetPasswordState value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ResetPasswordInitial value)  initial,required TResult Function( ResetPasswordLoading value)  loading,required TResult Function( ResetPasswordSuccess value)  success,required TResult Function( ResetPasswordFailure value)  failure,}){
 final _that = this;
 switch (_that) {
-case _ResetPasswordState():
-return $default(_that);}
+case ResetPasswordInitial():
+return initial(_that);case ResetPasswordLoading():
+return loading(_that);case ResetPasswordSuccess():
+return success(_that);case ResetPasswordFailure():
+return failure(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -378,11 +352,14 @@ return $default(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ResetPasswordState value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ResetPasswordInitial value)?  initial,TResult? Function( ResetPasswordLoading value)?  loading,TResult? Function( ResetPasswordSuccess value)?  success,TResult? Function( ResetPasswordFailure value)?  failure,}){
 final _that = this;
 switch (_that) {
-case _ResetPasswordState() when $default != null:
-return $default(_that);case _:
+case ResetPasswordInitial() when initial != null:
+return initial(_that);case ResetPasswordLoading() when loading != null:
+return loading(_that);case ResetPasswordSuccess() when success != null:
+return success(_that);case ResetPasswordFailure() when failure != null:
+return failure(_that);case _:
   return null;
 
 }
@@ -399,10 +376,13 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ResetPasswordStatus status,  String? errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function()?  success,TResult Function( String errorMessage)?  failure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _ResetPasswordState() when $default != null:
-return $default(_that.status,_that.errorMessage);case _:
+case ResetPasswordInitial() when initial != null:
+return initial();case ResetPasswordLoading() when loading != null:
+return loading();case ResetPasswordSuccess() when success != null:
+return success();case ResetPasswordFailure() when failure != null:
+return failure(_that.errorMessage);case _:
   return orElse();
 
 }
@@ -420,10 +400,13 @@ return $default(_that.status,_that.errorMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ResetPasswordStatus status,  String? errorMessage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function()  success,required TResult Function( String errorMessage)  failure,}) {final _that = this;
 switch (_that) {
-case _ResetPasswordState():
-return $default(_that.status,_that.errorMessage);}
+case ResetPasswordInitial():
+return initial();case ResetPasswordLoading():
+return loading();case ResetPasswordSuccess():
+return success();case ResetPasswordFailure():
+return failure(_that.errorMessage);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -437,10 +420,13 @@ return $default(_that.status,_that.errorMessage);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ResetPasswordStatus status,  String? errorMessage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function()?  success,TResult? Function( String errorMessage)?  failure,}) {final _that = this;
 switch (_that) {
-case _ResetPasswordState() when $default != null:
-return $default(_that.status,_that.errorMessage);case _:
+case ResetPasswordInitial() when initial != null:
+return initial();case ResetPasswordLoading() when loading != null:
+return loading();case ResetPasswordSuccess() when success != null:
+return success();case ResetPasswordFailure() when failure != null:
+return failure(_that.errorMessage);case _:
   return null;
 
 }
@@ -451,44 +437,139 @@ return $default(_that.status,_that.errorMessage);case _:
 /// @nodoc
 
 
-class _ResetPasswordState implements ResetPasswordState {
-  const _ResetPasswordState({this.status = ResetPasswordStatus.initial, this.errorMessage});
+class ResetPasswordInitial implements ResetPasswordState {
+  const ResetPasswordInitial();
   
 
-@override@JsonKey() final  ResetPasswordStatus status;
-@override final  String? errorMessage;
 
-/// Create a copy of ResetPasswordState
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ResetPasswordStateCopyWith<_ResetPasswordState> get copyWith => __$ResetPasswordStateCopyWithImpl<_ResetPasswordState>(this, _$identity);
+
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ResetPasswordState&&(identical(other.status, status) || other.status == status)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordInitial);
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,errorMessage);
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ResetPasswordState(status: $status, errorMessage: $errorMessage)';
+  return 'ResetPasswordState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ResetPasswordLoading implements ResetPasswordState {
+  const ResetPasswordLoading();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordLoading);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ResetPasswordState.loading()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ResetPasswordSuccess implements ResetPasswordState {
+  const ResetPasswordSuccess();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordSuccess);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'ResetPasswordState.success()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class ResetPasswordFailure implements ResetPasswordState {
+  const ResetPasswordFailure({required this.errorMessage});
+  
+
+ final  String errorMessage;
+
+/// Create a copy of ResetPasswordState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ResetPasswordFailureCopyWith<ResetPasswordFailure> get copyWith => _$ResetPasswordFailureCopyWithImpl<ResetPasswordFailure>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ResetPasswordFailure&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,errorMessage);
+
+@override
+String toString() {
+  return 'ResetPasswordState.failure(errorMessage: $errorMessage)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ResetPasswordStateCopyWith<$Res> implements $ResetPasswordStateCopyWith<$Res> {
-  factory _$ResetPasswordStateCopyWith(_ResetPasswordState value, $Res Function(_ResetPasswordState) _then) = __$ResetPasswordStateCopyWithImpl;
-@override @useResult
+abstract mixin class $ResetPasswordFailureCopyWith<$Res> implements $ResetPasswordStateCopyWith<$Res> {
+  factory $ResetPasswordFailureCopyWith(ResetPasswordFailure value, $Res Function(ResetPasswordFailure) _then) = _$ResetPasswordFailureCopyWithImpl;
+@useResult
 $Res call({
- ResetPasswordStatus status, String? errorMessage
+ String errorMessage
 });
 
 
@@ -496,20 +577,19 @@ $Res call({
 
 }
 /// @nodoc
-class __$ResetPasswordStateCopyWithImpl<$Res>
-    implements _$ResetPasswordStateCopyWith<$Res> {
-  __$ResetPasswordStateCopyWithImpl(this._self, this._then);
+class _$ResetPasswordFailureCopyWithImpl<$Res>
+    implements $ResetPasswordFailureCopyWith<$Res> {
+  _$ResetPasswordFailureCopyWithImpl(this._self, this._then);
 
-  final _ResetPasswordState _self;
-  final $Res Function(_ResetPasswordState) _then;
+  final ResetPasswordFailure _self;
+  final $Res Function(ResetPasswordFailure) _then;
 
 /// Create a copy of ResetPasswordState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? errorMessage = freezed,}) {
-  return _then(_ResetPasswordState(
-status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as ResetPasswordStatus,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,
+@pragma('vm:prefer-inline') $Res call({Object? errorMessage = null,}) {
+  return _then(ResetPasswordFailure(
+errorMessage: null == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

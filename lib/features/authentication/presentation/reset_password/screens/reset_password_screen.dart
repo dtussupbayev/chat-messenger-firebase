@@ -20,24 +20,23 @@ class ResetPasswordScreen extends StatelessWidget {
           ResetPasswordBloc(resetPasswordUseCase: getIt.get<ResetPasswordUseCase>()),
       child: BlocListener<ResetPasswordBloc, ResetPasswordState>(
         listener: (context, state) {
-          if (state.status == ResetPasswordStatus.failure) {
-            SnackBarService.showSnackBar(
-              context,
-              state.errorMessage ?? 'Unknown Failure',
-              type: SnackBarType.error,
-            );
-          } else if (state.status == ResetPasswordStatus.success) {
-            SnackBarService.showSnackBar(
-              context,
-              AppLocalizations.of(context).successResetPassword,
-              type: SnackBarType.success,
-            );
-            if (context.mounted) {
-              while (context.canPop()) {
-                context.pop();
+          switch (state) {
+            case ResetPasswordFailure(errorMessage: final errorMessage):
+              SnackBarService.showSnackBar(context, errorMessage, type: SnackBarType.error);
+            case ResetPasswordSuccess():
+              SnackBarService.showSnackBar(
+                context,
+                AppLocalizations.of(context).successResetPassword,
+                type: SnackBarType.success,
+              );
+              if (context.mounted) {
+                while (context.canPop()) {
+                  context.pop();
+                }
+                const LoginRoute().pushReplacement(context);
               }
-              const LoginRoute().pushReplacement(context);
-            }
+            default:
+              break;
           }
         },
         child: Scaffold(
