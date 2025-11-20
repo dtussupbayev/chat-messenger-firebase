@@ -8,7 +8,7 @@ import 'package:realtime_chat_app/features/authentication/domain/use_cases/reset
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/bloc/reset_password_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/reset_password/widgets/reset_password_form.dart';
 
-import '../../../../../l10n/app_localizations.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});

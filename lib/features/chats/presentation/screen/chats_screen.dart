@@ -9,7 +9,7 @@ import 'package:realtime_chat_app/features/chats/presentation/widgets/chat_room_
 import 'package:realtime_chat_app/features/chats/presentation/widgets/search_button.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
-import '../widgets/chats_app_bar_menu_button.dart';
+import 'package:realtime_chat_app/features/chats/presentation/widgets/chats_app_bar_menu_button.dart';
 
 class ChatsScreen extends StatelessWidget {
   const ChatsScreen({super.key});
