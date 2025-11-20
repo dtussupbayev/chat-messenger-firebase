@@ -8,7 +8,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:realtime_chat_app/features/settings/utilities/web_platform_locale.dart';
 import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
-import 'locale_converter.dart';
+import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_converter.dart';
 
 part 'locale_bloc.freezed.dart';
 

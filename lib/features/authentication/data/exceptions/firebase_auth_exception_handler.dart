@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:realtime_chat_app/core/locale_helper.dart';
 
-import 'auth_exception.dart' show AuthException;
+import 'package:realtime_chat_app/features/authentication/data/exceptions/auth_exception.dart' show AuthException;
 
 class FirebaseAuthExceptionHandler {
   static AuthException handle(FirebaseAuthException e) {

@@ -5,8 +5,8 @@ import 'package:realtimechat_uikit/realtimechat_uikit.dart';
 import 'package:realtime_chat_app/features/settings/blocs/locale_bloc/locale_bloc.dart';
 import 'package:realtime_chat_app/features/settings/blocs/theme_bloc/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/router/app_router.dart';
-import '../../l10n/app_localizations.dart';
+import 'package:realtime_chat_app/core/router/app_router.dart';
+import 'package:realtime_chat_app/l10n/app_localizations.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
-import 'features/app/app.dart';
-import 'firebase_options.dart';
+import 'package:realtime_chat_app/features/app/app.dart';
+import 'package:realtime_chat_app/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

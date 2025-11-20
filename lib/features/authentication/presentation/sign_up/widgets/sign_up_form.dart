@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'buttons/navigate_to_login_button.dart';
-import 'buttons/submit_sign_up_button.dart';
-import 'inputs/email_input.dart';
-import 'inputs/first_name_input.dart';
-import 'inputs/last_name_input.dart';
-import 'inputs/password_input.dart';
-import 'inputs/password_repeat_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/buttons/navigate_to_login_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/buttons/submit_sign_up_button.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/inputs/email_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/inputs/first_name_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/inputs/last_name_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/inputs/password_input.dart';
+import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/inputs/password_repeat_input.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
