@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/core/router/app_router.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
-import 'package:realtime_chat_app/features/authentication/domain/use_cases/login_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/bloc/login_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/login/widgets/login_form.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginBloc(loginUseCase: getIt.get<LoginUseCase>()),
+      create: (context) => LoginBloc(authRepository: getIt.get<IAuthRepository>()),
       child: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();
