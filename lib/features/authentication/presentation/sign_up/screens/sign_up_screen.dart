@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtimechat_uikit/realtimechat_uikit.dart';
-import 'package:realtime_chat_app/features/authentication/domain/use_cases/sign_up_use_case.dart';
+import 'package:realtime_chat_app/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:realtime_chat_app/features/authentication/presentation/sign_up/widgets/sign_up_form.dart';
 import 'package:realtime_chat_app/features/onboarding/welcome_screen.dart';
@@ -13,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignUpBloc(signUpUseCase: getIt.get<SignUpUseCase>()),
+      create: (context) => SignUpBloc(authRepository: getIt.get<IAuthRepository>()),
       child: BlocListener<SignUpBloc, SignUpState>(
         listener: (context, state) {
           switch (state) {

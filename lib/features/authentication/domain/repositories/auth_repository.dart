@@ -1,6 +1,6 @@
 import 'package:realtime_chat_app/features/authentication/domain/entities/user_entity.dart';
 
-abstract interface class IAuthRepository {
+abstract class IAuthRepository {
   const IAuthRepository();
 
   Future<void> signInWithEmailAndPassword(String email, String password);
