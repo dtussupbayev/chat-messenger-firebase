@@ -49,3 +49,7 @@ app.*.map.json
 
 # Local customizations
 local_customizations/
+
+# Generated files
+**/*.g.dart
+**/*.freezed.dart
