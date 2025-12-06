@@ -1,28 +1,39 @@
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/core/exceptions/app_exception.dart';
-import 'package:realtime_chat_app/features/profile/domain/use_cases/get_profile_info_use_case.dart';
-import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use_case.dart';
 import 'package:realtime_chat_app/core/locale_helper.dart';
+import 'package:realtime_chat_app/features/profile/domain/repositories/profile_repository.dart';
 
+part 'profile_bloc.freezed.dart';
 part 'profile_event.dart';
 part 'profile_state.dart';
-part 'profile_bloc.freezed.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
-  ProfileBloc() : super(const ProfileState.initial()) {
+
+  ProfileBloc({
+    required ProfileRepository profileRepository,
+    required FirebaseAuth firebaseAuth,
+  })
+      : _profileRepository = profileRepository,
+        _auth = firebaseAuth,
+        super(const ProfileState.initial()) {
     on<LoadProfileInfoEvent>(_onLoadProfileInfo);
     on<SignOutEvent>(_onSignOut);
   }
 
-  final GetProfileInfoUseCase _getProfileInfoUseCase = getIt.get<GetProfileInfoUseCase>();
-  final SignOutUseCase _signOutUseCase = getIt.get<SignOutUseCase>();
+  final ProfileRepository _profileRepository;
+  final FirebaseAuth _auth;
 
-  Future<void> _onLoadProfileInfo(LoadProfileInfoEvent event, Emitter<ProfileState> emit) async {
+  Future<void> _onLoadProfileInfo(LoadProfileInfoEvent event,
+      Emitter<ProfileState> emit,) async {
     emit(const ProfileState.loading());
     try {
-      final userEntity = await _getProfileInfoUseCase.call();
+      final user = _auth.currentUser;
+      if (user == null) {
+        throw const AppException('User not logged in');
+      }
+      final userEntity = await _profileRepository.getProfileInfo(user.uid);
       emit(
         ProfileState.loaded(
           email: userEntity.email,
@@ -37,9 +48,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
   }
 
-  Future<void> _onSignOut(SignOutEvent event, Emitter<ProfileState> emit) async {
+  Future<void> _onSignOut(SignOutEvent event,
+      Emitter<ProfileState> emit,) async {
     try {
-      await _signOutUseCase.call();
+      await _profileRepository.signOut();
       emit(const ProfileState.signedOut());
     } catch (e) {
       emit(ProfileState.error('${LocaleStrings.current.error}:$e'));

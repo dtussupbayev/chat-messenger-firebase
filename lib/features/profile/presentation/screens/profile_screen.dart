@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:realtime_chat_app/core/di/get_it.dart';
 import 'package:realtime_chat_app/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:realtime_chat_app/features/profile/presentation/widgets/arraw_back_button.dart';
 import 'package:realtime_chat_app/features/profile/presentation/widgets/sign_out_button.dart';
@@ -20,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProfileBloc()..add(const LoadProfileInfoEvent()),
+      create: (context) => getIt<ProfileBloc>()..add(const LoadProfileInfoEvent()),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(

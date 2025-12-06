@@ -3,8 +3,7 @@ import 'package:realtime_chat_app/features/profile/data/data_sources/profile_rem
 import 'package:realtime_chat_app/features/profile/data/data_sources/profile_remote_data_source_impl.dart';
 import 'package:realtime_chat_app/features/profile/data/repositories/profile_repository_impl.dart';
 import 'package:realtime_chat_app/features/profile/domain/repositories/profile_repository.dart';
-import 'package:realtime_chat_app/features/profile/domain/use_cases/get_profile_info_use_case.dart';
-import 'package:realtime_chat_app/features/profile/domain/use_cases/sign_out_use_case.dart';
+import 'package:realtime_chat_app/features/profile/presentation/bloc/profile_bloc.dart';
 
 void initProfileDependencies(GetIt getIt) {
   getIt
@@ -14,10 +13,11 @@ void initProfileDependencies(GetIt getIt) {
     ..registerLazySingleton<ProfileRepository>(
       () => ProfileRepositoryImpl(remoteDataSource: getIt.get<ProfileRemoteDataSource>()),
     )
-    ..registerLazySingleton<GetProfileInfoUseCase>(
-      () => GetProfileInfoUseCase(repository: getIt.get<ProfileRepository>()),
-    )
-    ..registerLazySingleton<SignOutUseCase>(
-      () => SignOutUseCase(repository: getIt.get<ProfileRepository>()),
+    ..registerFactory<ProfileBloc>(
+          () =>
+          ProfileBloc(
+            profileRepository: getIt.get<ProfileRepository>(),
+            firebaseAuth: getIt.get(),
+          ),
     );
 }
