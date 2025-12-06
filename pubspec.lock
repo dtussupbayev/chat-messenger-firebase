@@ -90,7 +90,7 @@ packages:
     source: hosted
     version: "4.1.0"
   build_runner:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: build_runner
       sha256: a9461b8e586bf018dd4afd2e13b49b08c6a844a4b226c8d1d10f3a723cdd78c3
@@ -249,22 +249,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  device_frame:
-    dependency: transitive
-    description:
-      name: device_frame
-      sha256: "7b2ebb2a09d6cc0f086b51bd1412d7be83e0170056a7290349169be41164c86a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.0"
-  device_preview:
-    dependency: "direct main"
-    description:
-      name: device_preview
-      sha256: "88aa1cc73ee9a8ec771b309dcbc4000cc66b5d8456b825980997640ab1195bf5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
   email_validator:
     dependency: "direct main"
     description:
@@ -282,7 +266,7 @@ packages:
     source: hosted
     version: "2.0.7"
   example:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       path: "packages/realtimechat_uikit/example"
       relative: true
@@ -329,7 +313,7 @@ packages:
     source: hosted
     version: "8.1.4"
   firebase_auth_web:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: firebase_auth_web
       sha256: a064ffee202f7d42d62e2c01775899d4ffcb83c602af07632f206acd46a0964e
@@ -382,7 +366,7 @@ packages:
     source: hosted
     version: "9.1.1"
   flutter_gen:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_gen
       sha256: eac4863b65813aacbf16ecc07e7c271ab82fb2d95181825348f1fb7b03fd52da
@@ -668,14 +652,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  mocktail:
-    dependency: "direct main"
-    description:
-      name: mocktail
-      sha256: "890df3f9688106f25755f26b1c60589a92b3ab91a22b8b224947ad041bf172d8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.4"
   nested:
     dependency: transitive
     description:
@@ -820,14 +796,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
-  random_string:
-    dependency: "direct main"
-    description:
-      name: random_string
-      sha256: "03b52435aae8cbdd1056cf91bfc5bf845e9706724dd35ae2e99fa14a1ef79d02"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   realtimechat_uikit:
     dependency: "direct main"
     description:
@@ -836,7 +804,7 @@ packages:
     source: path
     version: "0.0.1"
   rename_app:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: rename_app
       sha256: "387a88335f853674b39bed7943955388bbaf6aae4ffdc812e2ef275ce119abc7"
